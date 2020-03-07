@@ -5,46 +5,6 @@
     <Vendor>Rother OSS GmbH</Vendor>
     <URL>https://otobo.de/</URL>
     <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
-    <ChangeLog Date="2020-01-24 18:01:13" Version="6.0.15">- Updated minimum framework version to OTOBO 10.0.26.
-- Updated translations.
-- Updated jquery.
-- Updated copyright.</ChangeLog>
-    <ChangeLog Date="2019-09-20 17:03:36" Version="6.0.14">- Updated minimum framework version to OTOBO 10.0.23.</ChangeLog>
-    <ChangeLog Date="2019-06-28 22:40:01" Version="6.0.13">- Updated minimum framework version to OTOBO 10.0.20.
-- Updated translations.
-- Follow-up fix for bug#13466: Time spans will be saved implicitly.</ChangeLog>
-    <ChangeLog Date="2019-04-06 05:37:59" Version="6.0.12">- Updated framework files to OTOBO 10.0.18.
-- Updated translations.</ChangeLog>
-    <ChangeLog Date="2019-02-23 18:43:01" Version="6.0.11">- Updated framework files to OTOBO 10.0.17.
-- Follow-up fix for bug#14377.
-- Fixed: Checkboxes act as radio buttons and missing text from alert dialog (bug#14377).
-- Fixed: Webserver 500 Error when trying to put in hours into a weekend's day (bug#14354).</ChangeLog>
-    <ChangeLog Date="2019-01-15 01:37:31" Version="6.0.10">- Updated copyright.
-- Updated minimum framework version to 6.0.15.</ChangeLog>
-    <ChangeLog Date="2018-12-11 01:06:40" Version="6.0.9">- Code cleanup.
-- Updated minimum framework version to 6.0.13.</ChangeLog>
-    <ChangeLog Date="2018-11-05 17:00:42" Version="6.0.8">- Code cleanup.
-- Updated translations, thanks to all translators.</ChangeLog>
-    <ChangeLog Date="2018-09-28 17:26:01" Version="6.0.7">- Code cleanup.</ChangeLog>
-    <ChangeLog Date="2018-09-15 06:18:38" Version="6.0.6">- Updated translations, thanks to all translators.
-- Fixed: Time spans will be saved implicitly (bug#13466).
-- Updated license information.</ChangeLog>
-    <ChangeLog Date="2018-07-17 23:34:55" Version="6.0.5">- Updated translations, thanks to all translators.
-- Allow specific users to skip time accounting.
-- Updated Hungarian package description.
-- Fixed: Setting &quot;Days of vacation&quot; to value 0 not possible (bug#13467).</ChangeLog>
-    <ChangeLog Date="2018-04-24 20:08:03" Version="6.0.4">- Updated translations, thanks to all translators.</ChangeLog>
-    <ChangeLog Date="2018-02-07 00:53:03" Version="6.0.3">- Updated translations, thanks to all translators.</ChangeLog>
-    <ChangeLog Date="2017-12-12 23:43:43" Version="6.0.2">- Updated translations, thanks to all translators.
- - Improved display of DefaultUserDateStart and DefaultUserDateEnd settings.
- - Fixed bug13415 - Incomplete days widget has wrong day of week names.</ChangeLog>
-    <ChangeLog Date="2017-11-15 01:47:57" Version="6.0.1">- Updated documentation (Configuration chapter).
-- Updated translations, thanks to all translators.</ChangeLog>
-    <ChangeLog Date="2017-11-08 19:32:09" Version="5.0.92">- Updated translations, thanks to all translators.
-- Changed default group configuration and implemented migration path for existing systems. TimeAccounting specific user group will no longer be automatically created on new systems.</ChangeLog>
-    <ChangeLog Date="2017-10-23 05:16:10" Version="5.0.91">- Initial version for OTOBO 10.
-- Updated translations, thanks to all translators.
-- Bug#12104 - TimeAccounting statistic silently returns only last full month unless Period filter is used.</ChangeLog>
     <Description Lang="en">A Time Registration Module.</Description>
     <Description Lang="de">Ein Zeiterfassungsmodul.</Description>
     <Description Lang="hu">Egy munkaidő nyilvántartás modul.</Description>
