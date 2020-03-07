@@ -1,0 +1,80 @@
+/* OTOBO is a web-based ticketing system for service organisations.
+
+Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
+Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+/**
+ * @package     Skin "Default"
+ * @section     Time Accounting Default CSS
+ */
+
+@media screen,projection,tv,handheld {
+
+/**
+ * @subsection  left and right arrows
+ */
+
+.Arrow {
+    display: block;
+    width: 10px;
+    height: 12px;
+    float: left;
+    margin-top: -2px;
+    margin-right: 4px;
+}
+
+.Arrow i {
+    font-size: 16px;
+    color: #555;
+}
+
+/**
+ * @subsection  special settings: reporting
+ */
+
+div.MonthSelection {
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.MonthSelection .Arrow {
+    margin-top: 1px;
+}
+
+/**
+ * @subsection  IncompleteWorkingDays select
+ */
+#IncompleteWorkingDaysList option[selected=selected] {
+    font-weight: bold;
+}
+
+/**
+ * @subsection  project and action dropdowns
+ */
+.ProjectSelection {
+    width: 300px;
+}
+
+.ActionSelection {
+    width: 300px;
+}
+
+.SidebarColumn .DatepickerIcon {
+    vertical-align: middle;
+}
+
+.SidebarColumn th input[type=checkbox] {
+    margin: 0px;
+}
+
+} /* end @media */

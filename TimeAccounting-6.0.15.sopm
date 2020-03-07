@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otobo_package version="1.1">
+    <Name>TimeAccounting</Name>
+    <Version>6.0.15</Version>
+    <Vendor>Rother OSS GmbH</Vendor>
+    <URL>https://otobo.de/</URL>
+    <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
+    <ChangeLog Date="2020-01-24 18:01:13" Version="6.0.15">- Updated minimum framework version to OTOBO 10.0.26.
+- Updated translations.
+- Updated jquery.
+- Updated copyright.</ChangeLog>
+    <ChangeLog Date="2019-09-20 17:03:36" Version="6.0.14">- Updated minimum framework version to OTOBO 10.0.23.</ChangeLog>
+    <ChangeLog Date="2019-06-28 22:40:01" Version="6.0.13">- Updated minimum framework version to OTOBO 10.0.20.
+- Updated translations.
+- Follow-up fix for bug#13466: Time spans will be saved implicitly.</ChangeLog>
+    <ChangeLog Date="2019-04-06 05:37:59" Version="6.0.12">- Updated framework files to OTOBO 10.0.18.
+- Updated translations.</ChangeLog>
+    <ChangeLog Date="2019-02-23 18:43:01" Version="6.0.11">- Updated framework files to OTOBO 10.0.17.
+- Follow-up fix for bug#14377.
+- Fixed: Checkboxes act as radio buttons and missing text from alert dialog (bug#14377).
+- Fixed: Webserver 500 Error when trying to put in hours into a weekend's day (bug#14354).</ChangeLog>
+    <ChangeLog Date="2019-01-15 01:37:31" Version="6.0.10">- Updated copyright.
+- Updated minimum framework version to 6.0.15.</ChangeLog>
+    <ChangeLog Date="2018-12-11 01:06:40" Version="6.0.9">- Code cleanup.
+- Updated minimum framework version to 6.0.13.</ChangeLog>
+    <ChangeLog Date="2018-11-05 17:00:42" Version="6.0.8">- Code cleanup.
+- Updated translations, thanks to all translators.</ChangeLog>
+    <ChangeLog Date="2018-09-28 17:26:01" Version="6.0.7">- Code cleanup.</ChangeLog>
+    <ChangeLog Date="2018-09-15 06:18:38" Version="6.0.6">- Updated translations, thanks to all translators.
+- Fixed: Time spans will be saved implicitly (bug#13466).
+- Updated license information.</ChangeLog>
+    <ChangeLog Date="2018-07-17 23:34:55" Version="6.0.5">- Updated translations, thanks to all translators.
+- Allow specific users to skip time accounting.
+- Updated Hungarian package description.
+- Fixed: Setting &quot;Days of vacation&quot; to value 0 not possible (bug#13467).</ChangeLog>
+    <ChangeLog Date="2018-04-24 20:08:03" Version="6.0.4">- Updated translations, thanks to all translators.</ChangeLog>
+    <ChangeLog Date="2018-02-07 00:53:03" Version="6.0.3">- Updated translations, thanks to all translators.</ChangeLog>
+    <ChangeLog Date="2017-12-12 23:43:43" Version="6.0.2">- Updated translations, thanks to all translators.
+ - Improved display of DefaultUserDateStart and DefaultUserDateEnd settings.
+ - Fixed bug13415 - Incomplete days widget has wrong day of week names.</ChangeLog>
+    <ChangeLog Date="2017-11-15 01:47:57" Version="6.0.1">- Updated documentation (Configuration chapter).
+- Updated translations, thanks to all translators.</ChangeLog>
+    <ChangeLog Date="2017-11-08 19:32:09" Version="5.0.92">- Updated translations, thanks to all translators.
+- Changed default group configuration and implemented migration path for existing systems. TimeAccounting specific user group will no longer be automatically created on new systems.</ChangeLog>
+    <ChangeLog Date="2017-10-23 05:16:10" Version="5.0.91">- Initial version for OTOBO 10.
+- Updated translations, thanks to all translators.
+- Bug#12104 - TimeAccounting statistic silently returns only last full month unless Period filter is used.</ChangeLog>
+    <Description Lang="en">A Time Registration Module.</Description>
+    <Description Lang="de">Ein Zeiterfassungsmodul.</Description>
+    <Description Lang="hu">Egy munkaidő nyilvántartás modul.</Description>
+    <Framework>10.0.x</Framework>
+    <IntroInstall Lang="en" Title="Install Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;WELCOME&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        You are about to install the OTOBO package TimeAccounting.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="de" Title="Installation Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;WILLKOMMEN&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Sie sind im Begriff das OTOBO-Paket TimeAccounting zu installieren.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="es" Title="Install Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;BIENVENIDO&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Ud. está a punto de instalar el paquete Contabilidad de Tiempo de OTOBO.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="hu" Title="Telepítési információk" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;ÜDVÖZÖLJÜK&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Ön a TimeAccounting OTOBO csomag telepítésére készül.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="en" Title="Installation Information" Type="post">
+
+        &lt;br&gt;
+        &lt;b&gt;NOTICE&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        In order to grant users access to the time accounting 'settings' and 'reporting' features, you need to add them as member to the group 'admin'.
+        &lt;br&gt;
+        &lt;br&gt;
+        The menu items that were added by this package will be visible after you log-in to the system again.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="de" Title="Installation Information" Type="post">
+
+        &lt;br&gt;
+        &lt;b&gt;HINWEIS&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        In order to grant users access to the time accounting 'settings' and 'reporting' features, you need to add them as member to the group 'admin'.
+        &lt;br&gt;
+        &lt;br&gt;
+        Die von diesem Paket hinzugefügten Menü-Punkte sind erst nach einem erneuten Anmeldevorgang im System sichtbar.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="es" Title="Installation Information" Type="post">
+
+        &lt;br&gt;
+        &lt;b&gt;NOTA&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Para permitirles a los usuarios el acceso a las functiones de contabilidad de tiempo 'ajustes' y 'reporteo', es necesario añadirlos como miembros del grupo 'admin'.
+        &lt;br&gt;
+        &lt;br&gt;
+        Los elementos del menú agregados por este paquete, serán visibles luego de reiniciar sesión en el sistema.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroInstall Lang="hu" Title="Telepítési információk" Type="post">
+
+        &lt;br&gt;
+        &lt;b&gt;FIGYELMEZTETÉS&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Annak érdekében, hogy hozzáférést adjon a felhasználók számára az időelszámolás „beállítási” és „jelentési” funkcióihoz, hozzá kell adnia őket az „admin” csoporthoz tagként.
+        &lt;br&gt;
+        &lt;br&gt;
+        Azok a menüpontok, amelyeket ez a csomag adott hozzá, azután lesznek láthatóak, miután ismét bejelentkezik a rendszerbe.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroInstall>
+    <IntroUninstall Lang="en" Title="Uninstallation Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;ATTENTION&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        If you uninstall this package, all database tables that were created during installation will be deleted.
+        All data from these tables will be irrevocably lost!
+        &lt;br&gt;
+        &lt;br&gt;
+        The group 'time_accounting' that was created during package installation will be deactivated.
+        You can activate this group again in the admin area.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUninstall>
+    <IntroUninstall Lang="de" Title="Uninstallation Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;ACHTUNG&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Bei der Deinstallation werden die von diesem Paket angelegten Datenbank-Tabellen gelöscht.
+        Alle darin enthaltenen Daten gehen unwiderruflich verloren!
+        &lt;br&gt;
+        &lt;br&gt;
+        Die von diesem Paket angelegte Gruppe 'time_accounting' wird deaktiviert.
+        Sie kann jederzeit im Admin-Bereich wieder aktiviert werden.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUninstall>
+    <IntroUninstall Lang="es" Title="Uninstallation Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;ATTENTION&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Si usted desinstala este paquete, todas las tablas de la base de datos que se crearon durante la instalación del mismo, se eliminarán y
+        el contenido de dichas tablas se perderá irrevocablemente.
+        &lt;br&gt;
+        &lt;br&gt;
+        El grupo 'time_accounting' que se dió de alta durante la instalación del paquete, se desactivará.
+        Es posible reactivar dicho grupo en el área de administración.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUninstall>
+    <IntroUninstall Lang="hu" Title="Eltávolítási információk" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;FIGYELEM&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Ha eltávolítja ezt a csomagot, akkor a telepítés során létrehozott összes adatbázistábla törlésre kerül.
+        Az ezekben a táblákban lévő összes adat visszavonhatatlanul el fog veszni!
+        &lt;br&gt;
+        &lt;br&gt;
+        A csomagtelepítés során létrehozott „time_accounting” csoport ki lesz kapcsolva.
+        Ezt a csoportot az adminisztrációs területen tudja ismét bekapcsolni.
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUninstall>
+    <IntroUpgrade Lang="en" Title="Upgrade Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;WELCOME&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        You are about to upgrade the OTOBO package TimeAccounting.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUpgrade>
+    <IntroUpgrade Lang="de" Title="Upgrade Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;WILLKOMMEN&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Sie sind im Begriff das OTOBO-Paket TimeAccounting zu aktualisieren.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUpgrade>
+    <IntroUpgrade Lang="es" Title="Upgrade Information" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;BIENVENIDO&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Ud. está a punto de actualizar el paquete Contabilidad de Tiempo de OTOBO.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUpgrade>
+    <IntroUpgrade Lang="hu" Title="Frissítési információk" Type="pre">
+
+        &lt;br&gt;
+        &lt;b&gt;ÜDVÖZÖLJÜK&lt;/b&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        Ön a TimeAccounting OTOBO csomag frissítésére készül.&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        ((enjoy))&lt;br&gt;
+        &lt;br&gt;
+
+    </IntroUpgrade>
+    <CodeInstall Type="post">
+
+        # create the package name
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}-&gt;{Name}-&gt;{Content};
+
+        $Kernel::OM-&gt;Get($CodeModule)-&gt;CodeInstall();
+    </CodeInstall>
+    <CodeUpgrade Type="post" Version="4.0.91">
+
+        # create the package name
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}-&gt;{Name}-&gt;{Content};
+
+        $Kernel::OM-&gt;Get($CodeModule)-&gt;CodeUpgradeFromLowerThan_4_0_91();
+    </CodeUpgrade>
+    <CodeUpgrade Type="post" Version="5.0.92">
+
+        # create the package name
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}-&gt;{Name}-&gt;{Content};
+
+        $Kernel::OM-&gt;Get($CodeModule)-&gt;CodeUpgradeFromLowerThan_5_0_92();
+    </CodeUpgrade>
+    <CodeUninstall Type="pre">
+
+        # create the package name
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}-&gt;{Name}-&gt;{Content};
+
+        $Kernel::OM-&gt;Get($CodeModule)-&gt;CodeUninstall();
+    </CodeUninstall>
+    <BuildCommitID>77b3f8131899ad78afca2fbcfad43c055d3c2f17</BuildCommitID>
+    <BuildDate>2020-01-24 18:01:15</BuildDate>
+    <BuildHost>opms.otobo.com</BuildHost>
+    <Filelist>
+        <File Location="doc/timeaccounting-database.png" Permission="644" ></File>
+        <File Location="Kernel/Config/Files/XML/TimeAccounting.xml" Permission="644" ></File>
+        <File Location="Kernel/Language/bg_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/da_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/de_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/es_MX_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/es_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/fr_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/gl_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/hu_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/id_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/it_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/ja_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/mk_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/ms_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/nb_NO_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/nl_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/pl_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/pt_BR_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/pt_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/ro_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/ru_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/sr_Cyrl_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/sr_Latn_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/sv_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/sw_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/uk_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/vi_VN_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/zh_CN_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Language/zh_TW_TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Modules/AgentTimeAccountingEdit.pm" Permission="644" ></File>
+        <File Location="Kernel/Modules/AgentTimeAccountingOverview.pm" Permission="644" ></File>
+        <File Location="Kernel/Modules/AgentTimeAccountingReporting.pm" Permission="644" ></File>
+        <File Location="Kernel/Modules/AgentTimeAccountingSetting.pm" Permission="644" ></File>
+        <File Location="Kernel/Modules/AgentTimeAccountingView.pm" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingDelete.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingEdit.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingOverview.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingReporting.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingReportingProject.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingSetting.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingView.tt" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/Notification/TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/Output/HTML/ToolBar/IncompleteWorkingDays.pm" Permission="644" ></File>
+        <File Location="Kernel/Output/JavaScript/Templates/Standard/Agent/TimeAccounting/Option.html.tmpl" Permission="644" ></File>
+        <File Location="Kernel/Output/JavaScript/Templates/Standard/Agent/TimeAccounting/Dialog/AjaxLoader.html.tmpl" Permission="644" ></File>
+        <File Location="Kernel/System/TimeAccounting.pm" Permission="644" ></File>
+        <File Location="Kernel/System/Stats/Dynamic/TimeAccounting.pm" Permission="644" ></File>
+        <File Location="scripts/test/TimeAccounting/DayOfWeekToName.t" Permission="644" ></File>
+        <File Location="scripts/test/TimeAccounting/UpgradeLowerThan5092.t" Permission="644" ></File>
+        <File Location="scripts/test/TimeAccounting/UserReportingDateCheck.t" Permission="644" ></File>
+        <File Location="scripts/test/TimeAccounting/VacationCheck.t" Permission="644" ></File>
+        <File Location="scripts/test/TimeAccounting.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Agent/AgentTimeAccountingEdit.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Agent/AgentTimeAccountingOverview.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Agent/AgentTimeAccountingReporting.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Agent/AgentTimeAccountingSetting.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Agent/AgentTimeAccountingView.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Output/Notification/TimeAccounting.t" Permission="644" ></File>
+        <File Location="scripts/test/Selenium/Output/ToolBar/IncompleteWorkingDays.t" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.ConfirmationDialog.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.EditTimeRecords.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.Overview.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.Reporting.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/TimeAccounting.Agent.View.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/test/TimeAccounting.Agent.EditTimeRecords.UnitTest.html" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/js/test/TimeAccounting.Agent.EditTimeRecords.UnitTest.js" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/skins/Agent/default/css/TimeAccounting.Defaults.css" Permission="644" ></File>
+        <File Location="var/httpd/htdocs/skins/Agent/default/css/TimeAccounting.Table.css" Permission="644" ></File>
+        <File Location="var/packagesetup/TimeAccounting.pm" Permission="644" ></File>
+        <File Location="doc/en/TimeAccounting.pdf" Permission="644" ></File>
+    </Filelist>
+    <DatabaseInstall Type="post">
+        <TableCreate Type="post" Name="time_accounting_action">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="BIGINT"></Column>
+            <Column Name="action" Required="false" Size="250" Type="VARCHAR"></Column>
+            <Column Name="status" Required="true" Size="15" Type="VARCHAR"></Column>
+        </TableCreate>
+        <TableCreate Type="post" Name="time_accounting_project">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="BIGINT"></Column>
+            <Column Name="project" Required="false" Size="250" Type="VARCHAR"></Column>
+            <Column Name="description" Required="false" Size="500" Type="VARCHAR"></Column>
+            <Column Name="status" Required="true" Size="15" Type="VARCHAR"></Column>
+        </TableCreate>
+        <TableCreate Type="post" Name="time_accounting_table">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="BIGINT"></Column>
+            <Column Name="user_id" Required="true" Type="INTEGER"></Column>
+            <Column Name="project_id" Required="true" Type="BIGINT"></Column>
+            <Column Name="action_id" Required="true" Type="BIGINT"></Column>
+            <Column Name="remark" Required="false" Size="250" Type="VARCHAR"></Column>
+            <Column Name="time_start" Required="true" Type="DATE"></Column>
+            <Column Name="time_end" Required="true" Type="DATE"></Column>
+            <Column Name="period" Required="false" Size="10,3" Type="DECIMAL"></Column>
+            <Column Name="created" Required="true" Type="DATE"></Column>
+            <Index Name="time_accounting_table_user_id">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+            </Index>
+            <Index Name="time_accounting_table_project_action_period_time_start_end">
+                <IndexColumn Name="project_id">
+                </IndexColumn>
+                <IndexColumn Name="action_id">
+                </IndexColumn>
+                <IndexColumn Name="period">
+                </IndexColumn>
+                <IndexColumn Name="time_start">
+                </IndexColumn>
+                <IndexColumn Name="time_end">
+                </IndexColumn>
+            </Index>
+            <Index Name="time_accounting_table_user_id_time_start">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+                <IndexColumn Name="time_start">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+        <TableCreate Type="post" Name="time_accounting_user_period">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="BIGINT"></Column>
+            <Column Name="user_id" Required="true" Type="INTEGER"></Column>
+            <Column Name="preference_period" Required="true" Type="INTEGER"></Column>
+            <Column Name="date_start" Required="true" Type="DATE"></Column>
+            <Column Name="date_end" Required="true" Type="DATE"></Column>
+            <Column Name="weekly_hours" Required="false" Size="10,2" Type="DECIMAL"></Column>
+            <Column Name="leave_days" Required="false" Size="10,2" Type="DECIMAL"></Column>
+            <Column Name="overtime" Required="false" Size="10,2" Type="DECIMAL"></Column>
+            <Column Name="status" Required="true" Size="15" Type="VARCHAR"></Column>
+            <Index Name="time_accounting_user_period_user_status_date_start_end">
+                <IndexColumn Name="status">
+                </IndexColumn>
+                <IndexColumn Name="date_start">
+                </IndexColumn>
+                <IndexColumn Name="date_end">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+        <TableCreate Type="post" Name="time_accounting_user">
+            <Column AutoIncrement="true" Name="id" PrimaryKey="true" Required="true" Type="BIGINT"></Column>
+            <Column Name="user_id" Required="true" Type="INTEGER"></Column>
+            <Column Name="description" Required="true" Size="1020" Type="VARCHAR"></Column>
+            <Column Name="show_overtime" Required="false" Type="INTEGER"></Column>
+            <Column Name="create_project" Required="false" Type="INTEGER"></Column>
+            <Column Name="allow_skip" Required="false" Type="INTEGER"></Column>
+            <Column Name="calendar" Required="false" Type="INTEGER"></Column>
+            <Index Name="time_accounting_user_user_id">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+            </Index>
+        </TableCreate>
+    </DatabaseInstall>
+    <DatabaseUpgrade Type="post">
+        <TableAlter Type="post" Name="time_accounting_user" Version="1.2.2">
+            <ColumnAdd Name="calendar" Required="false" Type="INTEGER"></ColumnAdd>
+        </TableAlter>
+        <TableAlter Type="post" Name="time_accounting_table" Version="1.4.2">
+            <IndexCreate Name="time_accounting_table_user_id">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+            </IndexCreate>
+            <IndexCreate Name="time_accounting_table_project_action_period_time_start_end">
+                <IndexColumn Name="project_id">
+                </IndexColumn>
+                <IndexColumn Name="action_id">
+                </IndexColumn>
+                <IndexColumn Name="period">
+                </IndexColumn>
+                <IndexColumn Name="time_start">
+                </IndexColumn>
+                <IndexColumn Name="time_end">
+                </IndexColumn>
+            </IndexCreate>
+            <IndexCreate Name="time_accounting_table_user_id_time_start">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+                <IndexColumn Name="time_start">
+                </IndexColumn>
+            </IndexCreate>
+        </TableAlter>
+        <TableAlter Type="post" Name="time_accounting_user" Version="1.4.2">
+            <IndexCreate Name="time_accounting_user_user_id">
+                <IndexColumn Name="user_id">
+                </IndexColumn>
+            </IndexCreate>
+        </TableAlter>
+        <TableAlter Type="post" Name="time_accounting_user_period" Version="1.4.2">
+            <IndexCreate Name="time_accounting_user_period_user_status_date_start_end">
+                <IndexColumn Name="status">
+                </IndexColumn>
+                <IndexColumn Name="date_start">
+                </IndexColumn>
+                <IndexColumn Name="date_end">
+                </IndexColumn>
+            </IndexCreate>
+        </TableAlter>
+        <TableAlter Type="post" Name="time_accounting_user" Version="6.0.5">
+            <ColumnAdd Name="allow_skip" Required="false" Type="INTEGER"></ColumnAdd>
+        </TableAlter>
+    </DatabaseUpgrade>
+    <DatabaseUninstall Type="pre">
+        <TableDrop Type="pre" Name="time_accounting_action">
+        </TableDrop>
+        <TableDrop Type="pre" Name="time_accounting_project">
+        </TableDrop>
+        <TableDrop Type="pre" Name="time_accounting_table">
+        </TableDrop>
+        <TableDrop Type="pre" Name="time_accounting_user">
+        </TableDrop>
+        <TableDrop Type="pre" Name="time_accounting_user_period">
+        </TableDrop>
+    </DatabaseUninstall>
+</otobo_package>
