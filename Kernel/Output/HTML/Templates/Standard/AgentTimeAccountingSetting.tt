@@ -376,7 +376,7 @@
 [% RenderBlockStart("OverviewResultUserRow") %]
                         <tr>
                             <td><a class="AsBlock" href="[% Env("Baselink") %]Action=[% Env("Action") %];Subaction=EditUser;UserID=[% Data.UserID | uri %]">[% Data.User | html %]</a></td>
-                            <td>[% Data.Comment %]</td>
+                            <td>[% Data.Comment | html %]</td>
                             <td>[% Translate(Data.Calendar) | html %]</td>
                         </tr>
 [% RenderBlockEnd("OverviewResultUserRow") %]

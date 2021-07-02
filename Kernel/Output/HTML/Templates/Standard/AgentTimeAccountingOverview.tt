@@ -151,16 +151,16 @@
                                 <td rowspan="[% Data.RowSpan %]" class="RowSpan">
                                     <strong>
 [% RenderBlockStart("ProjectNoLink") %]
-                                    [% Data.Project %]
+                                    [% Data.Project | html %]
 [% RenderBlockEnd("ProjectNoLink") %]
 [% RenderBlockStart("ProjectLink") %]
                                     <a href="[% Env("Baselink") %]Action=AgentTimeAccountingReporting;Subaction=ReportingProject;ProjectID=[% Data.ProjectID | uri %]">
-                                        [% Data.Project %]
+                                        [% Data.Project | html %]
                                     </a>
 [% RenderBlockEnd("ProjectLink") %]
                                     </strong>
 [% RenderBlockStart("ProjectDescription") %]
-                                    <br/>[% Data.ProjectDescription %]
+                                    <br/>[% Data.ProjectDescription | html %]
 [% RenderBlockEnd("ProjectDescription") %]
                                 </td>
 [% RenderBlockEnd("Project") %]
