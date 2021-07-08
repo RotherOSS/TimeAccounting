@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
 "PO-Revision-Date: 2021-07-01 02:17+0000\n"
 "Last-Translator: Grit Rother <mr@otobo.de>\n"
-"Language-Team: German <https://translate.otobo.org/projects/otobo10/"
-"timeaccounting/de/>\n"
+"Language-Team: German <https://translate.otobo.org/projects/otobo10/timeaccounting/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,8 +130,7 @@ msgstr "Sie können nur eine Checkbox markieren!"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on sick leave?"
-msgstr ""
-"Sind Sie sicher, dass Sie gearbeitet haben, obwohl Sie krankgeschrieben sind?"
+msgstr "Sind Sie sicher, dass Sie gearbeitet haben, obwohl Sie krankgeschrieben sind?"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on vacation?"
@@ -140,9 +138,7 @@ msgstr "Sind Sie sicher, dass Sie gearbeitet haben, obwohl Sie im Urlaub sind?"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on overtime leave?"
-msgstr ""
-"Sind Sie sicher, dass Sie gearbeitet haben, obwohl Sie einen "
-"Überstundenabbau eingetragen hatten?"
+msgstr "Sind Sie sicher, dass Sie gearbeitet haben, obwohl Sie einen Überstundenabbau eingetragen hatten?"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked more than 16 hours?"
@@ -386,13 +382,11 @@ msgstr "Überspringen der Zeiterfassung erlauben"
 
 #. Template: AgentTimeAccountingSetting
 msgid "If this option is selected, time accounting is effectively optional for the user."
-msgstr ""
-"Ist diese Option ausgewählt, ist die Zeiterfassung für den Benutzer optional."
+msgstr "Ist diese Option ausgewählt, ist die Zeiterfassung für den Benutzer optional."
 
 #. Template: AgentTimeAccountingSetting
 msgid "There will be no warnings about missing entries and no entry enforcement."
-msgstr ""
-"Es gibt keine Warnung bei fehlenden Einträgen und keinen Zwang zum Eintragen."
+msgstr "Es gibt keine Warnung bei fehlenden Einträgen und keinen Zwang zum Eintragen."
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time Spans"
@@ -492,9 +486,7 @@ msgstr "Kann Arbeitseinheiten nicht löschen!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
-msgstr ""
-"Dieses Datum liegt außerhalb der Grenzwerte, Sie haben diesen Tag aber bis "
-"jetzt noch nicht eingefügt, deshalb bekommen Sie dafür eine(!) Chance"
+msgstr "Dieses Datum liegt außerhalb der Grenzwerte, Sie haben diesen Tag aber bis jetzt noch nicht eingefügt, deshalb bekommen Sie dafür eine(!) Chance"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Incomplete Working Days"
@@ -522,9 +514,7 @@ msgstr "Es ist keine Zeitperiode konfiguriert, oder das angegebene Datum liegt a
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Please contact the time accounting administrator to update your time periods!"
-msgstr ""
-"Bitte kontaktieren Sie Ihren Zeiterfassungs-Administrator, um die "
-"Zeitperioden zu aktualisieren!"
+msgstr "Bitte kontaktieren Sie Ihren Zeiterfassungs-Administrator, um die Zeitperioden zu aktualisieren!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Selected Projects"
@@ -716,16 +706,11 @@ msgstr "Der Filter bei vorherigen Projekten kann bei Aktivierung genutzt werden,
 
 #. SysConfig
 msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
-msgstr ""
-"Bei Aktivierung ist der Filter für vorherige Projekte standardmäßig aktiv "
-"falls vorherige Projekte vorhanden sind. Er kann nur genutzt werden, wenn "
-"EnableAutoCompletion und TimeAccounting::UseFilter aktiviert sind."
+msgstr "Bei Aktivierung ist der Filter für vorherige Projekte standardmäßig aktiv falls vorherige Projekte vorhanden sind. Er kann nur genutzt werden, wenn EnableAutoCompletion und TimeAccounting::UseFilter aktiviert sind."
 
 #. SysConfig
 msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
-msgstr ""
-"Wenn aktiviert, können Benutzer \"im Urlaub\", \"krankgeschrieben\" und "
-"\"Überstundenabbau\" an mehreren Tagen auf einmal setzen."
+msgstr "Wenn aktiviert, können Benutzer \"im Urlaub\", \"krankgeschrieben\" und \"Überstundenabbau\" an mehreren Tagen auf einmal setzen."
 
 #. SysConfig
 msgid "Maximum number of working days after which the working units have to be inserted."
@@ -794,3 +779,4 @@ msgstr "Zeitabrechnung."
 #. SysConfig
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr "Hier kann man eingeben, ob für eine bestimmte Tätigkeit, die zu verrechnenden Stunden gekürzt werden. Z. B wenn Reisezeiten nur zur Hälfte vergütet werden (Key =&gt; journey; Content =&gt; 50)."
+

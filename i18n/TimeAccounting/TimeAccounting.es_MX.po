@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
 "PO-Revision-Date: 2021-06-25 19:53+0000\n"
 "Last-Translator: Fredy Aragón <fredmac48@hotmail.com>\n"
-"Language-Team: Spanish (Mexico) <https://translate.otobo.org/projects/"
-"otobo10/timeaccounting/es_MX/>\n"
+"Language-Team: Spanish (Mexico) <https://translate.otobo.org/projects/otobo10/timeaccounting/es_MX/>\n"
 "Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -487,9 +486,7 @@ msgstr "¡No se pudieron guardar las Unidades de Trabajo!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
-msgstr ""
-"Esta Fecha esta fuera del límite, pero todavía no ha insertado este día, "
-"entonces usted tiene solo una oportunidad de insertar"
+msgstr "Esta Fecha esta fuera del límite, pero todavía no ha insertado este día, entonces usted tiene solo una oportunidad de insertar"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Incomplete Working Days"
@@ -513,9 +510,7 @@ msgstr "La fecha entrada es incorrecta! La fecha de ha cambiado a hoy."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "No time period configured, or the specified date is outside of the defined time periods."
-msgstr ""
-"No hay un periodo de tiempo configurado, o la fecha especificada está fuera "
-"de los periodos de tiempo definidos."
+msgstr "No hay un periodo de tiempo configurado, o la fecha especificada está fuera de los periodos de tiempo definidos."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Please contact the time accounting administrator to update your time periods!"
@@ -699,16 +694,11 @@ msgstr "Especifica el número máximo de días para registrar horas de trabajo a
 
 #. SysConfig
 msgid "If enabled, only users that has added working time to the selected project are shown."
-msgstr ""
-"Si se habilita, solamente los usuarios que han registrado sus tiempos en el "
-"proyecto seleccionado serán mostrados."
+msgstr "Si se habilita, solamente los usuarios que han registrado sus tiempos en el proyecto seleccionado serán mostrados."
 
 #. SysConfig
 msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
-msgstr ""
-"Si están habilitados, los elementos desplegables en la pantalla de edición "
-"han sido modificados por campos de auto-completado, esto para ser mas "
-"modernos."
+msgstr "Si están habilitados, los elementos desplegables en la pantalla de edición han sido modificados por campos de auto-completado, esto para ser mas modernos."
 
 #. SysConfig
 msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
@@ -728,9 +718,7 @@ msgstr "Número máximo de días laborales después de los cuales es obligatorio
 
 #. SysConfig
 msgid "Maximum number of working days without working units entry after which a warning will be shown."
-msgstr ""
-"Número máximo de días laborales sin registro de horas trabajadas después de "
-"los cuales se mostrará una advertencia."
+msgstr "Número máximo de días laborales sin registro de horas trabajadas después de los cuales se mostrará una advertencia."
 
 #. SysConfig
 msgid "Overview."
@@ -791,3 +779,4 @@ msgstr "Contabilidad de tiempo."
 #. SysConfig
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr "Se usa si algunas acciones reducen el número de horas trabajadas (por ejemplo: si sólo se paga la mitad del tiempo de viaje puede especificarse Key => Viaje; Content => 50)."
+

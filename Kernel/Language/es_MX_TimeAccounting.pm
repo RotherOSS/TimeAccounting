@@ -1,17 +1,9 @@
 # --
-# OTOBO is a web-based ticketing system for service organisations.
-# --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
 # --
-# This program is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later version.
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-# You should have received a copy of the GNU General Public License
-# along with this program. If not, see <https://www.gnu.org/licenses/>.
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (GPL). If you
+# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
 # --
 
 package Kernel::Language::es_MX_TimeAccounting;
@@ -168,14 +160,14 @@ sub Data {
     $Self->{Translation}->{'Can\'t save settings, because a day has only 24 hours!'} = '¡No se pudieron guardar los ajustes, porque el día solo tiene 24 horas!';
     $Self->{Translation}->{'Can\'t delete Working Units!'} = '¡No se pudieron guardar las Unidades de Trabajo!';
     $Self->{Translation}->{'This Date is out of limit, but you haven\'t insert this day yet, so you get one(!) chance to insert'} =
-        'Esta Fecha esta fuera del límite, pero todavía no ha insertado este día, entonces usted tiene solo una oportunidad de insertar.';
+        'Esta Fecha esta fuera del límite, pero todavía no ha insertado este día, entonces usted tiene solo una oportunidad de insertar';
     $Self->{Translation}->{'Incomplete Working Days'} = 'Días Laborales Incompletos';
     $Self->{Translation}->{'Successful insert!'} = 'Inserción exitosa!';
     $Self->{Translation}->{'Error while inserting multiple dates!'} = 'Error al insertar múltiples fechas!';
-    $Self->{Translation}->{'Successfully inserted entries for several dates!'} = 'Se insertaron satisfactoriamente las entradas de varias fechas! ';
+    $Self->{Translation}->{'Successfully inserted entries for several dates!'} = '¡Se insertaron satisfactoriamente las entradas de varias fechas!';
     $Self->{Translation}->{'Entered date was invalid! Date was changed to today.'} = 'La fecha entrada es incorrecta! La fecha de ha cambiado a hoy.';
     $Self->{Translation}->{'No time period configured, or the specified date is outside of the defined time periods.'} =
-        '¡No hay un periodo de tiempo configurado, or la fecha especificada está fuera de los periodos de tiempo definidos!';
+        'No hay un periodo de tiempo configurado, o la fecha especificada está fuera de los periodos de tiempo definidos.';
     $Self->{Translation}->{'Please contact the time accounting administrator to update your time periods!'} =
         '¡Por favor contacte al administrador de contabilidad de tiempos para actualizar sus periodos de tiempo!';
     $Self->{Translation}->{'Last Selected Projects'} = 'Los Últimos Proyectos Seleccionados';
@@ -212,9 +204,9 @@ sub Data {
     $Self->{Translation}->{'Incomplete working days'} = 'Días laborales incompletos';
 
     # JS File: TimeAccounting.Agent.EditTimeRecords
-    $Self->{Translation}->{'Please choose at least one day!'} = 'Por favor seleccione al menos un día.';
+    $Self->{Translation}->{'Please choose at least one day!'} = '¡Por favor seleccione al menos un día!';
     $Self->{Translation}->{'Mass Entry'} = 'Registro Masivo';
-    $Self->{Translation}->{'Please choose a reason for absence!'} = 'Por favor escoja una razón por ausencia.';
+    $Self->{Translation}->{'Please choose a reason for absence!'} = '¡Por favor escoja una razón por ausencia!';
 
     # JS File: TimeAccounting.Agent
     $Self->{Translation}->{'Delete Time Accounting Entry'} = 'Eliminar Registro de Contabilidad de Tiempo';
@@ -242,9 +234,9 @@ sub Data {
     $Self->{Translation}->{'Edit time record.'} = 'Editar registro de tiempo.';
     $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'Especifica el número máximo de días para registrar horas de trabajo atrasadas (por ejemplo: 10 días de antigüedad).';
     $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
-        'Si se habilita, solamente los usuarios que han registrado sus tiempos en el proyecto seleccionado serán mostrados';
+        'Si se habilita, solamente los usuarios que han registrado sus tiempos en el proyecto seleccionado serán mostrados.';
     $Self->{Translation}->{'If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields.'} =
-        'Si están habilitados, los elementos desplegables en la pantalla de edición han sido modificados por campos de auto-completado, esto para ser mas modernos ';
+        'Si están habilitados, los elementos desplegables en la pantalla de edición han sido modificados por campos de auto-completado, esto para ser mas modernos.';
     $Self->{Translation}->{'If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled.'} =
         'Si está habilitado, el filtro para el proyecto anterior puede ser usado en vez de dos listas de proyectos (las anterior y todas las demás). Esto se podrá usar si, y solo si TimeAccounting::EnableAutoCompletion está habilitado.';
     $Self->{Translation}->{'If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled.'} =
@@ -254,7 +246,7 @@ sub Data {
     $Self->{Translation}->{'Maximum number of working days after which the working units have to be inserted.'} =
         'Número máximo de días laborales después de los cuales es obligatorio reportar las horas trabajadas.';
     $Self->{Translation}->{'Maximum number of working days without working units entry after which a warning will be shown.'} =
-        'Número máximo de días laborales sin registro de horas trabajadas después de los cuales se mostrará una advertencia';
+        'Número máximo de días laborales sin registro de horas trabajadas después de los cuales se mostrará una advertencia.';
     $Self->{Translation}->{'Overview.'} = 'Vista General.';
     $Self->{Translation}->{'Project time reporting.'} = 'Reporte de tiempos del proyecto.';
     $Self->{Translation}->{'Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s).'} =
@@ -267,11 +259,11 @@ sub Data {
     $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
         'Módulo de notificación que muestra una advertencia si hay demasiados días sin registro de horas trabajadas.';
     $Self->{Translation}->{'Time Accounting'} = 'Contabilidad de Tiempo';
-    $Self->{Translation}->{'Time accounting edit.'} = 'Editar contabilidad de tiempo';
-    $Self->{Translation}->{'Time accounting overview.'} = 'Resumen de contabilidad de tiempo';
-    $Self->{Translation}->{'Time accounting reporting.'} = 'Reporte de contabilidad de tiempo';
-    $Self->{Translation}->{'Time accounting settings.'} = 'Ajustes de contabilidad de tiempo';
-    $Self->{Translation}->{'Time accounting view.'} = 'Ver contabilidad de tiempo';
+    $Self->{Translation}->{'Time accounting edit.'} = 'Editar contabilidad de tiempo.';
+    $Self->{Translation}->{'Time accounting overview.'} = 'Resumen de contabilidad de tiempo.';
+    $Self->{Translation}->{'Time accounting reporting.'} = 'Reporte de contabilidad de tiempo.';
+    $Self->{Translation}->{'Time accounting settings.'} = 'Ajustes de contabilidad de tiempo.';
+    $Self->{Translation}->{'Time accounting view.'} = 'Ver contabilidad de tiempo.';
     $Self->{Translation}->{'Time accounting.'} = 'Contabilidad de tiempo.';
     $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
         'Se usa si algunas acciones reducen el número de horas trabajadas (por ejemplo: si sólo se paga la mitad del tiempo de viaje puede especificarse Key => Viaje; Content => 50).';
