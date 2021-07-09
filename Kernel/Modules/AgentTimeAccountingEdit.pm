@@ -27,7 +27,7 @@ our $ObjectManagerDisabled = 1;
 sub new {
     my ( $Type, %Param ) = @_;
 
-    # allocate new hash for object
+    # allocate new hash for object 
     my $Self = {%Param};
     bless( $Self, $Type );
 
