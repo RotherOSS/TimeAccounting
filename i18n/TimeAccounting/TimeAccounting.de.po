@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
-"PO-Revision-Date: 2021-07-09 17:05+0000\n"
+"PO-Revision-Date: 2021-07-09 17:12+0000\n"
 "Last-Translator: sr <sr@otrs.ch>\n"
 "Language-Team: German <https://translate.otobo.org/projects/otobo10/"
 "timeaccounting/de/>\n"
@@ -59,7 +59,7 @@ msgstr "Überstundenabbau"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Required fields are marked with a \"*\"."
-msgstr "Felder, die ausgefüllt werden müssen, sind mit einem Stern \"*\" gekennzeichnet."
+msgstr "Pflichtfelder sind mit einem Stern \"*\" gekennzeichnet."
 
 #. Template: AgentTimeAccountingEdit
 msgid "You have to fill in start and end time or a time period."
