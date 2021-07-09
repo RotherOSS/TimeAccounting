@@ -1,9 +1,17 @@
 # --
-# Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
+# OTOBO is a web-based ticketing system for service organisations.
 # --
-# This software comes with ABSOLUTELY NO WARRANTY. For details, see
-# the enclosed file COPYING for license information (GPL). If you
-# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+# Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
+# Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
+# --
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 # --
 
 package Kernel::Language::de_TimeAccounting;
@@ -17,29 +25,29 @@ sub Data {
 
     # Template: AgentTimeAccountingDelete
     $Self->{Translation}->{'Do you really want to delete the Time Accounting of this day?'} =
-        'Möchten Sie wirklich die Zeiterfassung für den aktuellen Tag löschen?';
+        'Möchten Sie wirklich die erfasste Zeit für den aktuellen Tag löschen?';
 
     # Template: AgentTimeAccountingEdit
     $Self->{Translation}->{'Edit Time Record'} = 'Zeitabrechnung bearbeiten';
-    $Self->{Translation}->{'Go to settings'} = 'Zu Einstellungen gehen';
+    $Self->{Translation}->{'Go to settings'} = 'Gehe zu den Einstellungen';
     $Self->{Translation}->{'Date Navigation'} = 'Datumsnavigation';
     $Self->{Translation}->{'Days without entries'} = 'Tage ohne Einträge';
     $Self->{Translation}->{'Select all days'} = 'Alle Tage auswählen';
     $Self->{Translation}->{'Mass entry'} = 'Masseneintrag';
     $Self->{Translation}->{'Please choose the reason for your absence for the selected days'} =
         'Bitte wählen Sie den Grund für Ihre Abwesenheit für die ausgewählten Tage';
-    $Self->{Translation}->{'On vacation'} = 'im Urlaub';
+    $Self->{Translation}->{'On vacation'} = 'Im Urlaub';
     $Self->{Translation}->{'On sick leave'} = 'Krankgeschrieben';
     $Self->{Translation}->{'On overtime leave'} = 'Überstundenabbau';
-    $Self->{Translation}->{'Required fields are marked with a "*".'} = 'Felder, die ausgefüllt werden müssen, sind mit einem Stern "*" gekennzeichnet.';
+    $Self->{Translation}->{'Required fields are marked with a "*".'} = 'Pflichtfelder sind mit einem Stern "*" gekennzeichnet.';
     $Self->{Translation}->{'You have to fill in start and end time or a time period.'} = 'Sie müssen eine Start- und Endzeit oder eine Zeitspanne angeben.';
     $Self->{Translation}->{'Project'} = 'Projekt';
     $Self->{Translation}->{'Task'} = 'Tätigkeit';
     $Self->{Translation}->{'Remark'} = 'Anmerkung';
     $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = 'Bitte geben Sie eine Anmerkung von mehr als 8 Zeichen Länge ein!';
-    $Self->{Translation}->{'Negative times are not allowed.'} = 'Negative Angaben sind nicht erlaubt.';
+    $Self->{Translation}->{'Negative times are not allowed.'} = 'Negative Zeitangaben sind nicht erlaubt.';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =
-        'Diese Startzeit wurde bereits in einem anderen Eintrag angegeben.';
+        'Diese Startzeit fällt in einen bereits eingetragen Zeitraum.';
     $Self->{Translation}->{'Invalid format! Please enter a time with the format HH:MM.'} = 'Ungültiges Format! Bitte geben Sie eine Zeit im Format HH:MM ein.';
     $Self->{Translation}->{'24:00 is only permitted as end time.'} = 'Nur 24:00 ist als Endzeit erlaubt.';
     $Self->{Translation}->{'Invalid time! A day has only 24 hours.'} = 'Ungültige Zeit! Ein Tag hat nur 24 Stunden.';
