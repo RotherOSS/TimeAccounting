@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
-"PO-Revision-Date: 2021-07-09 17:12+0000\n"
+"PO-Revision-Date: 2021-07-09 17:19+0000\n"
 "Last-Translator: sr <sr@otrs.ch>\n"
 "Language-Team: German <https://translate.otobo.org/projects/otobo10/"
 "timeaccounting/de/>\n"
@@ -83,7 +83,7 @@ msgstr "Bitte geben Sie eine Anmerkung von mehr als 8 Zeichen Länge ein!"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Negative times are not allowed."
-msgstr "Negative Angaben sind nicht erlaubt."
+msgstr "Negative Zeitangaben sind nicht erlaubt."
 
 #. Template: AgentTimeAccountingEdit
 msgid "Repeated hours are not allowed. Start time matches another interval."
