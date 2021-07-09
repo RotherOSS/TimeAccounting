@@ -98,7 +98,7 @@ sub Run {
     my $DateTimeObjectCurrent = $Kernel::OM->Create('Kernel::System::DateTime');
 
     # ---------------------------------------------------------- #
-    # show confirmation dialog to delete the entry of this day 
+    # show confirmation dialog to delete the entry of this day
     # ---------------------------------------------------------- #
     if ( $ParamObject->GetParam( Param => 'DeleteDialog' ) ) {
 
