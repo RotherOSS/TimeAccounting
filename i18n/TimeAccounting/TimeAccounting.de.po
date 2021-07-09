@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
-"PO-Revision-Date: 2021-07-09 16:28+0000\n"
+"PO-Revision-Date: 2021-07-09 17:05+0000\n"
 "Last-Translator: sr <sr@otrs.ch>\n"
 "Language-Team: German <https://translate.otobo.org/projects/otobo10/"
 "timeaccounting/de/>\n"
@@ -47,7 +47,7 @@ msgstr "Bitte wählen Sie den Grund für Ihre Abwesenheit für die ausgewählten
 
 #. Template: AgentTimeAccountingEdit
 msgid "On vacation"
-msgstr "im Urlaub"
+msgstr "Im Urlaub"
 
 #. Template: AgentTimeAccountingEdit
 msgid "On sick leave"
