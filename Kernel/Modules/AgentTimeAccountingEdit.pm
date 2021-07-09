@@ -1610,7 +1610,7 @@ sub _ProjectListConstraints {
         }
         my @ProjectRegex = keys %ProjectRegex;
 
-        # reduce project list according to configuration
+        # reduce project list according to the configuration
         if ( ref( $Param{List} ) && @ProjectRegex ) {
 
             my $ElementCount = 0;
