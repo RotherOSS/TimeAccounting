@@ -2,13 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2022-12-14 11:48+0000\n"
+"Last-Translator: Yasen Arsov <jarsov@gmail.com>\n"
+"Language-Team: Bulgarian <https://translate.otobo.org/projects/otobo10/"
+"timeaccounting/bg/>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #. Template: AgentTimeAccountingDelete
 msgid "Do you really want to delete the Time Accounting of this day?"
@@ -320,7 +323,7 @@ msgstr "Добавяне на задача"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Filter for projects, tasks or users"
-msgstr ""
+msgstr "Филтър за проекти, задачи или потребители"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time periods can not be deleted."
@@ -352,11 +355,11 @@ msgstr "Списък с потребители"
 
 #. Template: AgentTimeAccountingSetting
 msgid "User Settings"
-msgstr ""
+msgstr "Потребителски настройки"
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to see overtimes"
-msgstr ""
+msgstr "Потребителят има право да вижда извънредните часове"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Show Overtime"
@@ -364,7 +367,7 @@ msgstr "Показване на извънреден труд"
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to create projects"
-msgstr ""
+msgstr "Потребителят има право да създава проекти"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Allow project creation"
@@ -372,23 +375,27 @@ msgstr "Разрешаване за създаването на проект"
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to skip time accounting"
-msgstr ""
+msgstr "Потребителят има право да пропусне отчитането на времето"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Allow time accounting skipping"
-msgstr ""
+msgstr "Позволете пропускане отчитането на време"
 
 #. Template: AgentTimeAccountingSetting
 msgid "If this option is selected, time accounting is effectively optional for the user."
 msgstr ""
+"Ако тази опция е избрана, отчитането на времето не е задължително за "
+"потребителя."
 
 #. Template: AgentTimeAccountingSetting
 msgid "There will be no warnings about missing entries and no entry enforcement."
 msgstr ""
+"Няма да има предупреждения за липсващи записи и няма да има принудително "
+"влизане."
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time Spans"
-msgstr ""
+msgstr "Времеви интервали"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Period Begin"
@@ -416,7 +423,7 @@ msgstr "Дата за начало"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Please insert a valid date."
-msgstr "Моля въведете валидна дата"
+msgstr "Моля въведете валидна дата."
 
 #. Template: AgentTimeAccountingSetting
 msgid "End Date"
@@ -468,67 +475,73 @@ msgstr "Няма данни за този ден."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't insert Working Units!"
-msgstr ""
+msgstr "Не могат да се вмъкнат работни единици!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Projects"
-msgstr ""
+msgstr "Последни проекти"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't save settings, because a day has only 24 hours!"
-msgstr ""
+msgstr "Не могат да се запазят настройки, защото един ден има само 24 часа!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't delete Working Units!"
-msgstr ""
+msgstr "Не могат да се изтрият работни единици!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
 msgstr ""
+"Тази дата е извън ограничението, но все още не сте вмъкнали този ден, така "
+"че получавате една (!) възможност да вмъкнете"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Incomplete Working Days"
-msgstr ""
+msgstr "Непълни работни дни"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Successful insert!"
-msgstr ""
+msgstr "Успешно вмъкване!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Error while inserting multiple dates!"
-msgstr ""
+msgstr "Грешка при вмъкване на няколко дати!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Successfully inserted entries for several dates!"
-msgstr ""
+msgstr "Успешно вмъкнати записи за няколко дати!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Entered date was invalid! Date was changed to today."
-msgstr ""
+msgstr "Въведената дата е невалидна! Датата беше променена на днес."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "No time period configured, or the specified date is outside of the defined time periods."
 msgstr ""
+"Няма конфигуриран период от време или посочената дата е извън определените "
+"периоди от време."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Please contact the time accounting administrator to update your time periods!"
 msgstr ""
+"Моля, свържете се с администратора за отчитане на времето, за да "
+"актуализирате вашите времеви периоди!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Selected Projects"
-msgstr ""
+msgstr "Последно избрани проекти"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "All Projects"
-msgstr ""
+msgstr "Всички проекти"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "ReportingProject: Need ProjectID"
-msgstr ""
+msgstr "Отчитане на проект: Нуждаете се от ProjectID"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "Reporting Project"
-msgstr ""
+msgstr "Проект за отчитане"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "Reporting"
@@ -536,35 +549,35 @@ msgstr "Отчетност"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Unable to update user settings!"
-msgstr ""
+msgstr "Не може да се актуализират потребителските настройки!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Project added!"
-msgstr ""
+msgstr "Проектът е добавен!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Project updated!"
-msgstr ""
+msgstr "Проектът е актуализиран!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Task added!"
-msgstr ""
+msgstr "Задачата е добавена!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Task updated!"
-msgstr ""
+msgstr "Задачата е актуализирана!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "The UserID is not valid!"
-msgstr ""
+msgstr "UserID не е валиден!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Can't insert user data!"
-msgstr ""
+msgstr "Не мога да вмъкна потребителски данни!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Unable to add time period!"
-msgstr ""
+msgstr "Не може да се добави период от време!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Setting"
@@ -572,35 +585,35 @@ msgstr "Настройка"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "User updated!"
-msgstr ""
+msgstr "Потребителят е актуализиран!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "User added!"
-msgstr ""
+msgstr "Потребителят е добавен!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Add a user to time accounting..."
-msgstr ""
+msgstr "Добавете потребител към отчитане на времето..."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "New User"
-msgstr ""
+msgstr "Нов потребител"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Period Status"
-msgstr ""
+msgstr "Състояние на период"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingView.pm
 msgid "View: Need %s!"
-msgstr ""
+msgstr "Изглед: Нуждаете се от %s!"
 
 #. Perl Module: Kernel/Output/HTML/Notification/TimeAccounting.pm
 msgid "Please insert your working hours!"
-msgstr ""
+msgstr "Моля, въведете вашето работно време!"
 
 #. Perl Module: Kernel/Output/HTML/ToolBar/IncompleteWorkingDays.pm
 msgid "Incomplete working days"
-msgstr ""
+msgstr "Непълни работни дни"
 
 #. JS File: TimeAccounting.Agent.EditTimeRecords
 msgid "Please choose at least one day!"
@@ -625,156 +638,190 @@ msgstr "Потвърдете"
 #. SysConfig
 msgid "Agent interface notification module to see the number of incomplete working days for the user."
 msgstr ""
+"Модул за уведомяване, за показване на броя незавършени работни дни на "
+"потребителя в интерфейса на агента."
 
 #. SysConfig
 msgid "Default name for new actions."
-msgstr ""
+msgstr "Име по подразбиране за нови действия."
 
 #. SysConfig
 msgid "Default name for new projects."
-msgstr ""
+msgstr "Име по подразбиране за нови проекти."
 
 #. SysConfig
 msgid "Default setting for date end."
-msgstr ""
+msgstr "Настройка по подразбиране за крайна дата."
 
 #. SysConfig
 msgid "Default setting for date start."
-msgstr ""
+msgstr "Настройка по подразбиране за начална дата."
 
 #. SysConfig
 msgid "Default setting for description."
-msgstr ""
+msgstr "Настройка по подразбиране за описание."
 
 #. SysConfig
 msgid "Default setting for leave days."
-msgstr ""
+msgstr "Настройка по подразбиране за дни отпуск."
 
 #. SysConfig
 msgid "Default setting for overtime."
-msgstr ""
+msgstr "Настройка по подразбиране за извънреден труд."
 
 #. SysConfig
 msgid "Default setting for the standard weekly hours."
-msgstr ""
+msgstr "Настройка по подразбиране за стандартните седмични часове."
 
 #. SysConfig
 msgid "Default status for new actions."
-msgstr ""
+msgstr "Състояние по подразбиране за нови действия."
 
 #. SysConfig
 msgid "Default status for new projects."
-msgstr ""
+msgstr "Състояние по подразбиране за нови проекти."
 
 #. SysConfig
 msgid "Default status for new users."
-msgstr ""
+msgstr "Състояние по подразбиране за нови потребители."
 
 #. SysConfig
 msgid "Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter."
 msgstr ""
+"Определя проектите, за които е необходима забележка. Ако RegExp съвпада с "
+"проекта, трябва да вмъкнете и забележка. RegExp използва smx параметъра."
 
 #. SysConfig
 msgid "Determines if the statistics module may generate time accounting information."
 msgstr ""
+"Определя дали статистическият модул може да генерира информация за отчитане "
+"на времето."
 
 #. SysConfig
 msgid "Edit time accounting settings."
-msgstr ""
+msgstr "Редактирайте настройките за отчитане на времето."
 
 #. SysConfig
 msgid "Edit time record."
-msgstr ""
+msgstr "Редактиране на запис за време."
 
 #. SysConfig
 msgid "For how many days ago you can insert working units."
-msgstr ""
+msgstr "За колко дни назад можете да вмъкнете работни единици."
 
 #. SysConfig
 msgid "If enabled, only users that has added working time to the selected project are shown."
 msgstr ""
+"Ако е разрешено, се показват само потребители, които са добавили работно "
+"време към избрания проект."
 
 #. SysConfig
 msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
 msgstr ""
+"Ако е разрешено, падащите елементи в екрана за редактиране се променят на "
+"модернизирани полета за автоматично довършване."
 
 #. SysConfig
 msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
 msgstr ""
+"Ако е активиран, филтърът за предишните проекти може да се използва вместо "
+"два списъка с проекти (последен и всички). Може да се използва само ако "
+"TimeAccounting::EnableAutoCompletion е активиран."
 
 #. SysConfig
 msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
 msgstr ""
+"Ако е активиран, филтърът за предишните проекти е активен по подразбиране, "
+"ако има предишни проекти. Може да се използва само ако EnableAutoCompletion "
+"и TimeAccounting::UseFilter са активирани."
 
 #. SysConfig
 msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
 msgstr ""
+"Ако е разрешено, на потребителя е позволено да въвежда „в отпуск във "
+"ваканция“, „в отпуск по болест“ и „в отпуск за извънреден труд“ за няколко "
+"дати наведнъж."
 
 #. SysConfig
 msgid "Maximum number of working days after which the working units have to be inserted."
 msgstr ""
+"Максимален брой работни дни, след които работните единици трябва да бъдат "
+"въведени."
 
 #. SysConfig
 msgid "Maximum number of working days without working units entry after which a warning will be shown."
 msgstr ""
+"Максимален брой работни дни без въвеждане на работни единици, след което ще "
+"се показва предупреждение."
 
 #. SysConfig
 msgid "Overview."
-msgstr ""
+msgstr "Преглед."
 
 #. SysConfig
 msgid "Project time reporting."
-msgstr ""
+msgstr "Отчитане на времето по проекта."
 
 #. SysConfig
 msgid "Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s)."
 msgstr ""
+"Регулярни изрази за ограничаване на списъка с действия според избрания "
+"проект. Ключът съдържа регулярен израз за проект(и), съдържанието съдържа "
+"регулярни изрази за действие(я)."
 
 #. SysConfig
 msgid "Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups."
 msgstr ""
+"Регулярни изрази за ограничаване на списъка с проекти според потребителски "
+"групи. Ключът съдържа регулярен израз за проект(и), съдържанието съдържа "
+"разделен със запетаи списък от групи."
 
 #. SysConfig
 msgid "Specifies if working hours can be inserted without start and end times."
 msgstr ""
+"Указва дали работните часове могат да бъдат вмъкнати без начален и краен час."
 
 #. SysConfig
 msgid "This module forces inserts in TimeAccounting."
-msgstr ""
+msgstr "Този модул ускорява вмъквания в TimeAccounting."
 
 #. SysConfig
 msgid "This notification module gives a warning if there are too many incomplete working days."
 msgstr ""
+"Този модул за уведомяване дава предупреждение, ако има твърде много непълни "
+"работни дни."
 
 #. SysConfig
 msgid "Time Accounting"
-msgstr ""
+msgstr "Отчитане на времето"
 
 #. SysConfig
 msgid "Time accounting edit."
-msgstr ""
+msgstr "Редактиране отчитането на времето."
 
 #. SysConfig
 msgid "Time accounting overview."
-msgstr ""
+msgstr "Преглед на отчитането за времето."
 
 #. SysConfig
 msgid "Time accounting reporting."
-msgstr ""
+msgstr "Отчитане на времето."
 
 #. SysConfig
 msgid "Time accounting settings."
-msgstr ""
+msgstr "Настройки за отчитане на времето."
 
 #. SysConfig
 msgid "Time accounting view."
-msgstr ""
+msgstr "Изглед за отчитане на времето."
 
 #. SysConfig
 msgid "Time accounting."
-msgstr ""
+msgstr "Отчитане на времето."
 
 #. SysConfig
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr ""
-
+"Да се използва, ако някои действия са намалили работното време (например, "
+"ако се заплаща само половината от времето за пътуване Ключ => пътуване; "
+"Съдържание => 50)."
