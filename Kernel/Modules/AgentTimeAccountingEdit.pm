@@ -365,13 +365,16 @@ sub Run {
         # arrays to save all start and end times for some checks
         my ( @StartTimes, @EndTimes );
 
-        # delete previous entries for this day and user
-        $TimeAccountingObject->WorkingUnitsDelete(
-            Year   => $Param{Year},
-            Month  => $Param{Month},
-            Day    => $Param{Day},
-            UserID => $Self->{UserID},
-        );
+        my $Mode = $ParamObject->GetParam( Param => 'Mode');
+        if ( $Mode ne 'Append' ) {
+            # delete previous entries for this day and user
+            $TimeAccountingObject->WorkingUnitsDelete(
+                Year   => $Param{Year},
+                Month  => $Param{Month},
+                Day    => $Param{Day},
+                UserID => $Self->{UserID},
+            );
+        }
 
         my %CheckboxCheck = ();
         for my $Element (qw(LeaveDay Sick Overtime)) {
