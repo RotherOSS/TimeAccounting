@@ -733,10 +733,12 @@ sub Run {
 
     if ( $ConfigObject->Get('TimeAccounting::InputHoursWithoutStartEndTime') ) {
         $Param{PeriodBlock}   = 'UnitInputPeriod';
+        $Param{AppendPeriodBlock}   = 'UnitInputPeriodAppend';
         $Frontend{PeriodNote} = '*';
     }
     else {
         $Param{PeriodBlock}   = 'UnitPeriodWithoutInput';
+        $Param{AppendPeriodBlock}   = 'UnitPeriodWithoutInputAppend';
         $Frontend{PeriodNote} = '';
     }
 
@@ -746,6 +748,17 @@ sub Run {
             Data => { %Param, %Frontend },
         );
     }
+
+    # render table for new entries
+    $LayoutObject->Block(
+        Name => 'WorkingUnitsAppend',
+        Data => {},
+    );
+
+    $LayoutObject->Block(
+        Name => 'UnitAppendBlock',
+        Data => { %Param, %Frontend },
+    );
 
     # get sick, leave day and overtime
     $Param{Sick}     = $Data{Sick}     ? 'checked="checked"' : '';
@@ -791,6 +804,8 @@ sub Run {
     if ( $Data{WorkingUnits} ) {
         push @Units, @{ $Data{WorkingUnits} };
     }
+
+    my $AppendProjectList = $Self->_ProjectList();
 
     $ErrorIndex = 0;
 
@@ -866,6 +881,14 @@ sub Run {
             %ProjectOptionParams,
         );
 
+        my %AppendProjectOptionParams = %ProjectOptionParams;
+        my @AppendProjects = ( @{ $AppendProjectList->{LastProjects} }, @{ $AppendProjectList->{AllProjects} } );
+        $AppendProjectOptionParams{Data} = \@AppendProjects;
+
+        $Frontend{ProjectAppendOption} = $LayoutObject->BuildSelection(
+            %AppendProjectOptionParams,
+        );
+
         # action list initially only contains empty and selected element as well as elements
         # configured for selected project
         # if no constraints are configured, all actions will be displayed
@@ -894,6 +917,20 @@ sub Run {
 
             Data        => $ActionData,
             SelectedID  => $UnitRef->{ActionID} || $ServerErrorData{$ErrorIndex}{ActionID} || '',
+            Name        => "ActionID[$ID]",
+            ID          => "ActionID$ID",
+            Translation => 0,
+            Class       => 'Validate_DependingRequiredAND Validate_Depending_ProjectID'
+                . $ID
+                . ' ActionSelection '
+                . ( $Errors{$ErrorIndex}{ActionIDInvalid} || '' )
+                . $Class,
+            Title => $LayoutObject->{LanguageObject}->Translate("Task"),
+        );
+
+        $Frontend{ActionAppendOption} = $LayoutObject->BuildSelection(
+
+            Data        => $ActionData,
             Name        => "ActionID[$ID]",
             ID          => "ActionID$ID",
             Translation => 0,
@@ -950,6 +987,14 @@ sub Run {
             },
         );
 
+        $LayoutObject->Block(
+            Name => 'UnitAppend',
+            Data => {
+                %Frontend,
+                %{ $Errors{$ErrorIndex} },
+            },
+        );
+
         # add proper server error message for the start and end times
         my $ServerErrorBlockName;
         if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{StartTimeInvalid} ) {
@@ -991,6 +1036,14 @@ sub Run {
             Name => $Param{PeriodBlock},
             Data => {
                 Period => $Period,
+                ID     => $ID,
+                %{ $Errors{$ErrorIndex} },
+            },
+        );
+
+        $LayoutObject->Block(
+            Name => $Param{AppendPeriodBlock},
+            Data => {
                 ID     => $ID,
                 %{ $Errors{$ErrorIndex} },
             },
@@ -1058,6 +1111,10 @@ sub Run {
         $Param{Total} = sprintf( "%.2f", ( $Param{Total} || 0 ) );
         $LayoutObject->Block(
             Name => 'Total',
+            Data => { %Param, %Frontend },
+        );
+        $LayoutObject->Block(
+            Name => 'TotalAppend',
             Data => { %Param, %Frontend },
         );
     }
@@ -1235,6 +1292,13 @@ sub Run {
             Name => 'OtherTimes',
             Data => {
                 %Param,
+                %Frontend,
+                %Errors,
+            },
+        );
+        $LayoutObject->Block(
+            Name => 'OtherTimesAppend',
+            Data => {
                 %Frontend,
                 %Errors,
             },
