@@ -1305,16 +1305,9 @@ sub Run {
         )
     {
         $LayoutObject->Block(
-            Name => 'OtherTimes',
-            Data => {
-                %Param,
-                %Frontend,
-                %Errors,
-            },
-        );
-        $LayoutObject->Block(
             Name => 'AppendOtherTimes',
             Data => {
+                %Param,
                 %Frontend,
                 %Errors,
             },
