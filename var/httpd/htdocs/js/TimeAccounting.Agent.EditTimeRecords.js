@@ -91,8 +91,8 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
 
 
     function InitAddRow() {
-        $('#MoreInputFields').off('click.MoreInputFields').on('click.MoreInputFields', function () {
-            var $LastRow = $('#InsertWorkingHours tbody tr.WorkingHours:last'),
+        $('[name=MoreInputFields]').off('click.MoreInputFields').on('click.MoreInputFields', function () {
+            var $LastRow = $(this).closest('.DataTable').find('tbody tr.WorkingHours:last'),
                 $NewRow, NewRowHTML,
                 RecordNumber = parseInt($('#RecordsNumber').val(), 10) + 1;
 
@@ -139,15 +139,15 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
         });
     }
 
-    function RecalculateTotalHours() {
+    function RecalculateTotalHours($DataTable) {
         var Total = 0;
-        $('.Period').each(function () {
+        $DataTable.find('.Period').each(function () {
             var Value = parseFloat($(this).val());
             if (!isNaN(Value)) {
                 Total += Value;
             }
         });
-        $('.TotalHours').text(Total.toFixed(2));
+        $DataTable.find('.TotalHours').text(Total.toFixed(2));
     }
 
     function InitPeriodCalculation() {
@@ -184,7 +184,7 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
            }
 
            // now re-calculate the total hours sum
-           RecalculateTotalHours();
+           RecalculateTotalHours($(this).closest('.DataTable'));
         });
 
         // init period calculation on starttime and endtime fields
@@ -228,7 +228,7 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
                     $StartTime.closest('tr').find('.Period').val('');
                 }
 
-                RecalculateTotalHours();
+                RecalculateTotalHours($(this).closest('.DataTable'));
             }
         });
     }
