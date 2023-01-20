@@ -242,12 +242,15 @@ sub Run {
         );
     }
 
+    my $Mode   = $ParamObject->GetParam( Param => 'Mode' ) || '';
+
     # get params
     for my $Parameter (qw(Status Year Month Day Notification)) {
         $Param{$Parameter} = $ParamObject->GetParam( Param => $Parameter ) || '';
     }
-    $Param{RecordsNumber}      = $ParamObject->GetParam( Param => 'RecordsNumber' ) || 8;
-    $Param{InsertWorkingUnits} = $ParamObject->GetParam( Param => 'InsertWorkingUnits' );
+    $Param{RecordsNumber}       = $ParamObject->GetParam( Param => 'RecordsNumber' ) || 8;
+    $Param{AppendRecordsNumber} = $ParamObject->GetParam( Param => 'AppendRecordsNumber' ) || 8;
+    $Param{InsertWorkingUnits}  = $ParamObject->GetParam( Param => 'InsertWorkingUnits' );
 
     my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $TimeAccountingObject->SystemTime2Date(
         SystemTime => $DateTimeObjectCurrent->ToEpoch(),
@@ -365,7 +368,6 @@ sub Run {
         # arrays to save all start and end times for some checks
         my ( @StartTimes, @EndTimes );
 
-        my $Mode = $ParamObject->GetParam( Param => 'Mode');
         if ( $Mode ne 'Append' ) {
             # delete previous entries for this day and user
             $TimeAccountingObject->WorkingUnitsDelete(
@@ -422,13 +424,13 @@ sub Run {
         my $CheckItemObject = $Kernel::OM->Get('Kernel::System::CheckItem');
 
         ID:
-        for my $ID ( 1 .. $Param{RecordsNumber} ) {
+        for my $ID ( 1 .. $Param{$Mode . 'RecordsNumber'} ) {
 
             # arrays to save the server errors block to show the error messages
             my ( @StartTimeServerErrorBlock, @EndTimeServerErrorBlock, @PeriodServerErrorBlock ) = ();
 
             for my $Parameter (qw(ProjectID ActionID Remark StartTime EndTime Period)) {
-                $Param{$Parameter} = $ParamObject->GetParam( Param => $Parameter . '[' . $ID . ']' );
+                $Param{$Parameter} = $ParamObject->GetParam( Param => $Mode . $Parameter . '[' . $ID . ']' );
                 if ( $Param{$Parameter} ) {
                     my $ParamRef = \$Param{$Parameter};
 
@@ -722,8 +724,9 @@ sub Run {
     # get number of working units (=records)
     #    if bigger than RecordsNumber, more than the number of default records were saved for
     #    this date
+    my $WorkingUnitsCount = 1;
     if ( $Data{WorkingUnits} ) {
-        my $WorkingUnitsCount = @{ $Data{WorkingUnits} };
+        $WorkingUnitsCount = @{ $Data{WorkingUnits} };
         if ( $WorkingUnitsCount > $Param{RecordsNumber} ) {
             $Param{RecordsNumber} = $WorkingUnitsCount;
         }
@@ -733,12 +736,12 @@ sub Run {
 
     if ( $ConfigObject->Get('TimeAccounting::InputHoursWithoutStartEndTime') ) {
         $Param{PeriodBlock}   = 'UnitInputPeriod';
-        $Param{AppendPeriodBlock}   = 'UnitInputPeriodAppend';
+        $Param{AppendPeriodBlock}   = 'AppendUnitInputPeriod';
         $Frontend{PeriodNote} = '*';
     }
     else {
         $Param{PeriodBlock}   = 'UnitPeriodWithoutInput';
-        $Param{AppendPeriodBlock}   = 'UnitPeriodWithoutInputAppend';
+        $Param{AppendPeriodBlock}   = 'AppendUnitPeriodWithoutInput';
         $Frontend{PeriodNote} = '';
     }
 
@@ -751,12 +754,16 @@ sub Run {
 
     # render table for new entries
     $LayoutObject->Block(
-        Name => 'WorkingUnitsAppend',
-        Data => {},
+        Name => 'AppendWorkingUnits',
+        Data => {
+            Year  => $Param{Year},
+            Month => $Param{Month},
+            Day   => $Param{Day},
+        },
     );
 
     $LayoutObject->Block(
-        Name => 'UnitAppendBlock',
+        Name => 'AppendUnitBlock',
         Data => { %Param, %Frontend },
     );
 
@@ -884,8 +891,11 @@ sub Run {
         my %AppendProjectOptionParams = %ProjectOptionParams;
         my @AppendProjects = ( @{ $AppendProjectList->{LastProjects} }, @{ $AppendProjectList->{AllProjects} } );
         $AppendProjectOptionParams{Data} = \@AppendProjects;
+        $AppendProjectOptionParams{ID} = 'Append' . $AppendProjectOptionParams{ID};
+        $AppendProjectOptionParams{Name} = 'Append' . $AppendProjectOptionParams{Name};
+        $AppendProjectOptionParams{Class} =~ s/Project/AppendProject/;
 
-        $Frontend{ProjectAppendOption} = $LayoutObject->BuildSelection(
+        $Frontend{AppendProjectOption} = $LayoutObject->BuildSelection(
             %AppendProjectOptionParams,
         );
 
@@ -928,16 +938,16 @@ sub Run {
             Title => $LayoutObject->{LanguageObject}->Translate("Task"),
         );
 
-        $Frontend{ActionAppendOption} = $LayoutObject->BuildSelection(
+        $Frontend{AppendActionOption} = $LayoutObject->BuildSelection(
 
             Data        => $ActionData,
-            Name        => "ActionID[$ID]",
-            ID          => "ActionID$ID",
+            Name        => "AppendActionID[$ID]",
+            ID          => "AppendActionID$ID",
             Translation => 0,
-            Class       => 'Validate_DependingRequiredAND Validate_Depending_ProjectID'
+            Class       => 'Validate_DependingRequiredAND Validate_Depending_AppendProjectID'
                 . $ID
-                . ' ActionSelection '
-                . ( $Errors{$ErrorIndex}{ActionIDInvalid} || '' )
+                . ' AppendActionSelection '
+                . ( $Errors{$ErrorIndex}{AppendActionIDInvalid} || '' )
                 . $Class,
             Title => $LayoutObject->{LanguageObject}->Translate("Task"),
         );
@@ -978,18 +988,21 @@ sub Run {
             $Param{EndTime}   = '';
         }
 
-        $LayoutObject->Block(
-            Name => 'Unit',
-            Data => {
-                %Param,
-                %Frontend,
-                %{ $Errors{$ErrorIndex} },
-            },
-        );
+        if ( $ID <= $WorkingUnitsCount ) {
+            $LayoutObject->Block(
+                Name => 'Unit',
+                Data => {
+                    %Param,
+                    %Frontend,
+                    %{ $Errors{$ErrorIndex} },
+                },
+            );
+        }
 
         $LayoutObject->Block(
-            Name => 'UnitAppend',
+            Name => 'AppendUnit',
             Data => {
+                ID => $Param{ID},
                 %Frontend,
                 %{ $Errors{$ErrorIndex} },
             },
@@ -1032,14 +1045,16 @@ sub Run {
             }
         }
 
-        $LayoutObject->Block(
-            Name => $Param{PeriodBlock},
-            Data => {
-                Period => $Period,
-                ID     => $ID,
-                %{ $Errors{$ErrorIndex} },
-            },
-        );
+        if ( $ID <= $WorkingUnitsCount ) {
+            $LayoutObject->Block(
+                Name => $Param{PeriodBlock},
+                Data => {
+                    Period => $Period,
+                    ID     => $ID,
+                    %{ $Errors{$ErrorIndex} },
+                },
+            );
+        }
 
         $LayoutObject->Block(
             Name => $Param{AppendPeriodBlock},
@@ -1109,12 +1124,13 @@ sub Run {
 
     if ( $DateTimeObjectCurrent->Compare( DateTimeObject => $DateTimeObjectGiven ) ) {
         $Param{Total} = sprintf( "%.2f", ( $Param{Total} || 0 ) );
+        $Param{AppendTotal} = sprintf( "%.2f", 0 );
         $LayoutObject->Block(
             Name => 'Total',
             Data => { %Param, %Frontend },
         );
         $LayoutObject->Block(
-            Name => 'TotalAppend',
+            Name => 'AppendTotal',
             Data => { %Param, %Frontend },
         );
     }
@@ -1297,7 +1313,7 @@ sub Run {
             },
         );
         $LayoutObject->Block(
-            Name => 'OtherTimesAppend',
+            Name => 'AppendOtherTimes',
             Data => {
                 %Frontend,
                 %Errors,
