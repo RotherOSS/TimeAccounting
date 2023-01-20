@@ -275,6 +275,7 @@ sub Data {
     $Self->{Translation}->{'Time accounting.'} = 'Zeitabrechnung.';
     $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
         'Hier kann man eingeben, ob für eine bestimmte Tätigkeit, die zu verrechnenden Stunden gekürzt werden. Z. B wenn Reisezeiten nur zur Hälfte vergütet werden (Key =&gt; journey; Content =&gt; 50).';
+    $Self->{Translation}->{'Submit changes'} = 'Änderungen übermitteln';
 
 
     push @{ $Self->{JavaScriptStrings} // [] }, (
