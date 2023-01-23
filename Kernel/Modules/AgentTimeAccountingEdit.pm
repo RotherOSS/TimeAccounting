@@ -1095,7 +1095,7 @@ sub Run {
         $LayoutObject->Block(
             Name => 'AppendUnit',
             Data => {
-                ID => $Param{ID},
+                %Param,
                 %Frontend,
                 %{ $Errors{$ErrorIndex} },
             },
