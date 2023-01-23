@@ -875,7 +875,7 @@ sub Run {
             Name        => "AppendProjectID[$ID]",
             ID          => "AppendProjectID$ID",
             Translation => 0,
-            Class       => 'Validate_TimeAccounting_Project AppendProjectSelection '
+            Class       => 'Validate_TimeAccounting_Project ProjectSelection '
                 . ( $Errors{$ErrorIndex}{AppendProjectIDInvalid} || '' ),
             OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
             Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
@@ -1012,7 +1012,7 @@ sub Run {
             Translation => 0,
             Class       => 'Validate_DependingRequiredAND Validate_Depending_AppendProjectID'
                 . $ID
-                . ' AppendActionSelection '
+                . ' ActionSelection '
                 . ( $Errors{$ErrorIndex}{AppendActionIDInvalid} || '' )
                 . $Class,
             Title => $LayoutObject->{LanguageObject}->Translate("Task"),
