@@ -849,9 +849,7 @@ sub Run {
                 || '',
         );
         my $AppendProjectList = $Self->_ProjectList(
-            SelectedID => $AppendUnitRef->{ProjectID}
-                || $ServerErrorData{$ErrorIndex}{AppendProjectID}
-                || '',
+            SelectedID => $ServerErrorData{$ErrorIndex}{AppendProjectID} || '',
         );
 
         $Param{ProjectID} = $UnitRef->{ProjectID}
@@ -877,7 +875,7 @@ sub Run {
             Name        => "AppendProjectID[$ID]",
             ID          => "AppendProjectID$ID",
             Translation => 0,
-            Class       => 'Validate_TimeAccounting_AppendProject AppendProjectSelection '
+            Class       => 'Validate_TimeAccounting_Project AppendProjectSelection '
                 . ( $Errors{$ErrorIndex}{AppendProjectIDInvalid} || '' ),
             OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
             Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
@@ -1008,7 +1006,7 @@ sub Run {
         $Frontend{AppendActionOption} = $LayoutObject->BuildSelection(
 
             Data        => $AppendActionData,
-            SelectedID  => $AppendUnitRef->{ActionID} || $ServerErrorData{$ErrorIndex}{AppendActionID} || '',
+            SelectedID  => $ServerErrorData{$ErrorIndex}{AppendActionID} || '',
             Name        => "AppendActionID[$ID]",
             ID          => "AppendActionID$ID",
             Translation => 0,
@@ -1021,7 +1019,7 @@ sub Run {
         );
 
         $Param{Remark}       = $UnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{Remark} || '';
-        $Param{AppendRemark} = $AppendUnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{AppendRemark} || '';
+        $Param{AppendRemark} = $ServerErrorData{$ErrorIndex}{AppendRemark} || '';
 
         my $Period;
         my $AppendPeriod;
@@ -1059,7 +1057,7 @@ sub Run {
             $AppendPeriod = 0;
         }
         else {
-            $AppendPeriod = $AppendUnitRef->{Period} || $ServerErrorData{$ErrorIndex}{'AppendPeriod'} || '';
+            $AppendPeriod = $ServerErrorData{$ErrorIndex}{'AppendPeriod'} || '';
         }
 
         for my $TimePeriod (qw(StartTime EndTime)) {
@@ -1090,6 +1088,13 @@ sub Run {
                     %{ $Errors{$ErrorIndex} },
                 },
             );
+        }
+
+        # cleaning data before rendering unit
+        if ( !$AppendShowError ) {
+            for my $Data (qw(StartTime EndTime ProjectID ProjectName RecordsNumber Remark)) {
+                $Param{'Append' . $Data} = '';
+            }
         }
 
         $LayoutObject->Block(
@@ -1152,7 +1157,8 @@ sub Run {
         $LayoutObject->Block(
             Name => $Param{AppendPeriodBlock},
             Data => {
-                ID     => $ID,
+                AppendPeriod => $AppendPeriod,
+                ID           => $ID,
                 %{ $Errors{$ErrorIndex} },
             },
         );
