@@ -447,10 +447,10 @@ sub Run {
 
             # check for missing values
             if ( $Param{ProjectID} && !$Param{ActionID} ) {
-                $Errors{$ErrorIndex}{ActionIDInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'ActionIDInvalid'} = 'ServerError';
             }
             if ( !$Param{ProjectID} && $Param{ActionID} ) {
-                $Errors{$ErrorIndex}{ProjectIDInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'ProjectIDInvalid'} = 'ServerError';
             }
 
             # create a valid period
@@ -496,7 +496,7 @@ sub Run {
 
                 # end time must be after start time
                 if ( $EndTime <= $StartTime ) {
-                    $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                     push @EndTimeServerErrorBlock, 'EndTimeBeforeStartTimeServerError';
                 }
 
@@ -505,22 +505,22 @@ sub Run {
             }
             else {
                 if ( $Param{StartTime} && $Param{StartTime} !~ /^(\d+):(\d+)$/ ) {
-                    $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                     push @StartTimeServerErrorBlock, 'StartTimeInvalidFormatServerError';
                 }
                 if ( $Param{EndTime} && $Param{EndTime} !~ /^(\d+):(\d+)$/ ) {
-                    $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                     push @EndTimeServerErrorBlock, 'EndTimeInvalidFormatServerError';
                 }
             }
 
             # negative times are not allowed
             if ( $Param{StartTime} =~ /^-(\d+):(\d+)$/ ) {
-                $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                 push @StartTimeServerErrorBlock, 'StartTimeNegativeServerError';
             }
             if ( $Param{EndTime} =~ /^-(\d+):(\d+)$/ ) {
-                $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                 push @EndTimeServerErrorBlock, 'EndTimeNegativeServerError';
             }
 
@@ -535,7 +535,7 @@ sub Run {
                     && $StartTimes[$Position] < $EndTimes[$ID]
                     )
                 {
-                    $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                     if ( !grep {/^EndTimeRepeatedHourServerError/} @EndTimeServerErrorBlock ) {
                         push @EndTimeServerErrorBlock, 'EndTimeRepeatedHourServerError';
                     }
@@ -547,7 +547,7 @@ sub Run {
                     )
                 {
                     if ( $EndTimes[$ID] > $EndTimes[$Position] ) {
-                        $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                        $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                         if (
                             !grep {/^StartTimeRepeatedHourServerError$/}
                             @StartTimeServerErrorBlock
@@ -557,7 +557,7 @@ sub Run {
                         }
                     }
                     else {
-                        $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                        $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                         if ( !grep {/^EndTimeRepeatedHourServerError$/} @EndTimeServerErrorBlock ) {
                             push @EndTimeServerErrorBlock, 'EndTimeRepeatedHourServerError';
                         }
@@ -565,14 +565,14 @@ sub Run {
                 }
 
                 if ( $StartTimes[$Position] == $StartTimes[$ID] ) {
-                    $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                     if ( !grep {/^StartTimeRepeatedHourServerError$/} @StartTimeServerErrorBlock ) {
                         push @StartTimeServerErrorBlock, 'StartTimeRepeatedHourServerError';
                     }
                 }
 
                 if ( $EndTimes[$Position] == $EndTimes[$ID] ) {
-                    $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                     if ( !grep {/^EndTimeRepeatedHourServerError$/} @EndTimeServerErrorBlock ) {
                         push @EndTimeServerErrorBlock, 'EndTimeRepeatedHourServerError';
                     }
@@ -583,7 +583,7 @@ sub Run {
                     && $StartTimes[$ID] < $EndTimes[$Position]
                     )
                 {
-                    $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                     if ( !grep {/^StartTimeRepeatedHourServerError$/} @StartTimeServerErrorBlock ) {
                         push @StartTimeServerErrorBlock, 'StartTimeRepeatedHourServerError';
                     }
@@ -594,7 +594,7 @@ sub Run {
                     && $EndTimes[$ID] < $EndTimes[$Position]
                     )
                 {
-                    $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                     if ( !grep {/^EndTimeRepeatedHourServerError$/} @EndTimeServerErrorBlock ) {
                         push @EndTimeServerErrorBlock, 'EndTimeRepeatedHourServerError';
                     }
@@ -603,26 +603,26 @@ sub Run {
 
             # '24:00' is only permitted as end time
             if ( $StartTimes[$ID] && $StartTimes[$ID] == 1440 ) {
-                $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                 push @StartTimeServerErrorBlock, 'StartTime24Hours';
             }
 
             # times superior to 24:00 are not allowed
             if ( $StartTimes[$ID] && $StartTimes[$ID] > 1440 ) {
-                $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
                 push @StartTimeServerErrorBlock, 'StartTimeInvalid';
             }
             if ( $EndTimes[$ID] && $EndTimes[$ID] > 1440 ) {
-                $Errors{$ErrorIndex}{EndTimeInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} = 'ServerError';
                 push @EndTimeServerErrorBlock, 'EndTimeInvalid';
             }
 
             # add reference to the server error messages to be shown
-            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{StartTimeInvalid} ) {
-                $Errors{$ErrorIndex}{StartTimeServerErrorBlock} = \@StartTimeServerErrorBlock;
+            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} ) {
+                $Errors{$ErrorIndex}{$Mode . 'StartTimeServerErrorBlock'} = \@StartTimeServerErrorBlock;
             }
-            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{EndTimeInvalid} ) {
-                $Errors{$ErrorIndex}{EndTimeServerErrorBlock} = \@EndTimeServerErrorBlock;
+            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} ) {
+                $Errors{$ErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} = \@EndTimeServerErrorBlock;
             }
 
             # overwrite period if there are start and end times
@@ -640,34 +640,34 @@ sub Run {
                     $ConfigObject->Get('TimeAccounting::InputHoursWithoutStartEndTime')
                     )
                 {
-                    $Errors{$ErrorIndex}{PeriodInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'PeriodInvalid'} = 'ServerError';
                 }
                 else {
-                    $Errors{$ErrorIndex}{StartTimeInvalid} = 'ServerError';
-                    $Errors{$ErrorIndex}{EndTimeInvalid}   = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'}   = 'ServerError';
                 }
             }
             else {
                 if ( $Period < 0 ) {
-                    $Errors{$ErrorIndex}{PeriodInvalid} = 'ServerError';
+                    $Errors{$ErrorIndex}{$Mode . 'PeriodInvalid'} = 'ServerError';
                     push @PeriodServerErrorBlock, 'NegativePeriodServerError';
                 }
             }
             if ( $Period > 24 ) {
-                $Errors{$ErrorIndex}{PeriodInvalid} = 'ServerError';
+                $Errors{$ErrorIndex}{$Mode . 'PeriodInvalid'} = 'ServerError';
                 push @PeriodServerErrorBlock, 'InvalidHoursPeriodServerError';
             }
 
-            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{PeriodInvalid} ) {
-                $Errors{$ErrorIndex}{PeriodServerErrorBlock} = \@PeriodServerErrorBlock;
+            if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'PeriodInvalid'} ) {
+                $Errors{$ErrorIndex}{$Mode . 'PeriodServerErrorBlock'} = \@PeriodServerErrorBlock;
             }
 
             # if there was an error on this row, save all data in the server error hash
             if ( defined $Errors{$ErrorIndex} ) {
                 for my $Parameter (qw(ProjectID ActionID Remark StartTime EndTime)) {
-                    $ServerErrorData{$ErrorIndex}{$Parameter} = $Param{$Parameter};
+                    $ServerErrorData{$ErrorIndex}{$Mode . $Parameter} = $Param{$Parameter};
                 }
-                $ServerErrorData{$ErrorIndex}{Period} = $Period;
+                $ServerErrorData{$ErrorIndex}{$Mode . 'Period'} = $Period;
             }
 
             # otherwise, save row on the DB
@@ -711,6 +711,8 @@ sub Run {
             $Param{SuccessfulInsert} = undef;
         }
     }
+
+    my %AppendData = %Data;
 
     # Show Working Units
     # get existing working units
@@ -808,6 +810,12 @@ sub Run {
 
     # build a working unit array
     my @Units = (undef);
+    my @AppendUnits = (undef);
+    if ( $Mode eq 'Append' ) {
+        if ( $AppendData{WorkingUnits} ) {
+            push @AppendUnits, @{ $AppendData{WorkingUnits} };
+        }
+    }
     if ( $Data{WorkingUnits} ) {
         push @Units, @{ $Data{WorkingUnits} };
     }
@@ -817,14 +825,21 @@ sub Run {
     $ErrorIndex = 0;
 
     # build units
-    for my $ID ( 1 .. $Param{RecordsNumber} ) {
-        $Param{ID} = $ID;
-        my $UnitRef   = $Units[$ID];
-        my $ShowError = 0;
+    for my $ID ( 1 .. $Param{AppendRecordsNumber} ) {
+        $Param{ID}        = $ID;
+        my $UnitRef       = $Units[$ID];
+        my $AppendUnitRef = $AppendUnits[$ID];
+        my $ShowError     = 0;
+        my $AppendShowError = 0;
 
         if ( !$UnitRef ) {
             $ErrorIndex++;
             $ShowError = 1;
+        }
+
+        if ( !$AppendUnitRef ) {
+            $ErrorIndex++;
+            $AppendShowError = 1;
         }
 
         # get data of projects
@@ -833,11 +848,20 @@ sub Run {
                 || $ServerErrorData{$ErrorIndex}{ProjectID}
                 || '',
         );
+        my $AppendProjectList = $Self->_ProjectList(
+            SelectedID => $AppendUnitRef->{ProjectID}
+                || $ServerErrorData{$ErrorIndex}{AppendProjectID}
+                || '',
+        );
 
         $Param{ProjectID} = $UnitRef->{ProjectID}
             || $ServerErrorData{$ErrorIndex}{ProjectID}
             || '';
         $Param{ProjectName} = '';
+        $Param{AppendProjectID} = $AppendUnitRef->{ProjectID}
+            || $ServerErrorData{$ErrorIndex}{AppendProjectID}
+            || '';
+        $Param{AppendProjectName} = '';
 
         # set common params for project selection
         my %ProjectOptionParams = (
@@ -849,12 +873,22 @@ sub Run {
             OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
             Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
         );
+        my %AppendProjectOptionParams = (
+            Name        => "AppendProjectID[$ID]",
+            ID          => "AppendProjectID$ID",
+            Translation => 0,
+            Class       => 'Validate_TimeAccounting_AppendProject AppendProjectSelection '
+                . ( $Errors{$ErrorIndex}{AppendProjectIDInvalid} || '' ),
+            OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
+            Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
+        );
 
         my $EnableAutoCompletion = $ConfigObject->Get("TimeAccounting::EnableAutoCompletion") || 0;
         my $Class                = $EnableAutoCompletion ? ' Modernize' : '';
 
         # set params for modern inputs
-        $ProjectOptionParams{Class} .= $Class;
+        $ProjectOptionParams{Class}       .= $Class;
+        $AppendProjectOptionParams{Class} .= $Class;
 
         if ( $EnableAutoCompletion && $ConfigObject->Get("TimeAccounting::UseFilter") ) {
 
@@ -867,6 +901,14 @@ sub Run {
                 },
             };
 
+            $AppendProjectOptionParams{Data}    = $AppendProjectList->{AllProjects};
+            $AppendProjectOptionParams{Filters} = {
+                LastProjects => {
+                    Name   => $LayoutObject->{LanguageObject}->Translate('Last Projects'),
+                    Values => $AppendProjectList->{LastProjects},
+                },
+            };
+
             # if there are the previous projects, expand filter dialog
             if ( scalar @{ $ProjectList->{LastProjects} } > 1 ) {
                 $ProjectOptionParams{ExpandFilters} = 1;
@@ -876,24 +918,28 @@ sub Run {
                     $ProjectOptionParams{Filters}->{LastProjects}->{Active} = 1;
                 }
             }
+
+            if ( scalar @{ $AppendProjectList->{LastProjects} } > 1 ) {
+                $AppendProjectOptionParams{ExpandFilters} = 1;
+
+                # make the filter active by default if 'ActiveFilter' is enabled
+                if ( $ConfigObject->Get("TimeAccounting::ActiveFilter") ) {
+                    $AppendProjectOptionParams{Filters}->{LastProjects}->{Active} = 1;
+                }
+            }
         }
         else {
             # set params for traditional selects (and modern input fields if filter is not used)
             my @Projects = ( @{ $ProjectList->{LastProjects} }, @{ $ProjectList->{AllProjects} } );
             $ProjectOptionParams{Data} = \@Projects;
+            my @AppendProjects = ( @{ $AppendProjectList->{LastProjects} }, @{ $AppendProjectList->{AllProjects} } );
+            $AppendProjectOptionParams{Data} = \@AppendProjects;
         }
 
         # build projects select
         $Frontend{ProjectOption} = $LayoutObject->BuildSelection(
             %ProjectOptionParams,
         );
-
-        my %AppendProjectOptionParams = %ProjectOptionParams;
-        my @AppendProjects = ( @{ $AppendProjectList->{LastProjects} }, @{ $AppendProjectList->{AllProjects} } );
-        $AppendProjectOptionParams{Data} = \@AppendProjects;
-        $AppendProjectOptionParams{ID} = 'Append' . $AppendProjectOptionParams{ID};
-        $AppendProjectOptionParams{Name} = 'Append' . $AppendProjectOptionParams{Name};
-        $AppendProjectOptionParams{Class} =~ s/Project/AppendProject/;
 
         $Frontend{AppendProjectOption} = $LayoutObject->BuildSelection(
             %AppendProjectOptionParams,
@@ -910,8 +956,16 @@ sub Run {
         );
         $ActionData->{''} = '-';
 
+        my $AppendActionData = $Self->_ActionListConstraints(
+            ProjectID             => $AppendUnitRef->{ProjectID} || $ServerErrorData{$ErrorIndex}->{AppendProjectID},
+            ProjectList           => $AppendProjectList,
+            ActionList            => \%ActionList,
+            ActionListConstraints => $ActionListConstraints,
+        );
+        $AppendActionData->{''} = '-';
+
         if ( $UnitRef && $UnitRef->{ActionID} && $ActionList{ $UnitRef->{ActionID} } ) {
-            $ActionData->{ $UnitRef->{ActionID} } = $ActionList{ $UnitRef->{ActionID} };
+            $ActionData->{ $UnitRef->{ActionID} }       = $ActionList{ $UnitRef->{ActionID} };
         }
         elsif (
             $ServerErrorData{$ErrorIndex}
@@ -921,6 +975,19 @@ sub Run {
         {
             $ActionData->{ $ServerErrorData{$ErrorIndex}{ActionID} }
                 = $ActionList{ $ServerErrorData{$ErrorIndex}{ActionID} };
+        }
+
+        if ( $AppendUnitRef && $AppendUnitRef->{ActionID} && $ActionList{ $AppendUnitRef->{ActionID} } ) {
+            $AppendActionData->{ $AppendUnitRef->{ActionID} } = $ActionList{ $AppendUnitRef->{ActionID} };
+        }
+        elsif (
+            $ServerErrorData{$ErrorIndex}
+            && $ServerErrorData{$ErrorIndex}{$Mode . 'ActionID'}
+            && $ActionList{ $ServerErrorData{$ErrorIndex}{$Mode . 'ActionID'} }
+            )
+        {
+            $AppendActionData->{ $ServerErrorData{$ErrorIndex}{$Mode . 'ActionID'} }
+                = $ActionList{ $ServerErrorData{$ErrorIndex}{$Mode . 'ActionID'} };
         }
 
         $Frontend{ActionOption} = $LayoutObject->BuildSelection(
@@ -940,7 +1007,8 @@ sub Run {
 
         $Frontend{AppendActionOption} = $LayoutObject->BuildSelection(
 
-            Data        => $ActionData,
+            Data        => $AppendActionData,
+            SelectedID  => $AppendUnitRef->{ActionID} || $ServerErrorData{$ErrorIndex}{AppendActionID} || '',
             Name        => "AppendActionID[$ID]",
             ID          => "AppendActionID$ID",
             Translation => 0,
@@ -952,9 +1020,11 @@ sub Run {
             Title => $LayoutObject->{LanguageObject}->Translate("Task"),
         );
 
-        $Param{Remark} = $UnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{Remark} || '';
+        $Param{Remark}       = $UnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{Remark} || '';
+        $Param{AppendRemark} = $AppendUnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{AppendRemark} || '';
 
         my $Period;
+        my $AppendPeriod;
         if (
             ( $UnitRef->{Period} && $UnitRef->{Period} == 0 )
             || (
@@ -975,6 +1045,29 @@ sub Run {
             }
             else {
                 $Param{$TimePeriod} = $UnitRef->{$TimePeriod} // '';
+            }
+        }
+
+        if (
+            ( $AppendUnitRef->{Period} && $AppendUnitRef->{Period} == 0 )
+            || (
+                defined $ServerErrorData{$ErrorIndex}{'AppendPeriod'}
+                && $ServerErrorData{$ErrorIndex}{'AppendPeriod'} == 0
+            )
+            )
+        {
+            $AppendPeriod = 0;
+        }
+        else {
+            $AppendPeriod = $AppendUnitRef->{Period} || $ServerErrorData{$ErrorIndex}{'AppendPeriod'} || '';
+        }
+
+        for my $TimePeriod (qw(StartTime EndTime)) {
+            if ($AppendShowError) {
+                $Param{'Append' . $TimePeriod} = $ServerErrorData{$ErrorIndex}{'Append' . $TimePeriod} // '';
+            }
+            else {
+                $Param{'Append' . $TimePeriod} = $AppendUnitRef->{$TimePeriod} // '';
             }
         }
 
@@ -1010,36 +1103,36 @@ sub Run {
 
         # add proper server error message for the start and end times
         my $ServerErrorBlockName;
-        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{StartTimeInvalid} ) {
-            if ( scalar @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} } > 0 ) {
-                while ( @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} } ) {
-                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} };
+        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'StartTimeInvalid'} ) {
+            if ( scalar @{ $Errors{$ErrorIndex}{$Mode . 'StartTimeServerErrorBlock'} } > 0 ) {
+                while ( @{ $Errors{$ErrorIndex}{$Mode . 'StartTimeServerErrorBlock'} } ) {
+                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{$Mode . 'StartTimeServerErrorBlock'} };
                     $LayoutObject->Block(
-                        Name => $ServerErrorBlockName,
+                        Name => $Mode . $ServerErrorBlockName,
                         Data => {},
                     );
                 }
             }
             else {
                 $LayoutObject->Block(
-                    Name => 'StartTimeGenericServerError',
+                    Name => $Mode . 'StartTimeGenericServerError',
                     Data => {},
                 );
             }
         }
-        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{EndTimeInvalid} ) {
-            if ( scalar @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} } > 0 ) {
-                while ( @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} } ) {
-                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} };
+        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'EndTimeInvalid'} ) {
+            if ( scalar @{ $Errors{$ErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } > 0 ) {
+                while ( @{ $Errors{$ErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } ) {
+                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} };
                     $LayoutObject->Block(
-                        Name => $ServerErrorBlockName,
+                        Name => $Mode . $ServerErrorBlockName,
                         Data => {}
                     );
                 }
             }
             else {
                 $LayoutObject->Block(
-                    Name => 'EndTimeGenericServerError',
+                    Name => $Mode . 'EndTimeGenericServerError',
                     Data => {},
                 );
             }
@@ -1065,26 +1158,26 @@ sub Run {
         );
 
         # add proper server error message for the period
-        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{PeriodInvalid} ) {
-            if ( scalar @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} } > 0 ) {
-                while ( @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} } ) {
-                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} };
+        if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{$Mode . 'PeriodInvalid'} ) {
+            if ( scalar @{ $Errors{$ErrorIndex}{$Mode . 'PeriodServerErrorBlock'} } > 0 ) {
+                while ( @{ $Errors{$ErrorIndex}{$Mode . 'PeriodServerErrorBlock'} } ) {
+                    $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{$Mode . 'PeriodServerErrorBlock'} };
                     $LayoutObject->Block(
-                        Name => $ServerErrorBlockName,
+                        Name => $Mode . $ServerErrorBlockName,
                         Data => {},
                     );
                 }
             }
             else {
                 $LayoutObject->Block(
-                    Name => 'PeriodGenericServerError',
+                    Name => $Mode . 'PeriodGenericServerError',
                     Data => {},
                 );
             }
         }
         else {
             $LayoutObject->Block(
-                Name => 'PeriodGenericServerError',
+                Name => $Mode . 'PeriodGenericServerError',
                 Data => {},
             );
         }
