@@ -251,15 +251,16 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
         // Validates the project: if some other field in this row is filled, the project select must be filled, too
         Core.Form.Validate.AddMethod('Validate_TimeAccounting_Project', function (Value, Element) {
             var ID,
+                Mode = $(Element).attr('id').indexOf('Append') != -1 ? 'Append' : '',
                 Result = true;
 
             // Get ID
             // Our Element can be the select element or the autocompletion input field
             if ($(Element).is('select')) {
-                ID = $(Element).attr('id').replace('ProjectID', '');
+                ID = $(Element).attr('id').replace(Mode + 'ProjectID', '');
             }
             else {
-                ID = $(Element).prevAll('select').attr('id').replace('ProjectID', '');
+                ID = $(Element).prevAll('select').attr('id').replace(Mode + 'ProjectID', '');
             }
 
             if (!Value) {
@@ -268,7 +269,7 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
                         return;
                     }
 
-                    if (this !== 'ProjectID' && $('#' + this + ID).val()) {
+                    if (this !== (Mode + 'ProjectID') && $('#' + Mode + this + ID).val()) {
                         Result = false;
                     }
                 });
@@ -285,11 +286,13 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
 
         // Validates the remarks: depending on the project, remarks must be entered or not
         Core.Form.Validate.AddMethod('Validate_TimeAccounting_Remark', function (Value, Element) {
-            var ID = $(Element).attr('id').replace('Remark', ''),
+            var Mode = $(Element).attr('id').indexOf('Append') != -1 ? 'Append' : '',
+                ID = $(Element).attr('id').replace(Mode + 'Remark', ''),
                 RemarkRegExp = new RegExp("^(" + RemarkRegExpContent + ")$"),
-                RemarkCheck = RemarkRegExp.test($('#ProjectID' + ID).val());
+                RemarkCheck = RemarkRegExp.test($('#' + Mode + 'ProjectID' + ID).val());
 
-            if ($('#ProjectID' + ID).val()) {
+
+            if ($('#' + Mode + 'ProjectID' + ID).val()) {
                 return !(RemarkCheck && Value.length < 8);
             }
 
@@ -304,9 +307,11 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
 
         // Validates the start time: if a project is given and no time period is given, this field is required
         Core.Form.Validate.AddMethod('Validate_TimeAccounting_StartTime', function (Value, Element) {
-            var ID = $(Element).attr('id').replace('StartTime', '');
+            var Mode = $(Element).attr('id').indexOf('Append') != -1 ? 'Append' : '',
+                ID = $(Element).attr('id').replace(Mode + 'StartTime', '');
 
-            if (!Value && $('#ProjectID' + ID).val() && !$('#Period' + ID).val()) {
+
+            if (!Value && $('#' + Mode + 'ProjectID' + ID).val() && !$('#' + Mode + 'Period' + ID).val()) {
                 return false;
             }
 
@@ -321,9 +326,10 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
 
         // Validates the time period: if a project is given and no start time is given, this field is required
         Core.Form.Validate.AddMethod('Validate_TimeAccounting_Period', function (Value, Element) {
-            var ID = $(Element).attr('id').replace('Period', '');
+            var Mode = $(Element).attr('id').indexOf('Append') != -1 ? 'Append' : '',
+                ID = $(Element).attr('id').replace(Mode + 'Period', '');
 
-            if (!Value && $('#ProjectID' + ID).val() && !$('#StartTime' + ID).val()) {
+            if (!Value && $('#' + Mode + 'ProjectID' + ID).val() && !$('#' + Mode + 'StartTime' + ID).val()) {
                 return false;
             }
 

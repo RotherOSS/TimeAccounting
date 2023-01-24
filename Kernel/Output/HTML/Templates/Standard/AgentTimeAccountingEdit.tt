@@ -330,14 +330,14 @@
                                     <div id="AppendCombo_ActionID[% Data.ID | html %]ServerError" class="TooltipErrorMessage"><p>[% Translate("This field is required.") | html %]</p></div>
                                 </td>
                                 <td>
-                                    <input type="text" name="AppendRemark[[% Data.ID | html %]]" id="AppendRemark[% Data.ID | html %]" class="Validate_TimeAccounting_AppendRemark [% Data.AppendRemarkInvalid | html %]" value="[% Data.AppendRemark | html %]" size="35" title="[% Translate("Remark") | html %]" />
+                                    <input type="text" name="AppendRemark[[% Data.ID | html %]]" id="AppendRemark[% Data.ID | html %]" class="Validate_TimeAccounting_Remark [% Data.AppendRemarkInvalid | html %]" value="[% Data.AppendRemark | html %]" size="35" title="[% Translate("Remark") | html %]" />
                                     <div id="AppendRemark[% Data.ID | html %]Error" class="TooltipErrorMessage"><p>[% Translate("Please add a remark with more than 8 characters!") | html %]</p></div>
                                     <div id="AppendRemark[% Data.ID | html %]ServerError" class="TooltipErrorMessage">
                                         <p>[% Translate("This field is required.") | html %]</p>
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="text" name="AppendStartTime[[% Data.ID | html %]]" id="AppendStartTime[% Data.ID | html %]" class="StartTime Validate_TimeAccounting_AppendStartTime [% Data.AppendStartTimeRequired | html %] [% Data.AppendStartTimeInvalid | html %]" value="[% Data.AppendStartTime | html %]" size="7" title="[% Translate("Start Time") | html %]" />
+                                    <input type="text" name="AppendStartTime[[% Data.ID | html %]]" id="AppendStartTime[% Data.ID | html %]" class="StartTime Validate_TimeAccounting_StartTime [% Data.AppendStartTimeRequired | html %] [% Data.AppendStartTimeInvalid | html %]" value="[% Data.AppendStartTime | html %]" size="7" title="[% Translate("Start Time") | html %]" />
                                     <div id="AppendStartTime[% Data.ID | html %]Error" class="TooltipErrorMessage">
                                         <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
                                     </div>
@@ -390,7 +390,7 @@
                                 </td>
 [% RenderBlockStart("AppendUnitInputPeriod") %]
                                 <td>
-                                    <input type="text" name="AppendPeriod[[% Data.ID | html %]]" id="AppendPeriod[% Data.ID | html %]" class="Period Validate_TimeAccounting_AppendPeriod Validate_TimeUnits [% Data.AppendPeriodRequired | html %] [% Data.AppendPeriodInvalid | html %]" value="[% Data.AppendPeriod | html %]" size="7" title="[% Translate("Period") | html %]" />
+                                    <input type="text" name="AppendPeriod[[% Data.ID | html %]]" id="AppendPeriod[% Data.ID | html %]" class="Period Validate_TimeAccounting_Period Validate_TimeUnits [% Data.AppendPeriodRequired | html %] [% Data.AppendPeriodInvalid | html %]" value="[% Data.AppendPeriod | html %]" size="7" title="[% Translate("Period") | html %]" />
                                     <div id="AppendPeriod[% Data.ID | html %]Error" class="TooltipErrorMessage">
                                         <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
                                     </div>
