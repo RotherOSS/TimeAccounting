@@ -151,6 +151,7 @@
                                 <th><span class="Marker">*</span> [% Translate("Project") | html %]</th>
                                 <th><span class="Marker">*</span> [% Translate("Task") | html %]</th>
                                 <th>[% Translate("Remark") | html %]</th>
+                                <th>[% Translate("Origin") | html %]</th>
                                 <th>[% Translate("Start") | html %] (HH:MM)</th>
                                 <th>[% Translate("End") | html %] (HH:MM)</th>
                                 <th><span class="Marker">[% Data.PeriodNote | html %]</span> [% Translate("Period") | html %]</th>
@@ -174,14 +175,21 @@
                                     <div id="Combo_ActionID[% Data.ID | html %]ServerError" class="TooltipErrorMessage"><p>[% Translate("This field is required.") | html %]</p></div>
                                 </td>
                                 <td>
-                                    <input type="text" name="Remark[[% Data.ID | html %]]" id="Remark[% Data.ID | html %]" class="Validate_TimeAccounting_Remark [% Data.RemarkInvalid | html %]" value="[% Data.Remark | html %]" size="35" title="[% Translate("Remark") | html %]" />
+                                    <input type="text" name="Remark[[% Data.ID | html %]]" id="Remark[% Data.ID | html %]" class="Validate_TimeAccounting_Remark [% Data.RemarkInvalid | html %]" value="[% Data.Remark | html %]" size="35" title="[% Translate("Remark") | html %]" [% Data.ReadOnly %] />
                                     <div id="Remark[% Data.ID | html %]Error" class="TooltipErrorMessage"><p>[% Translate("Please add a remark with more than 8 characters!") | html %]</p></div>
                                     <div id="Remark[% Data.ID | html %]ServerError" class="TooltipErrorMessage">
                                         <p>[% Translate("This field is required.") | html %]</p>
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="text" name="StartTime[[% Data.ID | html %]]" id="StartTime[% Data.ID | html %]" class="StartTime Validate_TimeAccounting_StartTime [% Data.StartTimeRequired | html %] [% Data.StartTimeInvalid | html %]" value="[% Data.StartTime | html %]" size="7" title="[% Translate("Start Time") | html %]" />
+                                    <a href="[% Env("Baselink") %]Action=[% Data.Link | html %]" target="_blank" class="" title="[% Translate("Ursprung") | html %]">[% Data.BaseModule | html %]</a>
+                                    <input type="hidden" name="TicketID[[% Data.ID | html %]]" value="[% Data.TicketID | html %]" />
+                                    <input type="hidden" name="ArticleID[[% Data.ID | html %]]" value="[% Data.ArticleID | html %]" />
+                                    <input type="hidden" name="BaseModule[[% Data.ID | html %]]" value="[% Data.BaseModule | html %]" />
+                                    <input type="hidden" name="ReadOnly[[% Data.ID | html %]]" value="[% Data.ReadOnly | html %]" />
+                                </td>
+                                <td>
+                                    <input type="text" name="StartTime[[% Data.ID | html %]]" id="StartTime[% Data.ID | html %]" class="StartTime Validate_TimeAccounting_StartTime [% Data.StartTimeRequired | html %] [% Data.StartTimeInvalid | html %]" value="[% Data.StartTime | html %]" size="7" title="[% Translate("Start Time") | html %]" [% Data.ReadOnly %] />
                                     <div id="StartTime[% Data.ID | html %]Error" class="TooltipErrorMessage">
                                         <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
                                     </div>
@@ -207,7 +215,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="text" name="EndTime[[% Data.ID | html %]]" id="EndTime[% Data.ID | html %]" class="EndTime Validate_DependingRequiredAND Validate_Depending_StartTime[% Data.ID | html %] [% Data.EndTimeRequired | html %] [% Data.EndTimeInvalid | html %]" value="[% Data.EndTime | html %]" size="7" title="[% Translate("End Time") | html %]" />
+                                    <input type="text" name="EndTime[[% Data.ID | html %]]" id="EndTime[% Data.ID | html %]" class="EndTime Validate_DependingRequiredAND Validate_Depending_StartTime[% Data.ID | html %] [% Data.EndTimeRequired | html %] [% Data.EndTimeInvalid | html %]" value="[% Data.EndTime | html %]" size="7" title="[% Translate("End Time") | html %]" [% Data.ReadOnly %] />
                                     <div id="EndTime[% Data.ID | html %]Error" class="TooltipErrorMessage">
                                         <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
                                     </div>
@@ -262,7 +270,7 @@
 [% RenderBlockEnd("Unit") %]
 [% RenderBlockEnd("UnitBlock") %]
                             <tr>
-                                <td colspan="4"></td>
+                                <td colspan="5"></td>
 [% RenderBlockStart("Total") %]
                                 <td>[% Translate("Total") | html %]:</td>
                                 <td><span class="TotalHours">[% Data.Total | html %]</span></td>
@@ -270,7 +278,7 @@
                             </tr>
 [% RenderBlockStart("Readonly") %]
                             <tr>
-                                <td colspan="6">
+                                <td colspan="7">
                                     [% Translate(Data.Description) | html %]
                                 </td>
                             </tr>

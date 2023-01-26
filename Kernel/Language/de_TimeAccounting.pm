@@ -44,6 +44,7 @@ sub Data {
     $Self->{Translation}->{'Project'} = 'Projekt';
     $Self->{Translation}->{'Task'} = 'Tätigkeit';
     $Self->{Translation}->{'Remark'} = 'Anmerkung';
+    $Self->{Translation}->{'Origin'} = 'Ursprung';
     $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = 'Bitte geben Sie eine Anmerkung von mehr als 8 Zeichen Länge ein!';
     $Self->{Translation}->{'Negative times are not allowed.'} = 'Negative Zeitangaben sind nicht erlaubt.';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =

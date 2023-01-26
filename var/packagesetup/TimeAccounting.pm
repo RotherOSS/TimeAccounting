@@ -24,6 +24,7 @@ use List::Util qw();
 our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::System::Cache',
+    'Kernel::System::DynamicField',
     'Kernel::System::Group',
     'Kernel::System::SysConfig',
     'Kernel::System::Valid',
@@ -82,6 +83,9 @@ run the code install part
 sub CodeInstall {
     my ( $Self, %Param ) = @_;
 
+    # Create DynamicField Article.
+    $Self->_CreateDynamicFieldArticleTimeUnit();
+
     return 1;
 }
 
@@ -100,6 +104,9 @@ sub CodeUninstall {
     $Self->_GroupDeactivate(
         Name => 'time_accounting',
     );
+
+    # Delete ArticleTimeUnit DynamicField
+    $Self->_DeleteDynamicFieldArticleTimeUnit();
 
     return 1;
 }
@@ -138,7 +145,118 @@ sub CodeUpgradeFromLowerThan_5_0_92 {    ## no critic
     return 1;
 }
 
+=head2 CodeUpgradeFromLowerThan_10_1_2()
+
+This function is only executed if the installed module version is smaller than 10.1.2.
+
+    my $Result = $CodeObject->CodeUpgradeFromLowerThan_10_1_2();
+
+=cut
+
+sub CodeUpgradeFromLowerThan_10_1_2 {    ## no critic
+    my ( $Self, %Param ) = @_;
+
+    # Create DynamicField ArticleTimeUnit
+    $Self->_CreateDynamicFieldArticleTimeUnit();
+
+    return 1;
+}
+
 =head1 PRIVATE INTERFACE
+
+=head2 _CreateDynamicFieldArticleTimeUnit()
+
+create dynamic field ArticleTimeUnit
+
+    my $Result = $CodeObject->_CreateDynamicFieldArticleTimeUnit();
+
+=cut
+
+sub _CreateDynamicFieldArticleTimeUnit {
+    my ( $Self, %Param ) = @_;
+
+    # get group object
+    my $ConfigObject       = $Kernel::OM->Get('Kernel::Config');
+    my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
+
+    my $List = $DynamicFieldObject->DynamicFieldList(
+        Valid => 0,
+    );
+
+    my $OrderCount = $List->@* + 1;
+    my $FieldConfig = {
+        Tooltip => 'Article Time Units',
+    };
+    my $DynName =  $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $ID = $DynamicFieldObject->DynamicFieldAdd(
+        InternalField => 1,
+        Name        => $DynName,
+        Label       => 'Article TimeUnit',
+        FieldOrder  => $OrderCount,
+        FieldType   => 'Text',
+        ObjectType  => 'Article',
+        Config      => $FieldConfig,
+        Reorder     => 1,
+        ValidID     => 1,
+        UserID      => 1,
+    );
+
+    if ( !$ID ) {
+
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
+            Priority => 'error',
+            Message  => "Can't add DynamicField with the name $DynName! Please add the field manually and change the sysconfig option TimeAccounting::TicketSync::SaveTimeUnitToArticleField to the new name.",
+        );
+    }
+    return 1;
+}
+
+=head2 _DeleteDynamicFieldArticleTimeUnit()
+
+delete dynamic filed ArticleTimeUnit
+
+    my $Result = $CodeObject->_DeleteDynamicFieldArticleTimeUnit();
+
+=cut
+
+sub _DeleteDynamicFieldArticleTimeUnit {
+
+    # get group object
+    my $ConfigObject       = $Kernel::OM->Get('Kernel::Config');
+    my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
+
+    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $DynamicField = $DynamicFieldObject->DynamicFieldGet(
+        Name => $DynName,
+    );
+    my $ValueDeleteSuccess = $Kernel::OM->Get('Kernel::System::DynamicFieldValue')->AllValuesDelete(
+        FieldID => $DynamicField->{ID},
+        UserID  => 1,
+    );
+
+    if ( !$FieldSuccess ) {
+
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
+            Priority => 'error',
+            Message  => "Can't delete DynamicField values for field with the name $DynName! Please delete the field manually.",
+        );
+    }
+
+    my $FieldDeleteSuccess = $DynamicFieldObject->DynamicFieldDelete(
+        ID     => $DynamicField->{ID},
+        UserID => 1,
+    );
+
+    if ( !$FieldSuccess ) {
+
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
+            Priority => 'error',
+            Message  => "Can't delete DynamicField with the name $DynName! Please delete the field manually.",
+        );
+    }
+    return 1;
+
+}
 
 =head2 _GroupDeactivate()
 

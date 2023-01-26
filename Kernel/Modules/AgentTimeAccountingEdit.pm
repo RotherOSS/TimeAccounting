@@ -430,7 +430,7 @@ sub Run {
             # arrays to save the server errors block to show the error messages
             my ( @StartTimeServerErrorBlock, @EndTimeServerErrorBlock, @PeriodServerErrorBlock ) = ();
 
-            for my $Parameter (qw(ProjectID ActionID Remark StartTime EndTime Period)) {
+            for my $Parameter (qw(ProjectID ActionID Remark StartTime EndTime Period TicketID ArticleID BaseModule ReadOnly)) {
                 $Param{$Parameter} = $ParamObject->GetParam( Param => $Mode . $Parameter . '[' . $ID . ']' );
                 $Param{$Mode . $Parameter} = $Param{$Parameter};
                 if ( $Param{$Parameter} ) {
@@ -682,12 +682,15 @@ sub Run {
                 $Param{EndTime} = $Param{EndTime} eq '24:00' ? '23:59:59' : $Param{EndTime};
 
                 my %WorkingUnit = (
-                    ProjectID => $Param{ProjectID},
-                    ActionID  => $Param{ActionID},
-                    Remark    => $Param{Remark},
-                    StartTime => $Param{StartTime},
-                    EndTime   => $Param{EndTime},
-                    Period    => $Period,
+                    ProjectID  => $Param{ProjectID},
+                    ActionID   => $Param{ActionID},
+                    Remark     => $Param{Remark},
+                    StartTime  => $Param{StartTime},
+                    EndTime    => $Param{EndTime},
+                    Period     => $Period,
+                    TicketID   => $Param{TicketID} || 0,
+                    ArticleID  => $Param{ArticleID} || 0,
+                    BaseModule => $Param{BaseModule} || '-',
                 );
                 push @{ $Data{WorkingUnits} }, \%WorkingUnit;
 
@@ -703,6 +706,17 @@ sub Run {
                     );
                 }
                 $Param{SuccessfulInsert} = 1;
+
+                # Check if ticket time unit was changed, if so: sync back
+                # TODO Sync back to Change.
+                if ( $Param{BaseModule} && $Param{BaseModule} eq 'Ticket' && $Param{TicketID} && $Param{ArticleID} ) {
+                    my $Success = $Kernel::OM->Get('Kernel::System::Ticket::Article')->ArticleAccountedTimeUpdate(
+                        TicketID  => $Param{TicketID},
+                        ArticleID => $Param{ArticleID},
+                        NewTime   => $Period * 60,
+                        UserID    => $Self->{UserID},
+                    );
+                }
             }
 
             # increment the error index if there was an error on this row
@@ -884,6 +898,13 @@ sub Run {
             Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
         );
 
+        # Config option is enabled to set ticket entries to ro
+        if ( $ConfigObject->Get('TimeAccounting::TicketSync::SetEntryReadOnly') ) {
+
+            $Param{ReadOnly} = $UnitRef->{ReadOnly} || '';
+
+        }
+
         my $EnableAutoCompletion = $ConfigObject->Get("TimeAccounting::EnableAutoCompletion") || 0;
         my $Class                = $EnableAutoCompletion ? ' Modernize' : '';
 
@@ -966,7 +987,7 @@ sub Run {
         $AppendActionData->{''} = '-';
 
         if ( $UnitRef && $UnitRef->{ActionID} && $ActionList{ $UnitRef->{ActionID} } ) {
-            $ActionData->{ $UnitRef->{ActionID} }       = $ActionList{ $UnitRef->{ActionID} };
+            $ActionData->{ $UnitRef->{ActionID} } = $ActionList{ $UnitRef->{ActionID} };
         }
         elsif (
             $ServerErrorData{$ErrorIndex}
@@ -1023,6 +1044,7 @@ sub Run {
 
         $Param{Remark}       = $UnitRef->{Remark} || $ServerErrorData{$ErrorIndex}{Remark} || '';
         $Param{AppendRemark} = $ServerErrorData{$AppendErrorIndex}{AppendRemark} || '';
+        $Param{BaseModule}   = $UnitRef->{BaseModule} || '';
 
         my $Period;
         my $AppendPeriod;
@@ -1082,32 +1104,109 @@ sub Run {
             $Param{EndTime}   = '';
         }
 
-        if ( $ID <= $WorkingUnitsCount ) {
+        # Blank entry
+        if ( !$Param{ProjectID} ) {
+
+            if ( $ID <= $WorkingUnitsCount ) {
+                $LayoutObject->Block(
+                    Name => 'Unit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$ErrorIndex} },
+                    },
+                );
+            }
+
+            # cleaning data before rendering unit
+            if ( !$AppendShowError ) {
+                for my $Data (qw(StartTime EndTime ProjectID ProjectName RecordsNumber Remark)) {
+                    $Param{'Append' . $Data} = '';
+                }
+            }
+
             $LayoutObject->Block(
-                Name => 'Unit',
+                Name => 'AppendUnit',
                 Data => {
                     %Param,
                     %Frontend,
-                    %{ $Errors{$ErrorIndex} },
+                    %{ $Errors{$AppendErrorIndex} },
                 },
             );
-        }
 
-        # cleaning data before rendering unit
-        if ( !$AppendShowError ) {
-            for my $Data (qw(StartTime EndTime ProjectID ProjectName RecordsNumber Remark)) {
-                $Param{'Append' . $Data} = '';
+        }
+        # Ticket entry
+        elsif ( $Param{BaseModule} && $Param{BaseModule} eq 'Ticket'  ) {
+            $Param{TicketID} = $UnitRef->{TicketID};
+            $Param{ArticleID} = $UnitRef->{ArticleID};
+            $Param{Link} = "AgentTicketZoom;TicketID=$Param{TicketID};$Param{ArticleID}";
+            $Param{BaseModule} = "Ticket";
+
+            # Set Field to ReadOnly cause it's a ticket field
+            $Param{ReadOnly} = "readonly";
+
+            $Param{Period} = $UnitRef->{Period};
+
+            if ( $ID <= $WorkingUnitsCount ) {
+                $LayoutObject->Block(
+                    Name => 'Unit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$ErrorIndex} },
+                    },
+                );
             }
-        }
 
-        $LayoutObject->Block(
-            Name => 'AppendUnit',
-            Data => {
-                %Param,
-                %Frontend,
-                %{ $Errors{$AppendErrorIndex} },
-            },
-        );
+            # cleaning data before rendering unit
+            if ( !$AppendShowError ) {
+                for my $Data (qw(StartTime EndTime ProjectID ProjectName RecordsNumber Remark)) {
+                    $Param{'Append' . $Data} = '';
+                }
+            }
+
+            $LayoutObject->Block(
+                Name => 'AppendUnit',
+                Data => {
+                    %Param,
+                    %Frontend,
+                    %{ $Errors{$AppendErrorIndex} },
+                },
+            );
+
+        }
+        # TimeAccounting entry
+        elsif ( $Param{ProjectID} ) {
+            $Param{BaseModule} = 'TimeAccount';
+
+            if ( $ID <= $WorkingUnitsCount ) {
+                $LayoutObject->Block(
+                    Name => 'Unit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$ErrorIndex} },
+                    },
+                );
+            }
+
+            # cleaning data before rendering unit
+            if ( !$AppendShowError ) {
+                for my $Data (qw(StartTime EndTime ProjectID ProjectName RecordsNumber Remark)) {
+                    $Param{'Append' . $Data} = '';
+                }
+            }
+
+            $LayoutObject->Block(
+                Name => 'AppendUnit',
+                Data => {
+                    %Param,
+                    %Frontend,
+                    %{ $Errors{$AppendErrorIndex} },
+                },
+            );
+
+        }
 
         # add proper server error message for the start and end times
         my $ServerErrorBlockName;

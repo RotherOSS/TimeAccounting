@@ -1517,7 +1517,7 @@ sub WorkingUnitsGet {
     # ask the database
     $DBObject->Prepare(
         SQL => '
-            SELECT user_id, project_id, action_id, remark, time_start, time_end, period
+            SELECT user_id, project_id, action_id, remark, time_start, time_end, period, ticket_id, article_id, base
             FROM time_accounting_table
             WHERE time_start >= ?
                 AND time_start <= ?
@@ -1560,13 +1560,16 @@ sub WorkingUnitsGet {
         }
 
         my %WorkingUnit = (
-            UserID    => $Row[0],
-            ProjectID => $Row[1],
-            ActionID  => $Row[2],
-            Remark    => $Row[3],
-            StartTime => $StartTime,
-            EndTime   => $EndTime,
-            Period    => defined( $Row[6] ) ? sprintf( "%.2f", $Row[6] ) : 0,
+            UserID     => $Row[0],
+            ProjectID  => $Row[1],
+            ActionID   => $Row[2],
+            Remark     => $Row[3],
+            StartTime  => $StartTime,
+            EndTime    => $EndTime,
+            Period     => defined( $Row[6] ) ? sprintf( "%.2f", $Row[6] ) : 0,
+            TicketID   => $Row[7],
+            ArticleID  => $Row[8],
+            BaseModule => $Row[9],
         );
 
         # only count complete working units
@@ -1662,11 +1665,12 @@ sub WorkingUnitsInsert {
         # build DQL
         my $SQL = '
             INSERT INTO time_accounting_table (user_id, project_id, action_id, remark, time_start,
-                time_end, period, created )
-            VALUES  ( ?, ?, ?, ?, ?, ?, ?, current_timestamp)';
+                time_end, period, ticket_id, article_id, base, created )
+            VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp)';
         my $Bind = [
             \$Param{UserID}, \$UnitRef->{ProjectID}, \$UnitRef->{ActionID},
             \$UnitRef->{Remark}, \$StartTime, \$EndTime, \$UnitRef->{Period},
+            \$UnitRef->{TicketID}, \$UnitRef->{ArticleID}, \$UnitRef->{BaseModule},
         ];
 
         # db insert
