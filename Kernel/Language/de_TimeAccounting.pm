@@ -85,6 +85,7 @@ sub Data {
     $Self->{Translation}->{'Working Hours'} = 'Arbeitsstunden';
     $Self->{Translation}->{'Total worked hours'} = 'Arbeitsstunden (gesamt)';
     $Self->{Translation}->{'User\'s project overview'} = 'Projektübersicht des Benutzers';
+    $Self->{Translation}->{'Show all projects'} = 'Alle Projekte anzeigen';
     $Self->{Translation}->{'Hours (monthly)'} = 'Stunden (im Monat)';
     $Self->{Translation}->{'Hours (Lifetime)'} = 'Stunden (gesamt)';
     $Self->{Translation}->{'Grand total'} = 'Summe';
