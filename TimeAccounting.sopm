@@ -101,7 +101,7 @@
             <Column Name="user_id" Required="true" Type="INTEGER" />
             <Column Name="project_id" Required="true" Type="BIGINT" />
             <Column Name="action_id" Required="true" Type="BIGINT" />
-            <Column Name="remark" Required="false" Type="VARCHAR" Size="250" />
+            <Column Name="remark" Required="false" Type="TEXT" />
             <Column Name="time_start" Required="true" Type="DATE" />
             <Column Name="time_end" Required="true" Type="DATE" />
             <Column Name="period" Required="false" Type="DECIMAL" Size="10,3" />
