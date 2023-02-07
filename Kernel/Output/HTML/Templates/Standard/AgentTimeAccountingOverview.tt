@@ -160,7 +160,7 @@
 [% RenderBlockEnd("ProjectLink") %]
                                     </strong>
 [% RenderBlockStart("ProjectDescription") %]
-                                    <br/>[% Data.ProjectDescription | html %]
+                                    <br/>[% Data.ProjectDescription | html | html_line_break %]
 [% RenderBlockEnd("ProjectDescription") %]
                                 </td>
 [% RenderBlockEnd("Project") %]

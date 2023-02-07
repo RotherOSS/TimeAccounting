@@ -329,6 +329,7 @@ sub Run {
                             HTMLResultMode => 1,
                             NewLine        => 50,
                         );
+                        $ProjectDescription =~ s|\<br\/\>|\n|g;
 
                         $LayoutObject->Block(
                             Name => 'Project',
