@@ -247,7 +247,7 @@ sub _DeleteDynamicFieldArticleTimeUnit {
         UserID => 1,
     );
 
-    if ( !$FieldSuccess ) {
+    if ( !$FieldDeleteSuccess ) {
 
         $Kernel::OM->Get('Kernel::System::Log')->Log(
             Priority => 'error',
