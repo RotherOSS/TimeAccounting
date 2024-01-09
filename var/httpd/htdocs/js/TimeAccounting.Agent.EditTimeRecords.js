@@ -134,6 +134,8 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
                 .removeClass('Even')
                 .filter(':odd').addClass('Even');
 
+            InitPeriodCalculation();
+
             // Modernize fields
             Core.UI.InputFields.Activate($('.WorkingHours'));
         });
