@@ -841,8 +841,10 @@ sub Run {
     $ErrorIndex       = 0;
     $AppendErrorIndex = 0;
 
+    my $MaxCounter = ( $#Units > 5 ) ? $#Units : 5;
+
     # build units
-    for my $ID ( 1 .. $Param{AppendRecordsNumber} ) {
+    for my $ID ( 1 .. $MaxCounter ) {
         $Param{ID}        = $ID;
         my $UnitRef       = $Units[$ID];
         my $AppendUnitRef = $AppendUnits[$ID];
@@ -1125,14 +1127,16 @@ sub Run {
                 }
             }
 
-            $LayoutObject->Block(
-                Name => 'AppendUnit',
-                Data => {
-                    %Param,
-                    %Frontend,
-                    %{ $Errors{$AppendErrorIndex} },
-                },
-            );
+            if ( $ID <= 5 ) {
+                $LayoutObject->Block(
+                    Name => 'AppendUnit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$AppendErrorIndex} },
+                    },
+                );
+            }
 
         }
         # Ticket entry
@@ -1165,14 +1169,16 @@ sub Run {
                 }
             }
 
-            $LayoutObject->Block(
-                Name => 'AppendUnit',
-                Data => {
-                    %Param,
-                    %Frontend,
-                    %{ $Errors{$AppendErrorIndex} },
-                },
-            );
+            if ( $ID <= 5 ) {
+                $LayoutObject->Block(
+                    Name => 'AppendUnit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$AppendErrorIndex} },
+                    },
+                );
+            }
 
         }
         # TimeAccounting entry
@@ -1197,14 +1203,16 @@ sub Run {
                 }
             }
 
-            $LayoutObject->Block(
-                Name => 'AppendUnit',
-                Data => {
-                    %Param,
-                    %Frontend,
-                    %{ $Errors{$AppendErrorIndex} },
-                },
-            );
+            if ( $ID <= 5 ) {
+                $LayoutObject->Block(
+                    Name => 'AppendUnit',
+                    Data => {
+                        %Param,
+                        %Frontend,
+                        %{ $Errors{$AppendErrorIndex} },
+                    },
+                );
+            }
 
         }
 
@@ -1227,21 +1235,23 @@ sub Run {
                 );
             }
         }
-        if ( $Errors{$AppendErrorIndex} && $Errors{$AppendErrorIndex}{$Mode . 'EndTimeInvalid'} ) {
-            if ( scalar @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } > 0 ) {
-                while ( @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } ) {
-                    $ServerErrorBlockName = shift @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} };
+        if ( $ID <= 5 ) {
+            if ( $Errors{$AppendErrorIndex} && $Errors{$AppendErrorIndex}{$Mode . 'EndTimeInvalid'} ) {
+                if ( scalar @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } > 0 ) {
+                    while ( @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} } ) {
+                        $ServerErrorBlockName = shift @{ $Errors{$AppendErrorIndex}{$Mode . 'EndTimeServerErrorBlock'} };
+                        $LayoutObject->Block(
+                            Name => $Mode . $ServerErrorBlockName,
+                            Data => {}
+                        );
+                    }
+                }
+                else {
                     $LayoutObject->Block(
-                        Name => $Mode . $ServerErrorBlockName,
-                        Data => {}
+                        Name => $Mode . 'EndTimeGenericServerError',
+                        Data => {},
                     );
                 }
-            }
-            else {
-                $LayoutObject->Block(
-                    Name => $Mode . 'EndTimeGenericServerError',
-                    Data => {},
-                );
             }
         }
 
@@ -1256,14 +1266,16 @@ sub Run {
             );
         }
 
-        $LayoutObject->Block(
-            Name => $Param{AppendPeriodBlock},
-            Data => {
-                AppendPeriod => $AppendPeriod,
-                ID           => $ID,
-                %{ $Errors{$AppendErrorIndex} },
-            },
-        );
+        if ( $ID <= 5 ) {
+            $LayoutObject->Block(
+                Name => $Param{AppendPeriodBlock},
+                Data => {
+                    AppendPeriod => $AppendPeriod,
+                    ID           => $ID,
+                    %{ $Errors{$AppendErrorIndex} },
+                },
+            );
+        }
 
         # add proper server error message for the period
         if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{PeriodInvalid} ) {
@@ -1290,12 +1302,20 @@ sub Run {
             );
         }
 
-        if ( $Errors{$AppendErrorIndex} && $Errors{$AppendErrorIndex}{AppendPeriodInvalid} ) {
-            if ( scalar @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} } > 0 ) {
-                while ( @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} } ) {
-                    $ServerErrorBlockName = shift @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} };
+        if ( $ID <= 5 ) {
+            if ( $Errors{$AppendErrorIndex} && $Errors{$AppendErrorIndex}{AppendPeriodInvalid} ) {
+                if ( scalar @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} } > 0 ) {
+                    while ( @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} } ) {
+                        $ServerErrorBlockName = shift @{ $Errors{$AppendErrorIndex}{AppendPeriodServerErrorBlock} };
+                        $LayoutObject->Block(
+                            Name => $Mode . $ServerErrorBlockName,
+                            Data => {},
+                        );
+                    }
+                }
+                else {
                     $LayoutObject->Block(
-                        Name => $Mode . $ServerErrorBlockName,
+                        Name => $Mode . 'PeriodGenericServerError',
                         Data => {},
                     );
                 }
@@ -1306,12 +1326,6 @@ sub Run {
                     Data => {},
                 );
             }
-        }
-        else {
-            $LayoutObject->Block(
-                Name => $Mode . 'PeriodGenericServerError',
-                Data => {},
-            );
         }
 
         # validity check
