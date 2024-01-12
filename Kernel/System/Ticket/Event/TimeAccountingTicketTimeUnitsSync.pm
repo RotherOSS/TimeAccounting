@@ -183,6 +183,8 @@ sub Run {
                 TicketID => $Param{Data}{TicketID},
             );
 
+            my $CurrentTimeObject = $Kernel::OM->Create('Kernel::System::DateTime');
+
             my $Insert = $TimeAccountingObject->WorkingUnitsInsert(
                 Year         => $Year,
                 Month        => $Month,
@@ -194,7 +196,7 @@ sub Run {
                     {
                         ProjectID => $ProjectID,
                         ActionID  => $ActionID,
-                        Remark    => $TicketNumber . '-' . $Article{Subject},
+                        Remark    => 'Time: ' . $CurrentTimeObject->Format( Format => '%H:%M') . ' - ' . $Article{Subject},
                         TicketID  => $Param{Data}->{TicketID},
                         ArticleID => $Param{Data}->{ArticleID},
                         Period    => $Article{TimeUnits} / 60,
