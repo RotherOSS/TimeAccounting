@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -25,6 +25,7 @@ our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::System::Cache',
     'Kernel::System::DynamicField',
+    'Kernel::System::DynamicFieldValue',
     'Kernel::System::Group',
     'Kernel::System::SysConfig',
     'Kernel::System::Valid',
@@ -119,7 +120,7 @@ my $Result = $CodeObject->CodeUpgradeFromLowerThan_4_0_91();
 
 =cut
 
-sub CodeUpgradeFromLowerThan_4_0_91 {    ## no critic
+sub CodeUpgradeFromLowerThan_4_0_91 {    ## no critic qw(OTOBO::RequireCamelCase)
     my ( $Self, %Param ) = @_;
 
     # change configurations to match the new module location.
@@ -136,7 +137,7 @@ This function is only executed if the installed module version is smaller than 5
 
 =cut
 
-sub CodeUpgradeFromLowerThan_5_0_92 {    ## no critic
+sub CodeUpgradeFromLowerThan_5_0_92 {    ## no critic qw(OTOBO::RequireCamelCase)
     my ( $Self, %Param ) = @_;
 
     # Recover the old permissions
@@ -153,7 +154,7 @@ This function is only executed if the installed module version is smaller than 1
 
 =cut
 
-sub CodeUpgradeFromLowerThan_10_1_2 {    ## no critic
+sub CodeUpgradeFromLowerThan_10_1_2 {    ## no critic qw(OTOBO::RequireCamelCase)
     my ( $Self, %Param ) = @_;
 
     # Create DynamicField ArticleTimeUnit
@@ -183,29 +184,30 @@ sub _CreateDynamicFieldArticleTimeUnit {
         Valid => 0,
     );
 
-    my $OrderCount = $List->@* + 1;
+    my $OrderCount  = $List->@* + 1;
     my $FieldConfig = {
         Tooltip => 'Article Time Units',
     };
-    my $DynName =  $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
-    my $ID = $DynamicFieldObject->DynamicFieldAdd(
+    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $ID      = $DynamicFieldObject->DynamicFieldAdd(
         InternalField => 1,
-        Name        => $DynName,
-        Label       => 'Article TimeUnit',
-        FieldOrder  => $OrderCount,
-        FieldType   => 'Text',
-        ObjectType  => 'Article',
-        Config      => $FieldConfig,
-        Reorder     => 1,
-        ValidID     => 1,
-        UserID      => 1,
+        Name          => $DynName,
+        Label         => 'Article TimeUnit',
+        FieldOrder    => $OrderCount,
+        FieldType     => 'Text',
+        ObjectType    => 'Article',
+        Config        => $FieldConfig,
+        Reorder       => 1,
+        ValidID       => 1,
+        UserID        => 1,
     );
 
     if ( !$ID ) {
 
         $Kernel::OM->Get('Kernel::System::Log')->Log(
             Priority => 'error',
-            Message  => "Can't add DynamicField with the name $DynName! Please add the field manually and change the sysconfig option TimeAccounting::TicketSync::SaveTimeUnitToArticleField to the new name.",
+            Message  =>
+                "Can't add DynamicField with the name $DynName! Please add the field manually and change the sysconfig option TimeAccounting::TicketSync::SaveTimeUnitToArticleField to the new name.",
         );
     }
     return 1;
@@ -225,7 +227,7 @@ sub _DeleteDynamicFieldArticleTimeUnit {
     my $ConfigObject       = $Kernel::OM->Get('Kernel::Config');
     my $DynamicFieldObject = $Kernel::OM->Get('Kernel::System::DynamicField');
 
-    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $DynName      = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
     my $DynamicField = $DynamicFieldObject->DynamicFieldGet(
         Name => $DynName,
     );
@@ -417,7 +419,7 @@ sub _MigratePermissions {
         my $SettingName = shift;
 
         my $Config = $Source;
-        my @Keys   = split '###', $SettingName;
+        my @Keys   = split /###/, $SettingName;
         while ( my $Key = shift @Keys ) {
             $Config = $Config->{$Key};
         }
@@ -553,7 +555,7 @@ sub _MigratePermissions {
 
         # Check for NavBar => Navigation.
         if ( $SettingOldConfig->{NavBar} || $SettingDefaults->{NavBar} ) {
-            my ( undef, $Frontend ) = split '###', $Setting->{Name};
+            my ( undef, $Frontend ) = split /###/, $Setting->{Name};
             my $NewSetting = $GetConfig->( $NewConfig, "Frontend::Navigation###${ Frontend }" );
 
             for my $Index ( sort keys %{$NewSetting} ) {

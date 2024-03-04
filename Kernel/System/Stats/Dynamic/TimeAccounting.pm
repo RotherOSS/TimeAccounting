@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -19,7 +19,7 @@ package Kernel::System::Stats::Dynamic::TimeAccounting;
 use strict;
 use warnings;
 
-use Kernel::Language qw(Translatable);
+use Kernel::Language              qw(Translatable);
 use Kernel::System::VariableCheck qw(IsArrayRefWithData);
 
 our @ObjectDependencies = (
@@ -52,8 +52,8 @@ sub GetObjectAttributes {
 
     # set predefined start time
     my $TimeStamp = $DateTimeObjectCurrent->ToEpoch();
-    my ($Date) = split /\s+/, $TimeStamp;
-    my $Today = sprintf "%s 23:59:59", $Date;
+    my ($Date)    = split /\s+/, $TimeStamp;
+    my $Today     = sprintf "%s 23:59:59", $Date;
 
     # get time accounting object
     my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');

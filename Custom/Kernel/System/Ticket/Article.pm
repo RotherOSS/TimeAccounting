@@ -2,7 +2,9 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# --
+# $origin: otobo - 1970606c33d9dba05dcbeff8e347be0368e671b5 - Kernel/System/Ticket/Article.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -21,7 +23,12 @@ use warnings;
 
 use parent qw(Kernel::System::EventHandler);
 
-use Kernel::System::VariableCheck qw(:all);
+# core modules
+
+# CPAN modules
+
+# OTOBO modules
+use Kernel::System::VariableCheck qw(IsArrayRefWithData);
 
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -69,8 +76,7 @@ sub new {
     my ( $Type, %Param ) = @_;
 
     # allocate new hash for object
-    my $Self = {};
-    bless( $Self, $Type );
+    my $Self = bless {}, $Type;
 
     # 0=off; 1=on;
     $Self->{Debug} = $Param{Debug} || 0;
@@ -628,10 +634,11 @@ sub ArticleAccountedTimeGet {
         Bind => [ \$Param{ArticleID} ],
     );
 
+    # Sum the result rows, even if usually there is only one row.
     my $AccountedTime = 0;
-    while ( my @Row = $DBObject->FetchrowArray() ) {
-        $Row[0] =~ s/,/./g;
-        $AccountedTime = $AccountedTime + $Row[0];
+    while ( my ($TimeUnit) = $DBObject->FetchrowArray ) {
+        $TimeUnit =~ s/,/./g;
+        $AccountedTime += $TimeUnit;
     }
 
     return $AccountedTime;
@@ -1140,6 +1147,7 @@ sub ArticleSearchableFieldsList {
 
     return %SearchableFields;
 }
+# Rother OSS / TimeAccounting
 
 =head2 ArticleAccountedTimeUpdate()
 
@@ -1211,6 +1219,7 @@ sub ArticleAccountedTimeUpdate {
 
     return 1;
 };
+# EO TimeAccounting
 
 =head1 PRIVATE FUNCTIONS
 

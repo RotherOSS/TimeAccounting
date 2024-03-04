@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -207,8 +207,8 @@ sub Run {
         $Output .= $LayoutObject->NavigationBar();
         $Output .= $Note
             ? $LayoutObject->Notify(
-            Priority => 'Error',
-            Info     => $Note,
+                Priority => 'Error',
+                Info     => $Note,
             )
             : '';
         $Self->_ProjectSettingsEdit(
@@ -321,8 +321,8 @@ sub Run {
         $Output .= $LayoutObject->NavigationBar();
         $Output .= $Note
             ? $LayoutObject->Notify(
-            Priority => 'Error',
-            Info     => $Note,
+                Priority => 'Error',
+                Info     => $Note,
             )
             : '';
         $Self->_ProjectSettingsEdit(
@@ -429,8 +429,8 @@ sub Run {
         $Output .= $LayoutObject->NavigationBar();
         $Output .= $Note
             ? $LayoutObject->Notify(
-            Priority => 'Error',
-            Info     => $Note,
+                Priority => 'Error',
+                Info     => $Note,
             )
             : '';
         $Self->_TaskSettingsEdit(
@@ -551,8 +551,8 @@ sub Run {
         $Output .= $LayoutObject->NavigationBar();
         $Output .= $Note
             ? $LayoutObject->Notify(
-            Priority => 'Error',
-            Info     => $Note,
+                Priority => 'Error',
+                Info     => $Note,
             )
             : '';
         $Self->_TaskSettingsEdit(
@@ -725,10 +725,10 @@ sub Run {
     if ($Note) {
         $Output .= $Note eq 'EditUser'
             ? $LayoutObject->Notify(
-            Info => Translatable('User updated!'),
+                Info => Translatable('User updated!'),
             )
             : $LayoutObject->Notify(
-            Info => Translatable('User added!'),
+                Info => Translatable('User added!'),
             );
     }
 
@@ -761,7 +761,7 @@ sub _CheckValidityUserPeriods {
                 $Errors{ $Parameter . '-' . $Period . 'ErrorType' } = 'MissingValue';
             }
         }
-        my ( $Year, $Month, $Day ) = split( '-', $GetParam{DateStart} );
+        my ( $Year, $Month, $Day ) = split( /-/, $GetParam{DateStart} );
         my $StartDate = $TimeAccountingObject->Date2SystemTime(
             Year   => $Year,
             Month  => $Month,
@@ -770,7 +770,7 @@ sub _CheckValidityUserPeriods {
             Minute => 0,
             Second => 0,
         );
-        ( $Year, $Month, $Day ) = split( '-', $GetParam{DateEnd} );
+        ( $Year, $Month, $Day ) = split( /-/, $GetParam{DateEnd} );
         my $EndDate = $TimeAccountingObject->Date2SystemTime(
             Year   => $Year,
             Month  => $Month,
@@ -1266,7 +1266,7 @@ sub _UserSettingsEdit {
             $LayoutObject->Block(
                 Name => 'DateStart'
                     . (
-                    $Param{Errors}->{ 'DateStart-' . $Period . 'ErrorType' }
+                        $Param{Errors}->{ 'DateStart-' . $Period . 'ErrorType' }
                         || 'MissingValue'
                     ),
                 Data => { Period => $Period },

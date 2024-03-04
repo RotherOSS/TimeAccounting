@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -325,7 +325,7 @@ sub Run {
     $Kernel::OM->Get('Kernel::System::AuthSession')->UpdateSessionID(
         SessionID => $Self->{SessionID},
         Key       => 'LastScreen',
-        Value =>
+        Value     =>
             "Action=$Self->{Action};Year=$Param{Year};Month=$Param{Month}",
     );
 
@@ -477,7 +477,7 @@ sub Run {
                 $Param{ProjectID}  = $ProjectID;
                 $Param{Action}     = $ActionRef->{Name};
                 $Param{Hours}      = sprintf( "%.2f", $ActionRef->{PerMonth} || 0 );
-                $Param{HoursTotal} = sprintf( "%.2f", $ActionRef->{Total} || 0 );
+                $Param{HoursTotal} = sprintf( "%.2f", $ActionRef->{Total}    || 0 );
                 $Total      += $Param{Hours};
                 $TotalTotal += $Param{HoursTotal};
                 $LayoutObject->Block(
