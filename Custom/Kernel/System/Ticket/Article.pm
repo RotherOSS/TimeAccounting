@@ -4,7 +4,7 @@
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
 # Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
-# $origin: otobo - 1970606c33d9dba05dcbeff8e347be0368e671b5 - Kernel/System/Ticket/Article.pm
+# $origin: otobo - 5636fd3317c8a35b34e1f61a6d1e8b31fad4cf19 - Kernel/System/Ticket/Article.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -130,8 +130,10 @@ sub BackendForArticle {
 
     if ( !$Param{CommunicationChannelID} ) {
         my @BaseArticles = $Self->ArticleList(
-            TicketID  => $Param{TicketID},
-            ArticleID => $Param{ArticleID},
+            TicketID             => $Param{TicketID},
+            ArticleID            => $Param{ArticleID},
+            ShowDeletedArticles  => $Param{ShowDeletedArticles} || '',
+            VersionView          => $Param{VersionView}
         );
         if (@BaseArticles) {
             $Param{CommunicationChannelID} = $BaseArticles[0]->{CommunicationChannelID};
@@ -358,6 +360,7 @@ Set article flags.
         Key       => 'Seen',
         Value     => 1,
         UserID    => 123,
+        ArticleDeleted => 1, #Optional
     );
 
 Events:
@@ -383,6 +386,7 @@ sub ArticleFlagSet {
     # check if set is needed
     return 1 if defined $Flag{ $Param{Key} } && $Flag{ $Param{Key} } eq $Param{Value};
 
+    return 1 if $Param{ArticleDeleted};
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
@@ -1228,7 +1232,9 @@ sub ArticleAccountedTimeUpdate {
 Returns an array-hash with the meta articles of the current ticket.
 
     my @MetaArticles = $ArticleObject->_MetaArticleList(
-        TicketID => 123,
+        TicketID            => 123,
+        ShowDeletedArticles => 1, #Optional
+        VersionView         => 1, #Optional
     );
 
 Returns:
@@ -1245,6 +1251,7 @@ Returns:
             CreateTime             => '2017-03-01 00:00:00',
             ChangeBy               => 1,
             ChangeTime             => '2017-03-01 00:00:00',
+            ArticleDeleted         => 1, #If article is deleted
         },
         { ... },
     )
@@ -1265,28 +1272,54 @@ sub _MetaArticleList {
     }
 
     my $CacheKey = '_MetaArticleList::' . $Param{TicketID};
+    
+    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
+        my $Cached = $Kernel::OM->Get('Kernel::System::Cache')->Get(
+            Type => $Self->{CacheType},
+            Key  => $CacheKey,
+        );
 
-    my $Cached = $Kernel::OM->Get('Kernel::System::Cache')->Get(
-        Type => $Self->{CacheType},
-        Key  => $CacheKey,
-    );
-
-    if ( ref $Cached eq 'ARRAY' ) {
-        return @{$Cached};
+        if ( ref $Cached eq 'ARRAY' ) {
+            return @{$Cached};
+        }
     }
 
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
-    return if !$DBObject->Prepare(
-        SQL => '
-            SELECT id, ticket_id, communication_channel_id, article_sender_type_id, is_visible_for_customer,
-                        create_by, create_time, change_by, change_time
-            FROM article
-            WHERE ticket_id = ?
-            ORDER BY id ASC',
-        Bind => [ \$Param{TicketID} ],
-    );
+    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
+        return if !$DBObject->Prepare(
+            SQL => "
+                SELECT a.id, a.ticket_id, a.communication_channel_id, a.article_sender_type_id, a.is_visible_for_customer,
+                a.create_by, a.create_time, a.change_by, a.change_time, 0
+                FROM article a WHERE a.ticket_id = ? ORDER BY a.id ASC",
+            Bind => [ \$Param{TicketID} ],
+        );
+    } 
+    elsif ( $Param{VersionView} ) {
+        return if !$DBObject->Prepare(
+            SQL => "
+                    SELECT av.id, av.ticket_id, av.communication_channel_id, av.article_sender_type_id, av.is_visible_for_customer,
+                    av.create_by, av.create_time, av.change_by, av.change_time, av.article_delete
+                    FROM article_version av WHERE av.ticket_id = ? AND av.article_delete <> 1 ",
+            Bind => [ \$Param{TicketID} ],
+        );
+    }  
+    else {
+        return if !$DBObject->Prepare(
+            SQL => "SELECT * FROM (
+                        SELECT a.id, a.ticket_id, a.communication_channel_id, a.article_sender_type_id, a.is_visible_for_customer,
+                        a.create_by, a.create_time, a.change_by, a.change_time, 0 AS article_delete
+                        FROM article a WHERE a.ticket_id = ?
+                    UNION
+                        SELECT av.source_article_id AS id, av.ticket_id, av.communication_channel_id, av.article_sender_type_id, av.is_visible_for_customer,
+                        av.create_by, av.create_time, av.change_by, av.change_time, av.article_delete
+                        FROM article_version av WHERE av.ticket_id = ? AND av.article_delete = 1
+                    ) at
+                    ORDER BY at.create_time ASC",
+            Bind => [ \$Param{TicketID}, \$Param{TicketID} ],
+        );
+    }
 
     my @Index;
     my $Count;
@@ -1302,15 +1335,23 @@ sub _MetaArticleList {
         $Result{ChangeBy}               = $Row[7];
         $Result{ChangeTime}             = $Row[8];
         $Result{ArticleNumber}          = ++$Count;
+
+        # key shall only exist if value is 1
+        if ( $Row[9] ) {
+            $Result{ArticleDeleted} = 1;
+        }
+
         push @Index, \%Result;
     }
 
-    $Kernel::OM->Get('Kernel::System::Cache')->Set(
-        Type  => $Self->{CacheType},
-        TTL   => $Self->{CacheTTL},
-        Key   => $CacheKey,
-        Value => \@Index,
-    );
+    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
+        $Kernel::OM->Get('Kernel::System::Cache')->Set(
+            Type  => $Self->{CacheType},
+            TTL   => $Self->{CacheTTL},
+            Key   => $CacheKey,
+            Value => \@Index,
+        );
+    }
 
     return @Index;
 }
