@@ -4,7 +4,7 @@
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
 # Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
-# $origin: otobo - 5636fd3317c8a35b34e1f61a6d1e8b31fad4cf19 - Kernel/System/Ticket/Article.pm
+# $origin: otobo - a696e03179a4cecbe9b64fa8bbabb83e3ecd084c - Kernel/System/Ticket/Article.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -130,10 +130,10 @@ sub BackendForArticle {
 
     if ( !$Param{CommunicationChannelID} ) {
         my @BaseArticles = $Self->ArticleList(
-            TicketID             => $Param{TicketID},
-            ArticleID            => $Param{ArticleID},
-            ShowDeletedArticles  => $Param{ShowDeletedArticles} || '',
-            VersionView          => $Param{VersionView}
+            TicketID            => $Param{TicketID},
+            ArticleID           => $Param{ArticleID},
+            ShowDeletedArticles => $Param{ShowDeletedArticles} || '',
+            VersionView         => $Param{VersionView}
         );
         if (@BaseArticles) {
             $Param{CommunicationChannelID} = $BaseArticles[0]->{CommunicationChannelID};
@@ -387,6 +387,7 @@ sub ArticleFlagSet {
     return 1 if defined $Flag{ $Param{Key} } && $Flag{ $Param{Key} } eq $Param{Value};
 
     return 1 if $Param{ArticleDeleted};
+
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
@@ -1272,7 +1273,7 @@ sub _MetaArticleList {
     }
 
     my $CacheKey = '_MetaArticleList::' . $Param{TicketID};
-    
+
     if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
         my $Cached = $Kernel::OM->Get('Kernel::System::Cache')->Get(
             Type => $Self->{CacheType},
@@ -1295,7 +1296,7 @@ sub _MetaArticleList {
                 FROM article a WHERE a.ticket_id = ? ORDER BY a.id ASC",
             Bind => [ \$Param{TicketID} ],
         );
-    } 
+    }
     elsif ( $Param{VersionView} ) {
         return if !$DBObject->Prepare(
             SQL => "
@@ -1304,7 +1305,7 @@ sub _MetaArticleList {
                     FROM article_version av WHERE av.ticket_id = ? AND av.article_delete <> 1 ",
             Bind => [ \$Param{TicketID} ],
         );
-    }  
+    }
     else {
         return if !$DBObject->Prepare(
             SQL => "SELECT * FROM (
