@@ -1,7 +1,7 @@
 # --
 # OTOBO is a web-based ticketing system for service organisations.
 # --
-# Copyright (C) 2019-2022 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -46,7 +46,7 @@ sub Run {
     my ( $Self, %Param ) = @_;
 
     # Check if the module is active
-    my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
     if ( !$ConfigObject->Get('TimeAccounting::TicketSync::Enable') ) {
         return 1;
     }
@@ -114,70 +114,76 @@ sub Run {
         }
 
         # Now we split the date to year month day
-        $Article{CreateTime} =~ /^(\d\d\d\d)\-(\d\d)\-(\d\d).*$/;
-        my $Year  = $1;
-        my $Month = $2;
-        my $Day   = $3;
+        my $Year;
+        my $Month;
+        my $Day;
+        if ( $Article{CreateTime} =~ /^(\d\d\d\d)\-(\d\d)\-(\d\d).*$/ ) {
+            $Year  = $1;
+            $Month = $2;
+            $Day   = $3;
+        }
 
         # Now I write the time unit to timeaccounting module
         # Get TimeAccouning project and action, which was set with TimeUnit
-    	my $ProjectID;
-	    my $ActionID;
+        my $ProjectID;
+        my $ActionID;
 
         my $DefaultProjectID = $ConfigObject->Get('TimeAccounting::TicketSync::DefaultProjectID');
         my $DefaultActionID  = $ConfigObject->Get('TimeAccounting::TicketSync::DefaultActionID');
 
         # First of all, we check if the project (customer_id) already exists or need to create
         my %Ticket = $TicketObject->TicketGet(
-            TicketID      => $Param{Data}{TicketID},
-            UserID        => 1,
+            TicketID => $Param{Data}{TicketID},
+            UserID   => 1,
         );
 
-    	my $ProjectName = $Self->_CheckProjectName(
+        my $ProjectName = $Self->_CheckProjectName(
             ProjectName => $Ticket{CustomerID} || '',
         );
 
-	    my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $ProjectName );
+        my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $ProjectName );
 
- 	    # We need to create the project if it not exist.
-	    if ( !IsHashRefWithData(\%ProjectData) ) {
+        # We need to create the project if it not exist.
+        if ( !IsHashRefWithData( \%ProjectData ) ) {
             $ProjectID = $Self->_CreateProject(
                 ProjectName => $ProjectName,
-		        Year => $Year,
-		        Month => $Month,
-		        Day => $Day,
+                Year        => $Year,
+                Month       => $Month,
+                Day         => $Day,
             );
-        } else {
-            $ProjectID =  $ProjectData{ID};
+        }
+        else {
+            $ProjectID = $ProjectData{ID};
         }
 
         # Get the right TimeAccounting Action for the entry
-	    my $ServiceToActionHashRef = $ConfigObject->Get('TimeAccounting::TicketSync::ServiceToAction');
+        my $ServiceToActionHashRef = $ConfigObject->Get('TimeAccounting::TicketSync::ServiceToAction');
 
         if ( IsHashRefWithData($ServiceToActionHashRef) ) {
 
             ACTION:
-            for my $Action (keys %$ServiceToActionHashRef) {
-	            my $ServiceArrayRef = $ServiceToActionHashRef->{$Action};
+            for my $Action ( keys %$ServiceToActionHashRef ) {
+                my $ServiceArrayRef = $ServiceToActionHashRef->{$Action};
 
-	            SERVICE:
-	            for my $Service (@$ServiceArrayRef) {
+                SERVICE:
+                for my $Service (@$ServiceArrayRef) {
                     next SERVICE if $Ticket{Service} !~ /$Service/i;
 
-		            # Now wo have the right service and action. We need only the ID in the next step!
-		            my %ActionData = $TimeAccountingObject->ActionGet( Action => $Action );
-		            $ActionID = $ActionData{ID};
+                    # Now wo have the right service and action. We need only the ID in the next step!
+                    my %ActionData = $TimeAccountingObject->ActionGet( Action => $Action );
+                    $ActionID = $ActionData{ID};
                     last ACTION;
-	            }
-	        }
+                }
+            }
 
-	        # No Action exists for this service, so we use the default action
-	        if (!$ActionID) {
+            # No Action exists for this service, so we use the default action
+            if ( !$ActionID ) {
                 $ActionID = $DefaultActionID;
-	        }
-        } else {
+            }
+        }
+        else {
             $ActionID = $DefaultActionID;
-	    }
+        }
         if ( $Year && $Month && $Day && $Article{CreateBy} && $Article{TimeUnits} ) {
 
             my $TicketNumber = $TicketObject->TicketNumberLookup(
@@ -195,12 +201,12 @@ sub Run {
                 Overtime     => 0,
                 WorkingUnits => [
                     {
-                        ProjectID => $ProjectID,
-                        ActionID  => $ActionID,
-                        Remark    => 'Time: ' . $CurrentTimeObject->Format( Format => '%H:%M') . ' - ' . $Article{Subject},
-                        TicketID  => $Param{Data}->{TicketID},
-                        ArticleID => $Param{Data}->{ArticleID},
-                        Period    => $Article{TimeUnits} / 60,
+                        ProjectID  => $ProjectID,
+                        ActionID   => $ActionID,
+                        Remark     => 'Time: ' . $CurrentTimeObject->Format( Format => '%H:%M' ) . ' - ' . $Article{Subject},
+                        TicketID   => $Param{Data}->{TicketID},
+                        ArticleID  => $Param{Data}->{ArticleID},
+                        Period     => $Article{TimeUnits} / 60,
                         BaseModule => 'Ticket',
                     },
                 ],
@@ -235,13 +241,12 @@ sub _CheckProjectName {
     my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
     my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
 
-
     my $DefaultProjectID = $ConfigObject->Get('TimeAccounting::TicketSync::DefaultProjectID');
-    my %DefaultProject = $TimeAccountingObject->ProjectGet( ID => $DefaultProjectID );
-    my $DefaultName = $DefaultProject{Project};
+    my %DefaultProject   = $TimeAccountingObject->ProjectGet( ID => $DefaultProjectID );
+    my $DefaultName      = $DefaultProject{Project};
 
     # check needed stuff
-    if ( !$Param{ProjectName} || $Param{ProjectName} eq '') {
+    if ( !$Param{ProjectName} || $Param{ProjectName} eq '' ) {
         return $DefaultName;
     }
 
@@ -259,28 +264,29 @@ sub _CheckProjectName {
     );
 
     # Return regular project cause customercompany exists
-    if (IsHashRefWithData(\%CustomerCompany) ) {
-	my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $Param{ProjectName} );
+    if ( IsHashRefWithData( \%CustomerCompany ) ) {
+        my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $Param{ProjectName} );
 
-        if ( IsHashRefWithData(\%ProjectData) ) {
+        if ( IsHashRefWithData( \%ProjectData ) ) {
             return $ProjectData{Project};
         }
-	return $Param{ProjectName};
+        return $Param{ProjectName};
     }
-		    
-    # Customer company not exist, so we need to check if we create projects from tmp customers.		    
-    if ( !$ConfigObject->Get('TimeAccounting::TicketSync::CreateProjectFromTMPCustomerID' )) {
+
+    # Customer company not exist, so we need to check if we create projects from tmp customers.
+    if ( !$ConfigObject->Get('TimeAccounting::TicketSync::CreateProjectFromTMPCustomerID') ) {
         return $DefaultName;
     }
 
     # Now we now that we need to create the project if it not exist
-    my ($User, $Domain) = split( /@/,  $Param{ProjectName} );
+    my ( $User, $Domain ) = split( /@/, $Param{ProjectName} );
     my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $Domain );
 
-    if (IsHashRefWithData(\%ProjectData) ) {
+    if ( IsHashRefWithData( \%ProjectData ) ) {
         return $ProjectData{Project};
-    } else {
-	
+    }
+    else {
+
         return $Domain;
     }
     return $DefaultName;
@@ -301,12 +307,12 @@ sub _CreateProject {
     my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
 
     my $ProjectID = $TimeAccountingObject->ProjectSettingsInsert(
-       Project            => $Param{ProjectName},
-       ProjectDescription => "Create Time: $Param{Year}-$Param{Month}-$Param{Day}",
-       ProjectStatus      => 1,
+        Project            => $Param{ProjectName},
+        ProjectDescription => "Create Time: $Param{Year}-$Param{Month}-$Param{Day}",
+        ProjectStatus      => 1,
     );
 
-    if ( $ProjectID ) {
+    if ($ProjectID) {
         return $ProjectID;
     }
 }

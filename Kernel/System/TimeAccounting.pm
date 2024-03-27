@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2020 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -1192,7 +1192,7 @@ sub UserSettingsUpdate {
             SET description = ?, show_overtime = ?, create_project = ?, allow_skip = ?, calendar = ?
             WHERE user_id = ?',
         Bind => [
-            \$Param{Description}, \$Param{ShowOvertime},
+            \$Param{Description},   \$Param{ShowOvertime},
             \$Param{CreateProject}, \$Param{AllowSkip}, \$Param{Calendar}, \$Param{UserID}
         ],
     );
@@ -1212,7 +1212,7 @@ sub UserSettingsUpdate {
                 \$Param{Period}->{$Period}{LeaveDays},   \$Param{Period}->{$Period}{DateStart},
                 \$Param{Period}->{$Period}{DateEnd},     \$Param{Period}->{$Period}{Overtime},
                 \$Param{Period}->{$Period}{WeeklyHours}, \$Param{Period}->{$Period}{UserStatus},
-                \$UserID, \$Period,
+                \$UserID,                                \$Period,
             ]
         );
     }
@@ -1535,7 +1535,13 @@ sub WorkingUnitsGet {
     ROW:
     while ( my @Row = $DBObject->FetchrowArray() ) {
 
-        next ROW if $Row[4] !~ m{^ (.+?) \s (\d+:\d+) : (\d+) }xms;
+        my $StartTime;
+        if ( $Row[4] =~ m{^ (.+?) \s (\d+:\d+) : (\d+) }xms ) {
+            $StartTime = $2;
+        }
+        else {
+            next ROW;
+        }
 
         # check if it is a special working unit
         if ( $Row[1] == -1 ) {
@@ -1548,8 +1554,7 @@ sub WorkingUnitsGet {
             next ROW;
         }
 
-        my $StartTime = $2;
-        my $EndTime   = '';
+        my $EndTime = '';
         if ( $Row[5] =~ m{^(.+?)\s(\d+:\d+):(\d+)}xms ) {
             $EndTime = $2;
 
@@ -1668,8 +1673,8 @@ sub WorkingUnitsInsert {
                 time_end, period, ticket_id, article_id, base, created )
             VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp)';
         my $Bind = [
-            \$Param{UserID}, \$UnitRef->{ProjectID}, \$UnitRef->{ActionID},
-            \$UnitRef->{Remark}, \$StartTime, \$EndTime, \$UnitRef->{Period},
+            \$Param{UserID},       \$UnitRef->{ProjectID}, \$UnitRef->{ActionID},
+            \$UnitRef->{Remark},   \$StartTime,            \$EndTime, \$UnitRef->{Period},
             \$UnitRef->{TicketID}, \$UnitRef->{ArticleID}, \$UnitRef->{BaseModule},
         ];
 
@@ -2404,7 +2409,7 @@ sub Date2SystemTime {
     if ( !$DateTimeObject ) {
         $Kernel::OM->Get('Kernel::System::Log')->Log(
             Priority => 'error',
-            Message =>
+            Message  =>
                 "Invalid Date '$Param{Year}-$Param{Month}-$Param{Day} $Param{Hour}:$Param{Minute}:$Param{Second}'!",
         );
         return;
