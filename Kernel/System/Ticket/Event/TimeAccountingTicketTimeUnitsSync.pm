@@ -51,6 +51,17 @@ sub Run {
         return 1;
     }
 
+    # check if dynamic field name is configured and if field exists
+    my $SyncDFName = $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField');
+
+    return 1 unless $SyncDFName;
+
+    my $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
+        Name => $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField'),
+    );
+
+    return 1 unless IsHashRefWithData($DynamicFieldConfig);
+
     # check needed stuff
     for (qw(Data Event Config)) {
         if ( !$Param{$_} ) {
@@ -76,7 +87,6 @@ sub Run {
         # get ticket object
         my $TicketObject         = $Kernel::OM->Get('Kernel::System::Ticket');
         my $ArticleObject        = $Kernel::OM->Get('Kernel::System::Ticket::Article');
-        my $DynamicFieldObject   = $Kernel::OM->Get('Kernel::System::DynamicField');
         my $BackendObject        = $Kernel::OM->Get('Kernel::System::DynamicField::Backend');
         my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
         my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
@@ -99,9 +109,6 @@ sub Run {
         );
 
         # I write the Artice TimeUnit to a dynamic field for later viewing
-        my $DynamicFieldConfig = $DynamicFieldObject->DynamicFieldGet(
-            Name => $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField'),
-        );
         my $Success = $BackendObject->ValueSet(
             DynamicFieldConfig => $DynamicFieldConfig,          # complete config of the DynamicField
             ObjectID           => $Param{Data}->{ArticleID},    # ID of the current object that the field
