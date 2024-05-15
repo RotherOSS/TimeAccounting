@@ -877,10 +877,10 @@ sub _GetPreviousMonthDates {
     my @NewStartDate = $TimeAccountingObject->AddDeltaYMD(
         $CurrentDate[ $Param{DateIndexToName}->{'Year'} ],
         $CurrentDate[ $Param{DateIndexToName}->{'Month'} ],
-        1,
-        0,
+         1,
+         0,
         -1,
-        0,
+         0,
     );
 
     # Get first day of next month relative to previous month.
@@ -888,9 +888,9 @@ sub _GetPreviousMonthDates {
         $NewStartDate[0],
         $NewStartDate[1],
         $NewStartDate[2],
-        0,
+         0,
         +1,
-        0,
+         0,
     );
 
     # Get last of day previous month.
@@ -898,8 +898,8 @@ sub _GetPreviousMonthDates {
         $NewStopDate[0],
         $NewStopDate[1],
         $NewStopDate[2],
-        0,
-        0,
+         0,
+         0,
         -1,
     );
 
