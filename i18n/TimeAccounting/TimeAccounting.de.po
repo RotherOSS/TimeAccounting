@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
 "POT-Creation-Date: 2020-01-24 14:51+0000\n"
-"PO-Revision-Date: 2022-12-02 08:22+0000\n"
-"Last-Translator: sr <sr@rother-oss.com>\n"
-"Language-Team: German <https://translate.otobo.org/projects/otobo10/"
+"PO-Revision-Date: 2024-05-16 09:13+0000\n"
+"Last-Translator: Markus Hlinka <mah@rother-oss.com>\n"
+"Language-Team: German <http://weblate.otobo.org/projects/opm-packages/"
 "timeaccounting/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. Template: AgentTimeAccountingDelete
 msgid "Do you really want to delete the Time Accounting of this day?"
@@ -19,7 +19,7 @@ msgstr "Möchten Sie die erfasste Zeit für den aktuellen Tag löschen?"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Edit Time Record"
-msgstr "Zeitabrechnung bearbeiten"
+msgstr "Zeiterfassung bearbeiten"
 
 #. Template: AgentTimeAccountingEdit
 msgid "Go to settings"
@@ -231,7 +231,7 @@ msgstr "Summe"
 
 #. Template: AgentTimeAccountingReporting
 msgid "Time reporting"
-msgstr "Zeiterfassung"
+msgstr "Zeitberichterstattung"
 
 #. Template: AgentTimeAccountingReporting
 msgid "Month Navigation"
@@ -291,7 +291,7 @@ msgstr "Derzeit werden alle zeiterfassenden Benutzer angezeigt. Um diese Einstel
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Time Accounting Project Settings"
-msgstr "Zeitabrechnung-Projekteinstellungen bearbeiten"
+msgstr "Zeiterfassung-Projekteinstellungen bearbeiten"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add project"
@@ -315,7 +315,7 @@ msgstr "Ein Projekt mit gleichem Namen existiert bereits. Bitte wählen Sie eine
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Time Accounting Settings"
-msgstr "Zeitabrechnungs-Einstellungen bearbeiten"
+msgstr "Zeiterfassung-Einstellungen bearbeiten"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add task"
@@ -583,7 +583,7 @@ msgstr "Benutzer hinzugefügt!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Add a user to time accounting..."
-msgstr "Einen Benutzer zur Zeitabrechnung hinzufügen ..."
+msgstr "Einen Benutzer zur Zeiterfassung hinzufügen ..."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "New User"
@@ -679,7 +679,9 @@ msgstr "Innerhalb dieser Konfigurationsoption kann eine RegExp definiert werden,
 
 #. SysConfig
 msgid "Determines if the statistics module may generate time accounting information."
-msgstr "Bestimmt, ob das Statistik-Modul Informationen zur Zeitabrechnung generieren kann."
+msgstr ""
+"Bestimmt, ob das Statistik-Modul Informationen zur Zeiterfassung generieren "
+"kann."
 
 #. SysConfig
 msgid "Edit time accounting settings."
@@ -751,31 +753,31 @@ msgstr "Modul, dass den Agent im Notification-Bereich des Agent-Interfaces darü
 
 #. SysConfig
 msgid "Time Accounting"
-msgstr "Zeitabrechnung"
+msgstr "Zeiterfassung"
 
 #. SysConfig
 msgid "Time accounting edit."
-msgstr "Zeitabrechnung Bearbeitung."
+msgstr "Zeiterfassung Bearbeitung."
 
 #. SysConfig
 msgid "Time accounting overview."
-msgstr "Zeitabrechnungsübersicht."
+msgstr "Zeiterfassungsübersicht."
 
 #. SysConfig
 msgid "Time accounting reporting."
-msgstr "Zeitabrechnung Berichterstattung."
+msgstr "Zeiterfassung Berichterstattung."
 
 #. SysConfig
 msgid "Time accounting settings."
-msgstr "Zeitabrechnung Einstellungen."
+msgstr "Zeiterfassung Einstellungen."
 
 #. SysConfig
 msgid "Time accounting view."
-msgstr "Zeitabrechnung Ansicht."
+msgstr "Zeiterfassung Ansicht."
 
 #. SysConfig
 msgid "Time accounting."
-msgstr "Zeitabrechnung."
+msgstr "Zeiterfassung."
 
 #. SysConfig
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
