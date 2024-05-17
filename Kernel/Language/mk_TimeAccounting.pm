@@ -44,7 +44,9 @@ sub Data {
     $Self->{Translation}->{'Project'} = 'Проект';
     $Self->{Translation}->{'Task'} = 'Задача';
     $Self->{Translation}->{'Remark'} = 'Напомена';
+    $Self->{Translation}->{'Origin'} = '';
     $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = '';
+    $Self->{Translation}->{'Ursprung'} = '';
     $Self->{Translation}->{'Negative times are not allowed.'} = 'Негативно време не е дозволено.';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =
         'Дуплирање на часови не е дозволено. Време на почнување се совпаѓа со друг интервал.';
@@ -57,6 +59,7 @@ sub Data {
     $Self->{Translation}->{'Invalid period! A day has only 24 hours.'} = 'Невалиден период! Денот има само 24 часа.';
     $Self->{Translation}->{'A valid period must be greater than zero.'} = 'Валидниот рок мора да е поголем од нула.';
     $Self->{Translation}->{'Invalid period! Negative periods are not allowed.'} = 'Невалиден период! Негативни периоди не се дозволени.';
+    $Self->{Translation}->{'Submit changes'} = '';
     $Self->{Translation}->{'Add one row'} = 'Додади еден ред';
     $Self->{Translation}->{'You can only select one checkbox element!'} = 'Можете да изберете само еден поле од елемент!';
     $Self->{Translation}->{'Are you sure that you worked while you were on sick leave?'} = 'Дали сте сигурни дека сте работеле додека сте биле на боледување?';
@@ -221,8 +224,14 @@ sub Data {
     $Self->{Translation}->{'Confirm insert'} = 'Прифати додавање';
 
     # SysConfig
+    $Self->{Translation}->{'Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module.'} =
+        '';
     $Self->{Translation}->{'Agent interface notification module to see the number of incomplete working days for the user.'} =
         'Модула за интерфејс на Агент за да го гледа бројот на незавршени работни денови за корисник.';
+    $Self->{Translation}->{'Also synchronise customers as a new project if they have not yet been created in the customer database.'} =
+        '';
+    $Self->{Translation}->{'As soon as the synchronisation of ticket TimeUnits is activated, it is possible to set the entries ReadOnly.'} =
+        '';
     $Self->{Translation}->{'Default name for new actions.'} = 'Вообичаено име за нови акции.';
     $Self->{Translation}->{'Default name for new projects.'} = 'Вообичаено име за нови проекти.';
     $Self->{Translation}->{'Default setting for date end.'} = 'Вообичаено подесување за краен датум.';
@@ -240,6 +249,8 @@ sub Data {
         'Одредува дали модулот за статистика може да генерира информации за пресметка на време.';
     $Self->{Translation}->{'Edit time accounting settings.'} = '';
     $Self->{Translation}->{'Edit time record.'} = '';
+    $Self->{Translation}->{'Every time a agent add TimeUnits to a ticket, we sync the information to the timeaccounting module.'} =
+        '';
     $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'За колку многу денови пред можете да вметнете работни единици.';
     $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
         'Ако е овозможено, само корисниците кои ќе додадат работното време на избраните проекти  ќе бидат прикажани.';
@@ -263,6 +274,8 @@ sub Data {
         'Стандарден израз за ограничување на листа во проект според корисничките групи. Клучот се содржи од стандардни изрази за проект(и), содржината содржи листа од групи одделени со запирка.';
     $Self->{Translation}->{'Specifies if working hours can be inserted without start and end times.'} =
         'Специфицира дали работните часови можат да бидат додадени без време на почеток и крај.';
+    $Self->{Translation}->{'Synchronise customers as a new project if they exists in the customer database.'} =
+        '';
     $Self->{Translation}->{'This module forces inserts in TimeAccounting.'} = 'Овој модул присилува внес во Пресметка на време.';
     $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
         'Овој известувачки модул дава предупредување ако има премногу нецелосни работни дена.';
@@ -275,6 +288,14 @@ sub Data {
     $Self->{Translation}->{'Time accounting.'} = ' менаџмент на Време';
     $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
         'Се користи кога некои акции го смалуваат бројот на работни часови (на пример, доколку половина од времето на патување е платено Key => патување;  Content => 50).';
+    $Self->{Translation}->{'Use Service as Action. Please add as key the timeacounting action and the service as value. RegEx are allowed.'} =
+        '';
+    $Self->{Translation}->{'We need to set a default action id when we sync TimeUnits to the TimeAccounting module.'} =
+        '';
+    $Self->{Translation}->{'We need to set a default project id when we sync TimeUnits to the TimeAccounting module.'} =
+        '';
+    $Self->{Translation}->{'We save the Article TimeUnit to a DynamicField from type "Article". Please add here the name of the field if the initinal name is changed.'} =
+        '';
 
 
     push @{ $Self->{JavaScriptStrings} // [] }, (

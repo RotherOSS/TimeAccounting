@@ -44,7 +44,9 @@ sub Data {
     $Self->{Translation}->{'Project'} = 'Пројекат';
     $Self->{Translation}->{'Task'} = 'Задатак';
     $Self->{Translation}->{'Remark'} = 'Напомена';
+    $Self->{Translation}->{'Origin'} = '';
     $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = 'Молимо да додате напомену дужу од 8 карактера!';
+    $Self->{Translation}->{'Ursprung'} = '';
     $Self->{Translation}->{'Negative times are not allowed.'} = 'Негативна времена нису дозвољена.';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =
         'Понављање сати није дозвољено. Време почетка се поклапа са другим интервалом.';
@@ -57,6 +59,7 @@ sub Data {
     $Self->{Translation}->{'Invalid period! A day has only 24 hours.'} = 'Неисправан период! Дан има само 24 сата.';
     $Self->{Translation}->{'A valid period must be greater than zero.'} = 'Исправан период мора бити већи од нуле.';
     $Self->{Translation}->{'Invalid period! Negative periods are not allowed.'} = 'Неисправан период! Негативни периоди нису дозвољени.';
+    $Self->{Translation}->{'Submit changes'} = '';
     $Self->{Translation}->{'Add one row'} = 'Додај један ред';
     $Self->{Translation}->{'You can only select one checkbox element!'} = 'Можете изабрати само једно поље за потврду.';
     $Self->{Translation}->{'Are you sure that you worked while you were on sick leave?'} = 'Да ли сте сигурни да сте радили док сте били на боловању?';
@@ -221,60 +224,144 @@ sub Data {
     $Self->{Translation}->{'Confirm insert'} = 'Потврди унос';
 
     # SysConfig
-    $Self->{Translation}->{'Agent interface notification module to see the number of incomplete working days for the user.'} =
-        'Модул за обавештавање у интерфејсу оператера који приказује број некомплетних радних дана за корисника.';
-    $Self->{Translation}->{'Default name for new actions.'} = 'Подразумевано име нових акција.';
-    $Self->{Translation}->{'Default name for new projects.'} = 'Подразумевано име нових пројеката.';
-    $Self->{Translation}->{'Default setting for date end.'} = 'Подразумевано подешавање за датум завршетка.';
-    $Self->{Translation}->{'Default setting for date start.'} = 'Подразумевано подешавање за датум почетка.';
-    $Self->{Translation}->{'Default setting for description.'} = 'Подразумевано подешавање за опис.';
-    $Self->{Translation}->{'Default setting for leave days.'} = 'Подразумевано подешавање за дане одсуства.';
-    $Self->{Translation}->{'Default setting for overtime.'} = 'Подразумевано подешавање за прековремени рад.';
-    $Self->{Translation}->{'Default setting for the standard weekly hours.'} = 'Подразумевано подешавање за стандардну радну недељу.';
-    $Self->{Translation}->{'Default status for new actions.'} = 'Подразумевани статус за нове акције.';
-    $Self->{Translation}->{'Default status for new projects.'} = 'Подразумевани статус за нове пројекте.';
-    $Self->{Translation}->{'Default status for new users.'} = 'Подразумевани статус нових корисника.';
-    $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
-        'Одређује пројекте за које је напомена обавезна. Ако се RegExp поклопи на пројекту, морате текође унети напомену. RegExp користи smx параметар.';
-    $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
-        'Одређује да ли статистички модул може генерисати информације о обрачуну времена.';
-    $Self->{Translation}->{'Edit time accounting settings.'} = 'Измени подешавања обрачунавања времена.';
-    $Self->{Translation}->{'Edit time record.'} = 'Измени временски запис.';
-    $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'За колико дана уназад можете унети радне јединице.';
-    $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
-        'Ако је активирано, приказани су само корисници који су додали радно време у изабрани пројекат.';
-    $Self->{Translation}->{'If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields.'} =
-        'Ако је активирано, падајући елементи на екрану за измену се мењају у модернизована самодовршавајућа поља.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled.'} =
-        'Ако је активирано, филтер претходних пројеката се може користити уместо две листе пројеката (последњи и сви). Може се користити само ако је TimeAccounting::EnableAutoCompletion активирано.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled.'} =
-        'Ако је активирано, филтер претходних пројеката је подразумевано активан ако има пројеката од пре. Може се користити само ако је EnableAutoCompletion и TimeAccounting::UseFilter активирано.';
-    $Self->{Translation}->{'If enabled, the user is allowed to enter "on vacation leave", "on sick leave" and "on overtime leave" to multiple dates at once.'} =
-        'Ако је активирано, кориснику је дозвољено да унесе "на одмору", "на боловању" и "на слободним данима" на више датума одједном.';
-    $Self->{Translation}->{'Maximum number of working days after which the working units have to be inserted.'} =
-        'Максимални број радних дана после ког треба додати радне јединице.';
-    $Self->{Translation}->{'Maximum number of working days without working units entry after which a warning will be shown.'} =
-        'Максимални број радних дана без уноса радних јединица после ког ће бити приказано упозорење.';
-    $Self->{Translation}->{'Overview.'} = 'Преглед.';
-    $Self->{Translation}->{'Project time reporting.'} = 'Извештавање о времену пројекта.';
-    $Self->{Translation}->{'Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s).'} =
-        'Регуларни изрази за ограничавање листе акција према изабраним пројектима. Кључ садржи регуларни израз за пројект(е), у садржају је регуларни израз за акцију(е).';
-    $Self->{Translation}->{'Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups.'} =
-        'Регуларни изрази за ограничавање листе акција према изабраним корисничким групама. Кључ садржи регуларни израз за пројект(е), у садржају је регуларни израз за групе.';
-    $Self->{Translation}->{'Specifies if working hours can be inserted without start and end times.'} =
-        'Одређује да ли радни сати могу да се унесу без времена почетка и завршетка.';
-    $Self->{Translation}->{'This module forces inserts in TimeAccounting.'} = 'Овај модул намеће унос у обрачун времена.';
-    $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
-        'Овај модул за обавештавање даје упозорење ако има превише некомплетних радних дана.';
-    $Self->{Translation}->{'Time Accounting'} = 'Обрачунавање времена';
-    $Self->{Translation}->{'Time accounting edit.'} = 'Уређивање обрачунавања времена.';
-    $Self->{Translation}->{'Time accounting overview.'} = 'Преглед обрачунавања времена.';
-    $Self->{Translation}->{'Time accounting reporting.'} = 'Извештаји обрачунавања времена.';
-    $Self->{Translation}->{'Time accounting settings.'} = 'Подешавања обрачунавања времена.';
-    $Self->{Translation}->{'Time accounting view.'} = 'Преглед обрачунавања времена.';
-    $Self->{Translation}->{'Time accounting.'} = 'Обрачунавање времена.';
-    $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
-        'За употребу ако неке акције смањују радне сате (на пример, ако се плаћа само пола времена путовања Кључ => путовање; Садржај => 50).';
+    $Self->{Translation}->{'A precentage value of the minimal translation progress per language, to be usable for documentations.'} =
+        '';
+    $Self->{Translation}->{'Access repos via http or https.'} = '';
+    $Self->{Translation}->{'Autoloading of Znuny4OTRSRepo extensions.'} = '';
+    $Self->{Translation}->{'Backend module registration for the config conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the file conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the function redefine check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the manual set module.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for BS ad removal.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for package manager output filter.'} =
+        '';
+    $Self->{Translation}->{'Branch View commit limit'} = 'Ограничење броја комитова у приказу гране';
+    $Self->{Translation}->{'CodePolicy'} = '';
+    $Self->{Translation}->{'Commit limit per page for Branch view screen'} = 'Ограничење броја комитова по страни у екрану приказа гране';
+    $Self->{Translation}->{'Create analysis file'} = '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket and sends to Znuny.'} =
+        '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket.'} = '';
+    $Self->{Translation}->{'Define private addon repos.'} = '';
+    $Self->{Translation}->{'Defines the filter that processes the HTML templates.'} = '';
+    $Self->{Translation}->{'Defines the test module for checking code policy.'} = '';
+    $Self->{Translation}->{'Definition of GIT clone/push URL Prefix.'} = 'Дефиниција адресног префикса за GIT клонирање и слање.';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Дефиниција динамичког поља: Group => група за приступ динамичким пољима; AlwaysVisible => поље може бити уклоњено (0|1); InformationAreaName => наслов додатака; InformationAreaSize => величина и позиција додатака (Large|Small); Name => назив динамичког поља; Priority => редослед динамичких поља; State => статус поља (0 = онемогућено, 1 = омогућено, 2 = обавезно); FilterRepository => регуларни израз који назив складишта мора да задовољава да би поље било приказано; FilterPackage => регуларни израз које назив пакета мора да задовољава да би поље било приказано; FilterBranch => регуларни израз који назив гране мора да задовољава да би поље било приказано; FilterRelease => регуларни израз који верзија издања мора да задовољава да би поље било приказано.';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Дефиниција динамичког поља: Group => група за приступ динамичким пољима; AlwaysVisible => поље може бити уклоњено (0|1); InformationAreaName => наслов додатака; InformationAreaSize => величина и позиција додатака (Large|Small); Name => назив динамичког поља; Priority => редослед динамичких поља; State => статус поља (0 = онемогућено, 1 = омогућено, 2 = обавезно); FilterRepository => регуларни израз који назив складишта мора да задовољава да би поље било приказано; FilterPackage => регуларни израз које назив пакета мора да задовољава да би поље било приказано; FilterBranch => регуларни израз који назив гране мора да задовољава да би поље било приказано; FilterRelease => регуларни израз који верзија издања мора да задовољава да би поље било приказано.';
+    $Self->{Translation}->{'Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date).'} =
+        'Дефиниција екстерних MD5 вредности (кључ => MD5, вредност => Vendor, PackageName, Version, Date).';
+    $Self->{Translation}->{'Definition of mappings between public repository requests and internal OPMS repositories.'} =
+        'Мапирање складишта у јавним захтевима са интерним OPMS складиштима.';
+    $Self->{Translation}->{'Definition of package states.'} = 'Дефиниција стања пакета.';
+    $Self->{Translation}->{'Definition of renamed OPMS packages.'} = 'Дефиниција OPMS пакета са промењеним именом.';
+    $Self->{Translation}->{'Directory, which is used by Git to cache repositories.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store temporary data.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store working copies.'} = '';
+    $Self->{Translation}->{'Disable online repositories.'} = '';
+    $Self->{Translation}->{'Do not log git ssh connection authorization results for these users. Useful for automated stuff.'} =
+        'Искључи бележење ауторизација приликом остваривања Git SSH конекција за ове кориснике. Корисно за аутоматизацију.';
+    $Self->{Translation}->{'Dynamic Fields Screens'} = '';
+    $Self->{Translation}->{'DynamicFieldScreen'} = '';
+    $Self->{Translation}->{'Export all available public keys to authorized_keys file.'} = 'Извези све доступне јавне кључеве у датотеку authorized_keys.';
+    $Self->{Translation}->{'Export all relevant releases to ftp server.'} = 'Извоз свих релевантних издања на FTP сервер.';
+    $Self->{Translation}->{'Frontend module registration for the OPMS object in the agent interface.'} =
+        'Модул регистрације за OPMS објекат у интерфејсу оператера.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepository object in the public interface.'} =
+        'Модул регистрације за PublicOPMSRepository објекат у јавном интерфејсу.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface.'} =
+        'Модул регистрације за PublicOPMSRepositoryLookup објекат у јавном интерфејсу.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSTestBuild object in the public interface.'} =
+        'Модул регистрације за PublicOPMSTestBuild објекат у јавном интерфејсу.';
+    $Self->{Translation}->{'Frontend module registration for the PublicPackageVerification object in the public interface.'} =
+        'Модул регистрације за PublicPackageVerification објекат у јавном интерфејсу.';
+    $Self->{Translation}->{'Frontend module registration for the admin interface.'} = '';
+    $Self->{Translation}->{'GIT Author registration.'} = 'Регистрација Git аутора.';
+    $Self->{Translation}->{'Generate HTML comment hooks for the specified blocks so that filters can use them.'} =
+        '';
+    $Self->{Translation}->{'Generate documentations once per night.'} = '';
+    $Self->{Translation}->{'Git'} = 'Git';
+    $Self->{Translation}->{'Git Management'} = 'Git управљање';
+    $Self->{Translation}->{'Git Repository'} = '';
+    $Self->{Translation}->{'Group, whose members have delete admin permissions in OPMS.'} = 'Група чији чланови имају дозволу за брисање у OPMS.';
+    $Self->{Translation}->{'Group, whose members have repository admin permissions in OPMS.'} =
+        'Група чији чланови имају администраторске дозволе у OPMS.';
+    $Self->{Translation}->{'Group, whose members will see CI test result information in OPMS screens.'} =
+        '';
+    $Self->{Translation}->{'Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface.'} =
+        'Групе у којима регистровани корисник (по корисничком имену и лозинци) мора бити члан да би имао дозволу за креирање тест издања пакета у јавном интерфејсу.';
+    $Self->{Translation}->{'Groups which will be set during git project creation processes while adding OPMS repositories.'} =
+        'Групе које ће бити подешене приликом креирања GIT пројекта у случају додавања OPMS складишта.';
+    $Self->{Translation}->{'Manage dynamic field in screens.'} = '';
+    $Self->{Translation}->{'Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key.'} =
+        'Уредите своје јавне SSH кључеве за Git приступ. Обратите пажњу да морате сачувати ово подешавање приликом додавања новог кључа.';
+    $Self->{Translation}->{'Module to generate statistics about the added code lines.'} = 'Модул за генерисање статистика о броју додатих линија кода.';
+    $Self->{Translation}->{'Module to generate statistics about the growth of code.'} = 'Модул за генерисање статистика о увећању кода.';
+    $Self->{Translation}->{'Module to generate statistics about the number of git commits.'} =
+        'Модул за генерисање статистика о броју Git комитова.';
+    $Self->{Translation}->{'Module to generate statistics about the removed code lines.'} = 'Модул за генерисање статистика о броју уклоњених линија кода.';
+    $Self->{Translation}->{'OPMS'} = 'OPMS';
+    $Self->{Translation}->{'Only users who have rw permissions in one of these groups may access git.'} =
+        'Само корисници који имају rw дозволу у једној од ових група имаће Git приступ.';
+    $Self->{Translation}->{'Option to set a package compatibility manually.'} = '';
+    $Self->{Translation}->{'Parameters for the pages in the BranchView screen.'} = 'Параметри за странице у екрану приказа гране.';
+    $Self->{Translation}->{'Pre-Definition of the \'GITProjectName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Предефинисање динамичког поља \'GITProjectName\': Group => група за приступ динамичким пољима; AlwaysVisible => поље може бити уклоњено (0|1); InformationAreaName => наслов додатака; InformationAreaSize => величина и позиција додатака (Large|Small); Name => назив динамичког поља; Priority => редослед динамичких поља; State => статус поља (0 = онемогућено, 1 = омогућено, 2 = обавезно); FilterRepository => регуларни израз који назив складишта мора да задовољава да би поље било приказано; FilterPackage => регуларни израз које назив пакета мора да задовољава да би поље било приказано; FilterBranch => регуларни израз који назив гране мора да задовољава да би поље било приказано; FilterRelease => регуларни израз који верзија издања мора да задовољава да би поље било приказано.';
+    $Self->{Translation}->{'Pre-Definition of the \'GITRepositoryName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Предефинисање динамичког поља \'GITRepositoryName\': Group => група за приступ динамичким пољима; AlwaysVisible => поље може бити уклоњено (0|1); InformationAreaName => наслов додатака; InformationAreaSize => величина и позиција додатака (Large|Small); Name => назив динамичког поља; Priority => редослед динамичких поља; State => статус поља (0 = онемогућено, 1 = омогућено, 2 = обавезно); FilterRepository => регуларни израз који назив складишта мора да задовољава да би поље било приказано; FilterPackage => регуларни израз које назив пакета мора да задовољава да би поље било приказано; FilterBranch => регуларни израз који назив гране мора да задовољава да би поље било приказано; FilterRelease => регуларни израз који верзија издања мора да задовољава да би поље било приказано.';
+    $Self->{Translation}->{'Pre-Definition of the \'PackageDeprecated\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Предефинисање динамичког поља \'PackageDeprecated\': Group => група за приступ динамичким пољима; AlwaysVisible => поље може бити уклоњено (0|1); InformationAreaName => наслов додатака; InformationAreaSize => величина и позиција додатака (Large|Small); Name => назив динамичког поља; Priority => редослед динамичких поља; State => статус поља (0 = онемогућено, 1 = омогућено, 2 = обавезно); FilterRepository => регуларни израз који назив складишта мора да задовољава да би поље било приказано; FilterPackage => регуларни израз које назив пакета мора да задовољава да би поље било приказано; FilterBranch => регуларни израз који назив гране мора да задовољава да би поље било приказано; FilterRelease => регуларни израз који верзија издања мора да задовољава да би поље било приказано.';
+    $Self->{Translation}->{'Recipients that will be informed by email in case of errors.'} =
+        '';
+    $Self->{Translation}->{'SSH Keys for Git Access'} = 'SSH кључеви за Git приступ';
+    $Self->{Translation}->{'Send analysis file'} = '';
+    $Self->{Translation}->{'Sets the git clone address to be used in repository listings.'} =
+        'Дефинише адресу за Git клонирање која ће бити коришћена у приказу репозиторија.';
+    $Self->{Translation}->{'Sets the home directory for git repositories.'} = 'Дефинише директоријум за Git репозиторије.';
+    $Self->{Translation}->{'Sets the path for the BugzillaAddComment post receive script location.'} =
+        'Дефинише путању до BugzillaAddComment скрипта.';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        '';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        'Дефинише путању до OTRSCodePolicy скрипта. Препоручено је да постоји посебан клон OTRSCodePolicy модула који се редовно освежава путем cron.';
+    $Self->{Translation}->{'Show latest commits in git repositories.'} = '';
+    $Self->{Translation}->{'Shows a link in the menu to go create a unit test from the current ticket.'} =
+        '';
+    $Self->{Translation}->{'Synchronize OPMS tables with a remote database.'} = 'Синхронизација OPMS табела са удаљеном базом.';
+    $Self->{Translation}->{'The minimum version of the sphinx library.'} = '';
+    $Self->{Translation}->{'The name of the sphinx theme to be used.'} = '';
+    $Self->{Translation}->{'The path to the OTRS CSS file (relative below the static path).'} =
+        '';
+    $Self->{Translation}->{'The path to the OTRS logo (relative below the static path).'} = '';
+    $Self->{Translation}->{'The path to the static folder, containing images and css files.'} =
+        '';
+    $Self->{Translation}->{'The path to the theme folder, containing the sphinx themes.'} = '';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable default columns.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable dynamic fields.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines if only valids or all (invalids) dynamic fields should be shown.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It\'s still recommended to use only verified packages.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig \'Znuny4OTRSRepoType\'.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers a Output post-filter to extend package verification.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an output filter to hide online repository selection in package manager.'} =
+        '';
+    $Self->{Translation}->{'Tidy unprocessed release that not passed test pomules checks for a long time.'} =
+        '';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to execute force pushes \'git push --force\'.'} =
+        'Корисници који имају rw дозволу у једној од ових група имаће могућност извршавања команде \'git push --force\'.';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management.'} =
+        'Корисници који имају rw дозволу у једној од ових група имаће могућност управљања пројектима. Додатно припадници ће имати администрационе привилегије за Git управљање.';
 
 
     push @{ $Self->{JavaScriptStrings} // [] }, (

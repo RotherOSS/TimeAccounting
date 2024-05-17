@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# This file is distributed under the same license as the OTOBO Installation Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OTOBO Installation Guide rel-10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-17 05:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../content/index.rst:20
+msgid "Sacrifice to Sphinx"
+msgstr ""
+
+#: ../../content/index.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../content/index.rst:24
+msgid "A Time Registration Module."
+msgstr ""
+
+#: ../../content/index.rst:27
+msgid "System requirements"
+msgstr ""
+
+#: ../../content/index.rst:30
+msgid "Framework"
+msgstr ""
+
+#: ../../content/index.rst:31
+msgid "OTOBO 10.1.x"
+msgstr ""
+
+#: ../../content/index.rst:34
+msgid "Packages"
+msgstr ""
+
+#: ../../content/index.rst:35
+#: ../../content/index.rst:39
+msgid "\\-"
+msgstr ""
+
+#: ../../content/index.rst:38
+msgid "Third-party software"
+msgstr ""
+
+#: ../../content/index.rst:42
+msgid "Usage"
+msgstr ""
+
+#: ../../content/index.rst:45
+msgid "Setup"
+msgstr ""
+
+#: ../../content/index.rst:48
+msgid "Configuration Reference"
+msgstr ""
+
+#: ../../content/index.rst:51
+msgid "Core::Stats"
+msgstr ""
+
+#: ../../content/index.rst:54
+msgid "Stats::DynamicObjectRegistration###TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:55
+msgid "Determines if the statistics module may generate time accounting information."
+msgstr ""
+
+#: ../../content/index.rst:58
+msgid "Core::Ticket"
+msgstr ""
+
+#: ../../content/index.rst:61
+msgid "Ticket::EventModulePost###999-TimeAccountingTicketTimeUnitsSync"
+msgstr ""
+
+#: ../../content/index.rst:62
+msgid "Every time a agent add TimeUnits to a ticket, we sync the information to the timeaccounting module."
+msgstr ""
+
+#: ../../content/index.rst:65
+msgid "TimeAccounting::TicketSync::ServiceToAction"
+msgstr ""
+
+#: ../../content/index.rst:66
+msgid "Use Service as Action. Please add as key the timeacounting action and the service as value. RegEx are allowed."
+msgstr ""
+
+#: ../../content/index.rst:69
+msgid "Core::TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:72
+msgid "TimeAccounting::MaxIntervalOfIncompleteDays"
+msgstr ""
+
+#: ../../content/index.rst:73
+msgid "Maximum number of working days after which the working units have to be inserted."
+msgstr ""
+
+#: ../../content/index.rst:76
+msgid "TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning"
+msgstr ""
+
+#: ../../content/index.rst:77
+msgid "Maximum number of working days without working units entry after which a warning will be shown."
+msgstr ""
+
+#: ../../content/index.rst:80
+msgid "TimeAccounting::MaxAllowedInsertDays"
+msgstr ""
+
+#: ../../content/index.rst:81
+msgid "For how many days ago you can insert working units."
+msgstr ""
+
+#: ../../content/index.rst:84
+msgid "Core::TimeAccounting::TicketSync"
+msgstr ""
+
+#: ../../content/index.rst:87
+msgid "TimeAccounting::TicketSync::Enable"
+msgstr ""
+
+#: ../../content/index.rst:88
+msgid "Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module."
+msgstr ""
+
+#: ../../content/index.rst:91
+msgid "TimeAccounting::TicketSync::SetEntryReadOnly"
+msgstr ""
+
+#: ../../content/index.rst:92
+msgid "As soon as the synchronisation of ticket TimeUnits is activated, it is possible to set the entries ReadOnly."
+msgstr ""
+
+#: ../../content/index.rst:95
+msgid "TimeAccounting::TicketSync::CreateProjectFromCustomerID"
+msgstr ""
+
+#: ../../content/index.rst:96
+msgid "Synchronise customers as a new project if they exists in the customer database."
+msgstr ""
+
+#: ../../content/index.rst:99
+msgid "TimeAccounting::TicketSync::CreateProjectFromTMPCustomerID"
+msgstr ""
+
+#: ../../content/index.rst:100
+msgid "Also synchronise customers as a new project if they have not yet been created in the customer database."
+msgstr ""
+
+#: ../../content/index.rst:103
+msgid "TimeAccounting::TicketSync::SaveTimeUnitToArticleField"
+msgstr ""
+
+#: ../../content/index.rst:104
+msgid "We save the Article TimeUnit to a DynamicField from type \"Article\". Please add here the name of the field if the initinal name is changed."
+msgstr ""
+
+#: ../../content/index.rst:107
+msgid "Core::TimeAccounting::ViewReportingProject"
+msgstr ""
+
+#: ../../content/index.rst:110
+msgid "TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers"
+msgstr ""
+
+#: ../../content/index.rst:111
+msgid "If enabled, only users that has added working time to the selected project are shown."
+msgstr ""
+
+#: ../../content/index.rst:114
+msgid "Frontend::Agent::FrontendNotification"
+msgstr ""
+
+#: ../../content/index.rst:117
+msgid "Frontend::NotifyModule###888-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:118
+msgid "This notification module gives a warning if there are too many incomplete working days."
+msgstr ""
+
+#: ../../content/index.rst:121
+msgid "Frontend::Agent::ModuleRegistration"
+msgstr ""
+
+#: ../../content/index.rst:124
+msgid "Frontend::Module###AgentTimeAccountingReporting"
+msgstr ""
+
+#: ../../content/index.rst:125
+#: ../../content/index.rst:129
+#: ../../content/index.rst:133
+#: ../../content/index.rst:137
+#: ../../content/index.rst:141
+msgid "Frontend module registration for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:128
+msgid "Frontend::Module###AgentTimeAccountingEdit"
+msgstr ""
+
+#: ../../content/index.rst:132
+msgid "Frontend::Module###AgentTimeAccountingSetting"
+msgstr ""
+
+#: ../../content/index.rst:136
+msgid "Frontend::Module###AgentTimeAccountingOverview"
+msgstr ""
+
+#: ../../content/index.rst:140
+msgid "Frontend::Module###AgentTimeAccountingView"
+msgstr ""
+
+#: ../../content/index.rst:144
+msgid "Frontend::Agent::ModuleRegistration::Loader"
+msgstr ""
+
+#: ../../content/index.rst:147
+msgid "Loader::Module::AgentTimeAccountingSetting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:148
+#: ../../content/index.rst:152
+#: ../../content/index.rst:156
+#: ../../content/index.rst:160
+#: ../../content/index.rst:164
+msgid "Loader module registration for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:151
+msgid "Loader::Module::AgentTimeAccountingOverview###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:155
+msgid "Loader::Module::AgentTimeAccountingEdit###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:159
+msgid "Loader::Module::AgentTimeAccountingReporting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:163
+msgid "Loader::Module::AgentTimeAccountingView###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:167
+msgid "Frontend::Agent::ModuleRegistration::MainMenu"
+msgstr ""
+
+#: ../../content/index.rst:170
+msgid "Frontend::Navigation###AgentTimeAccountingEdit###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:171
+#: ../../content/index.rst:175
+#: ../../content/index.rst:179
+#: ../../content/index.rst:183
+#: ../../content/index.rst:187
+msgid "Main menu item registration."
+msgstr ""
+
+#: ../../content/index.rst:174
+msgid "Frontend::Navigation###AgentTimeAccountingOverview###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:178
+msgid "Frontend::Navigation###AgentTimeAccountingSetting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:182
+msgid "Frontend::Navigation###AgentTimeAccountingReporting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:186
+msgid "Frontend::Navigation###AgentTimeAccountingView###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:190
+msgid "Frontend::Agent::Ticket::ViewActivityRecording"
+msgstr ""
+
+#: ../../content/index.rst:193
+msgid "TimeAccounting::TicketSync::DefaultProjectID"
+msgstr ""
+
+#: ../../content/index.rst:194
+msgid "We need to set a default project id when we sync TimeUnits to the TimeAccounting module."
+msgstr ""
+
+#: ../../content/index.rst:197
+msgid "TimeAccounting::TicketSync::DefaultActionID"
+msgstr ""
+
+#: ../../content/index.rst:198
+msgid "We need to set a default action id when we sync TimeUnits to the TimeAccounting module."
+msgstr ""
+
+#: ../../content/index.rst:201
+msgid "Frontend::Agent::ToolBar"
+msgstr ""
+
+#: ../../content/index.rst:204
+msgid "Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays"
+msgstr ""
+
+#: ../../content/index.rst:205
+msgid "Agent interface notification module to see the number of incomplete working days for the user."
+msgstr ""
+
+#: ../../content/index.rst:208
+msgid "Frontend::Agent::View::TimeAccountingEdit"
+msgstr ""
+
+#: ../../content/index.rst:211
+msgid "TimeAccounting::ReduceTime"
+msgstr ""
+
+#: ../../content/index.rst:212
+msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
+msgstr ""
+
+#: ../../content/index.rst:215
+msgid "TimeAccounting::InputHoursWithoutStartEndTime"
+msgstr ""
+
+#: ../../content/index.rst:216
+msgid "Specifies if working hours can be inserted without start and end times."
+msgstr ""
+
+#: ../../content/index.rst:219
+msgid "TimeAccounting::Project2RemarkRegExp"
+msgstr ""
+
+#: ../../content/index.rst:220
+msgid "Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter."
+msgstr ""
+
+#: ../../content/index.rst:223
+msgid "TimeAccounting::ProjectListConstraints"
+msgstr ""
+
+#: ../../content/index.rst:224
+msgid "Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups."
+msgstr ""
+
+#: ../../content/index.rst:227
+msgid "TimeAccounting::ActionListConstraints"
+msgstr ""
+
+#: ../../content/index.rst:228
+msgid "Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s)."
+msgstr ""
+
+#: ../../content/index.rst:231
+msgid "TimeAccounting::EnableAutoCompletion"
+msgstr ""
+
+#: ../../content/index.rst:232
+msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
+msgstr ""
+
+#: ../../content/index.rst:235
+msgid "TimeAccounting::UseFilter"
+msgstr ""
+
+#: ../../content/index.rst:236
+msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+
+#: ../../content/index.rst:239
+msgid "TimeAccounting::ActiveFilter"
+msgstr ""
+
+#: ../../content/index.rst:240
+msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+
+#: ../../content/index.rst:243
+msgid "TimeAccounting::AllowMassEntryForUser"
+msgstr ""
+
+#: ../../content/index.rst:244
+msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
+msgstr ""
+
+#: ../../content/index.rst:247
+msgid "Frontend::Agent::View::TimeAccountingSetting"
+msgstr ""
+
+#: ../../content/index.rst:250
+msgid "TimeAccounting::DefaultProjectName"
+msgstr ""
+
+#: ../../content/index.rst:251
+msgid "Default name for new projects."
+msgstr ""
+
+#: ../../content/index.rst:254
+msgid "TimeAccounting::DefaultProjectStatus"
+msgstr ""
+
+#: ../../content/index.rst:255
+msgid "Default status for new projects."
+msgstr ""
+
+#: ../../content/index.rst:258
+msgid "TimeAccounting::DefaultActionName"
+msgstr ""
+
+#: ../../content/index.rst:259
+msgid "Default name for new actions."
+msgstr ""
+
+#: ../../content/index.rst:262
+msgid "TimeAccounting::DefaultActionStatus"
+msgstr ""
+
+#: ../../content/index.rst:263
+msgid "Default status for new actions."
+msgstr ""
+
+#: ../../content/index.rst:266
+msgid "TimeAccounting::DefaultUserWeeklyHours"
+msgstr ""
+
+#: ../../content/index.rst:267
+msgid "Default setting for the standard weekly hours."
+msgstr ""
+
+#: ../../content/index.rst:270
+msgid "TimeAccounting::DefaultUserLeaveDays"
+msgstr ""
+
+#: ../../content/index.rst:271
+msgid "Default setting for leave days."
+msgstr ""
+
+#: ../../content/index.rst:274
+msgid "TimeAccounting::DefaultUserOvertime"
+msgstr ""
+
+#: ../../content/index.rst:275
+msgid "Default setting for overtime."
+msgstr ""
+
+#: ../../content/index.rst:278
+msgid "TimeAccounting::DefaultUserDateStart"
+msgstr ""
+
+#: ../../content/index.rst:279
+msgid "Default setting for date start."
+msgstr ""
+
+#: ../../content/index.rst:282
+msgid "TimeAccounting::DefaultUserDateEnd"
+msgstr ""
+
+#: ../../content/index.rst:283
+msgid "Default setting for date end."
+msgstr ""
+
+#: ../../content/index.rst:286
+msgid "TimeAccounting::DefaultUserDescription"
+msgstr ""
+
+#: ../../content/index.rst:287
+msgid "Default setting for description."
+msgstr ""
+
+#: ../../content/index.rst:290
+msgid "TimeAccounting::DefaultUserStatus"
+msgstr ""
+
+#: ../../content/index.rst:291
+msgid "Default status for new users."
+msgstr ""
+
+#: ../../content/index.rst:294
+msgid "Frontend::Base::PreApplicationModule"
+msgstr ""
+
+#: ../../content/index.rst:297
+msgid "PreApplicationModule###AgentTimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:298
+msgid "This module forces inserts in TimeAccounting."
+msgstr ""
+
+#: ../../content/index.rst:301
+msgid "About"
+msgstr ""
+
+#: ../../content/index.rst:304
+msgid "Contact"
+msgstr ""
+
+#: ../../content/index.rst:305
+msgid "Rother OSS GmbH"
+msgstr ""
+
+#: ../../content/index.rst:306
+msgid "Email: hello@otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:307
+msgid "Web: https://otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:310
+msgid "Version"
+msgstr ""
+
+#: ../../content/index.rst:311
+msgid "Author: |doc-vendor| / Version: |doc-version| / Date of release: |doc-datestamp|"
+msgstr ""
+

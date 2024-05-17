@@ -44,7 +44,9 @@ sub Data {
     $Self->{Translation}->{'Project'} = 'Projeto';
     $Self->{Translation}->{'Task'} = 'Tarefas';
     $Self->{Translation}->{'Remark'} = 'Observação';
+    $Self->{Translation}->{'Origin'} = '';
     $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = 'Por favor, adicione um comentário com mais de 8 caracteres!';
+    $Self->{Translation}->{'Ursprung'} = '';
     $Self->{Translation}->{'Negative times are not allowed.'} = 'Datas negativas não são liberadas';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =
         'Horas repetidas não são liberadas. Inicie o apontamento em outro intervalo.';
@@ -57,6 +59,7 @@ sub Data {
     $Self->{Translation}->{'Invalid period! A day has only 24 hours.'} = 'Período inválido! Um dia tem apenas 24 horas.';
     $Self->{Translation}->{'A valid period must be greater than zero.'} = 'Um período válido deve ser maior que zero.';
     $Self->{Translation}->{'Invalid period! Negative periods are not allowed.'} = 'Período inválido! Períodos negativos não são liberados.';
+    $Self->{Translation}->{'Submit changes'} = '';
     $Self->{Translation}->{'Add one row'} = 'Adicionar uma linha';
     $Self->{Translation}->{'You can only select one checkbox element!'} = 'Você pode selecionar apenas um elemento no checkbox!';
     $Self->{Translation}->{'Are you sure that you worked while you were on sick leave?'} = 'Tem certeza de que você trabalhou enquanto estava em licença médica?';
@@ -221,60 +224,144 @@ sub Data {
     $Self->{Translation}->{'Confirm insert'} = 'Confirmar inserção';
 
     # SysConfig
-    $Self->{Translation}->{'Agent interface notification module to see the number of incomplete working days for the user.'} =
-        'Módulo de notificação do Agente para ver o numero de dias incompletos do usuário.';
-    $Self->{Translation}->{'Default name for new actions.'} = 'O nome padrão para novas ações.';
-    $Self->{Translation}->{'Default name for new projects.'} = 'O nome padrão para novos projetos.';
-    $Self->{Translation}->{'Default setting for date end.'} = 'Configuração padrão para data final';
-    $Self->{Translation}->{'Default setting for date start.'} = 'Configuração padrão para data inicial.';
-    $Self->{Translation}->{'Default setting for description.'} = 'Configuração padrão para descrição.';
-    $Self->{Translation}->{'Default setting for leave days.'} = 'Configuração padrão para dias de férias.';
-    $Self->{Translation}->{'Default setting for overtime.'} = 'Configuração padrão para horas extras,';
-    $Self->{Translation}->{'Default setting for the standard weekly hours.'} = 'Configuração padrão para horas semanais padrão';
-    $Self->{Translation}->{'Default status for new actions.'} = 'Estado padrão para novas ações.';
-    $Self->{Translation}->{'Default status for new projects.'} = 'Estado padrão para novos projetos';
-    $Self->{Translation}->{'Default status for new users.'} = 'Estado para para novos usuários';
-    $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
-        'Define os projetos para os quais é necessária uma observação. Se o RegExp é encontrado no projeto, você tem que inserir uma observação. O RegExp usa o parâmetro smx.';
-    $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
-        'Determina se o módulo de estatísticas pode gerar informações do time accounting.';
-    $Self->{Translation}->{'Edit time accounting settings.'} = 'Editar configurações da contabilidade de tempo.';
-    $Self->{Translation}->{'Edit time record.'} = 'Editar registro de tempo.';
-    $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'Para quantos dias atrás você pode inserir unidades de trabalho.';
-    $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
-        'Se ativado, somente os usuários que adicionou tempo de trabalho ao o projeto selecionado serão exibidos.';
-    $Self->{Translation}->{'If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields.'} =
-        'Se ativado, os elementos suspensos na tela de edição são modificadas para campos de autocompletar modernizados.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled.'} =
-        'Se habilitado, o filtro para os projetos anteriores pode ser usado em vez de duas listas de projetos (último e todos). Ele pode ser usado apenas se TimeAccounting::EnableAutoCompletion está habilitado.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled.'} =
-        'Se habilitado, o filtro para projetos anteriores é ativado por padrão se há projetos anteriores. Ele pode ser usado apenas se EnableAutoCompletion e TimeAccounting::UseFilter estão habilitados.';
-    $Self->{Translation}->{'If enabled, the user is allowed to enter "on vacation leave", "on sick leave" and "on overtime leave" to multiple dates at once.'} =
-        'Se ativado, o usuário tem permissão para entrar "em licença de férias", "em licença médica" e "em licença de horas extras" de uma só vez para várias datas.';
-    $Self->{Translation}->{'Maximum number of working days after which the working units have to be inserted.'} =
-        'O número máximo de dias de trabalho após o qual as "unidades de trabalho" devem ser inseridos';
-    $Self->{Translation}->{'Maximum number of working days without working units entry after which a warning will be shown.'} =
-        'O número máximo de dias de trabalho sem "unidades de trabalho"  após o qual um aviso será mostrado.';
-    $Self->{Translation}->{'Overview.'} = 'Visão Geral.';
-    $Self->{Translation}->{'Project time reporting.'} = 'Relatório de tempos de projetos.';
-    $Self->{Translation}->{'Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s).'} =
-        'As expressões regulares para restringir lista de ações de acordo com o projeto selecionado. Chave contém expressão regular para o projeto(s), Conteúdo contém expressões regulares para a ação(s).';
-    $Self->{Translation}->{'Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups.'} =
-        'As expressões regulares para restringir a lista de projeto de acordo com grupos de usuários. Chave contém expressão regular para o projeto (s), conteúdo contém lista  separada por vírgulas de grupos.';
-    $Self->{Translation}->{'Specifies if working hours can be inserted without start and end times.'} =
-        'Especifique se o horário de trabalho pode ser inserido sem horários de início e término.';
-    $Self->{Translation}->{'This module forces inserts in TimeAccounting.'} = 'Esse módulo força preencher o TimeAccounting.';
-    $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
-        'Este módulo de notificação dá um aviso se houver muitos dias de trabalho não registrados.';
-    $Self->{Translation}->{'Time Accounting'} = 'Contabilidade Tempo';
-    $Self->{Translation}->{'Time accounting edit.'} = 'Editar contabilidade de tempo';
-    $Self->{Translation}->{'Time accounting overview.'} = 'Visão geral de contabilidade de tempo';
-    $Self->{Translation}->{'Time accounting reporting.'} = 'Relatório de contabilidade de tempo';
-    $Self->{Translation}->{'Time accounting settings.'} = 'Configurações de contabilidade de tempo';
-    $Self->{Translation}->{'Time accounting view.'} = 'Ver contabilidade de tempo';
-    $Self->{Translation}->{'Time accounting.'} = 'Contabilidade Tempo';
-    $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
-        'Usar para  algumas ações de reduzir as horas de trabalho (por exemplo, se apenas metade do tempo de viagem é pago Key => viajar; Content => 50)';
+    $Self->{Translation}->{'A precentage value of the minimal translation progress per language, to be usable for documentations.'} =
+        '';
+    $Self->{Translation}->{'Access repos via http or https.'} = '';
+    $Self->{Translation}->{'Autoloading of Znuny4OTRSRepo extensions.'} = '';
+    $Self->{Translation}->{'Backend module registration for the config conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the file conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the function redefine check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the manual set module.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for BS ad removal.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for package manager output filter.'} =
+        '';
+    $Self->{Translation}->{'Branch View commit limit'} = '';
+    $Self->{Translation}->{'CodePolicy'} = '';
+    $Self->{Translation}->{'Commit limit per page for Branch view screen'} = '';
+    $Self->{Translation}->{'Create analysis file'} = '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket and sends to Znuny.'} =
+        '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket.'} = '';
+    $Self->{Translation}->{'Define private addon repos.'} = '';
+    $Self->{Translation}->{'Defines the filter that processes the HTML templates.'} = '';
+    $Self->{Translation}->{'Defines the test module for checking code policy.'} = '';
+    $Self->{Translation}->{'Definition of GIT clone/push URL Prefix.'} = '';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        '';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        '';
+    $Self->{Translation}->{'Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date).'} =
+        '';
+    $Self->{Translation}->{'Definition of mappings between public repository requests and internal OPMS repositories.'} =
+        '';
+    $Self->{Translation}->{'Definition of package states.'} = '';
+    $Self->{Translation}->{'Definition of renamed OPMS packages.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to cache repositories.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store temporary data.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store working copies.'} = '';
+    $Self->{Translation}->{'Disable online repositories.'} = '';
+    $Self->{Translation}->{'Do not log git ssh connection authorization results for these users. Useful for automated stuff.'} =
+        '';
+    $Self->{Translation}->{'Dynamic Fields Screens'} = 'Telas Campos Dinâmicos';
+    $Self->{Translation}->{'DynamicFieldScreen'} = '';
+    $Self->{Translation}->{'Export all available public keys to authorized_keys file.'} = '';
+    $Self->{Translation}->{'Export all relevant releases to ftp server.'} = '';
+    $Self->{Translation}->{'Frontend module registration for the OPMS object in the agent interface.'} =
+        '';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepository object in the public interface.'} =
+        '';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface.'} =
+        '';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSTestBuild object in the public interface.'} =
+        '';
+    $Self->{Translation}->{'Frontend module registration for the PublicPackageVerification object in the public interface.'} =
+        '';
+    $Self->{Translation}->{'Frontend module registration for the admin interface.'} = '';
+    $Self->{Translation}->{'GIT Author registration.'} = '';
+    $Self->{Translation}->{'Generate HTML comment hooks for the specified blocks so that filters can use them.'} =
+        '';
+    $Self->{Translation}->{'Generate documentations once per night.'} = '';
+    $Self->{Translation}->{'Git'} = '';
+    $Self->{Translation}->{'Git Management'} = '';
+    $Self->{Translation}->{'Git Repository'} = '';
+    $Self->{Translation}->{'Group, whose members have delete admin permissions in OPMS.'} = '';
+    $Self->{Translation}->{'Group, whose members have repository admin permissions in OPMS.'} =
+        '';
+    $Self->{Translation}->{'Group, whose members will see CI test result information in OPMS screens.'} =
+        '';
+    $Self->{Translation}->{'Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface.'} =
+        '';
+    $Self->{Translation}->{'Groups which will be set during git project creation processes while adding OPMS repositories.'} =
+        '';
+    $Self->{Translation}->{'Manage dynamic field in screens.'} = 'Gerenciar campo dinâmico em telas.';
+    $Self->{Translation}->{'Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key.'} =
+        '';
+    $Self->{Translation}->{'Module to generate statistics about the added code lines.'} = '';
+    $Self->{Translation}->{'Module to generate statistics about the growth of code.'} = '';
+    $Self->{Translation}->{'Module to generate statistics about the number of git commits.'} =
+        '';
+    $Self->{Translation}->{'Module to generate statistics about the removed code lines.'} = '';
+    $Self->{Translation}->{'OPMS'} = '';
+    $Self->{Translation}->{'Only users who have rw permissions in one of these groups may access git.'} =
+        '';
+    $Self->{Translation}->{'Option to set a package compatibility manually.'} = '';
+    $Self->{Translation}->{'Parameters for the pages in the BranchView screen.'} = '';
+    $Self->{Translation}->{'Pre-Definition of the \'GITProjectName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        '';
+    $Self->{Translation}->{'Pre-Definition of the \'GITRepositoryName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        '';
+    $Self->{Translation}->{'Pre-Definition of the \'PackageDeprecated\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        '';
+    $Self->{Translation}->{'Recipients that will be informed by email in case of errors.'} =
+        '';
+    $Self->{Translation}->{'SSH Keys for Git Access'} = '';
+    $Self->{Translation}->{'Send analysis file'} = '';
+    $Self->{Translation}->{'Sets the git clone address to be used in repository listings.'} =
+        '';
+    $Self->{Translation}->{'Sets the home directory for git repositories.'} = '';
+    $Self->{Translation}->{'Sets the path for the BugzillaAddComment post receive script location.'} =
+        '';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        '';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        '';
+    $Self->{Translation}->{'Show latest commits in git repositories.'} = '';
+    $Self->{Translation}->{'Shows a link in the menu to go create a unit test from the current ticket.'} =
+        '';
+    $Self->{Translation}->{'Synchronize OPMS tables with a remote database.'} = '';
+    $Self->{Translation}->{'The minimum version of the sphinx library.'} = '';
+    $Self->{Translation}->{'The name of the sphinx theme to be used.'} = '';
+    $Self->{Translation}->{'The path to the OTRS CSS file (relative below the static path).'} =
+        '';
+    $Self->{Translation}->{'The path to the OTRS logo (relative below the static path).'} = '';
+    $Self->{Translation}->{'The path to the static folder, containing images and css files.'} =
+        '';
+    $Self->{Translation}->{'The path to the theme folder, containing the sphinx themes.'} = '';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable default columns.'} =
+        'Esta configuração define todas as telas possíveis para habilitar ou desabilitar colunas padrão.';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable dynamic fields.'} =
+        'Esta configuração define todas as telas possíveis para habilitar ou desabilitar campos dinâmicos.';
+    $Self->{Translation}->{'This configuration defines if only valids or all (invalids) dynamic fields should be shown.'} =
+        'Esta configuração define se somente os valores válidos ou todos os campos dinâmicos (inválidos) devem ser mostrados.';
+    $Self->{Translation}->{'This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It\'s still recommended to use only verified packages.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig \'Znuny4OTRSRepoType\'.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers a Output post-filter to extend package verification.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an output filter to hide online repository selection in package manager.'} =
+        '';
+    $Self->{Translation}->{'Tidy unprocessed release that not passed test pomules checks for a long time.'} =
+        '';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to execute force pushes \'git push --force\'.'} =
+        '';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management.'} =
+        '';
 
 
     push @{ $Self->{JavaScriptStrings} // [] }, (

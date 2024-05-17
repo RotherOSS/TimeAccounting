@@ -778,3 +778,51 @@ msgstr ""
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr ""
 
+#. Template: AgentTimeAccountingEdit
+msgid "Origin"
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
+msgid "Ursprung"
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
+msgid "Submit changes"
+msgstr ""
+
+#. SysConfig
+msgid "Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module."
+msgstr ""
+
+#. SysConfig
+msgid "Also synchronise customers as a new project if they have not yet been created in the customer database."
+msgstr ""
+
+#. SysConfig
+msgid "As soon as the synchronisation of ticket TimeUnits is activated, it is possible to set the entries ReadOnly."
+msgstr ""
+
+#. SysConfig
+msgid "Every time a agent add TimeUnits to a ticket, we sync the information to the timeaccounting module."
+msgstr ""
+
+#. SysConfig
+msgid "Synchronise customers as a new project if they exists in the customer database."
+msgstr ""
+
+#. SysConfig
+msgid "Use Service as Action. Please add as key the timeacounting action and the service as value. RegEx are allowed."
+msgstr ""
+
+#. SysConfig
+msgid "We need to set a default action id when we sync TimeUnits to the TimeAccounting module."
+msgstr ""
+
+#. SysConfig
+msgid "We need to set a default project id when we sync TimeUnits to the TimeAccounting module."
+msgstr ""
+
+#. SysConfig
+msgid "We save the Article TimeUnit to a DynamicField from type \"Article\". Please add here the name of the field if the initinal name is changed."
+msgstr ""
+
