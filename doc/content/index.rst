@@ -1,3 +1,7 @@
+.. image:: ../images/otobo-logo.png
+   :align: center
+|
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents
