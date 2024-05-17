@@ -234,6 +234,12 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Вообичаен статус за нови акции.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Вообичаен статус за нови проекти.';
     $Self->{Translation}->{'Default status for new users.'} = 'Вообичаен статус за нови корисници.';
+    $Self->{Translation}->{'Defines the default frontend (HTML) theme to be used by the agents and customers. If you like, you can add your own theme. Please refer the administrator manual located at https://doc.otobo.org/.'} =
+        '';
+    $Self->{Translation}->{'Defines the default frontend language. All the possible values are determined by the available language files on the system. These values are listed as the keys in the setting \'DefaultUsedLanguages\'.'} =
+        '';
+    $Self->{Translation}->{'Defines the parameters for the dashboard backend. "Cmd" is used to specify command with parameters. "Group" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). "Default" indicates if the plugin is enabled by default or if the user needs to enable it manually. "CacheTTL" indicates the cache expiration period in minutes for the plugin. "Mandatory" determines if the plugin is always shown and can not be removed by agents. Only works if DashboardBackend::AllowCmdOutput is enabled in Config.pm.'} =
+        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Дефинира проект за кој е потребно забелешка. Доколку RegExp се софпаѓа со овој проект, тогаш е потребно да внесете забечешка. RegExp користи smx параметар.';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
@@ -241,6 +247,8 @@ sub Data {
     $Self->{Translation}->{'Edit time accounting settings.'} = '';
     $Self->{Translation}->{'Edit time record.'} = '';
     $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'За колку многу денови пред можете да вметнете работни единици.';
+    $Self->{Translation}->{'If "LDAP" was selected for Customer::AuthModule and you wish to use TLS security to communicate with the LDAP server, the "verify" parameter can be specified here. See Net::LDAP::start_tls for more information about the parameter.'} =
+        '';
     $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
         'Ако е овозможено, само корисниците кои ќе додадат работното време на избраните проекти  ќе бидат прикажани.';
     $Self->{Translation}->{'If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields.'} =
@@ -251,6 +259,7 @@ sub Data {
         '';
     $Self->{Translation}->{'If enabled, the user is allowed to enter "on vacation leave", "on sick leave" and "on overtime leave" to multiple dates at once.'} =
         'Ако е овозможено, на корисникот ќе му биде дозволено да „Боледува“, да работи „Прекувремено“ и да зема „Одмор“ повеќе пати одеднаш.';
+    $Self->{Translation}->{'Ignores not ticket related attributes.'} = '';
     $Self->{Translation}->{'Maximum number of working days after which the working units have to be inserted.'} =
         'Максимален број на работни денови по што работните единици треба да се вметнат.';
     $Self->{Translation}->{'Maximum number of working days without working units entry after which a warning will be shown.'} =

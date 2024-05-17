@@ -778,3 +778,23 @@ msgstr " менаџмент на Време"
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr "Се користи кога некои акции го смалуваат бројот на работни часови (на пример, доколку половина од времето на патување е платено Key => патување;  Content => 50)."
 
+#. SysConfig
+msgid "Defines the default frontend (HTML) theme to be used by the agents and customers. If you like, you can add your own theme. Please refer the administrator manual located at https://doc.otobo.org/."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the default frontend language. All the possible values are determined by the available language files on the system. These values are listed as the keys in the setting 'DefaultUsedLanguages'."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the parameters for the dashboard backend. \"Cmd\" is used to specify command with parameters. \"Group\" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). \"Default\" indicates if the plugin is enabled by default or if the user needs to enable it manually. \"CacheTTL\" indicates the cache expiration period in minutes for the plugin. \"Mandatory\" determines if the plugin is always shown and can not be removed by agents. Only works if DashboardBackend::AllowCmdOutput is enabled in Config.pm."
+msgstr ""
+
+#. SysConfig
+msgid "If \"LDAP\" was selected for Customer::AuthModule and you wish to use TLS security to communicate with the LDAP server, the \"verify\" parameter can be specified here. See Net::LDAP::start_tls for more information about the parameter."
+msgstr ""
+
+#. SysConfig
+msgid "Ignores not ticket related attributes."
+msgstr ""
+

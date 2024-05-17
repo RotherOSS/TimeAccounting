@@ -25,256 +25,340 @@ sub Data {
 
     # Template: AgentTimeAccountingDelete
     $Self->{Translation}->{'Do you really want to delete the Time Accounting of this day?'} =
-        'Da li zaista želite da obrišete obračun vremena za ovaj dan?';
+        '';
 
     # Template: AgentTimeAccountingEdit
-    $Self->{Translation}->{'Edit Time Record'} = 'Uredi vremenski zapis';
-    $Self->{Translation}->{'Go to settings'} = 'Idi u podešavanja';
-    $Self->{Translation}->{'Date Navigation'} = 'Datumska navigacija';
-    $Self->{Translation}->{'Days without entries'} = 'Dani bez unosa';
-    $Self->{Translation}->{'Select all days'} = 'Selektuj sve dane';
-    $Self->{Translation}->{'Mass entry'} = 'Masovni unos';
+    $Self->{Translation}->{'Edit Time Record'} = '';
+    $Self->{Translation}->{'Go to settings'} = '';
+    $Self->{Translation}->{'Date Navigation'} = '';
+    $Self->{Translation}->{'Days without entries'} = '';
+    $Self->{Translation}->{'Select all days'} = '';
+    $Self->{Translation}->{'Mass entry'} = '';
     $Self->{Translation}->{'Please choose the reason for your absence for the selected days'} =
-        'Molimo Vas izaberite razlog vašeg odsustva za izabrane dane';
-    $Self->{Translation}->{'On vacation'} = 'Na odmoru';
-    $Self->{Translation}->{'On sick leave'} = 'Na bolovanju';
-    $Self->{Translation}->{'On overtime leave'} = 'Na slobodnim danima';
-    $Self->{Translation}->{'Required fields are marked with a "*".'} = 'Obavezna polja su označena sa "*".';
-    $Self->{Translation}->{'You have to fill in start and end time or a time period.'} = 'Morate uneti vreme početka i završetka ili vremenski period.';
-    $Self->{Translation}->{'Project'} = 'Projekat';
-    $Self->{Translation}->{'Task'} = 'Zadatak';
-    $Self->{Translation}->{'Remark'} = 'Napomena';
-    $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = 'Molimo da dodate napomenu dužu od 8 karaktera!';
-    $Self->{Translation}->{'Negative times are not allowed.'} = 'Negativna vremena nisu dozvoljena.';
+        '';
+    $Self->{Translation}->{'On vacation'} = '';
+    $Self->{Translation}->{'On sick leave'} = '';
+    $Self->{Translation}->{'On overtime leave'} = '';
+    $Self->{Translation}->{'Required fields are marked with a "*".'} = '';
+    $Self->{Translation}->{'You have to fill in start and end time or a time period.'} = '';
+    $Self->{Translation}->{'Project'} = '';
+    $Self->{Translation}->{'Task'} = '';
+    $Self->{Translation}->{'Remark'} = '';
+    $Self->{Translation}->{'Please add a remark with more than 8 characters!'} = '';
+    $Self->{Translation}->{'Negative times are not allowed.'} = '';
     $Self->{Translation}->{'Repeated hours are not allowed. Start time matches another interval.'} =
-        'Ponavljanje sati nije dozvoljeno. Vreme početka se poklapa sa drugim intervalom.';
-    $Self->{Translation}->{'Invalid format! Please enter a time with the format HH:MM.'} = 'Neispravan format! Molimo da unesete vreme u formatu HH:MM.';
-    $Self->{Translation}->{'24:00 is only permitted as end time.'} = '24:00 je dozvoljeno samo kao vreme završetka.';
-    $Self->{Translation}->{'Invalid time! A day has only 24 hours.'} = 'Neispravno vreme! Dan ima samo 24 sata.';
-    $Self->{Translation}->{'End time must be after start time.'} = 'Vreme završetka mora biti nakon početka.';
+        '';
+    $Self->{Translation}->{'Invalid format! Please enter a time with the format HH:MM.'} = '';
+    $Self->{Translation}->{'24:00 is only permitted as end time.'} = '';
+    $Self->{Translation}->{'Invalid time! A day has only 24 hours.'} = '';
+    $Self->{Translation}->{'End time must be after start time.'} = '';
     $Self->{Translation}->{'Repeated hours are not allowed. End time matches another interval.'} =
-        'Ponavljanje sati nije dozvoljeno. Vreme završetka se poklapa sa drugim intervalom.';
-    $Self->{Translation}->{'Invalid period! A day has only 24 hours.'} = 'Neispravan period! Dan ima samo 24 sata.';
-    $Self->{Translation}->{'A valid period must be greater than zero.'} = 'Ispravan period mora biti veći od nule.';
-    $Self->{Translation}->{'Invalid period! Negative periods are not allowed.'} = 'Neispravan period! Negativni periodi nisu dozvoljeni.';
-    $Self->{Translation}->{'Add one row'} = 'Dodaj jedan red';
-    $Self->{Translation}->{'You can only select one checkbox element!'} = 'Možete izabrati samo jedno polje za potvrdu.';
-    $Self->{Translation}->{'Are you sure that you worked while you were on sick leave?'} = 'Da li ste sigurni da ste radili dok ste bili na bolovanju?';
-    $Self->{Translation}->{'Are you sure that you worked while you were on vacation?'} = 'Da li ste sigurni da ste radili dok ste bili na odmoru?';
+        '';
+    $Self->{Translation}->{'Invalid period! A day has only 24 hours.'} = '';
+    $Self->{Translation}->{'A valid period must be greater than zero.'} = '';
+    $Self->{Translation}->{'Invalid period! Negative periods are not allowed.'} = '';
+    $Self->{Translation}->{'Add one row'} = '';
+    $Self->{Translation}->{'You can only select one checkbox element!'} = '';
+    $Self->{Translation}->{'Are you sure that you worked while you were on sick leave?'} = '';
+    $Self->{Translation}->{'Are you sure that you worked while you were on vacation?'} = '';
     $Self->{Translation}->{'Are you sure that you worked while you were on overtime leave?'} =
-        'Da li ste sigurni da ste radili dok ste bili na slobodnim danima?';
-    $Self->{Translation}->{'Are you sure that you worked more than 16 hours?'} = 'Da li ste sigurni da ste radili više od 16 sati?';
+        '';
+    $Self->{Translation}->{'Are you sure that you worked more than 16 hours?'} = '';
 
     # Template: AgentTimeAccountingOverview
-    $Self->{Translation}->{'Time reporting monthly overview'} = 'Pregled mesečnog obračuna vremena';
-    $Self->{Translation}->{'Overtime (Hours)'} = 'Prekovremeno (sati)';
-    $Self->{Translation}->{'Overtime (this month)'} = 'Prekovremeno (ovaj mesec)';
-    $Self->{Translation}->{'Overtime (total)'} = 'Prekovremeno (ukupno)';
-    $Self->{Translation}->{'Remaining overtime leave'} = 'Preostali slobodni dani';
-    $Self->{Translation}->{'Vacation (Days)'} = 'Odmor (dani)';
-    $Self->{Translation}->{'Vacation taken (this month)'} = 'Iskorišćen odmor (ovaj mesec)';
-    $Self->{Translation}->{'Vacation taken (total)'} = 'Iskorišćen odmor (ukupno)';
-    $Self->{Translation}->{'Remaining vacation'} = 'Preostao odmor';
-    $Self->{Translation}->{'Sick Leave (Days)'} = 'Bolovanje (dani)';
-    $Self->{Translation}->{'Sick leave taken (this month)'} = 'Bolovanje (ovaj mesec)';
-    $Self->{Translation}->{'Sick leave taken (total)'} = 'Bolovanje (ukupno)';
-    $Self->{Translation}->{'Previous month'} = 'Prethodni mesec';
-    $Self->{Translation}->{'Next month'} = 'Sledeći mesec';
-    $Self->{Translation}->{'Weekday'} = 'Radni dan';
-    $Self->{Translation}->{'Working Hours'} = 'Radni sati';
-    $Self->{Translation}->{'Total worked hours'} = 'Ukupno radnih sati';
-    $Self->{Translation}->{'User\'s project overview'} = 'Pregled korisničkog projekta';
-    $Self->{Translation}->{'Hours (monthly)'} = 'Sati (mesečno)';
-    $Self->{Translation}->{'Hours (Lifetime)'} = 'Sati (ukupno)';
-    $Self->{Translation}->{'Grand total'} = 'Ukupan zbir';
+    $Self->{Translation}->{'Time reporting monthly overview'} = '';
+    $Self->{Translation}->{'Overtime (Hours)'} = '';
+    $Self->{Translation}->{'Overtime (this month)'} = '';
+    $Self->{Translation}->{'Overtime (total)'} = '';
+    $Self->{Translation}->{'Remaining overtime leave'} = '';
+    $Self->{Translation}->{'Vacation (Days)'} = '';
+    $Self->{Translation}->{'Vacation taken (this month)'} = '';
+    $Self->{Translation}->{'Vacation taken (total)'} = '';
+    $Self->{Translation}->{'Remaining vacation'} = '';
+    $Self->{Translation}->{'Sick Leave (Days)'} = '';
+    $Self->{Translation}->{'Sick leave taken (this month)'} = '';
+    $Self->{Translation}->{'Sick leave taken (total)'} = '';
+    $Self->{Translation}->{'Previous month'} = '';
+    $Self->{Translation}->{'Next month'} = '';
+    $Self->{Translation}->{'Weekday'} = '';
+    $Self->{Translation}->{'Working Hours'} = '';
+    $Self->{Translation}->{'Total worked hours'} = '';
+    $Self->{Translation}->{'User\'s project overview'} = '';
+    $Self->{Translation}->{'Hours (monthly)'} = '';
+    $Self->{Translation}->{'Hours (Lifetime)'} = '';
+    $Self->{Translation}->{'Grand total'} = '';
 
     # Template: AgentTimeAccountingReporting
-    $Self->{Translation}->{'Time reporting'} = 'Izveštavanje o vremenu';
-    $Self->{Translation}->{'Month Navigation'} = 'Navigacija po mesecima';
-    $Self->{Translation}->{'Go to date'} = 'Idi na datum';
-    $Self->{Translation}->{'User reports'} = 'Korisnički izveštaji';
-    $Self->{Translation}->{'Monthly total'} = 'Mesečni zbir';
-    $Self->{Translation}->{'Lifetime total'} = 'Svega do sada';
-    $Self->{Translation}->{'Overtime leave'} = 'Slobodni dani';
-    $Self->{Translation}->{'Vacation'} = 'Odmor';
-    $Self->{Translation}->{'Sick leave'} = 'Bolovanje';
-    $Self->{Translation}->{'Vacation remaining'} = 'Preostao odmor';
-    $Self->{Translation}->{'Project reports'} = 'Izveštaji o projektu';
+    $Self->{Translation}->{'Time reporting'} = '';
+    $Self->{Translation}->{'Month Navigation'} = '';
+    $Self->{Translation}->{'Go to date'} = '';
+    $Self->{Translation}->{'User reports'} = '';
+    $Self->{Translation}->{'Monthly total'} = '';
+    $Self->{Translation}->{'Lifetime total'} = '';
+    $Self->{Translation}->{'Overtime leave'} = '';
+    $Self->{Translation}->{'Vacation'} = '';
+    $Self->{Translation}->{'Sick leave'} = '';
+    $Self->{Translation}->{'Vacation remaining'} = '';
+    $Self->{Translation}->{'Project reports'} = '';
 
     # Template: AgentTimeAccountingReportingProject
-    $Self->{Translation}->{'Project report'} = 'Izveštaj o projektu';
-    $Self->{Translation}->{'Go to reporting overview'} = 'Idi na pregled izveštavanja';
+    $Self->{Translation}->{'Project report'} = '';
+    $Self->{Translation}->{'Go to reporting overview'} = '';
     $Self->{Translation}->{'Currently only active users in this project are shown. To change this behavior, please update setting:'} =
-        'Trenutno su prikazani samo aktivni korisnici u ovom projektu. Za promenu ovakvog ponašanja, molimo Vas ažurirajte podešavanja:';
+        '';
     $Self->{Translation}->{'Currently all time accounting users are shown. To change this behavior, please update setting:'} =
-        'Trenutno su prikazani svi korisnici obračuna vremena. Za promenu ovakvog ponašanja, molimo ažurirajte podešavanja:';
+        '';
 
     # Template: AgentTimeAccountingSetting
-    $Self->{Translation}->{'Edit Time Accounting Project Settings'} = 'Izmena podešavanja obračunavanja vremena projekta';
+    $Self->{Translation}->{'Edit Time Accounting Project Settings'} = '';
     $Self->{Translation}->{'Add project'} = 'Dodaj projekat';
-    $Self->{Translation}->{'Go to settings overview'} = 'Idi na pregled podešavanja';
-    $Self->{Translation}->{'Add Project'} = 'Dodaj Projekat';
-    $Self->{Translation}->{'Edit Project Settings'} = 'Izmeni podešavanja Projekta';
+    $Self->{Translation}->{'Go to settings overview'} = '';
+    $Self->{Translation}->{'Add Project'} = '';
+    $Self->{Translation}->{'Edit Project Settings'} = '';
     $Self->{Translation}->{'There is already a project with this name. Please, choose a different one.'} =
-        'Već postoji projekat sa tim imenom. Molimo vas, izaberite neko drugo.';
-    $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Izmeni podešavanja obračunavanja vremena';
-    $Self->{Translation}->{'Add task'} = 'Dodaj zadatak';
-    $Self->{Translation}->{'Filter for projects, tasks or users'} = 'Filter za projekte, zadatke ili korisnike';
-    $Self->{Translation}->{'Time periods can not be deleted.'} = 'Vremenski periodi se ne mogu obrisati.';
-    $Self->{Translation}->{'Project List'} = 'Lista projekata';
-    $Self->{Translation}->{'Task List'} = 'Lista zadataka';
-    $Self->{Translation}->{'Add Task'} = 'Dodaj zadatak';
-    $Self->{Translation}->{'Edit Task Settings'} = 'Uredi podešavanja zadatka';
+        '';
+    $Self->{Translation}->{'Edit Time Accounting Settings'} = '';
+    $Self->{Translation}->{'Add task'} = '';
+    $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
+    $Self->{Translation}->{'Time periods can not be deleted.'} = '';
+    $Self->{Translation}->{'Project List'} = '';
+    $Self->{Translation}->{'Task List'} = '';
+    $Self->{Translation}->{'Add Task'} = '';
+    $Self->{Translation}->{'Edit Task Settings'} = '';
     $Self->{Translation}->{'There is already a task with this name. Please, choose a different one.'} =
-        'Već postoji zadatak sa tim imenom. Molimo vas, izaberite neko drugo.';
-    $Self->{Translation}->{'User List'} = 'Lista korisnika';
-    $Self->{Translation}->{'User Settings'} = 'Korisnička podešavanja';
-    $Self->{Translation}->{'User is allowed to see overtimes'} = 'Korisniku je omogućeno da vidi prekovremeno';
-    $Self->{Translation}->{'Show Overtime'} = 'Prikaži prekovremeno';
-    $Self->{Translation}->{'User is allowed to create projects'} = 'Korisniku je omogućeno da kreira projekte';
-    $Self->{Translation}->{'Allow project creation'} = 'Dozvoli kreiranje projekta';
-    $Self->{Translation}->{'User is allowed to skip time accounting'} = 'Korisniku je omogućeno da preskoči obračunavanje vremena';
-    $Self->{Translation}->{'Allow time accounting skipping'} = 'Dozvoli preskakanje obračunavanja vremena';
+        '';
+    $Self->{Translation}->{'User List'} = '';
+    $Self->{Translation}->{'User Settings'} = '';
+    $Self->{Translation}->{'User is allowed to see overtimes'} = '';
+    $Self->{Translation}->{'Show Overtime'} = '';
+    $Self->{Translation}->{'User is allowed to create projects'} = '';
+    $Self->{Translation}->{'Allow project creation'} = '';
+    $Self->{Translation}->{'User is allowed to skip time accounting'} = '';
+    $Self->{Translation}->{'Allow time accounting skipping'} = '';
     $Self->{Translation}->{'If this option is selected, time accounting is effectively optional for the user.'} =
-        'Ukoliko je uključeno, obračunavanje vremena će biti opciono za korisnika.';
+        '';
     $Self->{Translation}->{'There will be no warnings about missing entries and no entry enforcement.'} =
-        'Upozorenja o nedostatku obračuna vremena i kontrola pristupa će biti suspendovani.';
-    $Self->{Translation}->{'Time Spans'} = 'Rasponi vremena';
-    $Self->{Translation}->{'Period Begin'} = 'Početak perioda';
-    $Self->{Translation}->{'Period End'} = 'Kraj perioda';
-    $Self->{Translation}->{'Days of Vacation'} = 'Dani odmora';
-    $Self->{Translation}->{'Hours per Week'} = 'Sati po nedelji';
-    $Self->{Translation}->{'Authorized Overtime'} = 'Dozvoljeno prekovremeno';
-    $Self->{Translation}->{'Start Date'} = 'Datum početka';
-    $Self->{Translation}->{'Please insert a valid date.'} = 'Molimo da unesete važeći datum.';
-    $Self->{Translation}->{'End Date'} = 'Datum završetka';
-    $Self->{Translation}->{'Period end must be after period begin.'} = 'Kraj perioda mora biti posle početka perioda.';
-    $Self->{Translation}->{'Leave Days'} = 'Dani odsustva';
-    $Self->{Translation}->{'Weekly Hours'} = 'Sedmični sati';
-    $Self->{Translation}->{'Overtime'} = 'Prekovremeno';
-    $Self->{Translation}->{'No time periods found.'} = 'Nisu pronađeni vremenski periodi.';
-    $Self->{Translation}->{'Add time period'} = 'Dodaj vremenski period';
+        '';
+    $Self->{Translation}->{'Time Spans'} = '';
+    $Self->{Translation}->{'Period Begin'} = '';
+    $Self->{Translation}->{'Period End'} = '';
+    $Self->{Translation}->{'Days of Vacation'} = '';
+    $Self->{Translation}->{'Hours per Week'} = '';
+    $Self->{Translation}->{'Authorized Overtime'} = '';
+    $Self->{Translation}->{'Start Date'} = '';
+    $Self->{Translation}->{'Please insert a valid date.'} = '';
+    $Self->{Translation}->{'End Date'} = '';
+    $Self->{Translation}->{'Period end must be after period begin.'} = '';
+    $Self->{Translation}->{'Leave Days'} = '';
+    $Self->{Translation}->{'Weekly Hours'} = '';
+    $Self->{Translation}->{'Overtime'} = '';
+    $Self->{Translation}->{'No time periods found.'} = '';
+    $Self->{Translation}->{'Add time period'} = '';
 
     # Template: AgentTimeAccountingView
-    $Self->{Translation}->{'View Time Record'} = 'Prikaz vremenskog zapisa';
-    $Self->{Translation}->{'View of '} = 'Prikaz';
-    $Self->{Translation}->{'Previous day'} = 'Prethodni dan';
-    $Self->{Translation}->{'Next day'} = 'Sledeći dan';
-    $Self->{Translation}->{'No data found for this day.'} = 'Nema podataka za ovaj dan.';
+    $Self->{Translation}->{'View Time Record'} = '';
+    $Self->{Translation}->{'View of '} = '';
+    $Self->{Translation}->{'Previous day'} = '';
+    $Self->{Translation}->{'Next day'} = '';
+    $Self->{Translation}->{'No data found for this day.'} = '';
 
     # Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-    $Self->{Translation}->{'Can\'t insert Working Units!'} = 'Radne jedinice se ne mogu uneti!';
-    $Self->{Translation}->{'Last Projects'} = 'Poslednji projekti';
-    $Self->{Translation}->{'Can\'t save settings, because a day has only 24 hours!'} = 'Ne mogu da sačuvam podešavanja, jer dan ima samo 24 sata!';
-    $Self->{Translation}->{'Can\'t delete Working Units!'} = 'Radne jedinice se ne mogu obrisati!';
+    $Self->{Translation}->{'Can\'t insert Working Units!'} = '';
+    $Self->{Translation}->{'Last Projects'} = '';
+    $Self->{Translation}->{'Can\'t save settings, because a day has only 24 hours!'} = '';
+    $Self->{Translation}->{'Can\'t delete Working Units!'} = '';
     $Self->{Translation}->{'This Date is out of limit, but you haven\'t insert this day yet, so you get one(!) chance to insert'} =
-        'Ovaj datum je izvan granica ali ga niste još uvek uneli, pa imate još jednu(!) šansu za unos';
-    $Self->{Translation}->{'Incomplete Working Days'} = 'Nepotpuni radni dani';
-    $Self->{Translation}->{'Successful insert!'} = 'Uspešno dodavanje!';
-    $Self->{Translation}->{'Error while inserting multiple dates!'} = 'Greška pri unosu više datuma!';
-    $Self->{Translation}->{'Successfully inserted entries for several dates!'} = 'Uspešno ubačeni unosi za više datuma!';
-    $Self->{Translation}->{'Entered date was invalid! Date was changed to today.'} = 'Uneti datum je nevažeći! Datum je promenjen na današnji.';
+        '';
+    $Self->{Translation}->{'Incomplete Working Days'} = '';
+    $Self->{Translation}->{'Successful insert!'} = '';
+    $Self->{Translation}->{'Error while inserting multiple dates!'} = '';
+    $Self->{Translation}->{'Successfully inserted entries for several dates!'} = '';
+    $Self->{Translation}->{'Entered date was invalid! Date was changed to today.'} = '';
     $Self->{Translation}->{'No time period configured, or the specified date is outside of the defined time periods.'} =
-        'Nije konfigurisan vremenski period ili je navedeni datum van definisanih vremenskih perioda.';
+        '';
     $Self->{Translation}->{'Please contact the time accounting administrator to update your time periods!'} =
-        'Molimo da kontaktirate administratora obračuna vremena za ažuriranje vremenskih perioda!';
-    $Self->{Translation}->{'Last Selected Projects'} = 'Poslednji izabrani projekti';
-    $Self->{Translation}->{'All Projects'} = 'Svi projekti';
+        '';
+    $Self->{Translation}->{'Last Selected Projects'} = '';
+    $Self->{Translation}->{'All Projects'} = '';
 
     # Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
-    $Self->{Translation}->{'ReportingProject: Need ProjectID'} = 'Izveštavanje o projektu: neophodan je ProjectID';
-    $Self->{Translation}->{'Reporting Project'} = 'Izveštavanje o projektu';
-    $Self->{Translation}->{'Reporting'} = 'Izveštavanje';
+    $Self->{Translation}->{'ReportingProject: Need ProjectID'} = '';
+    $Self->{Translation}->{'Reporting Project'} = '';
+    $Self->{Translation}->{'Reporting'} = '';
 
     # Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
-    $Self->{Translation}->{'Unable to update user settings!'} = 'Korisnička podešavanja se ne mogu ažurirati!';
-    $Self->{Translation}->{'Project added!'} = 'Dodat projekat!';
-    $Self->{Translation}->{'Project updated!'} = 'Ažuriran projekat!';
-    $Self->{Translation}->{'Task added!'} = 'Dodat zadatak!';
-    $Self->{Translation}->{'Task updated!'} = 'Ažuriran zadatak!';
-    $Self->{Translation}->{'The UserID is not valid!'} = 'UserID je nevažeći!';
-    $Self->{Translation}->{'Can\'t insert user data!'} = 'Korisnički podaci se ne mogu uneti!';
-    $Self->{Translation}->{'Unable to add time period!'} = 'Vremenski period se ne može dodati!';
-    $Self->{Translation}->{'Setting'} = 'Podešavanje';
-    $Self->{Translation}->{'User updated!'} = 'Ažuriran korisnik!';
-    $Self->{Translation}->{'User added!'} = 'Dodat korisnik!';
-    $Self->{Translation}->{'Add a user to time accounting...'} = 'Dodaj korisnika u obračunavanje vremena...';
-    $Self->{Translation}->{'New User'} = 'Novi korisnik';
-    $Self->{Translation}->{'Period Status'} = 'Status perioda';
+    $Self->{Translation}->{'Unable to update user settings!'} = '';
+    $Self->{Translation}->{'Project added!'} = '';
+    $Self->{Translation}->{'Project updated!'} = '';
+    $Self->{Translation}->{'Task added!'} = '';
+    $Self->{Translation}->{'Task updated!'} = '';
+    $Self->{Translation}->{'The UserID is not valid!'} = '';
+    $Self->{Translation}->{'Can\'t insert user data!'} = '';
+    $Self->{Translation}->{'Unable to add time period!'} = '';
+    $Self->{Translation}->{'Setting'} = '';
+    $Self->{Translation}->{'User updated!'} = '';
+    $Self->{Translation}->{'User added!'} = '';
+    $Self->{Translation}->{'Add a user to time accounting...'} = '';
+    $Self->{Translation}->{'New User'} = '';
+    $Self->{Translation}->{'Period Status'} = '';
 
     # Perl Module: Kernel/Modules/AgentTimeAccountingView.pm
-    $Self->{Translation}->{'View: Need %s!'} = 'Prikaz: neophodan %s!';
+    $Self->{Translation}->{'View: Need %s!'} = '';
 
     # Perl Module: Kernel/Output/HTML/Notification/TimeAccounting.pm
-    $Self->{Translation}->{'Please insert your working hours!'} = 'Molimo vas unesite vaše radno vreme!';
+    $Self->{Translation}->{'Please insert your working hours!'} = '';
 
     # Perl Module: Kernel/Output/HTML/ToolBar/IncompleteWorkingDays.pm
-    $Self->{Translation}->{'Incomplete working days'} = 'Nepotpuni radni dani';
+    $Self->{Translation}->{'Incomplete working days'} = '';
 
     # JS File: TimeAccounting.Agent.EditTimeRecords
-    $Self->{Translation}->{'Please choose at least one day!'} = 'Molimo vas izaberite bar jedan dan!';
-    $Self->{Translation}->{'Mass Entry'} = 'Masovni unos';
-    $Self->{Translation}->{'Please choose a reason for absence!'} = 'Molimo vas izaberite razlog vašeg odsustva!';
+    $Self->{Translation}->{'Please choose at least one day!'} = '';
+    $Self->{Translation}->{'Mass Entry'} = '';
+    $Self->{Translation}->{'Please choose a reason for absence!'} = '';
 
     # JS File: TimeAccounting.Agent
-    $Self->{Translation}->{'Delete Time Accounting Entry'} = 'Obriši stavku obračuna vremena';
-    $Self->{Translation}->{'Confirm insert'} = 'Potvrdi unos';
+    $Self->{Translation}->{'Delete Time Accounting Entry'} = '';
+    $Self->{Translation}->{'Confirm insert'} = '';
 
     # SysConfig
-    $Self->{Translation}->{'Agent interface notification module to see the number of incomplete working days for the user.'} =
-        'Modul za obaveštavanje u interfejsu operatera koji prikazuje broj nekompletnih radnih dana za korisnika.';
-    $Self->{Translation}->{'Default name for new actions.'} = 'Podrazumevano ime novih akcija.';
-    $Self->{Translation}->{'Default name for new projects.'} = 'Podrazumevano ime novih projekata.';
-    $Self->{Translation}->{'Default setting for date end.'} = 'Podrazumevano podešavanje za datum završetka.';
-    $Self->{Translation}->{'Default setting for date start.'} = 'Podrazumevano podešavanje za datum početka.';
-    $Self->{Translation}->{'Default setting for description.'} = 'Podrazumevano podešavanje za opis.';
-    $Self->{Translation}->{'Default setting for leave days.'} = 'Podrazumevano podešavanje za dane odsustva.';
-    $Self->{Translation}->{'Default setting for overtime.'} = 'Podrazumevano podešavanje za prekovremeni rad.';
-    $Self->{Translation}->{'Default setting for the standard weekly hours.'} = 'Podrazumevano podešavanje za standardnu radnu nedelju.';
-    $Self->{Translation}->{'Default status for new actions.'} = 'Podrazumevani status za nove akcije.';
-    $Self->{Translation}->{'Default status for new projects.'} = 'Podrazumevani status za nove projekte.';
-    $Self->{Translation}->{'Default status for new users.'} = 'Podrazumevani status novih korisnika.';
-    $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
-        'Određuje projekte za koje je napomena obavezna. Ako se RegExp poklopi na projektu, morate tekođe uneti napomenu. RegExp koristi smx parametar.';
-    $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
-        'Određuje da li statistički modul može generisati informacije o obračunu vremena.';
-    $Self->{Translation}->{'Edit time accounting settings.'} = 'Izmeni podešavanja obračunavanja vremena.';
-    $Self->{Translation}->{'Edit time record.'} = 'Izmeni vremenski zapis.';
-    $Self->{Translation}->{'For how many days ago you can insert working units.'} = 'Za koliko dana unazad možete uneti radne jedinice.';
-    $Self->{Translation}->{'If enabled, only users that has added working time to the selected project are shown.'} =
-        'Ako je aktivirano, prikazani su samo korisnici koji su dodali radno vreme u izabrani projekat.';
-    $Self->{Translation}->{'If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields.'} =
-        'Ako je aktivirano, padajući elementi na ekranu za izmenu se menjaju u modernizovana samodovršavajuća polja.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled.'} =
-        'Ako je aktivirano, filter prethodnih projekata se može koristiti umesto dve liste projekata (poslednji i svi). Može se koristiti samo ako je TimeAccounting::EnableAutoCompletion aktivirano.';
-    $Self->{Translation}->{'If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled.'} =
-        'Ako je aktivirano, filter prethodnih projekata je podrazumevano aktivan ako ima projekata od pre. Može se koristiti samo ako je EnableAutoCompletion i TimeAccounting::UseFilter aktivirano.';
-    $Self->{Translation}->{'If enabled, the user is allowed to enter "on vacation leave", "on sick leave" and "on overtime leave" to multiple dates at once.'} =
-        'Ako je aktivirano, korisniku je dozvoljeno da unese "na odmoru", "na bolovanju" i "na slobodnim danima" na više datuma odjednom.';
-    $Self->{Translation}->{'Maximum number of working days after which the working units have to be inserted.'} =
-        'Maksimalni broj radnih dana posle kog treba dodati radne jedinice.';
-    $Self->{Translation}->{'Maximum number of working days without working units entry after which a warning will be shown.'} =
-        'Maksimalni broj radnih dana bez unosa radnih jedinica posle kog će biti prikazano upozorenje.';
-    $Self->{Translation}->{'Overview.'} = 'Pregled.';
-    $Self->{Translation}->{'Project time reporting.'} = 'Izveštavanje o vremenu projekta.';
-    $Self->{Translation}->{'Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s).'} =
-        'Regularni izrazi za ograničavanje liste akcija prema izabranim projektima. Ključ sadrži regularni izraz za projekt(e), u sadržaju je regularni izraz za akciju(e).';
-    $Self->{Translation}->{'Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups.'} =
-        'Regularni izrazi za ograničavanje liste akcija prema izabranim korisničkim grupama. Ključ sadrži regularni izraz za projekt(e), u sadržaju je regularni izraz za grupe.';
-    $Self->{Translation}->{'Specifies if working hours can be inserted without start and end times.'} =
-        'Određuje da li radni sati mogu da se unesu bez vremena početka i završetka.';
-    $Self->{Translation}->{'This module forces inserts in TimeAccounting.'} = 'Ovaj modul nameće unos u obračun vremena.';
-    $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
-        'Ovaj modul za obaveštavanje daje upozorenje ako ima previše nekompletnih radnih dana.';
-    $Self->{Translation}->{'Time Accounting'} = 'Obračunavanje vremena';
-    $Self->{Translation}->{'Time accounting edit.'} = 'Uređivanje obračunavanja vremena.';
-    $Self->{Translation}->{'Time accounting overview.'} = 'Pregled obračunavanja vremena.';
-    $Self->{Translation}->{'Time accounting reporting.'} = 'Izveštaji obračunavanja vremena.';
-    $Self->{Translation}->{'Time accounting settings.'} = 'Podešavanja obračunavanja vremena.';
-    $Self->{Translation}->{'Time accounting view.'} = 'Pregled obračunavanja vremena.';
-    $Self->{Translation}->{'Time accounting.'} = 'Obračunavanje vremena.';
-    $Self->{Translation}->{'To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50).'} =
-        'Za upotrebu ako neke akcije smanjuju radne sate (na primer, ako se plaća samo pola vremena putovanja Ključ => putovanje; Sadržaj => 50).';
+    $Self->{Translation}->{'A precentage value of the minimal translation progress per language, to be usable for documentations.'} =
+        '';
+    $Self->{Translation}->{'Access repos via http or https.'} = '';
+    $Self->{Translation}->{'Autoloading of Znuny4OTRSRepo extensions.'} = '';
+    $Self->{Translation}->{'Backend module registration for the config conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the file conflict check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the function redefine check module.'} =
+        '';
+    $Self->{Translation}->{'Backend module registration for the manual set module.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for BS ad removal.'} = '';
+    $Self->{Translation}->{'Block hooks to be created for package manager output filter.'} =
+        '';
+    $Self->{Translation}->{'Branch View commit limit'} = 'Ograničenje broja komitova u prikazu grane';
+    $Self->{Translation}->{'CodePolicy'} = '';
+    $Self->{Translation}->{'Commit limit per page for Branch view screen'} = 'Ograničenje broja komitova po strani u ekranu prikaza grane';
+    $Self->{Translation}->{'Create analysis file'} = '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket and sends to Znuny.'} =
+        '';
+    $Self->{Translation}->{'Creates a analysis file from this ticket.'} = '';
+    $Self->{Translation}->{'Define private addon repos.'} = '';
+    $Self->{Translation}->{'Defines the filter that processes the HTML templates.'} = '';
+    $Self->{Translation}->{'Defines the test module for checking code policy.'} = '';
+    $Self->{Translation}->{'Definition of GIT clone/push URL Prefix.'} = 'Definicija adresnog prefiksa za GIT kloniranje i slanje.';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano.';
+    $Self->{Translation}->{'Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano.';
+    $Self->{Translation}->{'Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date).'} =
+        'Definicija eksternih MD5 vrednosti (ključ => MD5, vrednost => Vendor, PackageName, Version, Date).';
+    $Self->{Translation}->{'Definition of mappings between public repository requests and internal OPMS repositories.'} =
+        'Mapiranje skladišta u javnim zahtevima sa internim OPMS skladištima.';
+    $Self->{Translation}->{'Definition of package states.'} = 'Definicija stanja paketa.';
+    $Self->{Translation}->{'Definition of renamed OPMS packages.'} = 'Definicija OPMS paketa sa promenjenim imenom.';
+    $Self->{Translation}->{'Directory, which is used by Git to cache repositories.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store temporary data.'} = '';
+    $Self->{Translation}->{'Directory, which is used by Git to store working copies.'} = '';
+    $Self->{Translation}->{'Disable online repositories.'} = '';
+    $Self->{Translation}->{'Do not log git ssh connection authorization results for these users. Useful for automated stuff.'} =
+        'Isključi beleženje autorizacija prilikom ostvarivanja Git SSH konekcija za ove korisnike. Korisno za automatizaciju.';
+    $Self->{Translation}->{'Dynamic Fields Screens'} = '';
+    $Self->{Translation}->{'DynamicFieldScreen'} = '';
+    $Self->{Translation}->{'Export all available public keys to authorized_keys file.'} = 'Izvezi sve dostupne javne ključeve u datoteku authorized_keys.';
+    $Self->{Translation}->{'Export all relevant releases to ftp server.'} = 'Izvoz svih relevantnih izdanja na FTP server.';
+    $Self->{Translation}->{'Frontend module registration for the OPMS object in the agent interface.'} =
+        'Modul registracije za OPMS objekat u interfejsu operatera.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepository object in the public interface.'} =
+        'Modul registracije za PublicOPMSRepository objekat u javnom interfejsu.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface.'} =
+        'Modul registracije za PublicOPMSRepositoryLookup objekat u javnom interfejsu.';
+    $Self->{Translation}->{'Frontend module registration for the PublicOPMSTestBuild object in the public interface.'} =
+        'Modul registracije za PublicOPMSTestBuild objekat u javnom interfejsu.';
+    $Self->{Translation}->{'Frontend module registration for the PublicPackageVerification object in the public interface.'} =
+        'Modul registracije za PublicPackageVerification objekat u javnom interfejsu.';
+    $Self->{Translation}->{'Frontend module registration for the admin interface.'} = '';
+    $Self->{Translation}->{'GIT Author registration.'} = 'Registracija Git autora.';
+    $Self->{Translation}->{'Generate HTML comment hooks for the specified blocks so that filters can use them.'} =
+        '';
+    $Self->{Translation}->{'Generate documentations once per night.'} = '';
+    $Self->{Translation}->{'Git'} = 'Git';
+    $Self->{Translation}->{'Git Management'} = 'Git upravljanje';
+    $Self->{Translation}->{'Git Repository'} = '';
+    $Self->{Translation}->{'Group, whose members have delete admin permissions in OPMS.'} = 'Grupa čiji članovi imaju dozvolu za brisanje u OPMS.';
+    $Self->{Translation}->{'Group, whose members have repository admin permissions in OPMS.'} =
+        'Grupa čiji članovi imaju administratorske dozvole u OPMS.';
+    $Self->{Translation}->{'Group, whose members will see CI test result information in OPMS screens.'} =
+        '';
+    $Self->{Translation}->{'Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface.'} =
+        'Grupe u kojima registrovani korisnik (po korisničkom imenu i lozinci) mora biti član da bi imao dozvolu za kreiranje test izdanja paketa u javnom interfejsu.';
+    $Self->{Translation}->{'Groups which will be set during git project creation processes while adding OPMS repositories.'} =
+        'Grupe koje će biti podešene prilikom kreiranja GIT projekta u slučaju dodavanja OPMS skladišta.';
+    $Self->{Translation}->{'Manage dynamic field in screens.'} = '';
+    $Self->{Translation}->{'Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key.'} =
+        'Uredite svoje javne SSH ključeve za Git pristup. Obratite pažnju da morate sačuvati ovo podešavanje prilikom dodavanja novog ključa.';
+    $Self->{Translation}->{'Module to generate statistics about the added code lines.'} = 'Modul za generisanje statistika o broju dodatih linija koda.';
+    $Self->{Translation}->{'Module to generate statistics about the growth of code.'} = 'Modul za generisanje statistika o uvećanju koda.';
+    $Self->{Translation}->{'Module to generate statistics about the number of git commits.'} =
+        'Modul za generisanje statistika o broju Git komitova.';
+    $Self->{Translation}->{'Module to generate statistics about the removed code lines.'} = 'Modul za generisanje statistika o broju uklonjenih linija koda.';
+    $Self->{Translation}->{'OPMS'} = 'OPMS';
+    $Self->{Translation}->{'Only users who have rw permissions in one of these groups may access git.'} =
+        'Samo korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće Git pristup.';
+    $Self->{Translation}->{'Option to set a package compatibility manually.'} = '';
+    $Self->{Translation}->{'Parameters for the pages in the BranchView screen.'} = 'Parametri za stranice u ekranu prikaza grane.';
+    $Self->{Translation}->{'Pre-Definition of the \'GITProjectName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Predefinisanje dinamičkog polja \'GITProjectName\': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano.';
+    $Self->{Translation}->{'Pre-Definition of the \'GITRepositoryName\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Predefinisanje dinamičkog polja \'GITRepositoryName\': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano.';
+    $Self->{Translation}->{'Pre-Definition of the \'PackageDeprecated\' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed.'} =
+        'Predefinisanje dinamičkog polja \'PackageDeprecated\': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano.';
+    $Self->{Translation}->{'Recipients that will be informed by email in case of errors.'} =
+        '';
+    $Self->{Translation}->{'SSH Keys for Git Access'} = 'SSH ključevi za Git pristup';
+    $Self->{Translation}->{'Send analysis file'} = '';
+    $Self->{Translation}->{'Sets the git clone address to be used in repository listings.'} =
+        'Definiše adresu za Git kloniranje koja će biti korišćena u prikazu repozitorija.';
+    $Self->{Translation}->{'Sets the home directory for git repositories.'} = 'Definiše direktorijum za Git repozitorije.';
+    $Self->{Translation}->{'Sets the path for the BugzillaAddComment post receive script location.'} =
+        'Definiše putanju do BugzillaAddComment skripta.';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        '';
+    $Self->{Translation}->{'Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron.'} =
+        'Definiše putanju do OTRSCodePolicy skripta. Preporučeno je da postoji poseban klon OTRSCodePolicy modula koji se redovno osvežava putem cron.';
+    $Self->{Translation}->{'Show latest commits in git repositories.'} = '';
+    $Self->{Translation}->{'Shows a link in the menu to go create a unit test from the current ticket.'} =
+        '';
+    $Self->{Translation}->{'Synchronize OPMS tables with a remote database.'} = 'Sinhronizacija OPMS tabela sa udaljenom bazom.';
+    $Self->{Translation}->{'The minimum version of the sphinx library.'} = '';
+    $Self->{Translation}->{'The name of the sphinx theme to be used.'} = '';
+    $Self->{Translation}->{'The path to the OTRS CSS file (relative below the static path).'} =
+        '';
+    $Self->{Translation}->{'The path to the OTRS logo (relative below the static path).'} = '';
+    $Self->{Translation}->{'The path to the static folder, containing images and css files.'} =
+        '';
+    $Self->{Translation}->{'The path to the theme folder, containing the sphinx themes.'} = '';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable default columns.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines all possible screens to enable or disable dynamic fields.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines if only valids or all (invalids) dynamic fields should be shown.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It\'s still recommended to use only verified packages.'} =
+        '';
+    $Self->{Translation}->{'This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig \'Znuny4OTRSRepoType\'.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers a Output post-filter to extend package verification.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements.'} =
+        '';
+    $Self->{Translation}->{'This configuration registers an output filter to hide online repository selection in package manager.'} =
+        '';
+    $Self->{Translation}->{'Tidy unprocessed release that not passed test pomules checks for a long time.'} =
+        '';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to execute force pushes \'git push --force\'.'} =
+        'Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost izvršavanja komande \'git push --force\'.';
+    $Self->{Translation}->{'Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management.'} =
+        'Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost upravljanja projektima. Dodatno pripadnici će imati administracione privilegije za Git upravljanje.';
 
 
     push @{ $Self->{JavaScriptStrings} // [] }, (

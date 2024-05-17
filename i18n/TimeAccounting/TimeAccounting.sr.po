@@ -12,615 +12,615 @@ msgstr ""
 
 #. Template: AgentTimeAccountingDelete
 msgid "Do you really want to delete the Time Accounting of this day?"
-msgstr "Да ли заиста желите да обришете обрачун времена за овај дан?"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Edit Time Record"
-msgstr "Уреди временски запис"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Go to settings"
-msgstr "Иди у подешавања"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Date Navigation"
-msgstr "Датумска навигација"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Days without entries"
-msgstr "Дани без уноса"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Select all days"
-msgstr "Селектуј све дане"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Mass entry"
-msgstr "Масовни унос"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Please choose the reason for your absence for the selected days"
-msgstr "Молимо Вас изаберите разлог вашег одсуства за изабране дане"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "On vacation"
-msgstr "На одмору"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "On sick leave"
-msgstr "На боловању"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "On overtime leave"
-msgstr "На слободним данима"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Required fields are marked with a \"*\"."
-msgstr "Обавезна поља су означена са \"*\"."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "You have to fill in start and end time or a time period."
-msgstr "Морате унети време почетка и завршетка или временски период."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Project"
-msgstr "Пројекат"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Task"
-msgstr "Задатак"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Remark"
-msgstr "Напомена"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Please add a remark with more than 8 characters!"
-msgstr "Молимо да додате напомену дужу од 8 карактера!"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Negative times are not allowed."
-msgstr "Негативна времена нису дозвољена."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Repeated hours are not allowed. Start time matches another interval."
-msgstr "Понављање сати није дозвољено. Време почетка се поклапа са другим интервалом."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid format! Please enter a time with the format HH:MM."
-msgstr "Неисправан формат! Молимо да унесете време у формату HH:MM."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "24:00 is only permitted as end time."
-msgstr "24:00 је дозвољено само као време завршетка."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid time! A day has only 24 hours."
-msgstr "Неисправно време! Дан има само 24 сата."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "End time must be after start time."
-msgstr "Време завршетка мора бити након почетка."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Repeated hours are not allowed. End time matches another interval."
-msgstr "Понављање сати није дозвољено. Време завршетка се поклапа са другим интервалом."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid period! A day has only 24 hours."
-msgstr "Неисправан период! Дан има само 24 сата."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "A valid period must be greater than zero."
-msgstr "Исправан период мора бити већи од нуле."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid period! Negative periods are not allowed."
-msgstr "Неисправан период! Негативни периоди нису дозвољени."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Add one row"
-msgstr "Додај један ред"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "You can only select one checkbox element!"
-msgstr "Можете изабрати само једно поље за потврду."
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on sick leave?"
-msgstr "Да ли сте сигурни да сте радили док сте били на боловању?"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on vacation?"
-msgstr "Да ли сте сигурни да сте радили док сте били на одмору?"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked while you were on overtime leave?"
-msgstr "Да ли сте сигурни да сте радили док сте били на слободним данима?"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Are you sure that you worked more than 16 hours?"
-msgstr "Да ли сте сигурни да сте радили више од 16 сати?"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Time reporting monthly overview"
-msgstr "Преглед месечног обрачуна времена"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Overtime (Hours)"
-msgstr "Прековремено (сати)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Overtime (this month)"
-msgstr "Прековремено (овај месец)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Overtime (total)"
-msgstr "Прековремено (укупно)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Remaining overtime leave"
-msgstr "Преостали слободни дани"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Vacation (Days)"
-msgstr "Одмор (дани)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Vacation taken (this month)"
-msgstr "Искоришћен одмор (овај месец)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Vacation taken (total)"
-msgstr "Искоришћен одмор (укупно)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Remaining vacation"
-msgstr "Преостао одмор"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Sick Leave (Days)"
-msgstr "Боловање (дани)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Sick leave taken (this month)"
-msgstr "Боловање (овај месец)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Sick leave taken (total)"
-msgstr "Боловање (укупно)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Previous month"
-msgstr "Претходни месец"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Next month"
-msgstr "Следећи месец"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Weekday"
-msgstr "Радни дан"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Working Hours"
-msgstr "Радни сати"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Total worked hours"
-msgstr "Укупно радних сати"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "User's project overview"
-msgstr "Преглед корисничког пројекта"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Hours (monthly)"
-msgstr "Сати (месечно)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Hours (Lifetime)"
-msgstr "Сати (укупно)"
+msgstr ""
 
 #. Template: AgentTimeAccountingOverview
 msgid "Grand total"
-msgstr "Укупан збир"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Time reporting"
-msgstr "Извештавање о времену"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Month Navigation"
-msgstr "Навигација по месецима"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Go to date"
-msgstr "Иди на датум"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "User reports"
-msgstr "Кориснички извештаји"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Monthly total"
-msgstr "Месечни збир"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Lifetime total"
-msgstr "Свега до сада"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Overtime leave"
-msgstr "Слободни дани"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Vacation"
-msgstr "Одмор"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Sick leave"
-msgstr "Боловање"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Vacation remaining"
-msgstr "Преостао одмор"
+msgstr ""
 
 #. Template: AgentTimeAccountingReporting
 msgid "Project reports"
-msgstr "Извештаји о пројекту"
+msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
 msgid "Project report"
-msgstr "Извештај о пројекту"
+msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
 msgid "Go to reporting overview"
-msgstr "Иди на преглед извештавања"
+msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
 msgid "Currently only active users in this project are shown. To change this behavior, please update setting:"
-msgstr "Тренутно су приказани само активни корисници у овом пројекту. За промену оваквог понашања, молимо Вас ажурирајте подешавања:"
+msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
 msgid "Currently all time accounting users are shown. To change this behavior, please update setting:"
-msgstr "Тренутно су приказани сви корисници обрачуна времена. За промену оваквог понашања, молимо ажурирајте подешавања:"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Time Accounting Project Settings"
-msgstr "Измена подешавања обрачунавања времена пројекта"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add project"
-msgstr "Додај пројекат"
+msgstr "Dodaj projekat"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Go to settings overview"
-msgstr "Иди на преглед подешавања"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add Project"
-msgstr "Додај Пројекат"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Project Settings"
-msgstr "Измени подешавања Пројекта"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "There is already a project with this name. Please, choose a different one."
-msgstr "Већ постоји пројекат са тим именом. Молимо вас, изаберите неко друго."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Time Accounting Settings"
-msgstr "Измени подешавања обрачунавања времена"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add task"
-msgstr "Додај задатак"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Filter for projects, tasks or users"
-msgstr "Филтер за пројекте, задатке или кориснике"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time periods can not be deleted."
-msgstr "Временски периоди се не могу обрисати."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Project List"
-msgstr "Листа пројеката"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Task List"
-msgstr "Листа задатака"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add Task"
-msgstr "Додај задатак"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Task Settings"
-msgstr "Уреди подешавања задатка"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "There is already a task with this name. Please, choose a different one."
-msgstr "Већ постоји задатак са тим именом. Молимо вас, изаберите неко друго."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "User List"
-msgstr "Листа корисника"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "User Settings"
-msgstr "Корисничка подешавања"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to see overtimes"
-msgstr "Кориснику је омогућено да види прековремено"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Show Overtime"
-msgstr "Прикажи прековремено"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to create projects"
-msgstr "Кориснику је омогућено да креира пројекте"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Allow project creation"
-msgstr "Дозволи креирање пројекта"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "User is allowed to skip time accounting"
-msgstr "Кориснику је омогућено да прескочи обрачунавање времена"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Allow time accounting skipping"
-msgstr "Дозволи прескакање обрачунавања времена"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "If this option is selected, time accounting is effectively optional for the user."
-msgstr "Уколико је укључено, обрачунавање времена ће бити опционо за корисника."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "There will be no warnings about missing entries and no entry enforcement."
-msgstr "Упозорења о недостатку обрачуна времена и контрола приступа ће бити суспендовани."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time Spans"
-msgstr "Распони времена"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Period Begin"
-msgstr "Почетак периода"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Period End"
-msgstr "Крај периода"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Days of Vacation"
-msgstr "Дани одмора"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Hours per Week"
-msgstr "Сати по недељи"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Authorized Overtime"
-msgstr "Дозвољено прековремено"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Start Date"
-msgstr "Датум почетка"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Please insert a valid date."
-msgstr "Молимо да унесете важећи датум."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "End Date"
-msgstr "Датум завршетка"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Period end must be after period begin."
-msgstr "Крај периода мора бити после почетка периода."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Leave Days"
-msgstr "Дани одсуства"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Weekly Hours"
-msgstr "Седмични сати"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Overtime"
-msgstr "Прековремено"
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "No time periods found."
-msgstr "Нису пронађени временски периоди."
+msgstr ""
 
 #. Template: AgentTimeAccountingSetting
 msgid "Add time period"
-msgstr "Додај временски период"
+msgstr ""
 
 #. Template: AgentTimeAccountingView
 msgid "View Time Record"
-msgstr "Приказ временског записа"
+msgstr ""
 
 #. Template: AgentTimeAccountingView
 msgid "View of "
-msgstr "Приказ"
+msgstr ""
 
 #. Template: AgentTimeAccountingView
 msgid "Previous day"
-msgstr "Претходни дан"
+msgstr ""
 
 #. Template: AgentTimeAccountingView
 msgid "Next day"
-msgstr "Следећи дан"
+msgstr ""
 
 #. Template: AgentTimeAccountingView
 msgid "No data found for this day."
-msgstr "Нема података за овај дан."
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't insert Working Units!"
-msgstr "Радне јединице се не могу унети!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Projects"
-msgstr "Последњи пројекти"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't save settings, because a day has only 24 hours!"
-msgstr "Не могу да сачувам подешавања, јер дан има само 24 сата!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Can't delete Working Units!"
-msgstr "Радне јединице се не могу обрисати!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
-msgstr "Овај датум је изван граница али га нисте још увек унели, па имате још једну(!) шансу за унос"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Incomplete Working Days"
-msgstr "Непотпуни радни дани"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Successful insert!"
-msgstr "Успешно додавање!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Error while inserting multiple dates!"
-msgstr "Грешка при уносу више датума!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Successfully inserted entries for several dates!"
-msgstr "Успешно убачени уноси за више датума!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Entered date was invalid! Date was changed to today."
-msgstr "Унети датум је неважећи! Датум је промењен на данашњи."
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "No time period configured, or the specified date is outside of the defined time periods."
-msgstr "Није конфигурисан временски период или је наведени датум ван дефинисаних временских периода."
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Please contact the time accounting administrator to update your time periods!"
-msgstr "Молимо да контактирате администратора обрачуна времена за ажурирање временских периода!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Selected Projects"
-msgstr "Последњи изабрани пројекти"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "All Projects"
-msgstr "Сви пројекти"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "ReportingProject: Need ProjectID"
-msgstr "Извештавање о пројекту: неопходан је ProjectID"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "Reporting Project"
-msgstr "Извештавање о пројекту"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingReporting.pm
 msgid "Reporting"
-msgstr "Извештавање"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Unable to update user settings!"
-msgstr "Корисничка подешавања се не могу ажурирати!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Project added!"
-msgstr "Додат пројекат!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Project updated!"
-msgstr "Ажуриран пројекат!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Task added!"
-msgstr "Додат задатак!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Task updated!"
-msgstr "Ажуриран задатак!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "The UserID is not valid!"
-msgstr "UserID је неважећи!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Can't insert user data!"
-msgstr "Кориснички подаци се не могу унети!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Unable to add time period!"
-msgstr "Временски период се не може додати!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Setting"
-msgstr "Подешавање"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "User updated!"
-msgstr "Ажуриран корисник!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "User added!"
-msgstr "Додат корисник!"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Add a user to time accounting..."
-msgstr "Додај корисника у обрачунавање времена..."
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "New User"
-msgstr "Нови корисник"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "Period Status"
-msgstr "Статус периода"
+msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingView.pm
 msgid "View: Need %s!"
-msgstr "Приказ: неопходан %s!"
+msgstr ""
 
 #. Perl Module: Kernel/Output/HTML/Notification/TimeAccounting.pm
 msgid "Please insert your working hours!"
-msgstr "Молимо вас унесите ваше радно време!"
+msgstr ""
 
 #. Perl Module: Kernel/Output/HTML/ToolBar/IncompleteWorkingDays.pm
 msgid "Incomplete working days"
-msgstr "Непотпуни радни дани"
+msgstr ""
 
 #. JS File: TimeAccounting.Agent.EditTimeRecords
 msgid "Please choose at least one day!"
-msgstr "Молимо вас изаберите бар један дан!"
+msgstr ""
 
 #. JS File: TimeAccounting.Agent.EditTimeRecords
 msgid "Mass Entry"
-msgstr "Масовни унос"
+msgstr ""
 
 #. JS File: TimeAccounting.Agent.EditTimeRecords
 msgid "Please choose a reason for absence!"
-msgstr "Молимо вас изаберите разлог вашег одсуства!"
+msgstr ""
 
 #. JS File: TimeAccounting.Agent
 msgid "Delete Time Accounting Entry"
-msgstr "Обриши ставку обрачуна времена"
+msgstr ""
 
 #. JS File: TimeAccounting.Agent
 msgid "Confirm insert"
-msgstr "Потврди унос"
+msgstr ""
 
 #. SysConfig
 msgid "Agent interface notification module to see the number of incomplete working days for the user."
@@ -777,4 +777,392 @@ msgstr "Обрачунавање времена."
 #. SysConfig
 msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
 msgstr "За употребу ако неке акције смањују радне сате (на пример, ако се плаћа само пола времена путовања Кључ => путовање; Садржај => 50)."
+
+#. SysConfig
+msgid "Defines the default frontend (HTML) theme to be used by the agents and customers. If you like, you can add your own theme. Please refer the administrator manual located at https://doc.otobo.org/."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the default frontend language. All the possible values are determined by the available language files on the system. These values are listed as the keys in the setting 'DefaultUsedLanguages'."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the parameters for the dashboard backend. \"Cmd\" is used to specify command with parameters. \"Group\" is used to restrict access to the plugin (e. g. Group: admin;group1;group2;). \"Default\" indicates if the plugin is enabled by default or if the user needs to enable it manually. \"CacheTTL\" indicates the cache expiration period in minutes for the plugin. \"Mandatory\" determines if the plugin is always shown and can not be removed by agents. Only works if DashboardBackend::AllowCmdOutput is enabled in Config.pm."
+msgstr ""
+
+#. SysConfig
+msgid "If \"LDAP\" was selected for Customer::AuthModule and you wish to use TLS security to communicate with the LDAP server, the \"verify\" parameter can be specified here. See Net::LDAP::start_tls for more information about the parameter."
+msgstr ""
+
+#. SysConfig
+msgid "Ignores not ticket related attributes."
+msgstr ""
+
+#. SysConfig
+msgid "A precentage value of the minimal translation progress per language, to be usable for documentations."
+msgstr ""
+
+#. SysConfig
+msgid "Access repos via http or https."
+msgstr ""
+
+#. SysConfig
+msgid "Autoloading of Znuny4OTRSRepo extensions."
+msgstr ""
+
+#. SysConfig
+msgid "Backend module registration for the config conflict check module."
+msgstr ""
+
+#. SysConfig
+msgid "Backend module registration for the file conflict check module."
+msgstr ""
+
+#. SysConfig
+msgid "Backend module registration for the function redefine check module."
+msgstr ""
+
+#. SysConfig
+msgid "Backend module registration for the manual set module."
+msgstr ""
+
+#. SysConfig
+msgid "Block hooks to be created for BS ad removal."
+msgstr ""
+
+#. SysConfig
+msgid "Block hooks to be created for package manager output filter."
+msgstr ""
+
+#. SysConfig
+msgid "Branch View commit limit"
+msgstr "Ograničenje broja komitova u prikazu grane"
+
+#. SysConfig
+msgid "CodePolicy"
+msgstr ""
+
+#. SysConfig
+msgid "Commit limit per page for Branch view screen"
+msgstr "Ograničenje broja komitova po strani u ekranu prikaza grane"
+
+#. SysConfig
+msgid "Create analysis file"
+msgstr ""
+
+#. SysConfig
+msgid "Creates a analysis file from this ticket and sends to Znuny."
+msgstr ""
+
+#. SysConfig
+msgid "Creates a analysis file from this ticket."
+msgstr ""
+
+#. SysConfig
+msgid "Define private addon repos."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the filter that processes the HTML templates."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the test module for checking code policy."
+msgstr ""
+
+#. SysConfig
+msgid "Definition of GIT clone/push URL Prefix."
+msgstr "Definicija adresnog prefiksa za GIT kloniranje i slanje."
+
+#. SysConfig
+msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
+msgstr "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#. SysConfig
+msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
+msgstr "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#. SysConfig
+msgid "Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date)."
+msgstr "Definicija eksternih MD5 vrednosti (ključ => MD5, vrednost => Vendor, PackageName, Version, Date)."
+
+#. SysConfig
+msgid "Definition of mappings between public repository requests and internal OPMS repositories."
+msgstr "Mapiranje skladišta u javnim zahtevima sa internim OPMS skladištima."
+
+#. SysConfig
+msgid "Definition of package states."
+msgstr "Definicija stanja paketa."
+
+#. SysConfig
+msgid "Definition of renamed OPMS packages."
+msgstr "Definicija OPMS paketa sa promenjenim imenom."
+
+#. SysConfig
+msgid "Directory, which is used by Git to cache repositories."
+msgstr ""
+
+#. SysConfig
+msgid "Directory, which is used by Git to store temporary data."
+msgstr ""
+
+#. SysConfig
+msgid "Directory, which is used by Git to store working copies."
+msgstr ""
+
+#. SysConfig
+msgid "Disable online repositories."
+msgstr ""
+
+#. SysConfig
+msgid "Do not log git ssh connection authorization results for these users. Useful for automated stuff."
+msgstr "Isključi beleženje autorizacija prilikom ostvarivanja Git SSH konekcija za ove korisnike. Korisno za automatizaciju."
+
+#. SysConfig
+msgid "Dynamic Fields Screens"
+msgstr ""
+
+#. SysConfig
+msgid "DynamicFieldScreen"
+msgstr ""
+
+#. SysConfig
+msgid "Export all available public keys to authorized_keys file."
+msgstr "Izvezi sve dostupne javne ključeve u datoteku authorized_keys."
+
+#. SysConfig
+msgid "Export all relevant releases to ftp server."
+msgstr "Izvoz svih relevantnih izdanja na FTP server."
+
+#. SysConfig
+msgid "Frontend module registration for the OPMS object in the agent interface."
+msgstr "Modul registracije za OPMS objekat u interfejsu operatera."
+
+#. SysConfig
+msgid "Frontend module registration for the PublicOPMSRepository object in the public interface."
+msgstr "Modul registracije za PublicOPMSRepository objekat u javnom interfejsu."
+
+#. SysConfig
+msgid "Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface."
+msgstr "Modul registracije za PublicOPMSRepositoryLookup objekat u javnom interfejsu."
+
+#. SysConfig
+msgid "Frontend module registration for the PublicOPMSTestBuild object in the public interface."
+msgstr "Modul registracije za PublicOPMSTestBuild objekat u javnom interfejsu."
+
+#. SysConfig
+msgid "Frontend module registration for the PublicPackageVerification object in the public interface."
+msgstr "Modul registracije za PublicPackageVerification objekat u javnom interfejsu."
+
+#. SysConfig
+msgid "Frontend module registration for the admin interface."
+msgstr ""
+
+#. SysConfig
+msgid "GIT Author registration."
+msgstr "Registracija Git autora."
+
+#. SysConfig
+msgid "Generate HTML comment hooks for the specified blocks so that filters can use them."
+msgstr ""
+
+#. SysConfig
+msgid "Generate documentations once per night."
+msgstr ""
+
+#. SysConfig
+msgid "Git"
+msgstr "Git"
+
+#. SysConfig
+msgid "Git Management"
+msgstr "Git upravljanje"
+
+#. SysConfig
+msgid "Git Repository"
+msgstr ""
+
+#. SysConfig
+msgid "Group, whose members have delete admin permissions in OPMS."
+msgstr "Grupa čiji članovi imaju dozvolu za brisanje u OPMS."
+
+#. SysConfig
+msgid "Group, whose members have repository admin permissions in OPMS."
+msgstr "Grupa čiji članovi imaju administratorske dozvole u OPMS."
+
+#. SysConfig
+msgid "Group, whose members will see CI test result information in OPMS screens."
+msgstr ""
+
+#. SysConfig
+msgid "Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface."
+msgstr "Grupe u kojima registrovani korisnik (po korisničkom imenu i lozinci) mora biti član da bi imao dozvolu za kreiranje test izdanja paketa u javnom interfejsu."
+
+#. SysConfig
+msgid "Groups which will be set during git project creation processes while adding OPMS repositories."
+msgstr "Grupe koje će biti podešene prilikom kreiranja GIT projekta u slučaju dodavanja OPMS skladišta."
+
+#. SysConfig
+msgid "Manage dynamic field in screens."
+msgstr ""
+
+#. SysConfig
+msgid "Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key."
+msgstr "Uredite svoje javne SSH ključeve za Git pristup. Obratite pažnju da morate sačuvati ovo podešavanje prilikom dodavanja novog ključa."
+
+#. SysConfig
+msgid "Module to generate statistics about the added code lines."
+msgstr "Modul za generisanje statistika o broju dodatih linija koda."
+
+#. SysConfig
+msgid "Module to generate statistics about the growth of code."
+msgstr "Modul za generisanje statistika o uvećanju koda."
+
+#. SysConfig
+msgid "Module to generate statistics about the number of git commits."
+msgstr "Modul za generisanje statistika o broju Git komitova."
+
+#. SysConfig
+msgid "Module to generate statistics about the removed code lines."
+msgstr "Modul za generisanje statistika o broju uklonjenih linija koda."
+
+#. SysConfig
+msgid "OPMS"
+msgstr "OPMS"
+
+#. SysConfig
+msgid "Only users who have rw permissions in one of these groups may access git."
+msgstr "Samo korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće Git pristup."
+
+#. SysConfig
+msgid "Option to set a package compatibility manually."
+msgstr ""
+
+#. SysConfig
+msgid "Parameters for the pages in the BranchView screen."
+msgstr "Parametri za stranice u ekranu prikaza grane."
+
+#. SysConfig
+msgid "Pre-Definition of the 'GITProjectName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
+msgstr "Predefinisanje dinamičkog polja 'GITProjectName': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#. SysConfig
+msgid "Pre-Definition of the 'GITRepositoryName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
+msgstr "Predefinisanje dinamičkog polja 'GITRepositoryName': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#. SysConfig
+msgid "Pre-Definition of the 'PackageDeprecated' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
+msgstr "Predefinisanje dinamičkog polja 'PackageDeprecated': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#. SysConfig
+msgid "Recipients that will be informed by email in case of errors."
+msgstr ""
+
+#. SysConfig
+msgid "SSH Keys for Git Access"
+msgstr "SSH ključevi za Git pristup"
+
+#. SysConfig
+msgid "Send analysis file"
+msgstr ""
+
+#. SysConfig
+msgid "Sets the git clone address to be used in repository listings."
+msgstr "Definiše adresu za Git kloniranje koja će biti korišćena u prikazu repozitorija."
+
+#. SysConfig
+msgid "Sets the home directory for git repositories."
+msgstr "Definiše direktorijum za Git repozitorije."
+
+#. SysConfig
+msgid "Sets the path for the BugzillaAddComment post receive script location."
+msgstr "Definiše putanju do BugzillaAddComment skripta."
+
+#. SysConfig
+msgid "Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
+msgstr ""
+
+#. SysConfig
+msgid "Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
+msgstr "Definiše putanju do OTRSCodePolicy skripta. Preporučeno je da postoji poseban klon OTRSCodePolicy modula koji se redovno osvežava putem cron."
+
+#. SysConfig
+msgid "Show latest commits in git repositories."
+msgstr ""
+
+#. SysConfig
+msgid "Shows a link in the menu to go create a unit test from the current ticket."
+msgstr ""
+
+#. SysConfig
+msgid "Synchronize OPMS tables with a remote database."
+msgstr "Sinhronizacija OPMS tabela sa udaljenom bazom."
+
+#. SysConfig
+msgid "The minimum version of the sphinx library."
+msgstr ""
+
+#. SysConfig
+msgid "The name of the sphinx theme to be used."
+msgstr ""
+
+#. SysConfig
+msgid "The path to the OTRS CSS file (relative below the static path)."
+msgstr ""
+
+#. SysConfig
+msgid "The path to the OTRS logo (relative below the static path)."
+msgstr ""
+
+#. SysConfig
+msgid "The path to the static folder, containing images and css files."
+msgstr ""
+
+#. SysConfig
+msgid "The path to the theme folder, containing the sphinx themes."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration defines all possible screens to enable or disable default columns."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration defines all possible screens to enable or disable dynamic fields."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration defines if only valids or all (invalids) dynamic fields should be shown."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It's still recommended to use only verified packages."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig 'Znuny4OTRSRepoType'."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration registers a Output post-filter to extend package verification."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements."
+msgstr ""
+
+#. SysConfig
+msgid "This configuration registers an output filter to hide online repository selection in package manager."
+msgstr ""
+
+#. SysConfig
+msgid "Tidy unprocessed release that not passed test pomules checks for a long time."
+msgstr ""
+
+#. SysConfig
+msgid "Users who have rw permissions in one of these groups are permitted to execute force pushes 'git push --force'."
+msgstr "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost izvršavanja komande 'git push --force'."
+
+#. SysConfig
+msgid "Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management."
+msgstr "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost upravljanja projektima. Dodatno pripadnici će imati administracione privilegije za Git upravljanje."
 

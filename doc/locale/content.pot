@@ -1,0 +1,447 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# This file is distributed under the same license as the OTOBO Installation Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OTOBO Installation Guide rel-10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-17 05:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../content/index.rst:20
+msgid "Sacrifice to Sphinx"
+msgstr ""
+
+#: ../../content/index.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../content/index.rst:24
+msgid "A Time Registration Module."
+msgstr ""
+
+#: ../../content/index.rst:27
+msgid "System requirements"
+msgstr ""
+
+#: ../../content/index.rst:30
+msgid "Framework"
+msgstr ""
+
+#: ../../content/index.rst:31
+msgid "OTOBO 10.0.x"
+msgstr ""
+
+#: ../../content/index.rst:34
+msgid "Packages"
+msgstr ""
+
+#: ../../content/index.rst:35
+#: ../../content/index.rst:39
+msgid "\\-"
+msgstr ""
+
+#: ../../content/index.rst:38
+msgid "Third-party software"
+msgstr ""
+
+#: ../../content/index.rst:42
+msgid "Usage"
+msgstr ""
+
+#: ../../content/index.rst:45
+msgid "Setup"
+msgstr ""
+
+#: ../../content/index.rst:48
+msgid "Configuration Reference"
+msgstr ""
+
+#: ../../content/index.rst:51
+msgid "Core::Stats"
+msgstr ""
+
+#: ../../content/index.rst:54
+msgid "Stats::DynamicObjectRegistration###TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:55
+msgid "Determines if the statistics module may generate time accounting information."
+msgstr ""
+
+#: ../../content/index.rst:58
+msgid "Core::TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:61
+msgid "TimeAccounting::MaxIntervalOfIncompleteDays"
+msgstr ""
+
+#: ../../content/index.rst:62
+msgid "Maximum number of working days after which the working units have to be inserted."
+msgstr ""
+
+#: ../../content/index.rst:65
+msgid "TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning"
+msgstr ""
+
+#: ../../content/index.rst:66
+msgid "Maximum number of working days without working units entry after which a warning will be shown."
+msgstr ""
+
+#: ../../content/index.rst:69
+msgid "TimeAccounting::MaxAllowedInsertDays"
+msgstr ""
+
+#: ../../content/index.rst:70
+msgid "For how many days ago you can insert working units."
+msgstr ""
+
+#: ../../content/index.rst:73
+msgid "Core::TimeAccounting::ViewReportingProject"
+msgstr ""
+
+#: ../../content/index.rst:76
+msgid "TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers"
+msgstr ""
+
+#: ../../content/index.rst:77
+msgid "If enabled, only users that has added working time to the selected project are shown."
+msgstr ""
+
+#: ../../content/index.rst:80
+msgid "Frontend::Agent::FrontendNotification"
+msgstr ""
+
+#: ../../content/index.rst:83
+msgid "Frontend::NotifyModule###888-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:84
+msgid "This notification module gives a warning if there are too many incomplete working days."
+msgstr ""
+
+#: ../../content/index.rst:87
+msgid "Frontend::Agent::ModuleRegistration"
+msgstr ""
+
+#: ../../content/index.rst:90
+msgid "Frontend::Module###AgentTimeAccountingEdit"
+msgstr ""
+
+#: ../../content/index.rst:91
+#: ../../content/index.rst:95
+#: ../../content/index.rst:99
+#: ../../content/index.rst:103
+#: ../../content/index.rst:107
+msgid "Frontend module registration for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:94
+msgid "Frontend::Module###AgentTimeAccountingSetting"
+msgstr ""
+
+#: ../../content/index.rst:98
+msgid "Frontend::Module###AgentTimeAccountingOverview"
+msgstr ""
+
+#: ../../content/index.rst:102
+msgid "Frontend::Module###AgentTimeAccountingReporting"
+msgstr ""
+
+#: ../../content/index.rst:106
+msgid "Frontend::Module###AgentTimeAccountingView"
+msgstr ""
+
+#: ../../content/index.rst:110
+msgid "Frontend::Agent::ModuleRegistration::Loader"
+msgstr ""
+
+#: ../../content/index.rst:113
+msgid "Loader::Module::AgentTimeAccountingOverview###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:114
+#: ../../content/index.rst:118
+#: ../../content/index.rst:122
+#: ../../content/index.rst:126
+#: ../../content/index.rst:130
+msgid "Loader module registration for the agent interface."
+msgstr ""
+
+#: ../../content/index.rst:117
+msgid "Loader::Module::AgentTimeAccountingEdit###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:121
+msgid "Loader::Module::AgentTimeAccountingSetting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:125
+msgid "Loader::Module::AgentTimeAccountingReporting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:129
+msgid "Loader::Module::AgentTimeAccountingView###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:133
+msgid "Frontend::Agent::ModuleRegistration::MainMenu"
+msgstr ""
+
+#: ../../content/index.rst:136
+msgid "Frontend::Navigation###AgentTimeAccountingOverview###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:137
+#: ../../content/index.rst:141
+#: ../../content/index.rst:145
+#: ../../content/index.rst:149
+#: ../../content/index.rst:153
+msgid "Main menu item registration."
+msgstr ""
+
+#: ../../content/index.rst:140
+msgid "Frontend::Navigation###AgentTimeAccountingEdit###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:144
+msgid "Frontend::Navigation###AgentTimeAccountingSetting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:148
+msgid "Frontend::Navigation###AgentTimeAccountingReporting###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:152
+msgid "Frontend::Navigation###AgentTimeAccountingView###002-TimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:156
+msgid "Frontend::Agent::ToolBar"
+msgstr ""
+
+#: ../../content/index.rst:159
+msgid "Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays"
+msgstr ""
+
+#: ../../content/index.rst:160
+msgid "Agent interface notification module to see the number of incomplete working days for the user."
+msgstr ""
+
+#: ../../content/index.rst:163
+msgid "Frontend::Agent::View::TimeAccountingEdit"
+msgstr ""
+
+#: ../../content/index.rst:166
+msgid "TimeAccounting::ReduceTime"
+msgstr ""
+
+#: ../../content/index.rst:167
+msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
+msgstr ""
+
+#: ../../content/index.rst:170
+msgid "TimeAccounting::InputHoursWithoutStartEndTime"
+msgstr ""
+
+#: ../../content/index.rst:171
+msgid "Specifies if working hours can be inserted without start and end times."
+msgstr ""
+
+#: ../../content/index.rst:174
+msgid "TimeAccounting::Project2RemarkRegExp"
+msgstr ""
+
+#: ../../content/index.rst:175
+msgid "Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter."
+msgstr ""
+
+#: ../../content/index.rst:178
+msgid "TimeAccounting::ProjectListConstraints"
+msgstr ""
+
+#: ../../content/index.rst:179
+msgid "Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups."
+msgstr ""
+
+#: ../../content/index.rst:182
+msgid "TimeAccounting::ActionListConstraints"
+msgstr ""
+
+#: ../../content/index.rst:183
+msgid "Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s)."
+msgstr ""
+
+#: ../../content/index.rst:186
+msgid "TimeAccounting::EnableAutoCompletion"
+msgstr ""
+
+#: ../../content/index.rst:187
+msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
+msgstr ""
+
+#: ../../content/index.rst:190
+msgid "TimeAccounting::UseFilter"
+msgstr ""
+
+#: ../../content/index.rst:191
+msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+
+#: ../../content/index.rst:194
+msgid "TimeAccounting::ActiveFilter"
+msgstr ""
+
+#: ../../content/index.rst:195
+msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+
+#: ../../content/index.rst:198
+msgid "TimeAccounting::AllowMassEntryForUser"
+msgstr ""
+
+#: ../../content/index.rst:199
+msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
+msgstr ""
+
+#: ../../content/index.rst:202
+msgid "Frontend::Agent::View::TimeAccountingSetting"
+msgstr ""
+
+#: ../../content/index.rst:205
+msgid "TimeAccounting::DefaultProjectName"
+msgstr ""
+
+#: ../../content/index.rst:206
+msgid "Default name for new projects."
+msgstr ""
+
+#: ../../content/index.rst:209
+msgid "TimeAccounting::DefaultProjectStatus"
+msgstr ""
+
+#: ../../content/index.rst:210
+msgid "Default status for new projects."
+msgstr ""
+
+#: ../../content/index.rst:213
+msgid "TimeAccounting::DefaultActionName"
+msgstr ""
+
+#: ../../content/index.rst:214
+msgid "Default name for new actions."
+msgstr ""
+
+#: ../../content/index.rst:217
+msgid "TimeAccounting::DefaultActionStatus"
+msgstr ""
+
+#: ../../content/index.rst:218
+msgid "Default status for new actions."
+msgstr ""
+
+#: ../../content/index.rst:221
+msgid "TimeAccounting::DefaultUserWeeklyHours"
+msgstr ""
+
+#: ../../content/index.rst:222
+msgid "Default setting for the standard weekly hours."
+msgstr ""
+
+#: ../../content/index.rst:225
+msgid "TimeAccounting::DefaultUserLeaveDays"
+msgstr ""
+
+#: ../../content/index.rst:226
+msgid "Default setting for leave days."
+msgstr ""
+
+#: ../../content/index.rst:229
+msgid "TimeAccounting::DefaultUserOvertime"
+msgstr ""
+
+#: ../../content/index.rst:230
+msgid "Default setting for overtime."
+msgstr ""
+
+#: ../../content/index.rst:233
+msgid "TimeAccounting::DefaultUserDateStart"
+msgstr ""
+
+#: ../../content/index.rst:234
+msgid "Default setting for date start."
+msgstr ""
+
+#: ../../content/index.rst:237
+msgid "TimeAccounting::DefaultUserDateEnd"
+msgstr ""
+
+#: ../../content/index.rst:238
+msgid "Default setting for date end."
+msgstr ""
+
+#: ../../content/index.rst:241
+msgid "TimeAccounting::DefaultUserDescription"
+msgstr ""
+
+#: ../../content/index.rst:242
+msgid "Default setting for description."
+msgstr ""
+
+#: ../../content/index.rst:245
+msgid "TimeAccounting::DefaultUserStatus"
+msgstr ""
+
+#: ../../content/index.rst:246
+msgid "Default status for new users."
+msgstr ""
+
+#: ../../content/index.rst:249
+msgid "Frontend::Base::PreApplicationModule"
+msgstr ""
+
+#: ../../content/index.rst:252
+msgid "PreApplicationModule###AgentTimeAccounting"
+msgstr ""
+
+#: ../../content/index.rst:253
+msgid "This module forces inserts in TimeAccounting."
+msgstr ""
+
+#: ../../content/index.rst:256
+msgid "About"
+msgstr ""
+
+#: ../../content/index.rst:259
+msgid "Contact"
+msgstr ""
+
+#: ../../content/index.rst:260
+msgid "Rother OSS GmbH"
+msgstr ""
+
+#: ../../content/index.rst:261
+msgid "Email: hello@otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:262
+msgid "Web: https://otobo.de"
+msgstr ""
+
+#: ../../content/index.rst:265
+msgid "Version"
+msgstr ""
+
+#: ../../content/index.rst:266
+msgid "Author: |doc-vendor| / Version: |doc-version| / Date of release: |doc-datestamp|"
+msgstr ""
+
