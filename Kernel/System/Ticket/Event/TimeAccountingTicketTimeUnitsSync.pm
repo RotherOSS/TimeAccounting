@@ -81,7 +81,7 @@ sub Run {
             return;
         }
     }
-
+    
     if ( $Param{Event} eq 'TicketAccountTime' ) {
 
         # get ticket object
@@ -104,9 +104,7 @@ sub Run {
         );
 
         # Add TimeUnits to the Article hash
-        $Article{TimeUnits} = $ArticleObject->ArticleAccountedTimeGet(
-            ArticleID => $Param{Data}->{ArticleID},
-        );
+        $Article{TimeUnits} = $Param{Data}{TimeUnits};
 
         # I write the Artice TimeUnit to a dynamic field for later viewing
         my $Success = $BackendObject->ValueSet(
@@ -198,11 +196,13 @@ sub Run {
             );
 
             my $CurrentTimeObject = $Kernel::OM->Create('Kernel::System::DateTime');
-
+            # the working unit may concern to some article edition later to the article creation
+            # therefore it must be assigned the current date instead of the article creation date
+            my $CurrentTimeValue = $CurrentTimeObject->Get();
             my $Insert = $TimeAccountingObject->WorkingUnitsInsert(
-                Year         => $Year,
-                Month        => $Month,
-                Day          => $Day,
+                Year         => $CurrentTimeValue->{Year},
+                Month        => $CurrentTimeValue->{Month},
+                Day          => $CurrentTimeValue->{Day},
                 LeaveDay     => 0,
                 Sick         => 0,
                 Overtime     => 0,

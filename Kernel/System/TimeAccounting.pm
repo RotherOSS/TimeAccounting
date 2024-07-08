@@ -1708,7 +1708,7 @@ sub WorkingUnitsDelete {
         if ( !$Param{$Needed} ) {
             $Kernel::OM->Get('Kernel::System::Log')->Log(
                 Priority => 'error',
-                Message  => "WorkingUnitsInsert: Need $Needed!"
+                Message  => "WorkingUnitsDelete: Need $Needed!"
             );
 
             return;
