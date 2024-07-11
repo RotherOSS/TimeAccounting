@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2020-01-24 14:51+0000\n"
+"POT-Creation-Date: 2024-05-25 17:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,15 @@ msgid "Remark"
 msgstr ""
 
 #. Template: AgentTimeAccountingEdit
+msgid "Origin"
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
 msgid "Please add a remark with more than 8 characters!"
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
+msgid "Ursprung"
 msgstr ""
 
 #. Template: AgentTimeAccountingEdit
@@ -116,6 +124,10 @@ msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid period! Negative periods are not allowed."
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
+msgid "Submit changes"
 msgstr ""
 
 #. Template: AgentTimeAccountingEdit
@@ -279,11 +291,15 @@ msgid "Go to reporting overview"
 msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
-msgid "Currently only active users in this project are shown. To change this behavior, please update setting:"
+msgid ""
+"Currently only active users in this project are shown. To change this "
+"behavior, please update setting:"
 msgstr ""
 
 #. Template: AgentTimeAccountingReportingProject
-msgid "Currently all time accounting users are shown. To change this behavior, please update setting:"
+msgid ""
+"Currently all time accounting users are shown. To change this behavior, "
+"please update setting:"
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
@@ -307,7 +323,8 @@ msgid "Edit Project Settings"
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
-msgid "There is already a project with this name. Please, choose a different one."
+msgid ""
+"There is already a project with this name. Please, choose a different one."
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
@@ -379,11 +396,14 @@ msgid "Allow time accounting skipping"
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
-msgid "If this option is selected, time accounting is effectively optional for the user."
+msgid ""
+"If this option is selected, time accounting is effectively optional for the "
+"user."
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
-msgid "There will be no warnings about missing entries and no entry enforcement."
+msgid ""
+"There will be no warnings about missing entries and no entry enforcement."
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
@@ -483,7 +503,9 @@ msgid "Can't delete Working Units!"
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
+msgid ""
+"This Date is out of limit, but you haven't insert this day yet, so you get "
+"one(!) chance to insert"
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
@@ -507,11 +529,14 @@ msgid "Entered date was invalid! Date was changed to today."
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "No time period configured, or the specified date is outside of the defined time periods."
+msgid ""
+"No time period configured, or the specified date is outside of the defined "
+"time periods."
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "Please contact the time accounting administrator to update your time periods!"
+msgid ""
+"Please contact the time accounting administrator to update your time periods!"
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
@@ -623,8 +648,30 @@ msgid "Confirm insert"
 msgstr ""
 
 #. SysConfig
-msgid "Agent interface notification module to see the number of incomplete working days for the user."
-msgstr "Модул за обавештавање у интерфејсу оператера који приказује број некомплетних радних дана за корисника."
+msgid ""
+"Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting "
+"module."
+msgstr ""
+
+#. SysConfig
+msgid ""
+"Agent interface notification module to see the number of incomplete working "
+"days for the user."
+msgstr ""
+"Модул за обавештавање у интерфејсу оператера који приказује број "
+"некомплетних радних дана за корисника."
+
+#. SysConfig
+msgid ""
+"Also synchronise customers as a new project if they have not yet been "
+"created in the customer database."
+msgstr ""
+
+#. SysConfig
+msgid ""
+"As soon as the synchronisation of ticket TimeUnits is activated, it is "
+"possible to set the entries ReadOnly."
+msgstr ""
 
 #. SysConfig
 msgid "Default name for new actions."
@@ -671,12 +718,20 @@ msgid "Default status for new users."
 msgstr "Подразумевани статус нових корисника."
 
 #. SysConfig
-msgid "Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter."
-msgstr "Одређује пројекте за које је напомена обавезна. Ако се RegExp поклопи на пројекту, морате текође унети напомену. RegExp користи smx параметар."
+msgid ""
+"Defines the projects for which a remark is required. If the RegExp matches "
+"on the project, you have to insert a remark too. The RegExp use the smx "
+"parameter."
+msgstr ""
+"Одређује пројекте за које је напомена обавезна. Ако се RegExp поклопи на "
+"пројекту, морате текође унети напомену. RegExp користи smx параметар."
 
 #. SysConfig
-msgid "Determines if the statistics module may generate time accounting information."
-msgstr "Одређује да ли статистички модул може генерисати информације о обрачуну времена."
+msgid ""
+"Determines if the statistics module may generate time accounting information."
+msgstr ""
+"Одређује да ли статистички модул може генерисати информације о обрачуну "
+"времена."
 
 #. SysConfig
 msgid "Edit time accounting settings."
@@ -687,36 +742,72 @@ msgid "Edit time record."
 msgstr "Измени временски запис."
 
 #. SysConfig
+msgid ""
+"Every time a agent add TimeUnits to a ticket, we sync the information to the "
+"timeaccounting module."
+msgstr ""
+
+#. SysConfig
 msgid "For how many days ago you can insert working units."
 msgstr "За колико дана уназад можете унети радне јединице."
 
 #. SysConfig
-msgid "If enabled, only users that has added working time to the selected project are shown."
-msgstr "Ако је активирано, приказани су само корисници који су додали радно време у изабрани пројекат."
+msgid ""
+"If enabled, only users that has added working time to the selected project "
+"are shown."
+msgstr ""
+"Ако је активирано, приказани су само корисници који су додали радно време у "
+"изабрани пројекат."
 
 #. SysConfig
-msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
-msgstr "Ако је активирано, падајући елементи на екрану за измену се мењају у модернизована самодовршавајућа поља."
+msgid ""
+"If enabled, the dropdown elements in the edit screen are changed to "
+"modernized autocompletion fields."
+msgstr ""
+"Ако је активирано, падајући елементи на екрану за измену се мењају у "
+"модернизована самодовршавајућа поља."
 
 #. SysConfig
-msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
-msgstr "Ако је активирано, филтер претходних пројеката се може користити уместо две листе пројеката (последњи и сви). Може се користити само ако је TimeAccounting::EnableAutoCompletion активирано."
+msgid ""
+"If enabled, the filter for the previous projects can be used instead two "
+"list of projects (last and all ones). It could be used only if "
+"TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+"Ако је активирано, филтер претходних пројеката се може користити уместо две "
+"листе пројеката (последњи и сви). Може се користити само ако је "
+"TimeAccounting::EnableAutoCompletion активирано."
 
 #. SysConfig
-msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
-msgstr "Ако је активирано, филтер претходних пројеката је подразумевано активан ако има пројеката од пре. Може се користити само ако је EnableAutoCompletion и TimeAccounting::UseFilter активирано."
+msgid ""
+"If enabled, the filter for the previous projects is active by default if "
+"there are the previous projects. It could be used only if "
+"EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+"Ако је активирано, филтер претходних пројеката је подразумевано активан ако "
+"има пројеката од пре. Може се користити само ако је EnableAutoCompletion и "
+"TimeAccounting::UseFilter активирано."
 
 #. SysConfig
-msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
-msgstr "Ако је активирано, кориснику је дозвољено да унесе \"на одмору\", \"на боловању\" и \"на слободним данима\" на више датума одједном."
+msgid ""
+"If enabled, the user is allowed to enter \"on vacation leave\", \"on sick "
+"leave\" and \"on overtime leave\" to multiple dates at once."
+msgstr ""
+"Ако је активирано, кориснику је дозвољено да унесе \"на одмору\", \"на "
+"боловању\" и \"на слободним данима\" на више датума одједном."
 
 #. SysConfig
-msgid "Maximum number of working days after which the working units have to be inserted."
+msgid ""
+"Maximum number of working days after which the working units have to be "
+"inserted."
 msgstr "Максимални број радних дана после ког треба додати радне јединице."
 
 #. SysConfig
-msgid "Maximum number of working days without working units entry after which a warning will be shown."
-msgstr "Максимални број радних дана без уноса радних јединица после ког ће бити приказано упозорење."
+msgid ""
+"Maximum number of working days without working units entry after which a "
+"warning will be shown."
+msgstr ""
+"Максимални број радних дана без уноса радних јединица после ког ће бити "
+"приказано упозорење."
 
 #. SysConfig
 msgid "Overview."
@@ -727,24 +818,47 @@ msgid "Project time reporting."
 msgstr "Извештавање о времену пројекта."
 
 #. SysConfig
-msgid "Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s)."
-msgstr "Регуларни изрази за ограничавање листе акција према изабраним пројектима. Кључ садржи регуларни израз за пројект(е), у садржају је регуларни израз за акцију(е)."
+msgid ""
+"Regular expressions for constraining action list according to selected "
+"project. Key contains regular expression for project(s), content contains "
+"regular expressions for action(s)."
+msgstr ""
+"Регуларни изрази за ограничавање листе акција према изабраним пројектима. "
+"Кључ садржи регуларни израз за пројект(е), у садржају је регуларни израз за "
+"акцију(е)."
 
 #. SysConfig
-msgid "Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups."
-msgstr "Регуларни изрази за ограничавање листе акција према изабраним корисничким групама. Кључ садржи регуларни израз за пројект(е), у садржају је регуларни израз за групе."
+msgid ""
+"Regular expressions for constraining project list according to user groups. "
+"Key contains regular expression for project(s), content contains comma "
+"separated list of groups."
+msgstr ""
+"Регуларни изрази за ограничавање листе акција према изабраним корисничким "
+"групама. Кључ садржи регуларни израз за пројект(е), у садржају је регуларни "
+"израз за групе."
 
 #. SysConfig
 msgid "Specifies if working hours can be inserted without start and end times."
-msgstr "Одређује да ли радни сати могу да се унесу без времена почетка и завршетка."
+msgstr ""
+"Одређује да ли радни сати могу да се унесу без времена почетка и завршетка."
+
+#. SysConfig
+msgid ""
+"Synchronise customers as a new project if they exists in the customer "
+"database."
+msgstr ""
 
 #. SysConfig
 msgid "This module forces inserts in TimeAccounting."
 msgstr "Овај модул намеће унос у обрачун времена."
 
 #. SysConfig
-msgid "This notification module gives a warning if there are too many incomplete working days."
-msgstr "Овај модул за обавештавање даје упозорење ако има превише некомплетних радних дана."
+msgid ""
+"This notification module gives a warning if there are too many incomplete "
+"working days."
+msgstr ""
+"Овај модул за обавештавање даје упозорење ако има превише некомплетних "
+"радних дана."
 
 #. SysConfig
 msgid "Time Accounting"
@@ -775,422 +889,335 @@ msgid "Time accounting."
 msgstr "Обрачунавање времена."
 
 #. SysConfig
-msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
-msgstr "За употребу ако неке акције смањују радне сате (на пример, ако се плаћа само пола времена путовања Кључ => путовање; Садржај => 50)."
-
-#. Template: AgentTimeAccountingEdit
-msgid "Origin"
+msgid ""
+"To use if some actions reduced the working hours (for example, if only half "
+"of the traveling time is paid Key => traveling; Content => 50)."
 msgstr ""
-
-#. Template: AgentTimeAccountingEdit
-msgid "Ursprung"
-msgstr ""
-
-#. Template: AgentTimeAccountingEdit
-msgid "Submit changes"
-msgstr ""
+"За употребу ако неке акције смањују радне сате (на пример, ако се плаћа само "
+"пола времена путовања Кључ => путовање; Садржај => 50)."
 
 #. SysConfig
-msgid "Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module."
+msgid ""
+"Use Service as Action. Please add as key the timeacounting action and the "
+"service as value. RegEx are allowed."
 msgstr ""
 
 #. SysConfig
-msgid "Also synchronise customers as a new project if they have not yet been created in the customer database."
+msgid ""
+"We need to set a default action id when we sync TimeUnits to the "
+"TimeAccounting module."
 msgstr ""
 
 #. SysConfig
-msgid "As soon as the synchronisation of ticket TimeUnits is activated, it is possible to set the entries ReadOnly."
+msgid ""
+"We need to set a default project id when we sync TimeUnits to the "
+"TimeAccounting module."
 msgstr ""
 
 #. SysConfig
-msgid "Every time a agent add TimeUnits to a ticket, we sync the information to the timeaccounting module."
+msgid ""
+"We save the Article TimeUnit to a DynamicField from type \"Article\". Please "
+"add here the name of the field if the initinal name is changed."
 msgstr ""
 
-#. SysConfig
-msgid "Synchronise customers as a new project if they exists in the customer database."
-msgstr ""
-
-#. SysConfig
-msgid "Use Service as Action. Please add as key the timeacounting action and the service as value. RegEx are allowed."
-msgstr ""
-
-#. SysConfig
-msgid "We need to set a default action id when we sync TimeUnits to the TimeAccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "We need to set a default project id when we sync TimeUnits to the TimeAccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "We save the Article TimeUnit to a DynamicField from type \"Article\". Please add here the name of the field if the initinal name is changed."
-msgstr ""
-
-#. SysConfig
-msgid "A precentage value of the minimal translation progress per language, to be usable for documentations."
-msgstr ""
-
-#. SysConfig
-msgid "Access repos via http or https."
-msgstr ""
-
-#. SysConfig
-msgid "Autoloading of Znuny4OTRSRepo extensions."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the config conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the file conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the function redefine check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the manual set module."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for BS ad removal."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for package manager output filter."
-msgstr ""
-
-#. SysConfig
-msgid "Branch View commit limit"
-msgstr "Ograničenje broja komitova u prikazu grane"
-
-#. SysConfig
-msgid "CodePolicy"
-msgstr ""
-
-#. SysConfig
-msgid "Commit limit per page for Branch view screen"
-msgstr "Ograničenje broja komitova po strani u ekranu prikaza grane"
-
-#. SysConfig
-msgid "Create analysis file"
-msgstr ""
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket and sends to Znuny."
-msgstr ""
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket."
-msgstr ""
-
-#. SysConfig
-msgid "Define private addon repos."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the filter that processes the HTML templates."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the test module for checking code policy."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of GIT clone/push URL Prefix."
-msgstr "Definicija adresnog prefiksa za GIT kloniranje i slanje."
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
-
-#. SysConfig
-msgid "Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date)."
-msgstr "Definicija eksternih MD5 vrednosti (ključ => MD5, vrednost => Vendor, PackageName, Version, Date)."
-
-#. SysConfig
-msgid "Definition of mappings between public repository requests and internal OPMS repositories."
-msgstr "Mapiranje skladišta u javnim zahtevima sa internim OPMS skladištima."
-
-#. SysConfig
-msgid "Definition of package states."
-msgstr "Definicija stanja paketa."
-
-#. SysConfig
-msgid "Definition of renamed OPMS packages."
-msgstr "Definicija OPMS paketa sa promenjenim imenom."
-
-#. SysConfig
-msgid "Directory, which is used by Git to cache repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store temporary data."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store working copies."
-msgstr ""
-
-#. SysConfig
-msgid "Disable online repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Do not log git ssh connection authorization results for these users. Useful for automated stuff."
-msgstr "Isključi beleženje autorizacija prilikom ostvarivanja Git SSH konekcija za ove korisnike. Korisno za automatizaciju."
-
-#. SysConfig
-msgid "Dynamic Fields Screens"
-msgstr ""
-
-#. SysConfig
-msgid "DynamicFieldScreen"
-msgstr ""
-
-#. SysConfig
-msgid "Export all available public keys to authorized_keys file."
-msgstr "Izvezi sve dostupne javne ključeve u datoteku authorized_keys."
-
-#. SysConfig
-msgid "Export all relevant releases to ftp server."
-msgstr "Izvoz svih relevantnih izdanja na FTP server."
-
-#. SysConfig
-msgid "Frontend module registration for the OPMS object in the agent interface."
-msgstr "Modul registracije za OPMS objekat u interfejsu operatera."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepository object in the public interface."
-msgstr "Modul registracije za PublicOPMSRepository objekat u javnom interfejsu."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface."
-msgstr "Modul registracije za PublicOPMSRepositoryLookup objekat u javnom interfejsu."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSTestBuild object in the public interface."
-msgstr "Modul registracije za PublicOPMSTestBuild objekat u javnom interfejsu."
-
-#. SysConfig
-msgid "Frontend module registration for the PublicPackageVerification object in the public interface."
-msgstr "Modul registracije za PublicPackageVerification objekat u javnom interfejsu."
-
-#. SysConfig
-msgid "Frontend module registration for the admin interface."
-msgstr ""
-
-#. SysConfig
-msgid "GIT Author registration."
-msgstr "Registracija Git autora."
-
-#. SysConfig
-msgid "Generate HTML comment hooks for the specified blocks so that filters can use them."
-msgstr ""
-
-#. SysConfig
-msgid "Generate documentations once per night."
-msgstr ""
-
-#. SysConfig
-msgid "Git"
-msgstr "Git"
-
-#. SysConfig
-msgid "Git Management"
-msgstr "Git upravljanje"
-
-#. SysConfig
-msgid "Git Repository"
-msgstr ""
-
-#. SysConfig
-msgid "Group, whose members have delete admin permissions in OPMS."
-msgstr "Grupa čiji članovi imaju dozvolu za brisanje u OPMS."
-
-#. SysConfig
-msgid "Group, whose members have repository admin permissions in OPMS."
-msgstr "Grupa čiji članovi imaju administratorske dozvole u OPMS."
-
-#. SysConfig
-msgid "Group, whose members will see CI test result information in OPMS screens."
-msgstr ""
-
-#. SysConfig
-msgid "Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface."
-msgstr "Grupe u kojima registrovani korisnik (po korisničkom imenu i lozinci) mora biti član da bi imao dozvolu za kreiranje test izdanja paketa u javnom interfejsu."
-
-#. SysConfig
-msgid "Groups which will be set during git project creation processes while adding OPMS repositories."
-msgstr "Grupe koje će biti podešene prilikom kreiranja GIT projekta u slučaju dodavanja OPMS skladišta."
-
-#. SysConfig
-msgid "Manage dynamic field in screens."
-msgstr ""
-
-#. SysConfig
-msgid "Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key."
-msgstr "Uredite svoje javne SSH ključeve za Git pristup. Obratite pažnju da morate sačuvati ovo podešavanje prilikom dodavanja novog ključa."
-
-#. SysConfig
-msgid "Module to generate statistics about the added code lines."
-msgstr "Modul za generisanje statistika o broju dodatih linija koda."
-
-#. SysConfig
-msgid "Module to generate statistics about the growth of code."
-msgstr "Modul za generisanje statistika o uvećanju koda."
-
-#. SysConfig
-msgid "Module to generate statistics about the number of git commits."
-msgstr "Modul za generisanje statistika o broju Git komitova."
-
-#. SysConfig
-msgid "Module to generate statistics about the removed code lines."
-msgstr "Modul za generisanje statistika o broju uklonjenih linija koda."
-
-#. SysConfig
-msgid "OPMS"
-msgstr "OPMS"
-
-#. SysConfig
-msgid "Only users who have rw permissions in one of these groups may access git."
-msgstr "Samo korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće Git pristup."
-
-#. SysConfig
-msgid "Option to set a package compatibility manually."
-msgstr ""
-
-#. SysConfig
-msgid "Parameters for the pages in the BranchView screen."
-msgstr "Parametri za stranice u ekranu prikaza grane."
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITProjectName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Predefinisanje dinamičkog polja 'GITProjectName': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITRepositoryName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Predefinisanje dinamičkog polja 'GITRepositoryName': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
-
-#. SysConfig
-msgid "Pre-Definition of the 'PackageDeprecated' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr "Predefinisanje dinamičkog polja 'PackageDeprecated': Group => grupa za pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|1); InformationAreaName => naslov dodataka; InformationAreaSize => veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority => redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage => regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz koji naziv grane mora da zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
-
-#. SysConfig
-msgid "Recipients that will be informed by email in case of errors."
-msgstr ""
-
-#. SysConfig
-msgid "SSH Keys for Git Access"
-msgstr "SSH ključevi za Git pristup"
-
-#. SysConfig
-msgid "Send analysis file"
-msgstr ""
-
-#. SysConfig
-msgid "Sets the git clone address to be used in repository listings."
-msgstr "Definiše adresu za Git kloniranje koja će biti korišćena u prikazu repozitorija."
-
-#. SysConfig
-msgid "Sets the home directory for git repositories."
-msgstr "Definiše direktorijum za Git repozitorije."
-
-#. SysConfig
-msgid "Sets the path for the BugzillaAddComment post receive script location."
-msgstr "Definiše putanju do BugzillaAddComment skripta."
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr "Definiše putanju do OTRSCodePolicy skripta. Preporučeno je da postoji poseban klon OTRSCodePolicy modula koji se redovno osvežava putem cron."
-
-#. SysConfig
-msgid "Show latest commits in git repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Shows a link in the menu to go create a unit test from the current ticket."
-msgstr ""
-
-#. SysConfig
-msgid "Synchronize OPMS tables with a remote database."
-msgstr "Sinhronizacija OPMS tabela sa udaljenom bazom."
-
-#. SysConfig
-msgid "The minimum version of the sphinx library."
-msgstr ""
-
-#. SysConfig
-msgid "The name of the sphinx theme to be used."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS CSS file (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS logo (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the static folder, containing images and css files."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the theme folder, containing the sphinx themes."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines all possible screens to enable or disable default columns."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines all possible screens to enable or disable dynamic fields."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines if only valids or all (invalids) dynamic fields should be shown."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It's still recommended to use only verified packages."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig 'Znuny4OTRSRepoType'."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers a Output post-filter to extend package verification."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an output filter to hide online repository selection in package manager."
-msgstr ""
-
-#. SysConfig
-msgid "Tidy unprocessed release that not passed test pomules checks for a long time."
-msgstr ""
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to execute force pushes 'git push --force'."
-msgstr "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost izvršavanja komande 'git push --force'."
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management."
-msgstr "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost upravljanja projektima. Dodatno pripadnici će imati administracione privilegije za Git upravljanje."
-
+#~ msgid "Branch View commit limit"
+#~ msgstr "Ograničenje broja komitova u prikazu grane"
+
+#~ msgid "Commit limit per page for Branch view screen"
+#~ msgstr "Ograničenje broja komitova po strani u ekranu prikaza grane"
+
+#~ msgid "Definition of GIT clone/push URL Prefix."
+#~ msgstr "Definicija adresnog prefiksa za GIT kloniranje i slanje."
+
+#~ msgid ""
+#~ "Definition of a Dynamic Field: Group => Group with access to the Dynamic "
+#~ "Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName "
+#~ "=> Name of the Widgets; InformationAreaSize => Size and position of the "
+#~ "widgets (Large|Small); Name => Name of the Dynamic Field which should be "
+#~ "used; Priority => Order of the Dynamic Fields; State => State of the "
+#~ "Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex "
+#~ "which the repository name has to match to be displayed, FilterPackage => "
+#~ "Regex which the package name has to match to be displayed, FilterBranch "
+#~ "=> Regex which the branch name has to match to be displayed, "
+#~ "FilterRelease => Regex which the repelase version string has to match to "
+#~ "be displayed."
+#~ msgstr ""
+#~ "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim "
+#~ "poljima; AlwaysVisible => polje može biti uklonjeno (0|1); "
+#~ "InformationAreaName => naslov dodataka; InformationAreaSize => veličina i "
+#~ "pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority "
+#~ "=> redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = "
+#~ "omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv "
+#~ "skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage "
+#~ "=> regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo "
+#~ "prikazano; FilterBranch => regularni izraz koji naziv grane mora da "
+#~ "zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz "
+#~ "koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#~ msgid ""
+#~ "Definition of a Dynamic Field: Group => Group with access to the Dynamic "
+#~ "Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName "
+#~ "=> Name of the Widgets; InformationAreaSize => Size and position of the "
+#~ "widgets (Large|Small); Name => Name of the Dynamic Field which should be "
+#~ "used; Priority => Order of the Dynamic Fields; State => State of the "
+#~ "Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => "
+#~ "Regex which the repository name has to match to be displayed, "
+#~ "FilterPackage => Regex which the package name has to match to be "
+#~ "displayed, FilterBranch => Regex which the branch name has to match to be "
+#~ "displayed, FilterRelease => Regex which the repelase version string has "
+#~ "to match to be displayed."
+#~ msgstr ""
+#~ "Definicija dinamičkog polja: Group => grupa za pristup dinamičkim "
+#~ "poljima; AlwaysVisible => polje može biti uklonjeno (0|1); "
+#~ "InformationAreaName => naslov dodataka; InformationAreaSize => veličina i "
+#~ "pozicija dodataka (Large|Small); Name => naziv dinamičkog polja; Priority "
+#~ "=> redosled dinamičkih polja; State => status polja (0 = onemogućeno, 1 = "
+#~ "omogućeno, 2 = obavezno); FilterRepository => regularni izraz koji naziv "
+#~ "skladišta mora da zadovoljava da bi polje bilo prikazano; FilterPackage "
+#~ "=> regularni izraz koje naziv paketa mora da zadovoljava da bi polje bilo "
+#~ "prikazano; FilterBranch => regularni izraz koji naziv grane mora da "
+#~ "zadovoljava da bi polje bilo prikazano; FilterRelease => regularni izraz "
+#~ "koji verzija izdanja mora da zadovoljava da bi polje bilo prikazano."
+
+#~ msgid ""
+#~ "Definition of external MD5 sums (key => MD5, Value => Vendor, "
+#~ "PackageName, Version, Date)."
+#~ msgstr ""
+#~ "Definicija eksternih MD5 vrednosti (ključ => MD5, vrednost => Vendor, "
+#~ "PackageName, Version, Date)."
+
+#~ msgid ""
+#~ "Definition of mappings between public repository requests and internal "
+#~ "OPMS repositories."
+#~ msgstr ""
+#~ "Mapiranje skladišta u javnim zahtevima sa internim OPMS skladištima."
+
+#~ msgid "Definition of package states."
+#~ msgstr "Definicija stanja paketa."
+
+#~ msgid "Definition of renamed OPMS packages."
+#~ msgstr "Definicija OPMS paketa sa promenjenim imenom."
+
+#~ msgid ""
+#~ "Do not log git ssh connection authorization results for these users. "
+#~ "Useful for automated stuff."
+#~ msgstr ""
+#~ "Isključi beleženje autorizacija prilikom ostvarivanja Git SSH konekcija "
+#~ "za ove korisnike. Korisno za automatizaciju."
+
+#~ msgid "Export all available public keys to authorized_keys file."
+#~ msgstr "Izvezi sve dostupne javne ključeve u datoteku authorized_keys."
+
+#~ msgid "Export all relevant releases to ftp server."
+#~ msgstr "Izvoz svih relevantnih izdanja na FTP server."
+
+#~ msgid ""
+#~ "Frontend module registration for the OPMS object in the agent interface."
+#~ msgstr "Modul registracije za OPMS objekat u interfejsu operatera."
+
+#~ msgid ""
+#~ "Frontend module registration for the PublicOPMSRepository object in the "
+#~ "public interface."
+#~ msgstr ""
+#~ "Modul registracije za PublicOPMSRepository objekat u javnom interfejsu."
+
+#~ msgid ""
+#~ "Frontend module registration for the PublicOPMSRepositoryLookup object in "
+#~ "the public interface."
+#~ msgstr ""
+#~ "Modul registracije za PublicOPMSRepositoryLookup objekat u javnom "
+#~ "interfejsu."
+
+#~ msgid ""
+#~ "Frontend module registration for the PublicOPMSTestBuild object in the "
+#~ "public interface."
+#~ msgstr ""
+#~ "Modul registracije za PublicOPMSTestBuild objekat u javnom interfejsu."
+
+#~ msgid ""
+#~ "Frontend module registration for the PublicPackageVerification object in "
+#~ "the public interface."
+#~ msgstr ""
+#~ "Modul registracije za PublicPackageVerification objekat u javnom "
+#~ "interfejsu."
+
+#~ msgid "GIT Author registration."
+#~ msgstr "Registracija Git autora."
+
+#~ msgid "Git"
+#~ msgstr "Git"
+
+#~ msgid "Git Management"
+#~ msgstr "Git upravljanje"
+
+#~ msgid "Group, whose members have delete admin permissions in OPMS."
+#~ msgstr "Grupa čiji članovi imaju dozvolu za brisanje u OPMS."
+
+#~ msgid "Group, whose members have repository admin permissions in OPMS."
+#~ msgstr "Grupa čiji članovi imaju administratorske dozvole u OPMS."
+
+#~ msgid ""
+#~ "Groups an authenticated user (by user login and password) must be member "
+#~ "of to build test packages via the public interface."
+#~ msgstr ""
+#~ "Grupe u kojima registrovani korisnik (po korisničkom imenu i lozinci) "
+#~ "mora biti član da bi imao dozvolu za kreiranje test izdanja paketa u "
+#~ "javnom interfejsu."
+
+#~ msgid ""
+#~ "Groups which will be set during git project creation processes while "
+#~ "adding OPMS repositories."
+#~ msgstr ""
+#~ "Grupe koje će biti podešene prilikom kreiranja GIT projekta u slučaju "
+#~ "dodavanja OPMS skladišta."
+
+#~ msgid ""
+#~ "Manage your public SSH key(s) for Git access here. Make sure to save this "
+#~ "preference when you add a new key."
+#~ msgstr ""
+#~ "Uredite svoje javne SSH ključeve za Git pristup. Obratite pažnju da "
+#~ "morate sačuvati ovo podešavanje prilikom dodavanja novog ključa."
+
+#~ msgid "Module to generate statistics about the added code lines."
+#~ msgstr "Modul za generisanje statistika o broju dodatih linija koda."
+
+#~ msgid "Module to generate statistics about the growth of code."
+#~ msgstr "Modul za generisanje statistika o uvećanju koda."
+
+#~ msgid "Module to generate statistics about the number of git commits."
+#~ msgstr "Modul za generisanje statistika o broju Git komitova."
+
+#~ msgid "Module to generate statistics about the removed code lines."
+#~ msgstr "Modul za generisanje statistika o broju uklonjenih linija koda."
+
+#~ msgid "OPMS"
+#~ msgstr "OPMS"
+
+#~ msgid ""
+#~ "Only users who have rw permissions in one of these groups may access git."
+#~ msgstr ""
+#~ "Samo korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće Git "
+#~ "pristup."
+
+#~ msgid "Parameters for the pages in the BranchView screen."
+#~ msgstr "Parametri za stranice u ekranu prikaza grane."
+
+#~ msgid ""
+#~ "Pre-Definition of the 'GITProjectName' Dynamic Field: Group => Group with "
+#~ "access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|"
+#~ "1); InformationAreaName => Name of the Widgets; InformationAreaSize => "
+#~ "Size and position of the widgets (Large|Small); Name => Name of the "
+#~ "Dynamic Field which should be used; Priority => Order of the Dynamic "
+#~ "Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = "
+#~ "mandatory), FilterRepository => Regex which the repository name has to "
+#~ "match to be displayed, FilterPackage => Regex which the package name has "
+#~ "to match to be displayed, FilterBranch => Regex which the branch name has "
+#~ "to match to be displayed, FilterRelease => Regex which the repelase "
+#~ "version string has to match to be displayed."
+#~ msgstr ""
+#~ "Predefinisanje dinamičkog polja 'GITProjectName': Group => grupa za "
+#~ "pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|"
+#~ "1); InformationAreaName => naslov dodataka; InformationAreaSize => "
+#~ "veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog "
+#~ "polja; Priority => redosled dinamičkih polja; State => status polja (0 = "
+#~ "onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni "
+#~ "izraz koji naziv skladišta mora da zadovoljava da bi polje bilo "
+#~ "prikazano; FilterPackage => regularni izraz koje naziv paketa mora da "
+#~ "zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz "
+#~ "koji naziv grane mora da zadovoljava da bi polje bilo prikazano; "
+#~ "FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava "
+#~ "da bi polje bilo prikazano."
+
+#~ msgid ""
+#~ "Pre-Definition of the 'GITRepositoryName' Dynamic Field: Group => Group "
+#~ "with access to the Dynamic Fields; AlwaysVisible => Field can be removed "
+#~ "(0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => "
+#~ "Size and position of the widgets (Large|Small); Name => Name of the "
+#~ "Dynamic Field which should be used; Priority => Order of the Dynamic "
+#~ "Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = "
+#~ "mandatory), FilterRepository => Regex which the repository name has to "
+#~ "match to be displayed, FilterPackage => Regex which the package name has "
+#~ "to match to be displayed, FilterBranch => Regex which the branch name has "
+#~ "to match to be displayed, FilterRelease => Regex which the repelase "
+#~ "version string has to match to be displayed."
+#~ msgstr ""
+#~ "Predefinisanje dinamičkog polja 'GITRepositoryName': Group => grupa za "
+#~ "pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|"
+#~ "1); InformationAreaName => naslov dodataka; InformationAreaSize => "
+#~ "veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog "
+#~ "polja; Priority => redosled dinamičkih polja; State => status polja (0 = "
+#~ "onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni "
+#~ "izraz koji naziv skladišta mora da zadovoljava da bi polje bilo "
+#~ "prikazano; FilterPackage => regularni izraz koje naziv paketa mora da "
+#~ "zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz "
+#~ "koji naziv grane mora da zadovoljava da bi polje bilo prikazano; "
+#~ "FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava "
+#~ "da bi polje bilo prikazano."
+
+#~ msgid ""
+#~ "Pre-Definition of the 'PackageDeprecated' Dynamic Field: Group => Group "
+#~ "with access to the Dynamic Fields; AlwaysVisible => Field can be removed "
+#~ "(0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => "
+#~ "Size and position of the widgets (Large|Small); Name => Name of the "
+#~ "Dynamic Field which should be used; Priority => Order of the Dynamic "
+#~ "Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = "
+#~ "mandatory), FilterRepository => Regex which the repository name has to "
+#~ "match to be displayed, FilterPackage => Regex which the package name has "
+#~ "to match to be displayed, FilterBranch => Regex which the branch name has "
+#~ "to match to be displayed, FilterRelease => Regex which the repelase "
+#~ "version string has to match to be displayed."
+#~ msgstr ""
+#~ "Predefinisanje dinamičkog polja 'PackageDeprecated': Group => grupa za "
+#~ "pristup dinamičkim poljima; AlwaysVisible => polje može biti uklonjeno (0|"
+#~ "1); InformationAreaName => naslov dodataka; InformationAreaSize => "
+#~ "veličina i pozicija dodataka (Large|Small); Name => naziv dinamičkog "
+#~ "polja; Priority => redosled dinamičkih polja; State => status polja (0 = "
+#~ "onemogućeno, 1 = omogućeno, 2 = obavezno); FilterRepository => regularni "
+#~ "izraz koji naziv skladišta mora da zadovoljava da bi polje bilo "
+#~ "prikazano; FilterPackage => regularni izraz koje naziv paketa mora da "
+#~ "zadovoljava da bi polje bilo prikazano; FilterBranch => regularni izraz "
+#~ "koji naziv grane mora da zadovoljava da bi polje bilo prikazano; "
+#~ "FilterRelease => regularni izraz koji verzija izdanja mora da zadovoljava "
+#~ "da bi polje bilo prikazano."
+
+#~ msgid "SSH Keys for Git Access"
+#~ msgstr "SSH ključevi za Git pristup"
+
+#~ msgid "Sets the git clone address to be used in repository listings."
+#~ msgstr ""
+#~ "Definiše adresu za Git kloniranje koja će biti korišćena u prikazu "
+#~ "repozitorija."
+
+#~ msgid "Sets the home directory for git repositories."
+#~ msgstr "Definiše direktorijum za Git repozitorije."
+
+#~ msgid ""
+#~ "Sets the path for the BugzillaAddComment post receive script location."
+#~ msgstr "Definiše putanju do BugzillaAddComment skripta."
+
+#~ msgid ""
+#~ "Sets the path for the OTRSCodePolicy pre receive script location. It is "
+#~ "recommended to have a separate clone of the OTRSCodePolicy module that is "
+#~ "updated via cron."
+#~ msgstr ""
+#~ "Definiše putanju do OTRSCodePolicy skripta. Preporučeno je da postoji "
+#~ "poseban klon OTRSCodePolicy modula koji se redovno osvežava putem cron."
+
+#~ msgid "Synchronize OPMS tables with a remote database."
+#~ msgstr "Sinhronizacija OPMS tabela sa udaljenom bazom."
+
+#~ msgid ""
+#~ "Users who have rw permissions in one of these groups are permitted to "
+#~ "execute force pushes 'git push --force'."
+#~ msgstr ""
+#~ "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost "
+#~ "izvršavanja komande 'git push --force'."
+
+#~ msgid ""
+#~ "Users who have rw permissions in one of these groups are permitted to "
+#~ "manage projects. Additionally the members have administration permissions "
+#~ "to the git management."
+#~ msgstr ""
+#~ "Korisnici koji imaju rw dozvolu u jednoj od ovih grupa imaće mogućnost "
+#~ "upravljanja projektima. Dodatno pripadnici će imati administracione "
+#~ "privilegije za Git upravljanje."

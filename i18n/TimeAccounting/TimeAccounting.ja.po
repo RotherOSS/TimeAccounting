@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2020-01-24 14:51+0000\n"
+"POT-Creation-Date: 2024-05-25 17:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,8 +75,16 @@ msgid "Remark"
 msgstr "注釈"
 
 #. Template: AgentTimeAccountingEdit
+msgid "Origin"
+msgstr ""
+
+#. Template: AgentTimeAccountingEdit
 msgid "Please add a remark with more than 8 characters!"
 msgstr "8文字以上の注釈を追加してください。"
+
+#. Template: AgentTimeAccountingEdit
+msgid "Ursprung"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Negative times are not allowed."
@@ -88,7 +96,8 @@ msgstr "繰り返された時間は許可されません。開始時刻は別の
 
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid format! Please enter a time with the format HH:MM."
-msgstr "不正なフォーマットです! 時間の入力はHH:MMのフォーマットに従ってください"
+msgstr ""
+"不正なフォーマットです! 時間の入力はHH:MMのフォーマットに従ってください"
 
 #. Template: AgentTimeAccountingEdit
 msgid "24:00 is only permitted as end time."
@@ -117,6 +126,10 @@ msgstr "「期間」の設定が不正です。（0は許可されません）"
 #. Template: AgentTimeAccountingEdit
 msgid "Invalid period! Negative periods are not allowed."
 msgstr "「期間」の設定が不正です。（－（マイナス）は許可されません）"
+
+#. Template: AgentTimeAccountingEdit
+msgid "Submit changes"
+msgstr ""
 
 #. Template: AgentTimeAccountingEdit
 msgid "Add one row"
@@ -279,12 +292,20 @@ msgid "Go to reporting overview"
 msgstr "報告の概要に移動する"
 
 #. Template: AgentTimeAccountingReportingProject
-msgid "Currently only active users in this project are shown. To change this behavior, please update setting:"
-msgstr "本プロジェクトのアクティブユーザーのみ表示しています、変更するには設定を更新してください。"
+msgid ""
+"Currently only active users in this project are shown. To change this "
+"behavior, please update setting:"
+msgstr ""
+"本プロジェクトのアクティブユーザーのみ表示しています、変更するには設定を更新"
+"してください。"
 
 #. Template: AgentTimeAccountingReportingProject
-msgid "Currently all time accounting users are shown. To change this behavior, please update setting:"
-msgstr "すべてのタイムアカウントユーザーを表示しています、変更するには設定を更新してください。"
+msgid ""
+"Currently all time accounting users are shown. To change this behavior, "
+"please update setting:"
+msgstr ""
+"すべてのタイムアカウントユーザーを表示しています、変更するには設定を更新して"
+"ください。"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Edit Time Accounting Project Settings"
@@ -307,7 +328,8 @@ msgid "Edit Project Settings"
 msgstr "プロジェクトの編集"
 
 #. Template: AgentTimeAccountingSetting
-msgid "There is already a project with this name. Please, choose a different one."
+msgid ""
+"There is already a project with this name. Please, choose a different one."
 msgstr "同名のプロジェクトが存在します。名称を変更してください。"
 
 #. Template: AgentTimeAccountingSetting
@@ -379,12 +401,19 @@ msgid "Allow time accounting skipping"
 msgstr "タイムアカウンティングのスキップを許可する"
 
 #. Template: AgentTimeAccountingSetting
-msgid "If this option is selected, time accounting is effectively optional for the user."
-msgstr "このオプションが選択されると、ユーザーに対するタイムアカウンティングがオプション項目扱いとなります。"
+msgid ""
+"If this option is selected, time accounting is effectively optional for the "
+"user."
+msgstr ""
+"このオプションが選択されると、ユーザーに対するタイムアカウンティングがオプ"
+"ション項目扱いとなります。"
 
 #. Template: AgentTimeAccountingSetting
-msgid "There will be no warnings about missing entries and no entry enforcement."
-msgstr "未入力のエントリに対する警告や、エントリへの入力を強制する表示はなくなります。"
+msgid ""
+"There will be no warnings about missing entries and no entry enforcement."
+msgstr ""
+"未入力のエントリに対する警告や、エントリへの入力を強制する表示はなくなりま"
+"す。"
 
 #. Template: AgentTimeAccountingSetting
 msgid "Time Spans"
@@ -483,8 +512,12 @@ msgid "Can't delete Working Units!"
 msgstr "工数を削除できません！"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "This Date is out of limit, but you haven't insert this day yet, so you get one(!) chance to insert"
-msgstr "入力された日付は期間外ですので、挿入する事はできませんでした。もう一度(!)日付を入力してください。"
+msgid ""
+"This Date is out of limit, but you haven't insert this day yet, so you get "
+"one(!) chance to insert"
+msgstr ""
+"入力された日付は期間外ですので、挿入する事はできませんでした。もう一度(!)日付"
+"を入力してください。"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Incomplete Working Days"
@@ -507,11 +540,16 @@ msgid "Entered date was invalid! Date was changed to today."
 msgstr "入力された日付は不正です ! 日付は本日に変更されました"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "No time period configured, or the specified date is outside of the defined time periods."
-msgstr "指定された期間が設定されていないか、または指定された日付が定義された期間外です。"
+msgid ""
+"No time period configured, or the specified date is outside of the defined "
+"time periods."
+msgstr ""
+"指定された期間が設定されていないか、または指定された日付が定義された期間外で"
+"す。"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
-msgid "Please contact the time accounting administrator to update your time periods!"
+msgid ""
+"Please contact the time accounting administrator to update your time periods!"
 msgstr "勤怠管理担当者に連絡して期間を更新してください！"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
@@ -623,8 +661,30 @@ msgid "Confirm insert"
 msgstr "挿入の確認"
 
 #. SysConfig
-msgid "Agent interface notification module to see the number of incomplete working days for the user."
-msgstr "ユーザの不完全な稼働日数をカウントし通知するエージェント・インターフェイスです。"
+msgid ""
+"Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting "
+"module."
+msgstr ""
+
+#. SysConfig
+msgid ""
+"Agent interface notification module to see the number of incomplete working "
+"days for the user."
+msgstr ""
+"ユーザの不完全な稼働日数をカウントし通知するエージェント・インターフェイスで"
+"す。"
+
+#. SysConfig
+msgid ""
+"Also synchronise customers as a new project if they have not yet been "
+"created in the customer database."
+msgstr ""
+
+#. SysConfig
+msgid ""
+"As soon as the synchronisation of ticket TimeUnits is activated, it is "
+"possible to set the entries ReadOnly."
+msgstr ""
 
 #. SysConfig
 msgid "Default name for new actions."
@@ -671,11 +731,18 @@ msgid "Default status for new users."
 msgstr "新規ユーザに対するデフォルトのステータス"
 
 #. SysConfig
-msgid "Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter."
-msgstr "「注釈」エントリーを必要とする項目を定義します。 もしプロジェクト名がここで設定した正規表現にマッチする場合、「注釈｝は必須項目となります。※正規表現にはSMXパラメータを使います。"
+msgid ""
+"Defines the projects for which a remark is required. If the RegExp matches "
+"on the project, you have to insert a remark too. The RegExp use the smx "
+"parameter."
+msgstr ""
+"「注釈」エントリーを必要とする項目を定義します。 もしプロジェクト名がここで設"
+"定した正規表現にマッチする場合、「注釈｝は必須項目となります。※正規表現には"
+"SMXパラメータを使います。"
 
 #. SysConfig
-msgid "Determines if the statistics module may generate time accounting information."
+msgid ""
+"Determines if the statistics module may generate time accounting information."
 msgstr "統計モジュールがタイムアカウンティング情報を生成するか選択してください"
 
 #. SysConfig
@@ -687,35 +754,69 @@ msgid "Edit time record."
 msgstr "タイムレコードを編集"
 
 #. SysConfig
+msgid ""
+"Every time a agent add TimeUnits to a ticket, we sync the information to the "
+"timeaccounting module."
+msgstr ""
+
+#. SysConfig
 msgid "For how many days ago you can insert working units."
 msgstr "何日前からワーキング・ユニットの新規登録が可能であるかの設定です。"
 
 #. SysConfig
-msgid "If enabled, only users that has added working time to the selected project are shown."
-msgstr "有効時には、該当のプロジェクトに稼働時間を投入しているユーザーのみ表示されます"
+msgid ""
+"If enabled, only users that has added working time to the selected project "
+"are shown."
+msgstr ""
+"有効時には、該当のプロジェクトに稼働時間を投入しているユーザーのみ表示されま"
+"す"
 
 #. SysConfig
-msgid "If enabled, the dropdown elements in the edit screen are changed to modernized autocompletion fields."
-msgstr "有効時には、編集画面のドロップダウンエレメントは自動フィールドに置き換えられます。"
+msgid ""
+"If enabled, the dropdown elements in the edit screen are changed to "
+"modernized autocompletion fields."
+msgstr ""
+"有効時には、編集画面のドロップダウンエレメントは自動フィールドに置き換えられ"
+"ます。"
 
 #. SysConfig
-msgid "If enabled, the filter for the previous projects can be used instead two list of projects (last and all ones). It could be used only if TimeAccounting::EnableAutoCompletion is enabled."
-msgstr "有効時には以前のプロジェクトフィルターを選択することが可能です(通常は前回およびすべて)。この項目は TimeAccounting::EnableAutoCompletion が有効になっている時のみ利用可能"
+msgid ""
+"If enabled, the filter for the previous projects can be used instead two "
+"list of projects (last and all ones). It could be used only if "
+"TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+"有効時には以前のプロジェクトフィルターを選択することが可能です(通常は前回およ"
+"びすべて)。この項目は TimeAccounting::EnableAutoCompletion が有効になっている"
+"時のみ利用可能"
 
 #. SysConfig
-msgid "If enabled, the filter for the previous projects is active by default if there are the previous projects. It could be used only if EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
-msgstr "有効時には「以前のプロジェクト」が存在する時は、以前のプロジェクトフィルターがデフォルト値になります。この項目は TimeAccounting::UseFilter が有効になっている時のみ利用可能"
+msgid ""
+"If enabled, the filter for the previous projects is active by default if "
+"there are the previous projects. It could be used only if "
+"EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+"有効時には「以前のプロジェクト」が存在する時は、以前のプロジェクトフィルター"
+"がデフォルト値になります。この項目は TimeAccounting::UseFilter が有効になって"
+"いる時のみ利用可能"
 
 #. SysConfig
-msgid "If enabled, the user is allowed to enter \"on vacation leave\", \"on sick leave\" and \"on overtime leave\" to multiple dates at once."
-msgstr "有効にすれば一回の編集で、複数の日に渡り「休暇」「病欠」「代休」が選択できます"
+msgid ""
+"If enabled, the user is allowed to enter \"on vacation leave\", \"on sick "
+"leave\" and \"on overtime leave\" to multiple dates at once."
+msgstr ""
+"有効にすれば一回の編集で、複数の日に渡り「休暇」「病欠」「代休」が選択できま"
+"す"
 
 #. SysConfig
-msgid "Maximum number of working days after which the working units have to be inserted."
+msgid ""
+"Maximum number of working days after which the working units have to be "
+"inserted."
 msgstr "1つ以上のワーキング・ユニットを設定すべき最大の稼働日数。"
 
 #. SysConfig
-msgid "Maximum number of working days without working units entry after which a warning will be shown."
+msgid ""
+"Maximum number of working days without working units entry after which a "
+"warning will be shown."
 msgstr "警告が表示されることなくエントリ出来る、営業日の最大日数。"
 
 #. SysConfig
@@ -727,24 +828,47 @@ msgid "Project time reporting."
 msgstr "プロジェクト別時間会計レポート"
 
 #. SysConfig
-msgid "Regular expressions for constraining action list according to selected project. Key contains regular expression for project(s), content contains regular expressions for action(s)."
-msgstr "プロジェクトによって行動リストを絞り込むための正規表現。「鍵」ではプロジェクトに対する正規表現を、「内容」では`行動`に対する正規表現を指定する。"
+msgid ""
+"Regular expressions for constraining action list according to selected "
+"project. Key contains regular expression for project(s), content contains "
+"regular expressions for action(s)."
+msgstr ""
+"プロジェクトによって行動リストを絞り込むための正規表現。「鍵」ではプロジェク"
+"トに対する正規表現を、「内容」では`行動`に対する正規表現を指定する。"
 
 #. SysConfig
-msgid "Regular expressions for constraining project list according to user groups. Key contains regular expression for project(s), content contains comma separated list of groups."
-msgstr "ユーザグループによってプロジェクトリストを絞り込むための正規表現。「鍵」ではプロジェクトに対する正規表現を、「内容」ではカンマ区切りのユーザリストを指定する。"
+msgid ""
+"Regular expressions for constraining project list according to user groups. "
+"Key contains regular expression for project(s), content contains comma "
+"separated list of groups."
+msgstr ""
+"ユーザグループによってプロジェクトリストを絞り込むための正規表現。「鍵」では"
+"プロジェクトに対する正規表現を、「内容」ではカンマ区切りのユーザリストを指定"
+"する。"
 
 #. SysConfig
 msgid "Specifies if working hours can be inserted without start and end times."
-msgstr "業務時間を「開始時間」と「終了時間」の指定ナシで新規登録できるかどうか指定する。"
+msgstr ""
+"業務時間を「開始時間」と「終了時間」の指定ナシで新規登録できるかどうか指定す"
+"る。"
+
+#. SysConfig
+msgid ""
+"Synchronise customers as a new project if they exists in the customer "
+"database."
+msgstr ""
 
 #. SysConfig
 msgid "This module forces inserts in TimeAccounting."
 msgstr "TimeAccountingモジュールと同等の項目が設定必須となります。"
 
 #. SysConfig
-msgid "This notification module gives a warning if there are too many incomplete working days."
-msgstr "あまりにも多くの不完全な稼働日がある場合、この通知モジュールは警告を与えます。"
+msgid ""
+"This notification module gives a warning if there are too many incomplete "
+"working days."
+msgstr ""
+"あまりにも多くの不完全な稼働日がある場合、この通知モジュールは警告を与えま"
+"す。"
 
 #. SysConfig
 msgid "Time Accounting"
@@ -775,422 +899,34 @@ msgid "Time accounting."
 msgstr "時間会計"
 
 #. SysConfig
-msgid "To use if some actions reduced the working hours (for example, if only half of the traveling time is paid Key => traveling; Content => 50)."
-msgstr "業務上の行動において、稼働時間として計上する時間を調整する必要がある場合に、この設定を使用します。（例：「移動時間」の50%のみ勤務時間相当とする場合「鍵」に`journey`、「内容」に`50`と設定)"
-
-#. Template: AgentTimeAccountingEdit
-msgid "Origin"
-msgstr ""
-
-#. Template: AgentTimeAccountingEdit
-msgid "Ursprung"
-msgstr ""
-
-#. Template: AgentTimeAccountingEdit
-msgid "Submit changes"
-msgstr ""
-
-#. SysConfig
-msgid "Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "Also synchronise customers as a new project if they have not yet been created in the customer database."
-msgstr ""
-
-#. SysConfig
-msgid "As soon as the synchronisation of ticket TimeUnits is activated, it is possible to set the entries ReadOnly."
-msgstr ""
-
-#. SysConfig
-msgid "Every time a agent add TimeUnits to a ticket, we sync the information to the timeaccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "Synchronise customers as a new project if they exists in the customer database."
-msgstr ""
-
-#. SysConfig
-msgid "Use Service as Action. Please add as key the timeacounting action and the service as value. RegEx are allowed."
-msgstr ""
-
-#. SysConfig
-msgid "We need to set a default action id when we sync TimeUnits to the TimeAccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "We need to set a default project id when we sync TimeUnits to the TimeAccounting module."
-msgstr ""
-
-#. SysConfig
-msgid "We save the Article TimeUnit to a DynamicField from type \"Article\". Please add here the name of the field if the initinal name is changed."
-msgstr ""
-
-#. SysConfig
-msgid "A precentage value of the minimal translation progress per language, to be usable for documentations."
-msgstr ""
-
-#. SysConfig
-msgid "Access repos via http or https."
-msgstr ""
-
-#. SysConfig
-msgid "Autoloading of Znuny4OTRSRepo extensions."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the config conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the file conflict check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the function redefine check module."
-msgstr ""
-
-#. SysConfig
-msgid "Backend module registration for the manual set module."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for BS ad removal."
-msgstr ""
-
-#. SysConfig
-msgid "Block hooks to be created for package manager output filter."
-msgstr ""
-
-#. SysConfig
-msgid "Branch View commit limit"
-msgstr ""
-
-#. SysConfig
-msgid "CodePolicy"
-msgstr ""
-
-#. SysConfig
-msgid "Commit limit per page for Branch view screen"
-msgstr ""
-
-#. SysConfig
-msgid "Create analysis file"
-msgstr ""
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket and sends to Znuny."
-msgstr ""
-
-#. SysConfig
-msgid "Creates a analysis file from this ticket."
-msgstr ""
-
-#. SysConfig
-msgid "Define private addon repos."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the filter that processes the HTML templates."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the test module for checking code policy."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of GIT clone/push URL Prefix."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRelease => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of a Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of external MD5 sums (key => MD5, Value => Vendor, PackageName, Version, Date)."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of mappings between public repository requests and internal OPMS repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of package states."
-msgstr ""
-
-#. SysConfig
-msgid "Definition of renamed OPMS packages."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to cache repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store temporary data."
-msgstr ""
-
-#. SysConfig
-msgid "Directory, which is used by Git to store working copies."
-msgstr ""
-
-#. SysConfig
-msgid "Disable online repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Do not log git ssh connection authorization results for these users. Useful for automated stuff."
-msgstr ""
-
-#. SysConfig
-msgid "Dynamic Fields Screens"
-msgstr ""
-
-#. SysConfig
-msgid "DynamicFieldScreen"
-msgstr ""
-
-#. SysConfig
-msgid "Export all available public keys to authorized_keys file."
-msgstr ""
-
-#. SysConfig
-msgid "Export all relevant releases to ftp server."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the OPMS object in the agent interface."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepository object in the public interface."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSRepositoryLookup object in the public interface."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the PublicOPMSTestBuild object in the public interface."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the PublicPackageVerification object in the public interface."
-msgstr ""
-
-#. SysConfig
-msgid "Frontend module registration for the admin interface."
-msgstr ""
-
-#. SysConfig
-msgid "GIT Author registration."
-msgstr ""
-
-#. SysConfig
-msgid "Generate HTML comment hooks for the specified blocks so that filters can use them."
-msgstr ""
-
-#. SysConfig
-msgid "Generate documentations once per night."
-msgstr ""
-
-#. SysConfig
-msgid "Git"
-msgstr ""
-
-#. SysConfig
-msgid "Git Management"
-msgstr ""
-
-#. SysConfig
-msgid "Git Repository"
-msgstr ""
-
-#. SysConfig
-msgid "Group, whose members have delete admin permissions in OPMS."
-msgstr ""
-
-#. SysConfig
-msgid "Group, whose members have repository admin permissions in OPMS."
-msgstr ""
-
-#. SysConfig
-msgid "Group, whose members will see CI test result information in OPMS screens."
-msgstr ""
-
-#. SysConfig
-msgid "Groups an authenticated user (by user login and password) must be member of to build test packages via the public interface."
-msgstr ""
-
-#. SysConfig
-msgid "Groups which will be set during git project creation processes while adding OPMS repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Manage dynamic field in screens."
-msgstr ""
-
-#. SysConfig
-msgid "Manage your public SSH key(s) for Git access here. Make sure to save this preference when you add a new key."
-msgstr ""
-
-#. SysConfig
-msgid "Module to generate statistics about the added code lines."
-msgstr ""
-
-#. SysConfig
-msgid "Module to generate statistics about the growth of code."
-msgstr ""
-
-#. SysConfig
-msgid "Module to generate statistics about the number of git commits."
-msgstr ""
-
-#. SysConfig
-msgid "Module to generate statistics about the removed code lines."
-msgstr ""
-
-#. SysConfig
-msgid "OPMS"
-msgstr ""
-
-#. SysConfig
-msgid "Only users who have rw permissions in one of these groups may access git."
-msgstr ""
-
-#. SysConfig
-msgid "Option to set a package compatibility manually."
-msgstr ""
-
-#. SysConfig
-msgid "Parameters for the pages in the BranchView screen."
-msgstr ""
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITProjectName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr ""
-
-#. SysConfig
-msgid "Pre-Definition of the 'GITRepositoryName' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr ""
-
-#. SysConfig
-msgid "Pre-Definition of the 'PackageDeprecated' Dynamic Field: Group => Group with access to the Dynamic Fields; AlwaysVisible => Field can be removed (0|1); InformationAreaName => Name of the Widgets; InformationAreaSize => Size and position of the widgets (Large|Small); Name => Name of the Dynamic Field which should be used; Priority => Order of the Dynamic Fields; State => State of the Fields (0 = disabled, 1 = active, 2 = mandatory), FilterRepository => Regex which the repository name has to match to be displayed, FilterPackage => Regex which the package name has to match to be displayed, FilterBranch => Regex which the branch name has to match to be displayed, FilterRelease => Regex which the repelase version string has to match to be displayed."
-msgstr ""
-
-#. SysConfig
-msgid "Recipients that will be informed by email in case of errors."
-msgstr ""
-
-#. SysConfig
-msgid "SSH Keys for Git Access"
-msgstr ""
-
-#. SysConfig
-msgid "Send analysis file"
-msgstr ""
-
-#. SysConfig
-msgid "Sets the git clone address to be used in repository listings."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the home directory for git repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the path for the BugzillaAddComment post receive script location."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy  script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr ""
-
-#. SysConfig
-msgid "Sets the path for the OTRSCodePolicy pre receive script location. It is recommended to have a separate clone of the OTRSCodePolicy module that is updated via cron."
-msgstr ""
-
-#. SysConfig
-msgid "Show latest commits in git repositories."
-msgstr ""
-
-#. SysConfig
-msgid "Shows a link in the menu to go create a unit test from the current ticket."
-msgstr ""
-
-#. SysConfig
-msgid "Synchronize OPMS tables with a remote database."
-msgstr ""
-
-#. SysConfig
-msgid "The minimum version of the sphinx library."
-msgstr ""
-
-#. SysConfig
-msgid "The name of the sphinx theme to be used."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS CSS file (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the OTRS logo (relative below the static path)."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the static folder, containing images and css files."
-msgstr ""
-
-#. SysConfig
-msgid "The path to the theme folder, containing the sphinx themes."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration defines all possible screens to enable or disable default columns."
+msgid ""
+"To use if some actions reduced the working hours (for example, if only half "
+"of the traveling time is paid Key => traveling; Content => 50)."
 msgstr ""
+"業務上の行動において、稼働時間として計上する時間を調整する必要がある場合に、"
+"この設定を使用します。（例：「移動時間」の50%のみ勤務時間相当とする場合「鍵」"
+"に`journey`、「内容」に`50`と設定)"
 
 #. SysConfig
-msgid "This configuration defines all possible screens to enable or disable dynamic fields."
+msgid ""
+"Use Service as Action. Please add as key the timeacounting action and the "
+"service as value. RegEx are allowed."
 msgstr ""
 
 #. SysConfig
-msgid "This configuration defines if only valids or all (invalids) dynamic fields should be shown."
+msgid ""
+"We need to set a default action id when we sync TimeUnits to the "
+"TimeAccounting module."
 msgstr ""
 
 #. SysConfig
-msgid "This configuration defines if the OTRS package verification should be active or disabled. If disabled all packages are shown as verified. It's still recommended to use only verified packages."
+msgid ""
+"We need to set a default project id when we sync TimeUnits to the "
+"TimeAccounting module."
 msgstr ""
 
 #. SysConfig
-msgid "This configuration defines the URL to the OTRS CloudService Proxy service. The http or https prefix will be added, depending on selection SysConfig 'Znuny4OTRSRepoType'."
+msgid ""
+"We save the Article TimeUnit to a DynamicField from type \"Article\". Please "
+"add here the name of the field if the initinal name is changed."
 msgstr ""
-
-#. SysConfig
-msgid "This configuration registers a Output post-filter to extend package verification."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an OutputFilter module that removes OTRS Business Solution TM advertisements."
-msgstr ""
-
-#. SysConfig
-msgid "This configuration registers an output filter to hide online repository selection in package manager."
-msgstr ""
-
-#. SysConfig
-msgid "Tidy unprocessed release that not passed test pomules checks for a long time."
-msgstr ""
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to execute force pushes 'git push --force'."
-msgstr ""
-
-#. SysConfig
-msgid "Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management."
-msgstr ""
-
