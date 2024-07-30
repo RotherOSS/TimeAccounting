@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2024-05-25 17:02+0000\n"
+"POT-Creation-Date: 2024-07-30 03:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -692,6 +692,10 @@ msgstr ""
 
 #. SysConfig
 msgid "Default status for new users."
+msgstr ""
+
+#. SysConfig
+msgid "Defines the initial height for the rich text editor component in pixels."
 msgstr ""
 
 #. SysConfig

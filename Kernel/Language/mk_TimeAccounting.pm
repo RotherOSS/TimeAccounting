@@ -243,6 +243,8 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Вообичаен статус за нови акции.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Вообичаен статус за нови проекти.';
     $Self->{Translation}->{'Default status for new users.'} = 'Вообичаен статус за нови корисници.';
+    $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Дефинира проект за кој е потребно забелешка. Доколку RegExp се софпаѓа со овој проект, тогаш е потребно да внесете забечешка. RegExp користи smx параметар.';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =

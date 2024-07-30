@@ -243,6 +243,8 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Standardindstilling for nye handlinger.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Standardindstilling for nye projekter.';
     $Self->{Translation}->{'Default status for new users.'} = 'Standardindstilling for nye brugere.';
+    $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Definerer de projekter, for hvilke en bemærkning er påkrævet. Hvis RegExp matcher på projektet, skal du også indføje en bemærkning. RegExp bruger smx parameteret.';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =

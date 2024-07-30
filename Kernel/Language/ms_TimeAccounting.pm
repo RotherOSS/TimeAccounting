@@ -243,6 +243,8 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Tetapan lalai untuk tindakan baharu.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Tetapan lalai untuk projek baharu.';
     $Self->{Translation}->{'Default status for new users.'} = 'Tetapan lalai untuk pengguna baharu.';
+    $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Mentakrifkan projek-projek yang mana komen diperlukan. Jika UngkapanBiasa padan dalam projek ini, anda perlu memasukkan komen juga. UngkapanBiasa menggunakan parameter smx.';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =

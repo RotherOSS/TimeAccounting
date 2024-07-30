@@ -243,6 +243,8 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = '新活动的默认状态。';
     $Self->{Translation}->{'Default status for new projects.'} = '新项目的默认状态。';
     $Self->{Translation}->{'Default status for new users.'} = '新用户的默认状态。';
+    $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         '指定备注必填的项目。如果RegExp匹配项目，你也需要添加备注。RegExp使用smx参数。';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
