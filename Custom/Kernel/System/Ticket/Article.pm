@@ -4,7 +4,7 @@
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
 # Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
 # --
-# $origin: otobo - a696e03179a4cecbe9b64fa8bbabb83e3ecd084c - Kernel/System/Ticket/Article.pm
+# $origin: otobo - 43d88b48cec2a202eec01df96f31eb195e18057c - Kernel/System/Ticket/Article.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -1272,23 +1272,30 @@ sub _MetaArticleList {
         return;
     }
 
-    my $CacheKey = '_MetaArticleList::' . $Param{TicketID};
+    my $ShowDeletedArticles = $Param{ShowDeletedArticles} ? 1 : 0;
+    my $VersionView         = $Param{VersionView}         ? 1 : 0;
 
-    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
-        my $Cached = $Kernel::OM->Get('Kernel::System::Cache')->Get(
-            Type => $Self->{CacheType},
-            Key  => $CacheKey,
-        );
+    my $CacheKey
+        = '_MetaArticleList::'
+        . $Param{TicketID}
+        . '::Deleted::'
+        . $ShowDeletedArticles
+        . '::Version::'
+        . $VersionView;
 
-        if ( ref $Cached eq 'ARRAY' ) {
-            return @{$Cached};
-        }
+    my $Cached = $Kernel::OM->Get('Kernel::System::Cache')->Get(
+        Type => $Self->{CacheType},
+        Key  => $CacheKey,
+    );
+
+    if ( ref $Cached eq 'ARRAY' ) {
+        return @{$Cached};
     }
 
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
-    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
+    if ( !$ShowDeletedArticles && !$VersionView ) {
         return if !$DBObject->Prepare(
             SQL => "
                 SELECT a.id, a.ticket_id, a.communication_channel_id, a.article_sender_type_id, a.is_visible_for_customer,
@@ -1297,12 +1304,13 @@ sub _MetaArticleList {
             Bind => [ \$Param{TicketID} ],
         );
     }
-    elsif ( $Param{VersionView} ) {
+    elsif ($VersionView) {
         return if !$DBObject->Prepare(
             SQL => "
                     SELECT av.id, av.ticket_id, av.communication_channel_id, av.article_sender_type_id, av.is_visible_for_customer,
                     av.create_by, av.create_time, av.change_by, av.change_time, av.article_delete
-                    FROM article_version av WHERE av.ticket_id = ? AND av.article_delete <> 1 ",
+                    FROM article_version av WHERE av.ticket_id = ? AND av.article_delete <> 1
+                    ORDER BY av.id",
             Bind => [ \$Param{TicketID} ],
         );
     }
@@ -1317,7 +1325,7 @@ sub _MetaArticleList {
                         av.create_by, av.create_time, av.change_by, av.change_time, av.article_delete
                         FROM article_version av WHERE av.ticket_id = ? AND av.article_delete = 1
                     ) at
-                    ORDER BY at.create_time ASC",
+                    ORDER BY at.create_time ASC, at.id DESC",
             Bind => [ \$Param{TicketID}, \$Param{TicketID} ],
         );
     }
@@ -1345,14 +1353,12 @@ sub _MetaArticleList {
         push @Index, \%Result;
     }
 
-    if ( !$Param{ShowDeletedArticles} && !$Param{VersionView} ) {
-        $Kernel::OM->Get('Kernel::System::Cache')->Set(
-            Type  => $Self->{CacheType},
-            TTL   => $Self->{CacheTTL},
-            Key   => $CacheKey,
-            Value => \@Index,
-        );
-    }
+    $Kernel::OM->Get('Kernel::System::Cache')->Set(
+        Type  => $Self->{CacheType},
+        TTL   => $Self->{CacheTTL},
+        Key   => $CacheKey,
+        Value => \@Index,
+    );
 
     return @Index;
 }
@@ -1384,10 +1390,14 @@ sub _ArticleCacheClear {
     my $CacheObject = $Kernel::OM->Get('Kernel::System::Cache');
 
     # MetaArticleIndex()
-    $CacheObject->Delete(
-        Type => $Self->{CacheType},
-        Key  => '_MetaArticleList::' . $Param{TicketID},
-    );
+    for my $VersionView ( 0 .. 1 ) {
+        for my $ShowDeletedArticles ( 0 .. 1 ) {
+            $Kernel::OM->Get('Kernel::System::Cache')->Delete(
+                Type => $Self->{CacheType},
+                Key  => '_MetaArticleList::' . $Param{TicketID} . '::Deleted::' . $ShowDeletedArticles . '::Version::' . $VersionView,
+            );
+        }
+    }
 
     return 1;
 }
