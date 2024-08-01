@@ -243,7 +243,11 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Alapértelmezett állapot az új műveletekhez.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Alapértelmezett állapot az új projektekhez.';
     $Self->{Translation}->{'Default status for new users.'} = 'Alapértelmezett állapot az új felhasználókhoz.';
+    $Self->{Translation}->{'Defines if parent-child translations for queues and services should be generated automatically.'} =
+        '';
     $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
+    $Self->{Translation}->{'Defines the initial height in pixels for the rich text editor component for this screen.'} =
         '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Meghatározza azokat a projekteket, amelyekhez észrevétel szükséges. Ha a reguláris kifejezés illeszkedik a projektre, akkor be kell illesztenie egy észrevételt is. A reguláris kifejezés az smx paramétert használja.';

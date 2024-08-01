@@ -243,7 +243,11 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = 'Estado padrão para novas ações.';
     $Self->{Translation}->{'Default status for new projects.'} = 'Estado padrão para novos projetos';
     $Self->{Translation}->{'Default status for new users.'} = 'Estado para para novos usuários';
+    $Self->{Translation}->{'Defines if parent-child translations for queues and services should be generated automatically.'} =
+        '';
     $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
+        '';
+    $Self->{Translation}->{'Defines the initial height in pixels for the rich text editor component for this screen.'} =
         '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         'Define os projetos para os quais é necessária uma observação. Se o RegExp é encontrado no projeto, você tem que inserir uma observação. O RegExp usa o parâmetro smx.';
