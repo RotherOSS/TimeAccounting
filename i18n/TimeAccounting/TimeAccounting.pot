@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2024-08-01 04:06+0000\n"
+"POT-Creation-Date: 2024-08-02 03:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -692,18 +692,6 @@ msgstr ""
 
 #. SysConfig
 msgid "Default status for new users."
-msgstr ""
-
-#. SysConfig
-msgid "Defines if parent-child translations for queues and services should be generated automatically."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the initial height for the rich text editor component in pixels."
-msgstr ""
-
-#. SysConfig
-msgid "Defines the initial height in pixels for the rich text editor component for this screen."
 msgstr ""
 
 #. SysConfig

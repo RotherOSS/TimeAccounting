@@ -243,12 +243,6 @@ sub Data {
     $Self->{Translation}->{'Default status for new actions.'} = '新規操作に対するデフォルトのステータス';
     $Self->{Translation}->{'Default status for new projects.'} = '新規プロジェクトに対するデフォルトのステータス';
     $Self->{Translation}->{'Default status for new users.'} = '新規ユーザに対するデフォルトのステータス';
-    $Self->{Translation}->{'Defines if parent-child translations for queues and services should be generated automatically.'} =
-        '';
-    $Self->{Translation}->{'Defines the initial height for the rich text editor component in pixels.'} =
-        '';
-    $Self->{Translation}->{'Defines the initial height in pixels for the rich text editor component for this screen.'} =
-        '';
     $Self->{Translation}->{'Defines the projects for which a remark is required. If the RegExp matches on the project, you have to insert a remark too. The RegExp use the smx parameter.'} =
         '「注釈」エントリーを必要とする項目を定義します。 もしプロジェクト名がここで設定した正規表現にマッチする場合、「注釈｝は必須項目となります。※正規表現にはSMXパラメータを使います。';
     $Self->{Translation}->{'Determines if the statistics module may generate time accounting information.'} =
