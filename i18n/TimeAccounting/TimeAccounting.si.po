@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2024-05-25 17:02+0000\n"
+"POT-Creation-Date: 2024-08-02 03:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
