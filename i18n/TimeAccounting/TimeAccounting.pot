@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TimeAccounting\n"
-"POT-Creation-Date: 2024-08-02 03:56+0000\n"
+"POT-Creation-Date: 2024-09-10 03:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -331,6 +331,10 @@ msgid "Add task"
 msgstr ""
 
 #. Template: AgentTimeAccountingSetting
+msgid "Add a user to time accounting."
+msgstr ""
+
+#. Template: AgentTimeAccountingSetting
 msgid "Filter for projects, tasks or users"
 msgstr ""
 
@@ -588,10 +592,6 @@ msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
 msgid "User added!"
-msgstr ""
-
-#. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm
-msgid "Add a user to time accounting..."
 msgstr ""
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingSetting.pm

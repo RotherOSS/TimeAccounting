@@ -122,6 +122,7 @@ sub Data {
         'Már létezik egy ilyen nevű projekt. Válasszon egy másik nevet.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Időelszámolási beállítások szerkesztése';
     $Self->{Translation}->{'Add task'} = 'Feladat hozzáadása';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = 'Szűrő a projektkehez, feladatokhoz vagy felhasználókhoz';
     $Self->{Translation}->{'Time periods can not be deleted.'} = 'Az időszakok nem törölhetők.';
     $Self->{Translation}->{'Project List'} = 'Projektlista';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Beállítás';
     $Self->{Translation}->{'User updated!'} = 'Felhasználó frissítve!';
     $Self->{Translation}->{'User added!'} = 'Felhasználó hozzáadva!';
-    $Self->{Translation}->{'Add a user to time accounting...'} = 'Felhasználó hozzáadása az időelszámoláshoz…';
     $Self->{Translation}->{'New User'} = 'Új felhasználó';
     $Self->{Translation}->{'Period Status'} = 'Időszak állapot';
 

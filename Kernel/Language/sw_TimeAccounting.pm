@@ -122,6 +122,7 @@ sub Data {
         'Tayari kuna mradi wenye hili jina. Tafadhali, chagua jengine.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Hariri mipangilio ya Uhasubu wa Muda';
     $Self->{Translation}->{'Add task'} = 'Ongeza kazi';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = '';
     $Self->{Translation}->{'Project List'} = 'Orodha ya miradi';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Mpangilio';
     $Self->{Translation}->{'User updated!'} = '';
     $Self->{Translation}->{'User added!'} = '';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = '';
     $Self->{Translation}->{'Period Status'} = '';
 

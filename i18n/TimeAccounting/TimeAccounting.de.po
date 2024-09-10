@@ -984,3 +984,7 @@ msgstr ""
 #~ msgid "Users who have rw permissions in one of these groups are permitted to manage projects. Additionally the members have administration permissions to the git management."
 #~ msgstr "Benutzer die über rw-Berechtigungen in einer dieser Gruppen verfügen, können Projekte verwalten. Zusätzlich haben die Mitglieder Administrationsberechtigungen für die Git-Verwaltung."
 
+#. Template: AgentTimeAccountingSetting
+msgid "Add a user to time accounting."
+msgstr ""
+

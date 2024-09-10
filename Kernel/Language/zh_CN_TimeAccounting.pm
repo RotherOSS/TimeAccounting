@@ -122,6 +122,7 @@ sub Data {
         '已存在同名的项目，请选择不同的名字。';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = '编辑工时管理设置';
     $Self->{Translation}->{'Add task'} = '添加任务';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '按项目、任务或用户过滤';
     $Self->{Translation}->{'Time periods can not be deleted.'} = '无法删除工时周期。';
     $Self->{Translation}->{'Project List'} = '项目列表';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = '设置';
     $Self->{Translation}->{'User updated!'} = '用户已更新！';
     $Self->{Translation}->{'User added!'} = '用户已添加！';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '添加一个用户到工时管理...';
     $Self->{Translation}->{'New User'} = '添加用户';
     $Self->{Translation}->{'Period Status'} = '时段状态';
 

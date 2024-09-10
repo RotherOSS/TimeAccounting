@@ -122,6 +122,7 @@ sub Data {
         'Xa hai un proxecto con este nome. Por favor, escolla un diferente.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Edite Contabilización do Tempo en Axustes';
     $Self->{Translation}->{'Add task'} = 'Engadir unha tarefa';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = '';
     $Self->{Translation}->{'Project List'} = 'Lista de proxectos';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Configuración';
     $Self->{Translation}->{'User updated!'} = '';
     $Self->{Translation}->{'User added!'} = '';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = '';
     $Self->{Translation}->{'Period Status'} = '';
 

@@ -122,6 +122,7 @@ sub Data {
         'Sudah ada projek dengan nama ini. Sila pilih yang lain.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Sunting Tetapan Perakaunan Masa';
     $Self->{Translation}->{'Add task'} = 'Tambah tugas';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = 'Tempoh masa tidak boleh dihapuskan.';
     $Self->{Translation}->{'Project List'} = 'Senarai projek';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Tetapan';
     $Self->{Translation}->{'User updated!'} = 'Pengguna telah dikemaskini!';
     $Self->{Translation}->{'User added!'} = 'Pengguna telah ditambah!';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = 'Pengguna Baharu';
     $Self->{Translation}->{'Period Status'} = 'Status Tempoh';
 

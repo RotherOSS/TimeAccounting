@@ -122,6 +122,7 @@ sub Data {
         'Inny projekt używa już tej nazwy. Użyj innej nazwy.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Edytuj ustawienia rozliczania czasu pracy';
     $Self->{Translation}->{'Add task'} = 'Dodaj zadanie';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = 'Filtruj projekty, zadania lub użytkowników';
     $Self->{Translation}->{'Time periods can not be deleted.'} = 'Cykle czasu nie mogą zostać usunięte.';
     $Self->{Translation}->{'Project List'} = 'Lista projektów';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Ustawienie';
     $Self->{Translation}->{'User updated!'} = 'Użytkownik zmieniony!';
     $Self->{Translation}->{'User added!'} = 'Użytkownik dodany!';
-    $Self->{Translation}->{'Add a user to time accounting...'} = 'Dodaj użytkownika do rozliczania czasu pracy...';
     $Self->{Translation}->{'New User'} = 'Nowy Użytkownik';
     $Self->{Translation}->{'Period Status'} = 'Stan cyklu';
 

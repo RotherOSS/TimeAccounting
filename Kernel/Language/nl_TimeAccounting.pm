@@ -122,6 +122,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = '';
     $Self->{Translation}->{'Add task'} = 'Taak toevoegen';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = 'Tijdperiodes kunnen niet worden verwijderd.';
     $Self->{Translation}->{'Project List'} = '';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Instelling';
     $Self->{Translation}->{'User updated!'} = '';
     $Self->{Translation}->{'User added!'} = '';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = 'Nieuwe Gebruiker';
     $Self->{Translation}->{'Period Status'} = 'Periode Status';
 

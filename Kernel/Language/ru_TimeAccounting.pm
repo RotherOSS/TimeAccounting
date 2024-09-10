@@ -122,6 +122,7 @@ sub Data {
         'Уже есть проект с таким наименованием. Выберите другое.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Редактировать настройки учета затраченного времени';
     $Self->{Translation}->{'Add task'} = 'Добавить задачу';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = 'Фильтр для проектов, задач или пользователей';
     $Self->{Translation}->{'Time periods can not be deleted.'} = 'Периоды времени не могут быть удалены.';
     $Self->{Translation}->{'Project List'} = 'Список проектов';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Параметр';
     $Self->{Translation}->{'User updated!'} = 'Пользователь обновлен!';
     $Self->{Translation}->{'User added!'} = 'Пользователь добавлен!';
-    $Self->{Translation}->{'Add a user to time accounting...'} = 'Добавить пользователя в учет времени ...';
     $Self->{Translation}->{'New User'} = 'Новый пользователь';
     $Self->{Translation}->{'Period Status'} = 'Статус периода';
 

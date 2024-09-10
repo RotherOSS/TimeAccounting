@@ -122,6 +122,7 @@ sub Data {
         '';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = '';
     $Self->{Translation}->{'Add task'} = '添加工作';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = '';
     $Self->{Translation}->{'Project List'} = '項目列表';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = '設置';
     $Self->{Translation}->{'User updated!'} = '';
     $Self->{Translation}->{'User added!'} = '';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = '新用戶';
     $Self->{Translation}->{'Period Status'} = '';
 

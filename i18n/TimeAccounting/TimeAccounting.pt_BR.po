@@ -841,3 +841,7 @@ msgstr ""
 #~ msgid "This configuration defines if only valids or all (invalids) dynamic fields should be shown."
 #~ msgstr "Esta configuração define se somente os valores válidos ou todos os campos dinâmicos (inválidos) devem ser mostrados."
 
+#. Template: AgentTimeAccountingSetting
+msgid "Add a user to time accounting."
+msgstr ""
+

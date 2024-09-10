@@ -122,6 +122,7 @@ sub Data {
         'Der er allerede et projekt med dette navn. Vælg venligst et andet.';
     $Self->{Translation}->{'Edit Time Accounting Settings'} = 'Rediger tidsregnskabsindstilinger';
     $Self->{Translation}->{'Add task'} = 'Tilføj opgave';
+    $Self->{Translation}->{'Add a user to time accounting.'} = '';
     $Self->{Translation}->{'Filter for projects, tasks or users'} = '';
     $Self->{Translation}->{'Time periods can not be deleted.'} = '';
     $Self->{Translation}->{'Project List'} = 'Projektliste';
@@ -201,7 +202,6 @@ sub Data {
     $Self->{Translation}->{'Setting'} = 'Indstilling';
     $Self->{Translation}->{'User updated!'} = '';
     $Self->{Translation}->{'User added!'} = '';
-    $Self->{Translation}->{'Add a user to time accounting...'} = '';
     $Self->{Translation}->{'New User'} = '';
     $Self->{Translation}->{'Period Status'} = '';
 
