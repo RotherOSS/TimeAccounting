@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otobo_package version="1.0">
     <Name>TimeAccounting</Name>
-    <Version>11.0.0</Version>
+    <Version>11.0.6</Version>
     <Framework>11.0.x</Framework>
     <Vendor>Rother OSS GmbH</Vendor>
     <URL>https://otobo.de/</URL>
@@ -236,6 +236,15 @@
 
         $Kernel::OM->Get($CodeModule)->CodeUpgradeFromLowerThan_10_1_2();
     ]]></CodeUpgrade>
+    
+    <CodeUpgrade Type="post" Version="11.0.6"><![CDATA[
+
+        # create the package name
+        my $CodeModule = 'var::packagesetup::' . $Param{Structure}->{Name}->{Content};
+
+        $Kernel::OM->Get($CodeModule)->CodeUpgradeFromLowerThan_11_x_x();
+    ]]></CodeUpgrade>
+    
     <IntroInstall Type="pre" Title="Install Information" Lang="en"><![CDATA[
 
         <br>
