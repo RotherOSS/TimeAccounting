@@ -12,6 +12,7 @@
     <Filelist>
         <File Permission="660" Location="doc/timeaccounting-database.png" />
         <File Permission="660" Location="Custom/Kernel/System/Ticket/Article.pm" />
+        <File Permission="660" Location="Custom/Kernel/System/Ticket.pm" />
         <File Permission="660" Location="Kernel/Config/Files/XML/TimeAccounting.xml" />
         <File Permission="660" Location="Kernel/Language/bg_TimeAccounting.pm" />
         <File Permission="660" Location="Kernel/Language/da_TimeAccounting.pm" />
