@@ -164,7 +164,7 @@ sub CodeUpgradeFromLowerThan_10_1_2 {    ## no critic qw(OTOBO::RequireCamelCase
     return 1;
 }
 
-sub CodeUpgradeFromLowerThan_11_x_x {    ## no critic qw(OTOBO::RequireCamelCase)
+sub CodeUpgradeFromLowerThan_11_0_3 {    ## no critic qw(OTOBO::RequireCamelCase)
     my ( $Self, %Param ) = @_;
 
     # Rearrange time_account table to aggregate rows by ticket_id and article_id

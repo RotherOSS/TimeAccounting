@@ -6473,10 +6473,18 @@ sub TicketMerge {
     );
 
     # update the accounted time of the main ticket
+    # there is only one table row for each one of the tickets
+    # enforce that after merging there is only one row for the main ticket:
+    # 1. increment the accounted time of the main ticket with the accounted time of the merged ticket
+    # 2. remove the merged ticket row
     return if !$DBObject->Do(
-        SQL => 'UPDATE time_accounting SET ticket_id = ?, change_time = current_timestamp, '
-            . ' change_by = ? WHERE ticket_id = ?',
-        Bind => [ \$Param{MainTicketID}, \$Param{UserID}, \$Param{MergeTicketID} ],
+        SQL => 'UPDATE time_accounting SET time_unit = time_unit + (SELECT sum(time_unit) FROM time_accounting WHERE ticket_id = ?) '
+            .  'WHERE ticket_id = ?',
+        Bind => [ \$Param{MergeTicketID}, \$Param{MainTicketID} ],
+    );
+    return if !$DBObject->Do(
+        SQL => 'DELETE FROM time_accounting WHERE ticket_id = ?',
+        Bind => [ \$Param{MergeTicketID} ],
     );
 
     my %MainTicket = $Self->TicketGet(
