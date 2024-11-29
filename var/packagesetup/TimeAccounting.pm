@@ -164,15 +164,6 @@ sub CodeUpgradeFromLowerThan_10_1_2 {    ## no critic qw(OTOBO::RequireCamelCase
     return 1;
 }
 
-sub CodeUpgradeFromLowerThan_11_0_3 {    ## no critic qw(OTOBO::RequireCamelCase)
-    my ( $Self, %Param ) = @_;
-
-    # Rearrange time_account table to aggregate rows by ticket_id and article_id
-    $Self->_AggregateTimeAccountTable();
-
-    return 1;
-}
-
 =head1 PRIVATE INTERFACE
 
 =head2 _CreateDynamicFieldArticleTimeUnit()
@@ -612,88 +603,6 @@ sub _MigratePermissions {
 
     return 1;
 }
-
-=head2 _AggregateTimeAccountTable()
-
-aggregate rows of the 'time_account' table by ticket_id and article_id, into one single entry, such that:
-    time_unit: is the sum of the 'time_unit' column of the aggregated rows
-    create_by: is the 'create_by' column of the earlier aggregated row (the row with the lowest id)
-    create_time: is the 'create_time' column of the earlier aggregated row
-    change_by: is the 'change_by' column of the latest aggregated row (the row with the highest id)
-    change_time: is the 'change_time' column of the latest aggregated row
-
-    my $Result = $CodeObject->_AggregateTimeAccountTable();
-
-=cut
-
-sub _AggregateTimeAccountTable {
-    my ( $Self, %Param ) = @_;
-
-    # get database object
-    my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
-
-    # db select
-    return if !$DBObject->Prepare(
-        SQL => 'SELECT * FROM time_accounting ORDER BY id',
-    );
-
-    # fetch the data
-    my %Data;
-    my $LastID = -1;
-    my $BackupStr;
-    while ( my @Row = $DBObject->FetchrowArray() ) {
-        my $Key = "$Row[1]-$Row[2]";
-        if ( !$Data{$Key} ) {
-            $Data{$Key} = {
-                ticket_id   => $Row[1],
-                article_id  => $Row[2],
-                time_unit   => $Row[3],
-                create_time => $Row[4],
-                create_by   => $Row[5],
-            };
-        }
-        else {
-            $Data{$Key}->{time_unit} += $Row[3];
-        }
-        $Data{$Key}->{change_time} = $Row[6];
-        $Data{$Key}->{change_by}   = $Row[7];
-
-        # the if condition is redundant, as the id field is supposed to always grow, but it increases code safety
-        if ( $Row[0] > $LastID ) {
-            $LastID = $Row[0];
-        }
-
-        $BackupStr .= "INSERT INTO time_accounting VALUES('$Row[0]', '$Row[1]', '$Row[2]', '$Row[3]', '$Row[4]', '$Row[5]', '$Row[6]', '$Row[7]');\n";
-    }
-
-    # backup csv file for previous data
-    my $FileLocation = $Kernel::OM->Get('Kernel::System::Main')->FileWrite(
-        Location => 'time_accounting_backup.sql',
-        Content  => \$BackupStr,
-    );
-
-    for my $Key ( sort keys %Data ) {
-
-        # insert project record
-        return if !$DBObject->Do(
-            SQL => 'INSERT INTO time_accounting(ticket_id, article_id, time_unit, create_time, create_by, change_time, change_by)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)',
-            Bind => [
-                \$Data{$Key}->{ticket_id},   \$Data{$Key}->{article_id}, \$Data{$Key}->{time_unit},
-                \$Data{$Key}->{create_time}, \$Data{$Key}->{create_by},  \$Data{$Key}->{change_time}, \$Data{$Key}->{change_by}
-            ],
-        );
-    }
-
-    return if !$DBObject->Do(
-        SQL  => 'DELETE FROM time_accounting WHERE id <= ?',
-        Bind => [ \$LastID ],
-    );
-
-    return 1;
-}
-
-1;
 
 =head1 TERMS AND CONDITIONS
 

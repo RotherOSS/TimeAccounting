@@ -582,7 +582,7 @@
             <Item ValueType="Checkbox">1</Item>
         </Value>
     </Setting>
-    <Setting Name="TimeAccounting::TicketSync::Enable" Required="1" Valid="1">
+    <Setting Name="TimeAccounting::TicketSync::Enable" Required="0" Valid="0">
         <Description Translatable="1">Activate the synchronisation of Ticket-TimeUnits into the TimeAccounting module.</Description>
         <Navigation>Core::TimeAccounting::TicketSync</Navigation>
         <Value>
@@ -610,7 +610,7 @@
             <Item ValueType="Checkbox">0</Item>
         </Value>
     </Setting>
-    <Setting Name="TimeAccounting::TicketSync::SaveTimeUnitToArticleField" Required="0" Valid="1">
+    <Setting Name="TimeAccounting::TicketSync::SaveTimeUnitToArticleField" Required="0" Valid="0">
         <Description Translatable="1">We save the Article TimeUnit to a DynamicField from type "Article". Please add here the name of the field if the initinal name is changed.</Description>
         <Navigation>Core::TimeAccounting::TicketSync</Navigation>
         <Value>
@@ -637,7 +637,7 @@
         <Value>
             <Hash>
                 <Item Key="Module">Kernel::System::Ticket::Event::TimeAccountingTicketTimeUnitsSync</Item>
-                <Item Key="Event">TicketAccountTime|ArticleFreeTextUpdate</Item>
+                <Item Key="Event">TicketAccountTime</Item>
             </Hash>
         </Value>
     </Setting>
