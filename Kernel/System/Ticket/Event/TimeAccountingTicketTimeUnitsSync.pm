@@ -51,17 +51,6 @@ sub Run {
         return 1;
     }
 
-    # check if dynamic field name is configured and if field exists
-    my $SyncDFName = $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField');
-
-    return 1 unless $SyncDFName;
-
-    my $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
-        Name => $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField'),
-    );
-
-    return 1 unless IsHashRefWithData($DynamicFieldConfig);
-
     # check needed stuff
     for (qw(Data Event Config)) {
         if ( !$Param{$_} ) {
