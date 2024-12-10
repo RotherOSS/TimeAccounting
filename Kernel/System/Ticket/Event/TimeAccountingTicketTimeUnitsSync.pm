@@ -70,7 +70,17 @@ sub Run {
             return;
         }
     }
-    
+
+    # check if dynamic field name is configured and if the field exists
+    # a negative check, however, must not cause return because personal time account has to be computed anyway
+    my $DynamicFieldConfig;
+    my $SyncDFName = $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField');
+    if ($SyncDFName) {
+        $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
+            Name => $SyncDFName,
+        );
+    }
+
     if ( $Param{Event} eq 'TicketAccountTime' ) {
 
         # get ticket object
@@ -95,13 +105,15 @@ sub Run {
         # Add TimeUnits to the Article hash
         $Article{TimeUnits} = $Param{Data}{TimeUnits};
 
-        # I write the Artice TimeUnit to a dynamic field for later viewing
-        my $Success = $BackendObject->ValueSet(
-            DynamicFieldConfig => $DynamicFieldConfig,          # complete config of the DynamicField
-            ObjectID           => $Param{Data}->{ArticleID},    # ID of the current object that the field
-            Value              => $Article{TimeUnits},          # Value to store, depends on backend type
-            UserID             => 1,
-        );
+        # Write the Article TimeUnit to a dynamic field for later viewing
+        if ($DynamicFieldConfig) {
+            my $Success = $BackendObject->ValueSet(
+                DynamicFieldConfig => $DynamicFieldConfig,          # complete config of the DynamicField
+                ObjectID           => $Param{Data}->{ArticleID},    # ID of the current object that the field
+                Value              => $Article{TimeUnits},          # Value to store, depends on backend type
+                UserID             => 1,
+            );
+        }
 
         if ( $Article{TimeUnits} == 0 ) {
             return 1;
@@ -185,10 +197,11 @@ sub Run {
             );
 
             my $CurrentTimeObject = $Kernel::OM->Create('Kernel::System::DateTime');
+
             # the working unit may concern to some article edition later to the article creation
             # therefore it must be assigned the current date instead of the article creation date
             my $CurrentTimeValue = $CurrentTimeObject->Get();
-            my $Insert = $TimeAccountingObject->WorkingUnitsInsert(
+            my $Insert           = $TimeAccountingObject->WorkingUnitsInsert(
                 Year         => $CurrentTimeValue->{Year},
                 Month        => $CurrentTimeValue->{Month},
                 Day          => $CurrentTimeValue->{Day},
