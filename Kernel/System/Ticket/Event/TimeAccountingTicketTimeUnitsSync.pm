@@ -45,12 +45,6 @@ sub new {
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    # Check if the module is active
-    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
-    if ( !$ConfigObject->Get('TimeAccounting::TicketSync::Enable') ) {
-        return 1;
-    }
-
     # check needed stuff
     for (qw(Data Event Config)) {
         if ( !$Param{$_} ) {
@@ -61,6 +55,9 @@ sub Run {
             return;
         }
     }
+
+    return if $Param{Event} ne 'TicketAccountTime';
+
     for (qw(TicketID ArticleID)) {
         if ( !$Param{Data}->{$_} ) {
             $Kernel::OM->Get('Kernel::System::Log')->Log(
@@ -71,24 +68,22 @@ sub Run {
         }
     }
 
-    # check if dynamic field name is configured and if the field exists
-    # a negative check, however, must not cause return because personal time account has to be computed anyway
-    my $DynamicFieldConfig;
-    my $SyncDFName = $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField');
-    if ($SyncDFName) {
-        $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
-            Name => $SyncDFName,
-        );
-    }
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
 
-    if ( $Param{Event} eq 'TicketAccountTime' ) {
+    # get task config
+    my $SyncToPersonalTime  = $ConfigObject->Get('TimeAccounting::TicketSync::Enable');
+    my $SyncToArticleDFName = $ConfigObject->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField');
 
-        # get ticket object
+    # return if no task is configured
+    return 1 if !$SyncToPersonalTime && !$SyncToArticleDFName;
+
+    my $Success = 1;
+
+    # sync personal time (only, if time units are not 0)
+    if ( $SyncToPersonalTime && $Param{Data}{TimeUnits} ) {
         my $TicketObject         = $Kernel::OM->Get('Kernel::System::Ticket');
         my $ArticleObject        = $Kernel::OM->Get('Kernel::System::Ticket::Article');
-        my $BackendObject        = $Kernel::OM->Get('Kernel::System::DynamicField::Backend');
         my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
-        my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
 
         my $ArticleBackendObject = $ArticleObject->BackendForArticle(
             TicketID  => $Param{Data}{TicketID},
@@ -104,20 +99,6 @@ sub Run {
 
         # Add TimeUnits to the Article hash
         $Article{TimeUnits} = $Param{Data}{TimeUnits};
-
-        # Write the Article TimeUnit to a dynamic field for later viewing
-        if ($DynamicFieldConfig) {
-            my $Success = $BackendObject->ValueSet(
-                DynamicFieldConfig => $DynamicFieldConfig,          # complete config of the DynamicField
-                ObjectID           => $Param{Data}->{ArticleID},    # ID of the current object that the field
-                Value              => $Article{TimeUnits},          # Value to store, depends on backend type
-                UserID             => 1,
-            );
-        }
-
-        if ( $Article{TimeUnits} == 0 ) {
-            return 1;
-        }
 
         # Now we split the date to year month day
         my $Year;
@@ -190,7 +171,8 @@ sub Run {
         else {
             $ActionID = $DefaultActionID;
         }
-        if ( $Year && $Month && $Day && $Article{CreateBy} && $Article{TimeUnits} ) {
+
+        if ( $Year && $Month && $Day && $Article{CreateBy} ) {
 
             my $TicketNumber = $TicketObject->TicketNumberLookup(
                 TicketID => $Param{Data}{TicketID},
@@ -201,7 +183,8 @@ sub Run {
             # the working unit may concern to some article edition later to the article creation
             # therefore it must be assigned the current date instead of the article creation date
             my $CurrentTimeValue = $CurrentTimeObject->Get();
-            my $Insert           = $TimeAccountingObject->WorkingUnitsInsert(
+
+            $Success = $TimeAccountingObject->WorkingUnitsInsert(
                 Year         => $CurrentTimeValue->{Year},
                 Month        => $CurrentTimeValue->{Month},
                 Day          => $CurrentTimeValue->{Day},
@@ -223,25 +206,52 @@ sub Run {
                 ExternalInsert => 1,
             );
 
-            if ($Insert) {
-                $TicketObject->HistoryAdd(
-                    TicketID     => $Param{Data}->{TicketID},
-                    CreateUserID => $Param{UserID},
-                    HistoryType  => 'Misc',
-                    Name         => "Sync " . $Article{TimeUnits} . " TimeUnits for user $Article{CreateBy} to Timeaccounting-Modul.",
-                );
-            }
-            else {
-                $TicketObject->HistoryAdd(
-                    TicketID     => $Param{Data}->{TicketID},
-                    CreateUserID => $Param{UserID},
-                    HistoryType  => 'Misc',
-                    Name         => "Sync " . $Article{TimeUnits} . " TimeUnits for user $Article{CreateBy} to Timeaccounting-Modul failed!",
+            if ( !$Success ) {
+                $Kernel::OM->Get('Kernel::System::Log')->Log(
+                    Priority => 'error',
+                    Message  => "Could not insert working units (" . ( $Article{TimeUnits} / 60 )
+                        . ") of article (ArticleID: $Param{Data}{ArticleID}, TicketID: $Param{Data}{TicketID}) for $Article{CreateBy}."
                 );
             }
         }
+        else {
+            $Kernel::OM->Get('Kernel::System::Log')->Log(
+                Priority => 'error',
+                Message  => "Error in receiving parameters for working units insertion (" . ( $Article{TimeUnits} / 60 )
+                    . ") of article (ArticleID: $Param{Data}{ArticleID}, TicketID: $Param{Data}{TicketID})."
+            );
+
+            $Success = 0;
+        }
     }
-    return 1;
+
+    # sync article time to DF
+    if ( $SyncToArticleDFName ) {
+        my $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
+            Name => $SyncToArticleDFName,
+        );
+
+        if ( $DynamicFieldConfig ) {
+            my $DFSuccess = $Kernel::OM->Get('Kernel::System::DynamicField::Backend')->ValueSet(
+                DynamicFieldConfig => $DynamicFieldConfig,
+                ObjectID           => $Param{Data}{ArticleID},
+                Value              => $Param{Data}{TimeUnits},
+                UserID             => 1,
+            );
+
+            $Success = $Success ? $DFSuccess : $Success;
+        }
+        else {
+            $Kernel::OM->Get('Kernel::System::Log')->Log(
+                Priority => 'error',
+                Message  => "No dynamic field '$SyncToArticleDFName'!",
+            );
+
+            $Success = 0;
+        }
+    }
+
+    return $Success;
 }
 
 sub _CheckProjectName {
