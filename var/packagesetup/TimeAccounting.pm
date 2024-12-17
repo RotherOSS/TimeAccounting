@@ -189,7 +189,7 @@ sub _CreateDynamicFieldArticleTimeUnit {
     my $FieldConfig = {
         Tooltip => 'Article Time Units',
     };
-    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnits';
     my $ID      = $DynamicFieldObject->DynamicFieldAdd(
         InternalField => 1,
         Name          => $DynName,
