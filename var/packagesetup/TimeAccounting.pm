@@ -24,6 +24,7 @@ use List::Util qw();
 our @ObjectDependencies = (
     'Kernel::Config',
     'Kernel::System::Cache',
+    'Kernel::System::DB',
     'Kernel::System::DynamicField',
     'Kernel::System::DynamicFieldValue',
     'Kernel::System::Group',
@@ -188,7 +189,7 @@ sub _CreateDynamicFieldArticleTimeUnit {
     my $FieldConfig = {
         Tooltip => 'Article Time Units',
     };
-    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnit';
+    my $DynName = $Kernel::OM->Get('Kernel::Config')->Get('TimeAccounting::TicketSync::SaveTimeUnitToArticleField') || 'ArticleTimeUnits';
     my $ID      = $DynamicFieldObject->DynamicFieldAdd(
         InternalField => 1,
         Name          => $DynName,
@@ -602,8 +603,6 @@ sub _MigratePermissions {
 
     return 1;
 }
-
-1;
 
 =head1 TERMS AND CONDITIONS
 

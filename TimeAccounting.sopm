@@ -2,7 +2,7 @@
 <otobo_package version="1.0">
     <Name>TimeAccounting</Name>
     <Version>11.0.0</Version>
-    <Framework>11.0.x</Framework>
+    <Framework Minimum='11.0.8'>11.0.x</Framework>
     <Vendor>Rother OSS GmbH</Vendor>
     <URL>https://otobo.io/</URL>
     <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
@@ -11,7 +11,6 @@
     <Description Lang="hu">Egy munkaidő nyilvántartás modul.</Description>
     <Filelist>
         <File Permission="660" Location="doc/timeaccounting-database.png" />
-        <File Permission="660" Location="Custom/Kernel/System/Ticket/Article.pm" />
         <File Permission="660" Location="Kernel/Config/Files/XML/TimeAccounting.xml" />
         <File Permission="660" Location="Kernel/Language/ar_SA_TimeAccounting.pm" />
         <File Permission="660" Location="Kernel/Language/bg_TimeAccounting.pm" />
@@ -255,6 +254,7 @@
 
         $Kernel::OM->Get($CodeModule)->CodeUpgradeFromLowerThan_10_1_2();
     ]]></CodeUpgrade>
+    
     <IntroInstall Type="pre" Title="Install Information" Lang="en"><![CDATA[
 
         <br>

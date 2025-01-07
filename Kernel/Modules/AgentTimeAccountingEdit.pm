@@ -713,17 +713,6 @@ sub Run {
                     );
                 }
                 $Param{SuccessfulInsert} = 1;
-
-                # Check if ticket time unit was changed, if so: sync back
-                # TODO Sync back to Change.
-                if ( $Param{BaseModule} && $Param{BaseModule} eq 'Ticket' && $Param{TicketID} && $Param{ArticleID} ) {
-                    my $Success = $Kernel::OM->Get('Kernel::System::Ticket::Article')->ArticleAccountedTimeUpdate(
-                        TicketID  => $Param{TicketID},
-                        ArticleID => $Param{ArticleID},
-                        NewTime   => $Period * 60,
-                        UserID    => $Self->{UserID},
-                    );
-                }
             }
 
             # increment the error index if there was an error on this row
