@@ -917,7 +917,7 @@ sub _SettingOverview {
             delete $ShownUsers{$UserInfo};
         }
 
-        if ( scalar keys %ShownUsers > 1 ) {
+        if ( scalar keys %ShownUsers >= 1 ) {
             my $NewUserOption = $LayoutObject->BuildSelection(
                 Data         => \%ShownUsers,
                 SelectedID   => '',
