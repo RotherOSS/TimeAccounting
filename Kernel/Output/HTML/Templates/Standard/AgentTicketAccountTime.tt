@@ -1,0 +1,108 @@
+# --
+# OTOBO is a web-based ticketing system for service organisations.
+# --
+# Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
+# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
+# --
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+# --
+
+<form action="[% Env("CGIHandle") %]" method="post" enctype="multipart/form-data" name="compose" class="Validate PreventMultipleSubmits">
+    <input type="hidden" id="ChallengeToken" name="ChallengeToken" value="[% Env("UserChallengeToken") | html %]"/>
+    <input type="hidden" name="Action" value="AgentTicketAccountTime"/>
+    <input type="hidden" name="Subaction" value="StoreNew"/>
+    <input type="hidden" name="TicketID" value="[% Data.TicketID | html %]"/>
+    <input type="hidden" name="ProjectID" value="[% Data.ProjectID | html %]"/>
+    <input type="hidden" name="CreateBy" value="[% Data.CreateBy | html %]"/>
+
+    <div class="LayoutPopup ARIARoleMain">
+        <div class="Header">
+            <ul class="HeaderPopup">
+                <li class="HeaderPopupleft">
+                    <h1>[% Translate("Add Time Accounting") | html %]</h1>
+                </li>
+                <li class="HeaderPopupright">
+                    <a class="CancelClosePopup" href="#">[% Translate("Cancel & close") | html %]</a>
+                </li>
+
+[% RenderBlockStart("PropertiesLock") %]
+                <li class="HeaderPopupright">
+                    [% Translate("The ticket has been locked") | html %].
+                    <a class="UndoClosePopup" href="[% Env("Baselink") %]Action=AgentTicketLock;Subaction=Unlock;TicketID=[% Data.TicketID | uri %][% IF Data.PreviousOwner %];PreviousOwner=[% Data.PreviousOwner %][% END %];[% Env("ChallengeTokenParam") | html %]">
+                        [% Translate("Undo & close") | html %]
+                    </a>
+                </li>
+[% RenderBlockEnd("PropertiesLock") %]
+            </ul>
+        </div>
+        <div class="Content">
+
+            <fieldset class="TableLike">
+                <label class="Mandatory" for="Date"><span class="Marker">*</span> [% Translate("Date") | html %]:</label>
+                <div class="Field">
+                    <div id="DateError" class="TooltipErrorMessage">
+                        <p>[% Translate("Invalid date!") | html %]</p>
+                        <p>[% Translate("Please set this date to a value not after current date.") | html %]</p>
+                    </div>
+                    [% Data.DateString %]
+                </div>
+                <div class="Clear"></div>
+                <label class="Mandatory" for="TaskID"><span class="Marker">*</span> [% Translate("Task") | html %]:</label>
+                <div class="Field">
+                    <div id="TaskIDError" class="TooltipErrorMessage">
+                        <p>[% Translate("This field is mandatory.") | html %]</p>
+                    </div>
+                    <div id="TaskIDServerError" class="TooltipErrorMessage">
+                        <p>[% Translate("This field is mandatory.") | html %]</p>
+                    </div>
+                    [% Data.TaskIDString %]
+                </div>
+                <div class="Clear"></div>
+                <label for="Remark">[% Translate("Remark") | html %]:</label>
+                <div class="Field">
+                    <input type="text" id="Remark" name="Remark" class="W50pc" value="[% Data.Remark | html %]"/>
+                </div>
+                <div class="Clear"></div>
+                <label for="StartTime">[% Translate("Start time") | html %] (hh:mm):</label>
+                <div class="Field">
+                    <input type="text" name="StartTime" id="StartTime" value="[% Data.StartTime | html %]" class="[% Data.StartTimeError | html %]" size="7" title="[% Translate("Start Time") | html %]" />
+                    <div id="StartTimeError" class="TooltipErrorMessage">
+                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                    </div>
+                </div>
+                <div class="Clear"></div>
+                <label for="EndTime">[% Translate("End time") | html %] (hh:mm):</label>
+                <div class="Field">
+                    <div id="EndTimeError" class="TooltipErrorMessage">
+                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                    </div>
+                    <input type="text" name="EndTime" id="EndTime" value="[% Data.EndTime | html %]" class="[% Data.EndTimeError | html %]" size="7" title="[% Translate("End Time") | html %]" />
+                </div>
+                <div class="Clear"></div>
+
+                <label class="Mandatory" for="Period"><span class="Marker">*</span> [% Translate("Period") | html %]:</label>
+                <div class="Field">
+                    <div id="PeriodError" class="TooltipErrorMessage">
+                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                    </div>
+                    <div id="PeriodServerError" class="TooltipErrorMessage">
+                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                    </div>
+                    <input type="text" name="Period" id="Period" value="[% Data.Period | html %]" class="[% Data.PeriodError | html %]" size="7" title="[% Translate("Period") | html %]" />
+                </div>
+                <div class="Clear"></div>
+
+            </fieldset>
+        </div>
+        <div class="Footer">
+            <button class="CallForAction Primary" id="submitRichText" accesskey="g" title="[% Translate("Submit") | html %] (g)" type="submit" value="[% Translate("Submit") | html %]"><span><i class="fa fa-check-square-o"></i> [% Translate("Submit") | html %]</span></button>
+        </div>
+    </div>
+</form>
