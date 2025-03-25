@@ -31,26 +31,18 @@
                 <li class="HeaderPopupright">
                     <a class="CancelClosePopup" href="#">[% Translate("Cancel & close") | html %]</a>
                 </li>
-
-[% RenderBlockStart("PropertiesLock") %]
-                <li class="HeaderPopupright">
-                    [% Translate("The ticket has been locked") | html %].
-                    <a class="UndoClosePopup" href="[% Env("Baselink") %]Action=AgentTicketLock;Subaction=Unlock;TicketID=[% Data.TicketID | uri %][% IF Data.PreviousOwner %];PreviousOwner=[% Data.PreviousOwner %][% END %];[% Env("ChallengeTokenParam") | html %]">
-                        [% Translate("Undo & close") | html %]
-                    </a>
-                </li>
-[% RenderBlockEnd("PropertiesLock") %]
             </ul>
         </div>
         <div class="Content">
-
             <fieldset class="TableLike">
-                <label class="Mandatory" for="Date"><span class="Marker">*</span> [% Translate("Date") | html %]:</label>
+                <label class="Mandatory"><span class="Marker">*</span> [% Translate("Date") | html %]:</label>
                 <div class="Field">
-                    <div id="DateError" class="TooltipErrorMessage">
-                        <p>[% Translate("Invalid date!") | html %]</p>
-                        <p>[% Translate("Please set this date to a value not after current date.") | html %]</p>
-                    </div>
+                    <div id="DayError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
+                    <div id="MonthError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
+                    <div id="YearError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
+                    <div id="DayServerError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
+                    <div id="MonthServerError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
+                    <div id="YearServerError" class="TooltipErrorMessage"><p>[% Translate("The date must be valid and not later than today!") | html %]</p></div>
                     [% Data.DateString %]
                 </div>
                 <div class="Clear"></div>
@@ -73,29 +65,22 @@
                 <label for="StartTime">[% Translate("Start time") | html %] (hh:mm):</label>
                 <div class="Field">
                     <input type="text" name="StartTime" id="StartTime" value="[% Data.StartTime | html %]" class="[% Data.StartTimeError | html %]" size="7" title="[% Translate("Start Time") | html %]" />
-                    <div id="StartTimeError" class="TooltipErrorMessage">
-                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
-                    </div>
                 </div>
                 <div class="Clear"></div>
                 <label for="EndTime">[% Translate("End time") | html %] (hh:mm):</label>
                 <div class="Field">
-                    <div id="EndTimeError" class="TooltipErrorMessage">
-                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
-                    </div>
                     <input type="text" name="EndTime" id="EndTime" value="[% Data.EndTime | html %]" class="[% Data.EndTimeError | html %]" size="7" title="[% Translate("End Time") | html %]" />
                 </div>
                 <div class="Clear"></div>
-
                 <label class="Mandatory" for="Period"><span class="Marker">*</span> [% Translate("Period") | html %]:</label>
                 <div class="Field">
                     <div id="PeriodError" class="TooltipErrorMessage">
-                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                        <p>[% Translate("You must enter a start and an end time, or a positive period of up to 24 hours.") | html %]</p>
                     </div>
                     <div id="PeriodServerError" class="TooltipErrorMessage">
-                        <p>[% Translate("You have to fill in start and end time or a time period.") | html %]</p>
+                        <p>[% Translate("You must enter a start and an end time, or a positive period of up to 24 hours.") | html %]</p>
                     </div>
-                    <input type="text" name="Period" id="Period" value="[% Data.Period | html %]" class="[% Data.PeriodError | html %]" size="7" title="[% Translate("Period") | html %]" />
+                    <input type="text" name="Period" id="Period" value="[% Data.Period | html %]" class="Validate_Required [% Data.PeriodError | html %]" size="7" title="[% Translate("Period") | html %]" />
                 </div>
                 <div class="Clear"></div>
 

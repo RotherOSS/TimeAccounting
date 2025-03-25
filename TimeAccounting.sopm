@@ -59,11 +59,13 @@
         <File Permission="660" Location="Kernel/Language/vi_VN_TimeAccounting.pm" />
         <File Permission="660" Location="Kernel/Language/zh_CN_TimeAccounting.pm" />
         <File Permission="660" Location="Kernel/Language/zh_TW_TimeAccounting.pm" />
+        <File Permission="660" Location="Kernel/Modules/AgentTicketAccountTime.pm" />        
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingEdit.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingOverview.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingReporting.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingSetting.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingView.pm" />
+        <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketAccountTime.tt" />        
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingDelete.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingEdit.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingOverview.tt" />
@@ -95,7 +97,8 @@
         <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.EditTimeRecords.js" />
         <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.Overview.js" />
         <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.Reporting.js" />
-        <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.View.js" />
+        <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.TicketTimeAccount.js" />
+        <File Permission="660" Location="var/httpd/htdocs/js/TimeAccounting.Agent.View.js" />        
         <File Permission="660" Location="var/httpd/htdocs/js/test/TimeAccounting.Agent.EditTimeRecords.UnitTest.html" />
         <File Permission="660" Location="var/httpd/htdocs/js/test/TimeAccounting.Agent.EditTimeRecords.UnitTest.js" />
         <File Permission="660" Location="var/httpd/htdocs/skins/Agent/default/css/TimeAccounting.Defaults.css" />

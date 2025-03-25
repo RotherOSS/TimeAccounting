@@ -22,7 +22,7 @@ use warnings;
 use Mail::Address;
 
 use Kernel::System::VariableCheck qw(:all);
-use Kernel::Language qw(Translatable);
+use Kernel::Language              qw(Translatable);
 
 our $ObjectManagerDisabled = 1;
 
@@ -36,18 +36,16 @@ sub new {
     return $Self;
 }
 
-use Data::Dumper;
-
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
-    my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+    my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
+    my $LayoutObject         = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
     my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
-    my $ParamObject = $Kernel::OM->Get('Kernel::System::Web::Request');
-    my $TicketObject = $Kernel::OM->Get('Kernel::System::Ticket');
+    my $ParamObject          = $Kernel::OM->Get('Kernel::System::Web::Request');
+    my $TicketObject         = $Kernel::OM->Get('Kernel::System::Ticket');
 
-    my $TicketID = $ParamObject->GetParam( 
+    my $TicketID = $ParamObject->GetParam(
         Param => 'TicketID',
     );
 
@@ -93,7 +91,7 @@ sub Run {
     }
 
     # action string
-    my %ActionList = $Self->_ActionList();
+    my %ActionList            = $Self->_ActionList();
     my $ActionListConstraints = $ConfigObject->Get('TimeAccounting::ActionListConstraints');
 
     # action list initially only contains empty and selected element as well as elements
@@ -114,30 +112,35 @@ sub Run {
                 Param => $Key,
             );
         }
+        $GetParam{Period} =~ s/,/./;
         my %Errors = $Self->_Validate(
             %GetParam,
         );
         if (%Errors) {
+
             # date string
             my $DateString = $LayoutObject->BuildDateSelection(
-                YearPeriodFuture => 0,
-                Year => $GetParam{Year},
-                Month => $GetParam{Month},
-                Day => $GetParam{Day},
-                #ValidateDateNotInFuture => 1,
+                YearPeriodFuture        => 0,
+                Year                    => $GetParam{Year},
+                Month                   => $GetParam{Month},
+                Day                     => $GetParam{Day},
+                Class                   => 'Validate_Required ' . $Errors{DateError},
+                ValidateDateNotInFuture => 1,
+
                 #Validate => 1,
             );
 
             my $ActionIDString = $LayoutObject->BuildSelection(
                 Data         => $ActionConstrainedList,
                 Name         => 'TaskID',
-                Class        => 'Modernize Validate_Required',
+                Class        => 'Modernize Validate_Required ' . $Errors{TaskIDError},
                 SelectedID   => $GetParam{TaskID},
                 PossibleNone => 1,
             );
 
             my $Output = join '',
                 $LayoutObject->Header(
+
                     #Value     => $Ticket{TicketNumber},
                     Type      => 'Small',
                     BodyClass => 'Popup',
@@ -145,28 +148,16 @@ sub Run {
             $Output .= $LayoutObject->Output(
                 TemplateFile => 'AgentTicketAccountTime',
                 Data         => {
-                    DateString => $DateString,
+                    DateString   => $DateString,
                     TaskIDString => $ActionIDString,
                     %GetParam,
                     %Errors,
                 },
-                AJAX => 1,
             );
             $Output .= $LayoutObject->Footer();
 
             return $Output;
         }
-        if ($GetParam{Period}) {
-            # if the period field is defined then clean the start time and the end time fields
-            $GetParam{StartTime} = '';
-            $GetParam{EndTime} = '';
-        }
-        else {
-            # previous validation enforces that otherwise there must be a start time and an end time from which to compute period
-            my ($StartHH, $StartMM) = $GetParam{StartTime} =~ /^(\d+):(\d+).*/;
-            my ($EndHH, $EndMM) = $GetParam{EndTime} =~ /^(\d+):(\d+).*/;
-            $GetParam{Period} = $EndHH - $StartHH + ($EndMM - $StartMM) / 60;
-        }        
         my $Success = $TimeAccountingObject->WorkingUnitsInsert(
             Year         => $GetParam{Year},
             Month        => $GetParam{Month},
@@ -186,13 +177,13 @@ sub Run {
                     BaseModule => 'Ticket',
                 },
             ],
-            UserID => $GetParam{CreateBy},
+            UserID         => $GetParam{CreateBy},
             ExternalInsert => 1,
         );
         if ( !$Success ) {
             $Kernel::OM->Get('Kernel::System::Log')->Log(
                 Priority => 'error',
-                Message  => "Could not insert working units (" .  $ParamObject->GetParam( Param => 'Period' ) 
+                Message  => "Could not insert working units (" . $ParamObject->GetParam( Param => 'Period' )
                     . ") of ticket (TicketID: " . $ParamObject->GetParam( Param => 'TicketID' ) . ") for UserID "
                     . $ParamObject->GetParam( Param => 'CreateBy' ) . "."
             );
@@ -201,15 +192,18 @@ sub Run {
         # challenge token check for write action
         $LayoutObject->ChallengeTokenCheck();
         return $LayoutObject->PopupClose(
-            #URL => "Action=AgentTicketZoom;TicketID=$TicketID",
-            Reload => 1,
+            URL => "Action=AgentTicketZoom;TicketID=$TicketID",
+
+            #Reload => 1,
         );
     }
 
     # date string
     my $DateString = $LayoutObject->BuildDateSelection(
-        YearPeriodFuture => 0,
-        #ValidateDateNotInFuture => 1,
+        YearPeriodFuture        => 0,
+        Class                   => 'Validate_Required',
+        ValidateDateNotInFuture => 1,
+
         #Validate => 1,
     );
 
@@ -218,7 +212,7 @@ sub Run {
 
     # if there is only one action available, that one should be preselected
     my @ActionIDList = keys %$ActionConstrainedList;
-    if ( scalar @ActionIDList == 1) {
+    if ( scalar @ActionIDList == 1 ) {
         $ActionID = $ActionIDList[0];
     }
     else {
@@ -258,20 +252,19 @@ sub Run {
 
     my $Output = join '',
         $LayoutObject->Header(
-            #Value     => $Ticket{TicketNumber},
+            Value     => $Ticket{TicketNumber},
             Type      => 'Small',
             BodyClass => 'Popup',
         );
     $Output .= $LayoutObject->Output(
         TemplateFile => 'AgentTicketAccountTime',
         Data         => {
-            DateString => $DateString,
+            DateString   => $DateString,
             TaskIDString => $ActionIDString,
-            TicketID => $TicketID,
-            ProjectID => $ProjectID,
-            CreateBy => $Ticket{CreateBy},
+            TicketID     => $TicketID,
+            ProjectID    => $ProjectID,
+            CreateBy     => $Ticket{CreateBy},
         },
-        AJAX => 1,
     );
     $Output .= $LayoutObject->Footer();
 
@@ -306,13 +299,13 @@ sub _ActionListConstraints {
         # and action reg-exp pairs
         for my $ActionID ( sort keys %{ $Param{ActionList} } ) {
 
-            my $ActionName = $Param{ActionList}->{$ActionID};
+            my $ActionName = $Param{ActionList}{$ActionID};
 
             PROJECTNAMEREGEXP:
             for my $ProjectNameRegExp ( sort keys %{ $Param{ActionListConstraints} } ) {
-                my $ActionNameRegExp = $Param{ActionListConstraints}->{$ProjectNameRegExp};
+                my $ActionNameRegExp = $Param{ActionListConstraints}{$ProjectNameRegExp};
                 if (
-                    $Param{ProjectName}   =~ m{$ProjectNameRegExp}smx
+                    $Param{ProjectName} =~ m{$ProjectNameRegExp}smx
                     && $ActionName =~ m{$ActionNameRegExp}smx
                     )
                 {
@@ -326,7 +319,7 @@ sub _ActionListConstraints {
     # all available actions will be added if no action was added above (possible misconfiguration)
     if ( !keys %List ) {
         for my $ActionID ( sort keys %{ $Param{ActionList} } ) {
-            my $ActionName = $Param{ActionList}->{$ActionID};
+            my $ActionName = $Param{ActionList}{$ActionID};
             $List{$ActionID} = $ActionName;
         }
     }
@@ -345,7 +338,7 @@ sub _CheckProjectName {
     my $DefaultName      = $DefaultProject{Project};
 
     # check needed stuff
-    if ( !$Param{ProjectName} || $Param{ProjectName} eq '' ) {
+    if ( !$Param{ProjectName} ) {
         return $DefaultName;
     }
 
@@ -418,37 +411,96 @@ sub _CreateProject {
 
 sub _Validate {
     my ( $Self, %Param ) = @_;
-    my %DateErrors = $Self->_ValidateDate(
-        Year => $Param{Year},
+
+    my $IsValidDate = $Self->_IsValidDate(
+        Year  => $Param{Year},
         Month => $Param{Month},
-        Day => $Param{Day},
+        Day   => $Param{Day},
     );
+    if ( !$IsValidDate ) {
 
-    return %DateErrors if %DateErrors;
-
-    my %PeriodErrors = $Self->_ValidatePeriod(
-        StartTime => $Param{StartTime},
-        EndTime => $Param{EndTime},
+        return (
+            DateError => 'ServerError',
+        );
+    }
+    my $IsValidPeriod = $Self->_IsValidPeriod(
         Period => $Param{Period},
     );
+    if ( !$IsValidPeriod ) {
 
-    return %PeriodErrors;
-}
+        return (
+            PeriodError => 'ServerError',
+        );
+    }
+    my $IsValidTaskID = $Self->_IsValidTaskID(
+        TaskID => $Param{TaskID},
+    );
+    if ( !$IsValidTaskID ) {
 
-sub _ValidateDate {
-    my ( $Self, %Param ) = @_;
+        return (
+            TaskIDError => 'ServerError',
+        );
+    }
+
     return;
 }
 
-sub _ValidatePeriod {
+sub _IsValidDate {
     my ( $Self, %Param ) = @_;
 
-    if (!$Param{Period} && !$Param{StartTime}) {
-        return(
-            StartTimeServerError => "Error",
-            PeriodServerError => "Error",
-        );
-    }
+    return if !$Param{Day} || !$Param{Month} || !$Param{Year};
+
+    my $DateTimeObjectParam = $Kernel::OM->Create('Kernel::System::DateTime');
+    my $TimeZone            = $Self->{UserTimeZone} || $DateTimeObjectParam->OTOBOTimeZoneGet();
+    my $IsValidDate         = $DateTimeObjectParam->Validate(
+        Year     => $Param{Year},
+        Month    => $Param{Month},
+        Day      => $Param{Day},
+        Hour     => 0,
+        Minute   => 0,
+        Second   => 0,
+        TimeZone => $TimeZone,
+    );
+
+    return if !$IsValidDate;
+
+    $DateTimeObjectParam->Set(
+        Year     => $Param{Year},
+        Month    => $Param{Month},
+        Day      => $Param{Day},
+        Hour     => 0,
+        Minute   => 0,
+        Second   => 0,
+        TimeZone => $TimeZone,
+    );
+    my $DateTimeObjectNow = $Kernel::OM->Create('Kernel::System::DateTime');
+    my $Compare           = $DateTimeObjectParam->Compare(
+        DateTimeObject => $DateTimeObjectNow,
+    );
+
+    return if $Compare == 1;
+
+    return 1;
+}
+
+sub _IsValidPeriod {
+    my ( $Self, %Param ) = @_;
+
+    return if !$Param{Period};
+
+    return if $Param{Period} !~ /-?\d+\.\d*/;
+
+    return if $Param{Period} <= 0 || $Param{Period} > 24;
+
+    return 1;
+}
+
+sub _IsValidTaskID {
+    my ( $Self, %Param ) = @_;
+
+    return if !$Param{TaskID};
+
+    return 1;
 }
 
 1;

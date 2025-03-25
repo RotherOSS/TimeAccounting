@@ -690,9 +690,7 @@
                 </Item>
                 <Item Key="JavaScript">
                     <Array>
-                        <Item>TimeAccounting.Agent.js</Item>
-                        <Item>TimeAccounting.Agent.ConfirmationDialog.js</Item>
-                        <Item>TimeAccounting.Agent.EditTimeRecords.js</Item>
+                        <Item>TimeAccounting.Agent.TicketTimeAccount.js</Item>
                     </Array>
                 </Item>
             </Hash>
