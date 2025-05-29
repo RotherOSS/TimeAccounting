@@ -107,7 +107,7 @@ sub Run {
 
         # get params
         my %GetParam;
-        for my $Key (qw(Day Month Year TaskID Remark StartTime EndTime Period TicketID ProjectID CreateBy)) {
+        for my $Key (qw(Day Month Year TaskID Remark StartTime EndTime Period TicketID ProjectID)) {
             $GetParam{$Key} = $ParamObject->GetParam(
                 Param => $Key,
             );
@@ -177,15 +177,15 @@ sub Run {
                     BaseModule => 'Ticket',
                 },
             ],
-            UserID         => $GetParam{CreateBy},
+            UserID         => $Self->{UserID},
             ExternalInsert => 1,
         );
         if ( !$Success ) {
             $Kernel::OM->Get('Kernel::System::Log')->Log(
                 Priority => 'error',
                 Message  => "Could not insert working units (" . $ParamObject->GetParam( Param => 'Period' )
-                    . ") of ticket (TicketID: " . $ParamObject->GetParam( Param => 'TicketID' ) . ") for UserID "
-                    . $ParamObject->GetParam( Param => 'CreateBy' ) . "."
+                    . ") of ticket (TicketID: " . $ParamObject->GetParam( Param => 'TicketID' )
+                    . ") for UserID $Self->{UserID}."
             );
         }
 
@@ -290,7 +290,6 @@ sub Run {
             TaskIDString => $ActionIDString,
             TicketID     => $TicketID,
             ProjectID    => $ProjectID,
-            CreateBy     => $Ticket{CreateBy},
         },
     );
     $Output .= $LayoutObject->Footer();
