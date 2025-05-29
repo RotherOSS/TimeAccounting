@@ -142,8 +142,10 @@ sub Run {
         Project => $ProjectName
     );
 
+    my $ProjectID = $ProjectData{ID};
+
     # check needed params
-    if ( !%ProjectData ) {
+    if ( !$ProjectID ) {
         return $LayoutObject->ErrorScreen(
             Message => Translatable('ReportingProject: No Project for Ticket found.')
         );
@@ -151,7 +153,7 @@ sub Run {
 
     my %Action  = $TimeAccountingObject->ActionSettingsGet();
     my %Project = $TimeAccountingObject->ProjectSettingsGet();
-    $Param{Project} = $Project{Project}->{ $ProjectData{ProjectID} };
+    $Param{Project} = $Project{Project}->{ $ProjectID };
 
     # get system users
     my %ShownUsers = $UserObject->UserList(
@@ -190,9 +192,9 @@ sub Run {
             UserID   => $UserID,
             TicketID => $Ticket{TicketID},
         );
-        if ( $ProjectData{ $Param{ProjectID} } ) {
+        if ( $ProjectData{ $ProjectID } ) {
             my $UserTotalHoursInProject;
-            my $ActionsRef = $ProjectData{ $Param{ProjectID} }->{Actions};
+            my $ActionsRef = $ProjectData{ $ProjectID }->{Actions};
             for my $ActionID ( sort keys %{$ActionsRef} ) {
                 $ProjectTime{$ActionID}->{$UserID}->{Hours} = $ActionsRef->{$ActionID}->{Total};
 
@@ -289,7 +291,7 @@ sub Run {
         );
     }
     my @ProjectHistoryArray = $TimeAccountingObject->ProjectHistory(
-        ProjectID => $Param{ProjectID},
+        ProjectID => $ProjectID,
         TicketID  => $Ticket{TicketID},
     );
 
@@ -326,7 +328,7 @@ sub Run {
         my $ProjectTotalHours = sprintf(
             "%.2f",
             $TimeAccountingObject->ProjectTotalHours(
-                ProjectID => $Param{ProjectID},
+                ProjectID => $ProjectID,
                 TicketID  => $Ticket{TicketID},
             )
         );
@@ -355,6 +357,63 @@ sub Run {
     $Output .= $LayoutObject->Footer();
 
     return $Output;
+}
+
+sub _CheckProjectName {
+    my ( $Self, %Param ) = @_;
+
+    my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
+    my $ConfigObject         = $Kernel::OM->Get('Kernel::Config');
+
+    my $DefaultProjectID = $ConfigObject->Get('TimeAccounting::TicketSync::DefaultProjectID');
+    my %DefaultProject   = $TimeAccountingObject->ProjectGet( ID => $DefaultProjectID );
+    my $DefaultName      = $DefaultProject{Project};
+
+    # check needed stuff
+    if ( !$Param{ProjectName} ) {
+        return $DefaultName;
+    }
+
+    # If this option is disabled, return. We do not create a project.
+    if ( !$ConfigObject->Get('TimeAccounting::TicketSync::CreateProjectFromCustomerID') ) {
+        return $DefaultName;
+    }
+
+    # Now we need to check if the customer company exists already exists inside the database
+    my $CustomerCompanyObject = $Kernel::OM->Get('Kernel::System::CustomerCompany');
+
+    # Check if a customer company already exists in the customer company database
+    my %CustomerCompany = $CustomerCompanyObject->CustomerCompanyGet(
+        CustomerID => $Param{ProjectName},
+    );
+
+    # Return regular project cause customercompany exists
+    if ( IsHashRefWithData( \%CustomerCompany ) ) {
+        my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $Param{ProjectName} );
+
+        if ( IsHashRefWithData( \%ProjectData ) ) {
+            return $ProjectData{Project};
+        }
+        return $Param{ProjectName};
+    }
+
+    # Customer company not exist, so we need to check if we create projects from tmp customers.
+    if ( !$ConfigObject->Get('TimeAccounting::TicketSync::CreateProjectFromTMPCustomerID') ) {
+        return $DefaultName;
+    }
+
+    # Now we now that we need to create the project if it not exist
+    my ( $User, $Domain ) = split( /@/, $Param{ProjectName} );
+    my %ProjectData = $TimeAccountingObject->ProjectGet( Project => $Domain );
+
+    if ( IsHashRefWithData( \%ProjectData ) ) {
+        return $ProjectData{Project};
+    }
+    else {
+
+        return $Domain;
+    }
+    return $DefaultName;
 }
 
 1;
