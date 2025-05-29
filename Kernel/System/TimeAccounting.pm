@@ -1736,9 +1736,10 @@ sub WorkingUnitsDelete {
 returns a hash with the hours dependent project and action data
 
     my %ProjectData = $TimeAccountingObject->ProjectActionReporting(
-        Year  => 2005,
-        Month => 7,
-        UserID => 123, # optional; no UserID means 'of all users'
+        Year     => 2005,
+        Month    => 7,
+        UserID   => 123, # optional; no UserID means 'of all users'
+        TicketID => 321, # optional; only for a specific ticket
     );
 
 =cut
@@ -1776,6 +1777,11 @@ sub ProjectActionReporting {
     if ( $Param{UserID} ) {
         $SQL .= ' AND user_id = ?';
         push @Bind, \$Param{UserID};
+    }
+
+    if ( $Param{TicketID} ) {
+        $SQL .= ' AND ticket_id = ?';
+        push @Bind, \$Param{TicketID};
     }
 
     # total hours
@@ -1848,7 +1854,8 @@ sub ProjectActionReporting {
 returns the sum of all hours related to a project
 
     my $ProjectTotalHours = $TimeAccountingObject->ProjectTotalHours(
-        ProjectID  => 15,
+        ProjectID => 15,
+        TicketID  => 15,
     );
 
 =cut
@@ -1869,13 +1876,20 @@ sub ProjectTotalHours {
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
+
+    my $SQL = 'SELECT SUM(period) FROM time_accounting_table WHERE project_id = ?';
+
+    my @Bind = ( \$Param{ProjectID} );
+
+    if ( $Param{TicketID} ) {
+        $SQL .= ' AND ticket_id = ?';
+        push @Bind, \$Param{TicketID};
+    }
+
     # ask the database
-    return if !$DBObject->Prepare(
-        SQL => '
-            SELECT SUM(period)
-            FROM time_accounting_table
-            WHERE project_id = ?',
-        Bind  => [ \$Param{ProjectID} ],
+    $DBObject->Prepare(
+        SQL   => $SQL,
+        Bind  => \@Bind,
         Limit => 1,
     );
 
@@ -1894,6 +1908,7 @@ returns an array with all WorkingUnits related to a project
 
     my @ProjectHistoryArray = $TimeAccountingObject->ProjectHistory(
         ProjectID  => 15,
+        TicketID   => 51, # optional
     );
 
 This would return
@@ -1953,14 +1968,22 @@ sub ProjectHistory {
     # get database object
     my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
+    my $SQL = 'SELECT id, user_id, action_id, remark, time_start, time_end, period, created
+        FROM time_accounting_table WHERE project_id = ?';
+
+    my @Bind = ( \$Param{ProjectID} );
+
+    if ( $Param{TicketID} ) {
+        $SQL .= ' AND ticket_id = ?';
+        push @Bind, \$Param{TicketID};
+    }
+
+    $SQL .= ' ORDER BY time_start',
+
     # ask the database
     $DBObject->Prepare(
-        SQL => '
-            SELECT id, user_id, action_id, remark, time_start, time_end, period, created
-            FROM time_accounting_table
-            WHERE project_id = ?
-            ORDER BY time_start',
-        Bind => [ \$Param{ProjectID} ],
+        SQL  => $SQL,
+        Bind => \@Bind,
     );
 
     # fetch the result

@@ -63,6 +63,7 @@
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingEdit.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingOverview.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingReporting.pm" />
+	    <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingReportingTicket.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingSetting.pm" />
         <File Permission="660" Location="Kernel/Modules/AgentTimeAccountingView.pm" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketAccountTime.tt" />        
@@ -71,6 +72,7 @@
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingOverview.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingReporting.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingReportingProject.tt" />
+	    <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingReportingTicket.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingSetting.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Templates/Standard/AgentTimeAccountingView.tt" />
         <File Permission="660" Location="Kernel/Output/HTML/Notification/TimeAccounting.pm" />
