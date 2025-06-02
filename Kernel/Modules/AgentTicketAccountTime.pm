@@ -197,12 +197,14 @@ sub Run {
                 OnlyFirst => 1,
             );
 
-            if ( @Articles ) {
+            if (@Articles) {
                 $Success = $TicketObject->TicketAccountTime(
                     TicketID  => $TicketID,
                     ArticleID => $Articles[0]{ArticleID},
-                    TimeUnit  => $GetParam{Period},
-                    UserID    => $Self->{UserID},
+
+                    # calculate minutes, as period is given in hours
+                    TimeUnit => ( $GetParam{Period} * 60 ),
+                    UserID   => $Self->{UserID},
                 );
             }
 
