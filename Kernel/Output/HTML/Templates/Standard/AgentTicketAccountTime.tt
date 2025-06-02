@@ -80,6 +80,7 @@
                         <p>[% Translate("You must enter a start and an end time, or a positive period of up to 24 hours.") | html %]</p>
                     </div>
                     <input type="text" name="Period" id="Period" value="[% Data.Period | html %]" class="Validate_Required [% Data.PeriodError | html %]" size="7" title="[% Translate("Period") | html %]" />
+                    <p class="FieldExplanation">[% Translate("The time period must be given in hours and can be a decimal number.") | html %]</p>
                 </div>
                 <div class="Clear"></div>
 
