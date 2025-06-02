@@ -48,10 +48,10 @@
                 <label class="Mandatory" for="TaskID"><span class="Marker">*</span> [% Translate("Task") | html %]:</label>
                 <div class="Field">
                     <div id="TaskIDError" class="TooltipErrorMessage">
-                        <p>[% Translate("This field is mandatory.") | html %]</p>
+                        <p>[% Translate("This field is required.") | html %]</p>
                     </div>
                     <div id="TaskIDServerError" class="TooltipErrorMessage">
-                        <p>[% Translate("This field is mandatory.") | html %]</p>
+                        <p>[% Translate("This field is required.") | html %]</p>
                     </div>
                     [% Data.TaskIDString %]
                 </div>
