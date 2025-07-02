@@ -191,33 +191,6 @@ sub Run {
 
         my $Config = $ConfigObject->Get('Ticket::Frontend::AgentTicketAccountTime') // {};
 
-        if ( $Config->{AccountTimeOnFirstArticle} ) {
-            my @Articles = $Kernel::OM->Get('Kernel::System::Ticket::Article')->ArticleList(
-                TicketID  => $TicketID,
-                OnlyFirst => 1,
-            );
-
-            if (@Articles) {
-                $Success = $TicketObject->TicketAccountTime(
-                    TicketID  => $TicketID,
-                    ArticleID => $Articles[0]{ArticleID},
-
-                    # calculate minutes, as period is given in hours
-                    TimeUnit => ( $GetParam{Period} * 60 ),
-                    UserID   => $Self->{UserID},
-                );
-            }
-
-            if ( !@Articles || !$Success ) {
-                $Kernel::OM->Get('Kernel::System::Log')->Log(
-                    Priority => 'error',
-                    Message  => "Could account time (" . $ParamObject->GetParam( Param => 'Period' )
-                        . ") on first article of ticket (TicketID: " . $ParamObject->GetParam( Param => 'TicketID' )
-                        . ") for UserID $Self->{UserID}."
-                );
-            }
-        }
-
         # challenge token check for write action
         $LayoutObject->ChallengeTokenCheck();
         return $LayoutObject->PopupClose(
