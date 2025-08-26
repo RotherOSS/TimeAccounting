@@ -1,7 +1,7 @@
 # --
 # OTOBO is a web-based ticketing system for service organisations.
 # --
-# Copyright (C) 2019-2024 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -202,7 +202,9 @@ sub Run {
                         BaseModule => 'Ticket',
                     },
                 ],
-                UserID         => $Article{CreateBy},
+
+                # use given user id instead of article creator user id to take ArticleEdit into account
+                UserID         => $Param{UserID},
                 ExternalInsert => 1,
             );
 
@@ -226,12 +228,12 @@ sub Run {
     }
 
     # sync article time to DF
-    if ( $SyncToArticleDFName ) {
+    if ($SyncToArticleDFName) {
         my $DynamicFieldConfig = $Kernel::OM->Get('Kernel::System::DynamicField')->DynamicFieldGet(
             Name => $SyncToArticleDFName,
         );
 
-        if ( $DynamicFieldConfig ) {
+        if ($DynamicFieldConfig) {
             my $DFSuccess = $Kernel::OM->Get('Kernel::System::DynamicField::Backend')->ValueSet(
                 DynamicFieldConfig => $DynamicFieldConfig,
                 ObjectID           => $Param{Data}{ArticleID},
